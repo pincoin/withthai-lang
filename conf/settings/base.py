@@ -15,8 +15,6 @@ ALLOWED_HOSTS = Secret.ALLOWED_HOSTS
 DATABASES = Secret.DATABASES
 ADMIN_URL = Secret.ADMIN_URL
 
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -26,6 +24,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',  # appended
     'django.contrib.sitemaps',  # appended
+]
+
+INSTALLED_APPS += [
+    'rakmai',
+    'blog',
+    'board',
+    'book',
+    'voca',
 ]
 
 MIDDLEWARE = [
