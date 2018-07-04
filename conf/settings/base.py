@@ -13,13 +13,17 @@ import os
 
 from . import BASE_DIR
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'zy*%i@3_w@7y1l-7koca&h_wg@c1#m&d)v1i=7e$s882tlpbgi'
+try:
+    from .secret import Secret
+except ImportError:
+    raise ImportError(
+        'Failed to import Secret values.'
+    )
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+# SECURITY WARNING: Keep them secret!
+SECRET_KEY = Secret.SECRET_KEY
+ALLOWED_HOSTS = Secret.ALLOWED_HOSTS
+DATABASES = Secret.DATABASES
 
 # Application definition
 

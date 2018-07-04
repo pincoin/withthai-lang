@@ -123,9 +123,9 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-# sandbox
+# conf
 db.sqlite3
 assets/
 media/
-sandbox/settings/secret.py
-sandbox/settings/production.py
+conf/settings/secret.py
+conf/settings/production.py
