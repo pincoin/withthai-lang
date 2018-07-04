@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-04 22:27+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: conf/settings/local.py:10
+msgid "Korean"
+msgstr "ภาษาเกาหลี"
+
+#: conf/settings/local.py:11
+msgid "English"
+msgstr "ภาษาอังกฤษ"
+
+#: conf/settings/local.py:12
+msgid "Thai"
+msgstr "ภาษาไทย"
+
+#: rakmai/models.py:14
+msgid "equals"
+msgstr ""
+
+#: rakmai/models.py:15
+msgid "startswith"
+msgstr ""
+
+#: rakmai/models.py:19
+msgid "_self"
+msgstr ""
+
+#: rakmai/models.py:20
+msgid "blank"
+msgstr ""
+
+#: rakmai/models.py:25 rakmai/models.py:108
+msgid "parent"
+msgstr ""
+
+#: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
+msgid "title"
+msgstr ""
+
+#: rakmai/models.py:36
+msgid ""
+"Site menu item title. Can contain template variables E.g.: {{ mytitle }}"
+msgstr ""
+
+#: rakmai/models.py:40
+msgid "url"
+msgstr ""
+
+#: rakmai/models.py:43
+msgid "Exact URL or URL pattern"
+msgstr ""
+
+#: rakmai/models.py:47
+msgid "match"
+msgstr ""
+
+#: rakmai/models.py:53
+msgid "target"
+msgstr ""
+
+#: rakmai/models.py:59
+msgid "menu item"
+msgstr ""
+
+#: rakmai/models.py:60
+msgid "menu items"
+msgstr ""
+
+#: rakmai/models.py:74
+msgid "The page title as you'd like it to be seen by the public"
+msgstr ""
+
+#: rakmai/models.py:78
+msgid "description"
+msgstr ""
+
+#: rakmai/models.py:80
+msgid ""
+"A short description not longer than 155 characters. Don't use double quotes."
+msgstr ""
+
+#: rakmai/models.py:85
+msgid "keywords"
+msgstr ""
+
+#: rakmai/models.py:87
+msgid "A comma-separated list of keywords. Don't use double quotes."
+msgstr ""
+
+#: rakmai/models.py:93
+msgid "owner"
+msgstr ""
+
+#: rakmai/models.py:122
+msgid "slug"
+msgstr ""
+
+#: rakmai/models.py:123
+msgid ""
+"A short label containing only letters, numbers, underscores or hyphens for "
+"URL"
+msgstr ""
+
+#: rakmai/models.py:142
+msgid "file name"
+msgstr ""
+
+#: rakmai/models.py:147
+msgid "public identifier"
+msgstr ""
+
+#: rakmai/models.py:154
+msgid "uploaded file"
+msgstr ""
+
+#: rakmai/models.py:159
+msgid "created time"
+msgstr ""
+
+#: rakmai/models.py:165
+msgid "attachment"
+msgstr ""
+
+#: rakmai/models.py:166
+msgid "attachments"
+msgstr ""
