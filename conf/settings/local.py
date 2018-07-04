@@ -4,6 +4,10 @@ from .base import *
 
 DEBUG = True
 
+INSTALLED_APPS += [
+    'rakmai',
+]
+
 # Internationalization
 LANGUAGE_CODE = 'ko-kr'
 LANGUAGES = [

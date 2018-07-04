@@ -13,6 +13,7 @@ except ImportError:
 SECRET_KEY = Secret.SECRET_KEY
 ALLOWED_HOSTS = Secret.ALLOWED_HOSTS
 DATABASES = Secret.DATABASES
+ADMIN_URL = Secret.ADMIN_URL
 
 # Application definition
 
