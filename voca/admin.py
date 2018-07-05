@@ -17,10 +17,16 @@ class EntryMeaningInline(admin.TabularInline):
     formset = EntryMeaningInlineFormset
 
 
+class CompoundWordInline(admin.TabularInline):
+    model = Entry.relationships.through
+    extra = 1
+    fk_name = 'from_entry'
+
+
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('title', 'pronunciation')
     list_display_links = ('title',)
-    inlines = [EntryMeaningInline, ]
+    inlines = [EntryMeaningInline, CompoundWordInline]
 
 
 class EntryCompoundAdmin(admin.ModelAdmin):
