@@ -42,6 +42,9 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         verbose_name = _('entry')
         verbose_name_plural = _('entries')
 
+    def __str__(self):
+        return self.title
+
 
 class EntryCompound(models.Model):
     from_entry = models.ForeignKey(
@@ -98,6 +101,13 @@ class EntryMeaning(TimeStampedModel):
         max_length=250,
     )
 
+    position = models.IntegerField(
+        verbose_name=_('position'),
+    )
+
     class Meta:
         verbose_name = _('meaning')
         verbose_name_plural = _('meanings')
+
+    def __str__(self):
+        return '{} {}'.format(self.entry.title, self.meaning)
