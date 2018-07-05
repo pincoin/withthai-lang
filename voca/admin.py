@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.forms.models import BaseInlineFormSet
 
 from .models import (
-    Entry, EntryCompound, EntryMeaning
+    Entry, EntryMeaning
 )
 
 
@@ -17,7 +17,7 @@ class EntryMeaningInline(admin.TabularInline):
     formset = EntryMeaningInlineFormset
 
 
-class CompoundWordInline(admin.TabularInline):
+class EntryCompoundInline(admin.TabularInline):
     model = Entry.relationships.through
     extra = 1
     fk_name = 'from_entry'
@@ -26,12 +26,7 @@ class CompoundWordInline(admin.TabularInline):
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('title', 'pronunciation')
     list_display_links = ('title',)
-    inlines = [EntryMeaningInline, CompoundWordInline]
-
-
-class EntryCompoundAdmin(admin.ModelAdmin):
-    pass
+    inlines = [EntryMeaningInline, EntryCompoundInline]
 
 
 admin.site.register(Entry, EntryAdmin)
-admin.site.register(EntryCompound, EntryCompoundAdmin)
