@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-05 23:43+0900\n"
+"POT-Creation-Date: 2018-07-05 23:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,11 +162,11 @@ msgstr ""
 msgid "pronunciation"
 msgstr ""
 
-#: voca/models.py:27 voca/models.py:81
+#: voca/models.py:27 voca/models.py:83
 msgid "level"
 msgstr ""
 
-#: voca/models.py:42 voca/models.py:89
+#: voca/models.py:42 voca/models.py:91
 msgid "entry"
 msgstr ""
 
@@ -186,34 +186,42 @@ msgstr ""
 msgid "position"
 msgstr ""
 
-#: voca/models.py:71
+#: voca/models.py:66
+msgid "compound word"
+msgstr ""
+
+#: voca/models.py:67
+msgid "compound words"
+msgstr ""
+
+#: voca/models.py:73
 msgid "noun"
 msgstr ""
 
-#: voca/models.py:72
+#: voca/models.py:74
 msgid "pronoun"
 msgstr ""
 
-#: voca/models.py:73 voca/models.py:75
+#: voca/models.py:75 voca/models.py:77
 msgid "verb"
 msgstr ""
 
-#: voca/models.py:74
+#: voca/models.py:76
 msgid "modifier"
 msgstr ""
 
-#: voca/models.py:76
+#: voca/models.py:78
 msgid "conjunction"
 msgstr ""
 
-#: voca/models.py:77
+#: voca/models.py:79
 msgid "interjection"
 msgstr ""
 
-#: voca/models.py:95 voca/models.py:100
+#: voca/models.py:97 voca/models.py:102
 msgid "meaning"
 msgstr ""
 
-#: voca/models.py:101
+#: voca/models.py:103
 msgid "meanings"
 msgstr ""

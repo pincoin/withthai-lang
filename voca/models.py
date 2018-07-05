@@ -63,6 +63,8 @@ class EntryCompound(models.Model):
     )
 
     class Meta:
+        verbose_name = _('compound word')
+        verbose_name_plural = _('compound words')
         ordering = ['position']
 
 
