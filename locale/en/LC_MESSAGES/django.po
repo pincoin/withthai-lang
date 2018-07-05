@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-04 23:52+0900\n"
+"POT-Creation-Date: 2018-07-05 23:43+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,128 +19,205 @@ msgstr ""
 
 #: conf/settings/local.py:10
 msgid "Korean"
-msgstr ""
+msgstr "Korean"
 
 #: conf/settings/local.py:11
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #: conf/settings/local.py:12
 msgid "Thai"
-msgstr ""
+msgstr "Thai"
 
 #: rakmai/models.py:14
 msgid "equals"
-msgstr ""
+msgstr "equals"
 
 #: rakmai/models.py:15
 msgid "startswith"
-msgstr ""
+msgstr "startswith"
 
 #: rakmai/models.py:19
 msgid "_self"
-msgstr ""
+msgstr "_self"
 
 #: rakmai/models.py:20
 msgid "blank"
-msgstr ""
+msgstr "blank"
 
 #: rakmai/models.py:25 rakmai/models.py:108
 msgid "parent"
-msgstr ""
+msgstr "parent"
 
 #: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
+#: voca/models.py:17
 msgid "title"
-msgstr ""
+msgstr "title"
 
 #: rakmai/models.py:36
 msgid ""
 "Site menu item title. Can contain template variables E.g.: {{ mytitle }}"
 msgstr ""
+"Site menu item title. Can contain template variables E.g.: {{ mytitle }}"
 
 #: rakmai/models.py:40
 msgid "url"
-msgstr ""
+msgstr "url"
 
 #: rakmai/models.py:43
 msgid "Exact URL or URL pattern"
-msgstr ""
+msgstr "Exact URL or URL pattern"
 
 #: rakmai/models.py:47
 msgid "match"
-msgstr ""
+msgstr "match"
 
 #: rakmai/models.py:53
 msgid "target"
-msgstr ""
+msgstr "target"
 
 #: rakmai/models.py:59
 msgid "menu item"
-msgstr ""
+msgstr "menu item"
 
 #: rakmai/models.py:60
 msgid "menu items"
-msgstr ""
+msgstr "menu items"
 
 #: rakmai/models.py:74
 msgid "The page title as you'd like it to be seen by the public"
-msgstr ""
+msgstr "The page title as you'd like it to be seen by the public"
 
 #: rakmai/models.py:78
 msgid "description"
-msgstr ""
+msgstr "description"
 
 #: rakmai/models.py:80
 msgid ""
 "A short description not longer than 155 characters. Don't use double quotes."
 msgstr ""
+"A short description not longer than 155 characters. Don't use double quotes."
 
 #: rakmai/models.py:85
 msgid "keywords"
-msgstr ""
+msgstr "keywords"
 
 #: rakmai/models.py:87
 msgid "A comma-separated list of keywords. Don't use double quotes."
-msgstr ""
+msgstr "A comma-separated list of keywords. Don't use double quotes."
 
 #: rakmai/models.py:93
 msgid "owner"
-msgstr ""
+msgstr "owner"
 
 #: rakmai/models.py:122
 msgid "slug"
-msgstr ""
+msgstr "slug"
 
 #: rakmai/models.py:123
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
 msgstr ""
+"A short label containing only letters, numbers, underscores or hyphens for "
+"URL"
 
 #: rakmai/models.py:142
 msgid "file name"
-msgstr ""
+msgstr "file name"
 
 #: rakmai/models.py:147
 msgid "public identifier"
-msgstr ""
+msgstr "public identifier"
 
 #: rakmai/models.py:154
 msgid "uploaded file"
-msgstr ""
+msgstr "uploaded file"
 
 #: rakmai/models.py:159
 msgid "created time"
-msgstr ""
+msgstr "created time"
 
 #: rakmai/models.py:165
 msgid "attachment"
-msgstr ""
+msgstr "attachment"
 
 #: rakmai/models.py:166
 msgid "attachments"
-msgstr ""
+msgstr "attachments"
 
 #: rakmai/views.py:12
 msgid "withthai"
-msgstr ""
+msgstr "withthai"
+
+#: voca/models.py:11
+msgid "beginner"
+msgstr "beginner"
+
+#: voca/models.py:12
+msgid "intermediate"
+msgstr "intermediate"
+
+#: voca/models.py:13
+msgid "advanced"
+msgstr "advanced"
+
+#: voca/models.py:22
+msgid "pronunciation"
+msgstr "pronunciation"
+
+#: voca/models.py:27 voca/models.py:81
+msgid "level"
+msgstr "level"
+
+#: voca/models.py:42 voca/models.py:89
+msgid "entry"
+msgstr "entry"
+
+#: voca/models.py:43
+msgid "entries"
+msgstr "entries"
+
+#: voca/models.py:49
+msgid "from_entry"
+msgstr "from_entry"
+
+#: voca/models.py:56
+msgid "to_entry"
+msgstr "to_entry"
+
+#: voca/models.py:62
+msgid "position"
+msgstr "position"
+
+#: voca/models.py:71
+msgid "noun"
+msgstr "noun"
+
+#: voca/models.py:72
+msgid "pronoun"
+msgstr "pronoun"
+
+#: voca/models.py:73 voca/models.py:75
+msgid "verb"
+msgstr "verb"
+
+#: voca/models.py:74
+msgid "modifier"
+msgstr "modifier"
+
+#: voca/models.py:76
+msgid "conjunction"
+msgstr "conjunction"
+
+#: voca/models.py:77
+msgid "interjection"
+msgstr "interjection"
+
+#: voca/models.py:95 voca/models.py:100
+msgid "meaning"
+msgstr "meaning"
+
+#: voca/models.py:101
+msgid "meanings"
+msgstr "meanings"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-04 23:52+0900\n"
+"POT-Creation-Date: 2018-07-05 23:43+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,8 +50,9 @@ msgid "parent"
 msgstr ""
 
 #: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
+#: voca/models.py:17
 msgid "title"
-msgstr ""
+msgstr "제목"
 
 #: rakmai/models.py:36
 msgid ""
@@ -119,28 +120,100 @@ msgstr ""
 
 #: rakmai/models.py:142
 msgid "file name"
-msgstr ""
+msgstr "파일이름"
 
 #: rakmai/models.py:147
 msgid "public identifier"
-msgstr ""
+msgstr "고유 아이디"
 
 #: rakmai/models.py:154
 msgid "uploaded file"
-msgstr ""
+msgstr "업로드 파일"
 
 #: rakmai/models.py:159
 msgid "created time"
-msgstr ""
+msgstr "생성일시"
 
 #: rakmai/models.py:165
 msgid "attachment"
-msgstr ""
+msgstr "첨부파일"
 
 #: rakmai/models.py:166
 msgid "attachments"
-msgstr ""
+msgstr "첨부파일"
 
 #: rakmai/views.py:12
 msgid "withthai"
 msgstr "위드타이"
+
+#: voca/models.py:11
+msgid "beginner"
+msgstr "초급"
+
+#: voca/models.py:12
+msgid "intermediate"
+msgstr "중급"
+
+#: voca/models.py:13
+msgid "advanced"
+msgstr "고급"
+
+#: voca/models.py:22
+msgid "pronunciation"
+msgstr "발음"
+
+#: voca/models.py:27 voca/models.py:81
+msgid "level"
+msgstr "수준"
+
+#: voca/models.py:42 voca/models.py:89
+msgid "entry"
+msgstr "표제어"
+
+#: voca/models.py:43
+msgid "entries"
+msgstr "표제어"
+
+#: voca/models.py:49
+msgid "from_entry"
+msgstr "어근"
+
+#: voca/models.py:56
+msgid "to_entry"
+msgstr "파생어"
+
+#: voca/models.py:62
+msgid "position"
+msgstr "순서"
+
+#: voca/models.py:71
+msgid "noun"
+msgstr "명사"
+
+#: voca/models.py:72
+msgid "pronoun"
+msgstr "대명사"
+
+#: voca/models.py:73 voca/models.py:75
+msgid "verb"
+msgstr "동사"
+
+#: voca/models.py:74
+msgid "modifier"
+msgstr "수식사"
+
+#: voca/models.py:76
+msgid "conjunction"
+msgstr "접속사"
+
+#: voca/models.py:77
+msgid "interjection"
+msgstr "감탄사"
+
+#: voca/models.py:95 voca/models.py:100
+msgid "meaning"
+msgstr "뜻"
+
+#: voca/models.py:101
+msgid "meanings"
+msgstr "뜻"

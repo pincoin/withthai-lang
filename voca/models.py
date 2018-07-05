@@ -38,6 +38,10 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         symmetrical=False,
     )
 
+    class Meta:
+        verbose_name = _('entry')
+        verbose_name_plural = _('entries')
+
 
 class EntryCompound(models.Model):
     from_entry = models.ForeignKey(
@@ -91,3 +95,7 @@ class EntryMeaning(TimeStampedModel):
         verbose_name=_('meaning'),
         max_length=250,
     )
+
+    class Meta:
+        verbose_name = _('meaning')
+        verbose_name_plural = _('meanings')
