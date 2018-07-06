@@ -12,7 +12,6 @@ class EntryListView(generic.ListView):
 
     def get_queryset(self):
         queryset = Entry.objects.all()
-
         return queryset.order_by('-created')
 
     def get_context_data(self, **kwargs):
@@ -27,7 +26,10 @@ class EntryListView(generic.ListView):
 class EntryDetailView(generic.DetailView):
     logger = logging.getLogger(__name__)
     context_object_name = 'entry'
-    model = Entry
+
+    def get_queryset(self):
+        queryset = Entry.objects.all()
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super(EntryDetailView, self).get_context_data(**kwargs)

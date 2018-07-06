@@ -52,7 +52,7 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         verbose_name_plural = _('entries')
 
     def __str__(self):
-        return self.title
+        return self.slug
 
 
 class EntryCompound(models.Model):
@@ -119,7 +119,7 @@ class EntryMeaning(TimeStampedModel):
         verbose_name_plural = _('meanings')
 
     def __str__(self):
-        return '{} {}'.format(self.entry.title, self.meaning)
+        return '{} {}'.format(self.entry.slug, self.meaning)
 
 
 class EntryCategory(AbstractCategory):

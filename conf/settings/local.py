@@ -28,3 +28,29 @@ STATICFILES_DIRS = [
 # Media files (Uploaded files)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        }
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+        'rakmai': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+        'voca': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    }
+}

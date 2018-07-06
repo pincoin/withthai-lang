@@ -21,7 +21,7 @@
                 {{ entry.get_level_display }}
             </div>
             <div class="col-md-3">
-                <a href="{% url 'voca:entry-detail' '1' %}">
+                <a href="{% url 'voca:entry-detail' pk=entry.pk %}">
                     {{ entry.slug }}
                 </a>
             </div>
