@@ -5,6 +5,8 @@ from model_utils.models import (
     TimeStampedModel, SoftDeletableModel
 )
 
+from rakmai.models import AbstractCategory
+
 
 class Entry(SoftDeletableModel, TimeStampedModel):
     LEVEL_CHOICES = Choices(
@@ -21,6 +23,11 @@ class Entry(SoftDeletableModel, TimeStampedModel):
     pronunciation = models.CharField(
         verbose_name=_('pronunciation'),
         max_length=250,
+    )
+
+    description = models.TextField(
+        verbose_name=_('description'),
+        blank=True,
     )
 
     level = models.IntegerField(
@@ -83,7 +90,7 @@ class EntryMeaning(TimeStampedModel):
     )
 
     part = models.IntegerField(
-        verbose_name=_('level'),
+        verbose_name=_('part of speech'),
         choices=PART_CHOICES,
         default=PART_CHOICES.noun,
         db_index=True,
@@ -111,3 +118,17 @@ class EntryMeaning(TimeStampedModel):
 
     def __str__(self):
         return '{} {}'.format(self.entry.title, self.meaning)
+
+
+class EntryCategory(AbstractCategory):
+    description = models.TextField(
+        verbose_name=_('description'),
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = _('entry category')
+        verbose_name_plural = _('entry categories')
+
+    def __str__(self):
+        return self.title

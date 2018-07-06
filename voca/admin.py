@@ -28,6 +28,8 @@ class EntryAdmin(admin.ModelAdmin):
     list_display_links = ('title',)
     list_filter = ('level',)
     search_fields = ('title',)
+    fields = ('level', 'title', 'pronunciation', 'description')
+    readonly_fields = ('is_removed',)
     inlines = [EntryMeaningInline, EntryCompoundInline]
 
 
