@@ -1,11 +1,25 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     padding-top: 54px;
+    margin-bottom: 60px; /* allocate footer margin */
 }
 
 @media (min-width: 992px) {
     body {
         padding-top: 56px;
     }
+}
+
+.footer {
+    /* No media query for Extra small devices (portrait phones, less than 576px) */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* fixed height of the footer */
 }
 
 .carousel-item {

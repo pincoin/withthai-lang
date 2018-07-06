@@ -11,7 +11,7 @@ class EntryListView(generic.ListView):
     context_object_name = 'entries'
 
     def get_queryset(self):
-        queryset = Entry.objects.all()
+        queryset = Entry.objects.prefetch_related('meanings')
         return queryset.order_by('-created')
 
     def get_context_data(self, **kwargs):

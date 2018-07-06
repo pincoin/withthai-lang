@@ -89,6 +89,7 @@ class EntryMeaning(TimeStampedModel):
         (4, 'preposition', _('verb')),
         (5, 'conjunction', _('conjunction')),
         (6, 'interjection', _('interjection')),
+        (7, 'classifier', _('classifier')),
     )
 
     part = models.IntegerField(

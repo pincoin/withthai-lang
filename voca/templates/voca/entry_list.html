@@ -17,16 +17,18 @@
 
     {% for entry in entries %}
         <div class="row my-2">
-            <div class="col-md-3">
-                {{ entry.get_level_display }}
-            </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <a href="{% url 'voca:entry-detail' pk=entry.pk %}">
                     {{ entry.slug }}
                 </a>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 {{ entry.pronunciation }}
+            </div>
+            <div class="col-md-8">
+                {% for meaning in entry.meanings.all %}
+                    {{ meaning.get_part_display }} - {{ meaning.meaning }}
+                {% endfor %}
             </div>
         </div>
     {% endfor %}
