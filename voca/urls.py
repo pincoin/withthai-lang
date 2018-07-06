@@ -7,7 +7,7 @@ from .views import (
 app_name = 'voca'
 
 urlpatterns = [
-    url(r'^entries$',
+    url(r'^entries/$',
         EntryListView.as_view(), name='entry-list'),
     url(r'^entries/(?P<slug>[-\w]+)/$',
         EntryDetailView.as_view(), name='entry-detail'),

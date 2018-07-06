@@ -18,7 +18,7 @@ class Entry(SoftDeletableModel, TimeStampedModel):
     slug = models.SlugField(
         verbose_name=_('title'),
         max_length=255,
-        # unique=True,
+        unique=True,
         allow_unicode=True,
     )
 
