@@ -23,7 +23,7 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         max_length=250,
     )
 
-    status = models.IntegerField(
+    level = models.IntegerField(
         verbose_name=_('level'),
         choices=LEVEL_CHOICES,
         default=LEVEL_CHOICES.beginner,

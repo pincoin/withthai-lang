@@ -26,6 +26,8 @@ class EntryCompoundInline(admin.TabularInline):
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('title', 'pronunciation')
     list_display_links = ('title',)
+    list_filter = ('level',)
+    search_fields = ('title',)
     inlines = [EntryMeaningInline, EntryCompoundInline]
 
 
