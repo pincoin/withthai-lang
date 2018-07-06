@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-06 20:46+0900\n"
+"POT-Creation-Date: 2018-07-06 23:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -240,10 +240,16 @@ msgstr "meanings"
 
 #: voca/models.py:130
 msgid "entry category"
-msgstr ""
+msgstr "entry category"
 
 #: voca/models.py:131
-#, fuzzy
-#| msgid "entries"
 msgid "entry categories"
-msgstr "entries"
+msgstr "entry categories"
+
+#: voca/templates/voca/voca_list.html:6
+msgid "Vocabulary"
+msgstr "Vocabulary"
+
+#: voca/views.py:20
+msgid "voca"
+msgstr "voca"

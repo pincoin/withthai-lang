@@ -24,11 +24,11 @@ class EntryCompoundInline(admin.TabularInline):
 
 
 class EntryAdmin(admin.ModelAdmin):
-    list_display = ('title', 'pronunciation')
-    list_display_links = ('title',)
+    list_display = ('slug', 'pronunciation')
+    list_display_links = ('slug',)
     list_filter = ('level',)
-    search_fields = ('title',)
-    fields = ('level', 'title', 'pronunciation', 'description')
+    search_fields = ('slug',)
+    fields = ('level', 'slug', 'pronunciation', 'description')
     readonly_fields = ('is_removed',)
     inlines = [EntryMeaningInline, EntryCompoundInline]
 

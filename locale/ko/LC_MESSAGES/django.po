@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-06 20:46+0900\n"
+"POT-Creation-Date: 2018-07-06 23:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -236,10 +236,16 @@ msgstr "뜻"
 
 #: voca/models.py:130
 msgid "entry category"
-msgstr ""
+msgstr "표제어 카테고리"
 
 #: voca/models.py:131
-#, fuzzy
-#| msgid "entries"
 msgid "entry categories"
-msgstr "표제어"
+msgstr "표제어 카테고리"
+
+#: voca/templates/voca/voca_list.html:6
+msgid "Vocabulary"
+msgstr "어휘"
+
+#: voca/views.py:20
+msgid "voca"
+msgstr "어휘"

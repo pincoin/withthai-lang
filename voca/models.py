@@ -15,9 +15,11 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         (2, 'advanced', _('advanced')),
     )
 
-    title = models.CharField(
+    slug = models.SlugField(
         verbose_name=_('title'),
-        max_length=250,
+        max_length=255,
+        # unique=True,
+        allow_unicode=True,
     )
 
     pronunciation = models.CharField(
