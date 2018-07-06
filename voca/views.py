@@ -6,7 +6,7 @@ from django.views import generic
 from .models import Entry
 
 
-class VocaListView(generic.ListView):
+class EntryListView(generic.ListView):
     logger = logging.getLogger(__name__)
     context_object_name = 'entries'
 
@@ -16,23 +16,23 @@ class VocaListView(generic.ListView):
         return queryset.order_by('-created')
 
     def get_context_data(self, **kwargs):
-        context = super(VocaListView, self).get_context_data(**kwargs)
+        context = super(EntryListView, self).get_context_data(**kwargs)
         context['page_title'] = _('voca')
         return context
 
     def get_template_names(self):
-        return 'voca/voca_list.html'
+        return 'voca/entry_list.html'
 
 
-class VocaDetailView(generic.DetailView):
+class EntryDetailView(generic.DetailView):
     logger = logging.getLogger(__name__)
     context_object_name = 'entry'
     model = Entry
 
     def get_context_data(self, **kwargs):
-        context = super(VocaDetailView, self).get_context_data(**kwargs)
+        context = super(EntryDetailView, self).get_context_data(**kwargs)
         context['page_title'] = _('voca')
         return context
 
     def get_template_names(self):
-        return 'voca/voca_detail.html'
+        return 'voca/entry_detail.html'
