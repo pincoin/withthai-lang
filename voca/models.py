@@ -4,6 +4,7 @@ from model_utils import Choices
 from model_utils.models import (
     TimeStampedModel, SoftDeletableModel
 )
+from mptt.fields import TreeForeignKey
 
 from rakmai.models import AbstractCategory
 
@@ -38,6 +39,15 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         choices=LEVEL_CHOICES,
         default=LEVEL_CHOICES.beginner,
         db_index=True,
+    )
+
+    category = TreeForeignKey(
+        'voca.EntryCategory',
+        verbose_name=_('entry category'),
+        related_name=_('entries'),
+        null=True,
+        db_index=True,
+        on_delete=models.SET_NULL,
     )
 
     relationships = models.ManyToManyField(
