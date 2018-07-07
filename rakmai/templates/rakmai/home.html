@@ -1,52 +1,16 @@
 {% extends "./base.html" %}
 
 {% block content %}
-    <!-- carousel -->
-    <header>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x300')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>First Slide</h3>
-                        <p>This is a description for the first slide.</p>
-                    </div>
-                </div>
-                <!-- Slide Two - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background-image: url('http://placehold.it/1900x300')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>Second Slide</h3>
-                        <p>This is a description for the second slide.</p>
-                    </div>
-                </div>
-                <!-- Slide Three - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background-image: url('http://placehold.it/1900x300')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>Third Slide</h3>
-                        <p>This is a description for the third slide.</p>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </header>
-
-
-
     <!-- Page Content -->
     <div class="container">
+        <!-- Jumbotron Header -->
+        <header class="jumbotron my-4">
+            <h1 class="display-3">A Warm Welcome!</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt
+                possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam
+                repellat.</p>
+            <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+        </header>
 
         <h1 class="my-4">Welcome to Modern Business</h1>
 
@@ -295,15 +259,6 @@
         </div>
         <!-- /.row -->
 
-        <!-- Jumbotron Header -->
-        <header class="jumbotron my-4">
-            <h1 class="display-3">A Warm Welcome!</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt
-                possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam
-                repellat.</p>
-            <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
-        </header>
-
         <!-- Page Features -->
         <div class="row text-center">
             <div class="col-lg-3 col-md-6 mb-4">
@@ -361,10 +316,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- /.row -->
-
     </div>
     <!-- /.container -->
 {% endblock %}

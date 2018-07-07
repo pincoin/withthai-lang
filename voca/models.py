@@ -44,7 +44,7 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         'self',
         through='voca.EntryCompound',
         blank=True,
-        related_name='related_to',
+        related_name='components',
         symmetrical=False,
     )
 

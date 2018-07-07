@@ -26,9 +26,11 @@
                 {{ entry.pronunciation }}
             </div>
             <div class="col-md-8">
-                {% for meaning in entry.meanings.all %}
-                    {{ meaning.get_part_display }} - {{ meaning.meaning }}
-                {% endfor %}
+                <ul class="">
+                    {% for meaning in entry.meanings.all %}
+                        <li>{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     {% endfor %}
