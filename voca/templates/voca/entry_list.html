@@ -17,12 +17,12 @@
 
     {% for entry in entries %}
         <div class="row my-2">
-            <div class="col-md-2">
+            <div class="col-md-2 thai-font">
                 <a href="{% url 'voca:entry-detail' pk=entry.pk %}">
-                    {{ entry.slug }}
+                    {{ entry.title }}
                 </a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 thai-font">
                 {{ entry.pronunciation }}
             </div>
             <div class="col-md-8">

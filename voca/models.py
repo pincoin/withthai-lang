@@ -15,10 +15,9 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         (2, 'advanced', _('advanced')),
     )
 
-    slug = models.CharField(
+    title = models.CharField(
         verbose_name=_('title'),
         max_length=255,
-        unique=True,
         null=False,
         blank=False,
         db_index=True,
@@ -54,7 +53,7 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         verbose_name_plural = _('entries')
 
     def __str__(self):
-        return self.slug
+        return self.title
 
 
 class EntryCompound(models.Model):
@@ -122,7 +121,7 @@ class EntryMeaning(TimeStampedModel):
         verbose_name_plural = _('meanings')
 
     def __str__(self):
-        return '{} {}'.format(self.entry.slug, self.meaning)
+        return '{} {}'.format(self.entry.title, self.meaning)
 
 
 class EntryCategory(AbstractCategory):

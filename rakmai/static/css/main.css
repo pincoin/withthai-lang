@@ -1,3 +1,5 @@
+@import url(../fonts/thsarabunnew.css);
+
 html {
     position: relative;
     min-height: 100%;
@@ -34,4 +36,8 @@ body {
 
 .portfolio-item {
     margin-bottom: 30px;
+}
+
+.thai-font {
+    font-family: 'THSarabunNew', sans-serif;
 }
