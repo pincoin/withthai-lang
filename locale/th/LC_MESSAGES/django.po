@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-06 23:00+0900\n"
+"POT-Creation-Date: 2018-07-08 20:45+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgid "parent"
 msgstr ""
 
 #: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
-#: voca/models.py:19
+#: voca/models.py:20
 msgid "title"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr ""
 msgid "The page title as you'd like it to be seen by the public"
 msgstr ""
 
-#: rakmai/models.py:78 voca/models.py:29 voca/models.py:125
+#: rakmai/models.py:78 voca/models.py:33 voca/models.py:139
 msgid "description"
 msgstr ""
 
@@ -142,6 +142,15 @@ msgstr ""
 msgid "attachments"
 msgstr ""
 
+#: rakmai/templates/rakmai/base.html:47
+msgid "Thai Language"
+msgstr ""
+
+#: rakmai/templates/rakmai/base.html:51 voca/templates/voca/entry_detail.html:9
+#: voca/templates/voca/entry_list.html:9
+msgid "Vocabulary"
+msgstr ""
+
 #: rakmai/views.py:12
 msgid "withthai"
 msgstr "withthai"
@@ -150,102 +159,102 @@ msgstr "withthai"
 msgid "vocabulary"
 msgstr ""
 
-#: voca/models.py:13
+#: voca/models.py:14
 msgid "beginner"
 msgstr ""
 
-#: voca/models.py:14
+#: voca/models.py:15
 msgid "intermediate"
 msgstr ""
 
-#: voca/models.py:15
+#: voca/models.py:16
 msgid "advanced"
 msgstr ""
 
-#: voca/models.py:24
+#: voca/models.py:28
 msgid "pronunciation"
 msgstr ""
 
-#: voca/models.py:34
+#: voca/models.py:38
 msgid "level"
 msgstr ""
 
-#: voca/models.py:49 voca/models.py:101
-msgid "entry"
-msgstr ""
-
-#: voca/models.py:50
-msgid "entries"
-msgstr ""
-
-#: voca/models.py:59
-msgid "from_entry"
-msgstr ""
-
-#: voca/models.py:66
-msgid "to_entry"
-msgstr ""
-
-#: voca/models.py:72 voca/models.py:112
-msgid "position"
-msgstr ""
-
-#: voca/models.py:76
-msgid "compound word"
-msgstr ""
-
-#: voca/models.py:77
-msgid "compound words"
-msgstr ""
-
-#: voca/models.py:83
-msgid "noun"
-msgstr ""
-
-#: voca/models.py:84
-msgid "pronoun"
-msgstr ""
-
-#: voca/models.py:85 voca/models.py:87
-msgid "verb"
-msgstr ""
-
-#: voca/models.py:86
-msgid "modifier"
-msgstr ""
-
-#: voca/models.py:88
-msgid "conjunction"
-msgstr ""
-
-#: voca/models.py:89
-msgid "interjection"
-msgstr ""
-
-#: voca/models.py:93
-msgid "part of speech"
-msgstr ""
-
-#: voca/models.py:107 voca/models.py:116
-msgid "meaning"
-msgstr ""
-
-#: voca/models.py:117
-msgid "meanings"
-msgstr ""
-
-#: voca/models.py:130
+#: voca/models.py:46 voca/models.py:144
 msgid "entry category"
 msgstr ""
 
+#: voca/models.py:47 voca/models.py:63
+msgid "entries"
+msgstr ""
+
+#: voca/models.py:62 voca/models.py:115
+msgid "entry"
+msgstr ""
+
+#: voca/models.py:72
+msgid "from_entry"
+msgstr ""
+
+#: voca/models.py:79
+msgid "to_entry"
+msgstr ""
+
+#: voca/models.py:85 voca/models.py:126
+msgid "position"
+msgstr ""
+
+#: voca/models.py:89
+msgid "compound word"
+msgstr ""
+
+#: voca/models.py:90
+msgid "compound words"
+msgstr ""
+
+#: voca/models.py:96
+msgid "noun"
+msgstr ""
+
+#: voca/models.py:97
+msgid "pronoun"
+msgstr ""
+
+#: voca/models.py:98 voca/models.py:100
+msgid "verb"
+msgstr ""
+
+#: voca/models.py:99
+msgid "modifier"
+msgstr ""
+
+#: voca/models.py:101
+msgid "conjunction"
+msgstr ""
+
+#: voca/models.py:102
+msgid "interjection"
+msgstr ""
+
+#: voca/models.py:103
+msgid "classifier"
+msgstr ""
+
+#: voca/models.py:107
+msgid "part of speech"
+msgstr ""
+
+#: voca/models.py:121 voca/models.py:130
+msgid "meaning"
+msgstr ""
+
 #: voca/models.py:131
+msgid "meanings"
+msgstr ""
+
+#: voca/models.py:145 voca/templates/voca/2_columns.html:17
 msgid "entry categories"
 msgstr ""
 
-#: voca/templates/voca/voca_list.html:6
-msgid "Vocabulary"
-msgstr ""
-
-#: voca/views.py:20
+#: voca/views.py:19 voca/views.py:36
 msgid "voca"
 msgstr ""

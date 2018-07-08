@@ -36,27 +36,26 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">소개</a>
+                    <a class="nav-link" href="">소개</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">블로그</a>
+                    <a class="nav-link" href="">블로그</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        태국어
+                        {% trans "Thai Language" %}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
                         <a class="dropdown-item" href="{% url 'voca:entry-list' %}">
-                            어휘
+                            {% trans "Vocabulary" %}
                         </a>
-                        <a class="dropdown-item" href="portfolio-2-col.html">구문 (드릴연습)</a>
-                        <a class="dropdown-item" href="portfolio-4-col.html">문법</a>
-                        <a class="dropdown-item" href="portfolio-4-col.html">성조 기초</a>
-                        <a class="dropdown-item" href="portfolio-item.html">회화표현</a>
-                        <a class="dropdown-item" href="portfolio-item.html">노래</a>
-                        <a class="dropdown-item" href="portfolio-item.html">독해 (신문/인터넷/교과서)</a>
-                        <a class="dropdown-item" href="portfolio-item.html">유튜브 (드라마/영화/광고)</a>
+                        <a class="dropdown-item" href="">구문 연습</a>
+                        <a class="dropdown-item" href="">문법</a>
+                        <a class="dropdown-item" href="">성조 기초</a>
+                        <a class="dropdown-item" href="">회화 표현</a>
+                        <a class="dropdown-item" href="">독해</a>
+                        <a class="dropdown-item" href="">유튜브</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -65,20 +64,24 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                         커뮤니티
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item" href="blog-home-1.html">자유게시판</a>
-                        <a class="dropdown-item" href="blog-home-2.html">사진게시판</a>
-                        <a class="dropdown-item" href="blog-post.html">묻고답하기</a>
+                        <a class="dropdown-item" href="">자유게시판</a>
+                        <a class="dropdown-item" href="">사진게시판</a>
+                        <a class="dropdown-item" href="">묻고답하기</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">회원가입</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">로그인</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'admin:index' %}">admin</a>
-                </li>
+                {% if not user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="">회원가입</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">로그인</a>
+                    </li>
+                {% endif %}
+                {% if request.user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin:index' %}">admin</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>

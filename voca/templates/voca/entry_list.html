@@ -2,18 +2,25 @@
 {% load i18n %}
 
 {% block main_content %}
-    <h4 class="mt-4 mb-2">
-        {% trans "Vocabulary" %}
-    </h4>
-
-    <form action="" method="get" class="input-group my-4">
-        <input name="keyword" placeholder="검색" id="id_keyword" required="" class="form-control" type="text">
-        <span class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit">
-                <i class="fa fa-search"></i>
-            </button>
-        </span>
-    </form>
+    <div class="row my-4">
+        <div class="col-md-2">
+            <h4 class="mt-md-2">
+                <a href="{% url 'voca:entry-list' %}">
+                    {% trans "Vocabulary" %}
+                </a>
+            </h4>
+        </div>
+        <div class="col-md-10">
+            <form action="" method="get" class="input-group mt-md-1">
+                <input name="keyword" placeholder="검색" id="id_keyword" required="" class="form-control" type="text">
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </form>
+        </div>
+    </div>
 
     {% for entry in entries %}
         <div class="row my-2">
