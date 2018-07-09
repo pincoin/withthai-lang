@@ -42,3 +42,16 @@ body {
     font-family: 'THSarabunNew', sans-serif;
     font-size: 1.2rem;
 }
+
+.jumbotron {
+    background-image: url("../images/jumbotron-01.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.jumbotron-text {
+    background-color: rgba(0, 0, 0, 0.6);
+    line-height: 170%;
+}
