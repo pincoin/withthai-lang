@@ -46,6 +46,7 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         verbose_name=_('entry category'),
         related_name=_('entries'),
         null=True,
+        blank=True,
         db_index=True,
         on_delete=models.SET_NULL,
     )
