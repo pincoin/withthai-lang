@@ -38,6 +38,12 @@
             <div class="col-md-9">{{ meaning.meaning }}</div>
         </div>
     {% endfor %}
+    {% if entry.description %}
+        <div class="row my-2">
+            <div class="col-md-3">{% trans "description" %}</div>
+            <div class="col-md-9 thai-font">{{ entry.description }}</div>
+        </div>
+    {% endif %}
     {% for component in entry.relationships.all %}
         {% if forloop.first %}
             <div class="row mt-4 mb-2">
