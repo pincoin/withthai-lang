@@ -20,7 +20,7 @@
                         <ul class="list-unstyled mb-0">
                             {% voca_categories %}
                                 <li class="mb-1">
-                                    <a href="">{{ category.title }}</a>
+                                    <a href="{% url 'voca:entry-category' category.slug %}">{{ category.title }}</a>
                                 </li>
                                 {% if not category.is_leaf_node %}
                                     <ul class="">

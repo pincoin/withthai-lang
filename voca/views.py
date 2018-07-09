@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
 from rakmai.viewmixins import PageableMixin
-from .models import Entry
+from .models import Entry, EntryCategory
 from .viewmixins import SearchContextMixin, VocaContextMixin
 
 
@@ -49,3 +49,25 @@ class EntryDetailView(SearchContextMixin, generic.DetailView):
 
     def get_template_names(self):
         return 'voca/entry_detail.html'
+
+
+class EntryCategoryView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
+    logger = logging.getLogger(__name__)
+    context_object_name = 'entries'
+
+    def get_queryset(self):
+        queryset = Entry.objects \
+            .prefetch_related('meanings') \
+            .select_related('category') \
+            .filter(category__in=EntryCategory.objects
+                    .filter(slug=self.kwargs['slug']).get_descendants(include_self=True))
+
+        return queryset.order_by('-created')
+
+    def get_context_data(self, **kwargs):
+        context = super(EntryCategoryView, self).get_context_data(**kwargs)
+        context['page_title'] = _('{} Vocabulary Category').format(self.kwargs['slug'])
+        return context
+
+    def get_template_names(self):
+        return 'voca/entry_list.html'
