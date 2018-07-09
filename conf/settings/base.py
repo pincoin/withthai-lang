@@ -30,6 +30,7 @@ INSTALLED_APPS += [
     'mptt',
     'crispy_forms',
     'rakmai',
+    'help',
     'blog',
     'board',
     'book',

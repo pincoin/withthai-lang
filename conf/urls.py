@@ -12,7 +12,8 @@ urlpatterns = [
         HomeView.as_view(), name='home'),
     url(r'{}'.format(settings.ADMIN_URL),
         admin.site.urls),
-    url(r'^voca/', include('voca.urls', namespace='voca'))
+    url(r'^voca/', include('voca.urls', namespace='voca')),
+    url(r'^help/', include('help.urls', namespace='help'))
 ]
 
 if settings.DEBUG:
