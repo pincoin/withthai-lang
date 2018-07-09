@@ -1,11 +1,11 @@
-{% load static %}
-{% load i18n %}
 <!doctype html>
 <html class="no-js" lang="ko">
 <head>
+    {% load static %}
+    {% load i18n %}
     <meta charset="utf-8">
     <meta http-equiv="x-ua-comptible" content="ie=edge">
-    <title>{{ page_title }}</title>
+    <title>{{ page_title }} : {% trans "WITHTHAI" %}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="manifest" href="{% static "site.webmanifest" %}">
@@ -27,7 +27,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
 <!-- Navigation -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">위드타이</a>
+        <a class="navbar-brand" href="{% url 'home' %}">{% trans "WITHTHAI" %}</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">

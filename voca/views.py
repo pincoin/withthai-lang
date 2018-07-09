@@ -16,7 +16,7 @@ class EntryListView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(EntryListView, self).get_context_data(**kwargs)
-        context['page_title'] = _('voca')
+        context['page_title'] = _('Vocabulary')
         return context
 
     def get_template_names(self):
@@ -33,7 +33,7 @@ class EntryDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(EntryDetailView, self).get_context_data(**kwargs)
-        context['page_title'] = _('voca')
+        context['page_title'] = _('{} - Vocabulary').format(self.object.title)
         return context
 
     def get_template_names(self):

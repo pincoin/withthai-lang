@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-08 20:45+0900\n"
+"POT-Creation-Date: 2018-07-09 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -146,12 +146,16 @@ msgstr "attachment"
 msgid "attachments"
 msgstr "attachments"
 
+#: rakmai/templates/rakmai/base.html:8 rakmai/templates/rakmai/base.html:30
+msgid "WITHTHAI"
+msgstr "WITHTHAI"
+
 #: rakmai/templates/rakmai/base.html:47
 msgid "Thai Language"
-msgstr ""
+msgstr "Thai"
 
 #: rakmai/templates/rakmai/base.html:51 voca/templates/voca/entry_detail.html:9
-#: voca/templates/voca/entry_list.html:9
+#: voca/templates/voca/entry_list.html:9 voca/views.py:19
 msgid "Vocabulary"
 msgstr "Vocabulary"
 
@@ -241,7 +245,7 @@ msgstr "interjection"
 
 #: voca/models.py:103
 msgid "classifier"
-msgstr ""
+msgstr "classifier"
 
 #: voca/models.py:107
 msgid "part of speech"
@@ -259,6 +263,6 @@ msgstr "meanings"
 msgid "entry categories"
 msgstr "entry categories"
 
-#: voca/views.py:19 voca/views.py:36
-msgid "voca"
-msgstr "voca"
+#: voca/views.py:36
+msgid "{} - Vocabulary"
+msgstr "{} - Vocabulary"
