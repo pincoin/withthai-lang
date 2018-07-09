@@ -1,5 +1,6 @@
 import logging
 
+from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
@@ -14,6 +15,14 @@ class EntryListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic
 
     def get_queryset(self):
         queryset = Entry.objects.prefetch_related('meanings')
+
+        form = self.search_form_class(self.request.GET)
+        if form.is_valid() and form.cleaned_data['q']:
+            q = form.cleaned_data['q']
+            queryset = queryset.filter(
+                Q(title__icontains=q)
+            )
+
         return queryset.order_by('-created')
 
     def get_context_data(self, **kwargs):
