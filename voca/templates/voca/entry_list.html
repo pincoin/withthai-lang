@@ -33,9 +33,9 @@
                 {{ entry.pronunciation }}
             </div>
             <div class="col-md-8">
-                <ul class="">
+                <ul class="list-unstyled">
                     {% for meaning in entry.meanings.all %}
-                        <li>{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
+                        <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
                     {% endfor %}
                 </ul>
             </div>
