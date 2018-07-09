@@ -11,8 +11,8 @@
             </h4>
         </div>
         <div class="col-md-10">
-            <form action="" method="get" class="input-group mt-md-1">
-                <input name="keyword" placeholder="검색" id="id_keyword" required="" class="form-control" type="text">
+            <form action="{% url 'voca:entry-list' %}" method="get" class="input-group mt-md-1">
+                {{ search_form.q }}
                 <span class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit">
                         <i class="fa fa-search"></i>

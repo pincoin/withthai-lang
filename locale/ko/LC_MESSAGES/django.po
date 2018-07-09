@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-09 20:54+0900\n"
+"POT-Creation-Date: 2018-07-09 21:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,7 +151,7 @@ msgid "Thai Language"
 msgstr "태국어"
 
 #: rakmai/templates/rakmai/base.html:51 voca/templates/voca/entry_detail.html:9
-#: voca/templates/voca/entry_list.html:9 voca/views.py:19
+#: voca/templates/voca/entry_list.html:9 voca/views.py:20
 msgid "Vocabulary"
 msgstr "어휘"
 
@@ -162,6 +162,10 @@ msgstr "위드타이"
 #: voca/apps.py:7
 msgid "vocabulary"
 msgstr "어휘"
+
+#: voca/forms.py:7 voca/forms.py:11
+msgid "lookup word"
+msgstr "검색"
 
 #: voca/models.py:14
 msgid "beginner"
@@ -259,6 +263,6 @@ msgstr "뜻"
 msgid "entry categories"
 msgstr "어휘분류"
 
-#: voca/views.py:36
+#: voca/views.py:37
 msgid "{} - Vocabulary"
 msgstr "{} - 어휘"

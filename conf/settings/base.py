@@ -27,6 +27,8 @@ INSTALLED_APPS = [
 ]
 
 INSTALLED_APPS += [
+    'mptt',
+    'crispy_forms',
     'rakmai',
     'blog',
     'board',
@@ -75,3 +77,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # django.contrib.sites settings for allauth
 SITE_ID = 1
+
+# crispy-form template
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -4,9 +4,10 @@ from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
 from .models import Entry
+from .viewmixins import SearchContextMixin
 
 
-class EntryListView(generic.ListView):
+class EntryListView(SearchContextMixin, generic.ListView):
     logger = logging.getLogger(__name__)
     context_object_name = 'entries'
 
@@ -23,7 +24,7 @@ class EntryListView(generic.ListView):
         return 'voca/entry_list.html'
 
 
-class EntryDetailView(generic.DetailView):
+class EntryDetailView(SearchContextMixin, generic.DetailView):
     logger = logging.getLogger(__name__)
     context_object_name = 'entry'
 
