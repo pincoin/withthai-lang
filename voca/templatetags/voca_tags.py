@@ -9,9 +9,8 @@ register = template.Library()
 
 
 class CategoryNode(template.Node):
-    def __init__(self, nodes, obj):
+    def __init__(self, nodes):
         self.nodes = nodes
-        self.obj = Variable(obj)
         self.tree_query_set = None
 
     def _render_category(self, context, category):
@@ -30,8 +29,6 @@ class CategoryNode(template.Node):
         return rendered
 
     def render(self, context):
-        obj = self.obj.resolve(context)
-
         try:
             self.tree_query_set = EntryCategory.objects.all()
         except EntryCategory.DoesNotExist:
@@ -47,7 +44,7 @@ class CategoryNode(template.Node):
 def voca_categories(parser, token):
     try:
         # split_contents() knows not to split quoted strings.
-        tag_name, obj = token.split_contents()
+        tag_name = token.split_contents()
     except ValueError:
         raise template.TemplateSyntaxError(
             '{} tag does not require an additional argument.'.format(token.split_contents()[0])
@@ -56,4 +53,4 @@ def voca_categories(parser, token):
     nodes = parser.parse(('end_voca_categories',))
     parser.delete_first_token()
 
-    return CategoryNode(nodes, obj)
+    return CategoryNode(nodes)
