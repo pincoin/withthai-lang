@@ -3,11 +3,12 @@ import logging
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
+from rakmai.viewmixins import PageableMixin
 from .models import Entry
-from .viewmixins import SearchContextMixin
+from .viewmixins import SearchContextMixin, VocaContextMixin
 
 
-class EntryListView(SearchContextMixin, generic.ListView):
+class EntryListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
     logger = logging.getLogger(__name__)
     context_object_name = 'entries'
 
