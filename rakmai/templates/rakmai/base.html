@@ -36,7 +36,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="">소개</a>
+                    <a class="nav-link" href="{% url 'help:post-detail' 'about' %}">소개</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">블로그</a>
@@ -94,7 +94,9 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
         <p class="m-0 text-center text-white">
             Copyright &copy; 2018 withthai.com All Rights Reserved.
 
-            이용안내 이용약관 개인정보처리방침
+            <a href="{% url 'help:post-detail' 'help' %}">이용안내</a>
+            <a href="{% url 'help:post-detail' 'terms' %}">이용약관</a>
+            <a href="{% url 'help:post-detail' 'privacy' %}">개인정보처리방침</a>
         </p>
     </div>
 </footer>
