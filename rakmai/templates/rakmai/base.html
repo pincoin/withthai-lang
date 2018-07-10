@@ -89,15 +89,71 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
 
 {% block content %}body content{% endblock %}
 
-<footer class="footer py-3 bg-light">
-    <div class="container">
-        <p class="m-0 text-center text-dark">
-            Copyright &copy; 2018 withthai.com All Rights Reserved.
-
-            <a href="{% url 'help:post-detail' 'help' %}">이용안내</a>
-            <a href="{% url 'help:post-detail' 'terms' %}">이용약관</a>
-            <a href="{% url 'help:post-detail' 'privacy' %}">개인정보처리방침</a>
-        </p>
+<footer class="footer outer-footer">
+    <div class="container mt-1">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-2 d-flex-inline d-flex order-1 order-md-2">
+                <a href="#" target="_blank" class="ml-2">
+                    <i class="fa fa-youtube-square fa-2x"></i>
+                </a>
+                <a href="#" target="_blank" class="ml-2">
+                    <i class="fa fa-facebook-square fa-2x"></i>
+                </a>
+                <a href="#" target="_blank" class="ml-2">
+                    <i class="fa fa-twitter-square fa-2x"></i>
+                </a>
+            </div>
+            <div class="col-12 col-sm-12 col-md-10 d-flex flex-row flex-wrap order-2 order-md-1">
+                <div class="pt-1 px-2">
+                    <a href="{% url 'help:post-detail' 'user-guide' %}">
+                        이용안내
+                    </a>
+                </div>
+                <div class="pt-1 px-2">
+                    <a href="{% url 'help:post-detail' 'user-guide' %}">
+                        이용안내
+                    </a>
+                </div>
+                <div class="pt-1 px-2">
+                    <a href="{% url 'help:post-detail' 'terms' %}">
+                        이용약관
+                    </a>
+                </div>
+                <div class="pt-1 px-2">
+                    <a href="{% url 'help:post-detail' 'privacy' %}">
+                        개인정보보호방침
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5 class="ml-2 mt-2">
+                    <a href="{% url 'home' %}">{% trans "WITHTHAI" %}</a>
+                </h5>
+                <ul class="list-inline pl-2 mb-1">
+                    <li class="list-inline-item">대표: 서종화</li>
+                    <li class="list-inline-item">주소: 서울 서초구 방배동</li>
+                    <li class="list-inline-item">사업자등록번호:
+                        <a href="#" target="_blank">
+                            123-45-6789
+                        </a>
+                    </li>
+                    <li class="list-inline-item">통신판매업신고: 2018-서울OO-1234</li>
+                    <li class="list-inline-item"><i class="fa fa-envelope-o"></i> help@withthai.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid base-footer">
+        <div class="container">
+            <div class="row py-2">
+                <div class="col text-center text-light">
+                    Copyright &copy; 2018 withthai.com <br/>
+                    All Rights Reserved.
+                </div>
+            </div>
+        </div>
     </div>
 </footer>
 
