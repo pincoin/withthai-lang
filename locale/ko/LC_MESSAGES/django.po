@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-11 19:58+0900\n"
+"POT-Creation-Date: 2018-07-11 21:14+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgid "parent"
 msgstr "부모"
 
 #: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
-#: voca/models.py:20
+#: voca/models.py:20 voca/models.py:155
 msgid "title"
 msgstr "제목"
 
@@ -109,7 +109,7 @@ msgstr "메뉴항목"
 msgid "The page title as you'd like it to be seen by the public"
 msgstr ""
 
-#: rakmai/models.py:78 voca/models.py:33 voca/models.py:141
+#: rakmai/models.py:78 voca/models.py:33 voca/models.py:141 voca/models.py:168
 #: voca/templates/voca/entry_detail.html:43
 msgid "description"
 msgstr "설명"
@@ -155,16 +155,16 @@ msgstr "첨부파일"
 msgid "attachments"
 msgstr "첨부파일"
 
-#: rakmai/templates/rakmai/base.html:8 rakmai/templates/rakmai/base.html:30
-#: rakmai/templates/rakmai/base.html:127
+#: rakmai/templates/rakmai/base.html:8 rakmai/templates/rakmai/base.html:42
+#: rakmai/templates/rakmai/base.html:139
 msgid "WITHTHAI"
 msgstr "위드타이"
 
-#: rakmai/templates/rakmai/base.html:47
+#: rakmai/templates/rakmai/base.html:56
 msgid "Thai Language"
 msgstr "태국어"
 
-#: rakmai/templates/rakmai/base.html:51 voca/templates/voca/entry_detail.html:9
+#: rakmai/templates/rakmai/base.html:60 voca/templates/voca/entry_detail.html:9
 #: voca/templates/voca/entry_list.html:9 voca/views.py:30
 msgid "Vocabulary"
 msgstr "어휘"
@@ -193,7 +193,7 @@ msgstr "중급"
 msgid "advanced"
 msgstr "고급"
 
-#: voca/models.py:28
+#: voca/models.py:28 voca/models.py:163
 msgid "pronunciation"
 msgstr "발음"
 
@@ -221,15 +221,15 @@ msgstr "어근"
 msgid "to_entry"
 msgstr "파생어"
 
-#: voca/models.py:86 voca/models.py:127
+#: voca/models.py:86 voca/models.py:127 voca/models.py:204
 msgid "position"
 msgstr "순서"
 
-#: voca/models.py:90
+#: voca/models.py:90 voca/models.py:208
 msgid "compound word"
 msgstr "합성어"
 
-#: voca/models.py:91
+#: voca/models.py:91 voca/models.py:209
 msgid "compound words"
 msgstr "합성어"
 
@@ -276,6 +276,24 @@ msgstr "뜻"
 #: voca/models.py:147 voca/templates/voca/2_columns.html:17
 msgid "entry categories"
 msgstr "어휘분류"
+
+#: voca/models.py:181
+msgid "entry sentence"
+msgstr "예문"
+
+#: voca/models.py:182
+msgid "entry sentences"
+msgstr "예문"
+
+#: voca/models.py:191
+#, fuzzy
+#| msgid "from_entry_sentence"
+msgid "from_sentence"
+msgstr "예문"
+
+#: voca/models.py:198
+msgid "to_entry_sentence"
+msgstr "단어"
 
 #: voca/templates/voca/_pagination.html:9
 #: voca/templates/voca/_pagination.html:14

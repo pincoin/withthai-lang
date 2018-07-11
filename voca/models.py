@@ -148,3 +148,63 @@ class EntryCategory(AbstractCategory):
 
     def __str__(self):
         return self.title
+
+
+class EntrySentence(SoftDeletableModel, TimeStampedModel):
+    title = models.CharField(
+        verbose_name=_('title'),
+        max_length=255,
+        null=False,
+        blank=False,
+        db_index=True,
+    )
+
+    pronunciation = models.CharField(
+        verbose_name=_('pronunciation'),
+        max_length=250,
+    )
+
+    description = models.TextField(
+        verbose_name=_('description'),
+        blank=True,
+    )
+
+    relationships = models.ManyToManyField(
+        'self',
+        through='voca.EntrySentenceCompound',
+        blank=True,
+        related_name='components',
+        symmetrical=False,
+    )
+
+    class Meta:
+        verbose_name = _('entry sentence')
+        verbose_name_plural = _('entry sentences')
+
+    def __str__(self):
+        return self.title
+
+
+class EntrySentenceCompound(models.Model):
+    from_sentence = models.ForeignKey(
+        'voca.EntrySentence',
+        related_name=_('from_sentence'),
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    to_entry = models.ForeignKey(
+        'voca.Entry',
+        related_name=_('to_entry_sentence'),
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    position = models.IntegerField(
+        verbose_name=_('position'),
+    )
+
+    class Meta:
+        verbose_name = _('compound word')
+        verbose_name_plural = _('compound words')
+        ordering = ['position']

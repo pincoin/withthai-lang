@@ -3,7 +3,7 @@ from django.forms.models import BaseInlineFormSet
 from mptt.admin import DraggableMPTTAdmin
 
 from .models import (
-    Entry, EntryMeaning, EntryCategory
+    Entry, EntryMeaning, EntryCategory, EntrySentence
 )
 
 
@@ -24,6 +24,12 @@ class EntryCompoundInline(admin.TabularInline):
     fk_name = 'from_entry'
 
 
+class EntrySentenceCompoundInline(admin.TabularInline):
+    model = EntrySentence.relationships.through
+    extra = 1
+    fk_name = 'from_sentence'
+
+
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('title', 'pronunciation')
     list_display_links = ('title',)
@@ -40,5 +46,10 @@ class EntryCategoryAdmin(DraggableMPTTAdmin):
     mptt_level_indent = 20
 
 
+class EntrySentenceAdmin(admin.ModelAdmin):
+    inlines = [EntrySentenceCompoundInline]
+
+
 admin.site.register(Entry, EntryAdmin)
 admin.site.register(EntryCategory, EntryCategoryAdmin)
+admin.site.register(EntrySentence, EntrySentenceAdmin)

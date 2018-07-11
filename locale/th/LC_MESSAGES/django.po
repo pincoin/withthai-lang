@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-11 19:58+0900\n"
+"POT-Creation-Date: 2018-07-11 21:14+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgid "parent"
 msgstr ""
 
 #: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
-#: voca/models.py:20
+#: voca/models.py:20 voca/models.py:155
 msgid "title"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "The page title as you'd like it to be seen by the public"
 msgstr ""
 
-#: rakmai/models.py:78 voca/models.py:33 voca/models.py:141
+#: rakmai/models.py:78 voca/models.py:33 voca/models.py:141 voca/models.py:168
 #: voca/templates/voca/entry_detail.html:43
 msgid "description"
 msgstr ""
@@ -155,16 +155,16 @@ msgstr ""
 msgid "attachments"
 msgstr ""
 
-#: rakmai/templates/rakmai/base.html:8 rakmai/templates/rakmai/base.html:30
-#: rakmai/templates/rakmai/base.html:127
+#: rakmai/templates/rakmai/base.html:8 rakmai/templates/rakmai/base.html:42
+#: rakmai/templates/rakmai/base.html:139
 msgid "WITHTHAI"
 msgstr ""
 
-#: rakmai/templates/rakmai/base.html:47
+#: rakmai/templates/rakmai/base.html:56
 msgid "Thai Language"
 msgstr ""
 
-#: rakmai/templates/rakmai/base.html:51 voca/templates/voca/entry_detail.html:9
+#: rakmai/templates/rakmai/base.html:60 voca/templates/voca/entry_detail.html:9
 #: voca/templates/voca/entry_list.html:9 voca/views.py:30
 msgid "Vocabulary"
 msgstr ""
@@ -193,7 +193,7 @@ msgstr ""
 msgid "advanced"
 msgstr ""
 
-#: voca/models.py:28
+#: voca/models.py:28 voca/models.py:163
 msgid "pronunciation"
 msgstr ""
 
@@ -221,15 +221,15 @@ msgstr ""
 msgid "to_entry"
 msgstr ""
 
-#: voca/models.py:86 voca/models.py:127
+#: voca/models.py:86 voca/models.py:127 voca/models.py:204
 msgid "position"
 msgstr ""
 
-#: voca/models.py:90
+#: voca/models.py:90 voca/models.py:208
 msgid "compound word"
 msgstr ""
 
-#: voca/models.py:91
+#: voca/models.py:91 voca/models.py:209
 msgid "compound words"
 msgstr ""
 
@@ -275,6 +275,22 @@ msgstr ""
 
 #: voca/models.py:147 voca/templates/voca/2_columns.html:17
 msgid "entry categories"
+msgstr ""
+
+#: voca/models.py:181
+msgid "entry sentence"
+msgstr ""
+
+#: voca/models.py:182
+msgid "entry sentences"
+msgstr ""
+
+#: voca/models.py:191
+msgid "from_sentence"
+msgstr ""
+
+#: voca/models.py:198
+msgid "to_entry_sentence"
 msgstr ""
 
 #: voca/templates/voca/_pagination.html:9
