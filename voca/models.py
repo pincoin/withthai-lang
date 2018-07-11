@@ -130,6 +130,7 @@ class EntryMeaning(TimeStampedModel):
     class Meta:
         verbose_name = _('meaning')
         verbose_name_plural = _('meanings')
+        ordering = ['position']
 
     def __str__(self):
         return '{} {}'.format(self.entry.title, self.meaning)
