@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-11 22:25+0900\n"
+"POT-Creation-Date: 2018-07-12 01:33+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,7 +113,7 @@ msgid "The page title as you'd like it to be seen by the public"
 msgstr "The page title as you'd like it to be seen by the public"
 
 #: rakmai/models.py:78 voca/models.py:33 voca/models.py:141 voca/models.py:168
-#: voca/templates/voca/entry_detail.html:43
+#: voca/templates/voca/entry_detail.html:47
 msgid "description"
 msgstr "description"
 
@@ -160,7 +160,7 @@ msgid "attachments"
 msgstr "attachments"
 
 #: rakmai/templates/rakmai/base.html:8 rakmai/templates/rakmai/base.html:42
-#: rakmai/templates/rakmai/base.html:139
+#: rakmai/templates/rakmai/base.html:142
 msgid "WITHTHAI"
 msgstr "WITHTHAI"
 

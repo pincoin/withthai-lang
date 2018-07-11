@@ -89,7 +89,7 @@ class EntryCompound(models.Model):
     class Meta:
         verbose_name = _('compound word')
         verbose_name_plural = _('compound words')
-        ordering = ['position']
+        ordering = ('position',)
 
 
 class EntryMeaning(TimeStampedModel):
@@ -173,7 +173,7 @@ class EntrySentence(SoftDeletableModel, TimeStampedModel):
         'self',
         through='voca.EntrySentenceCompound',
         blank=True,
-        related_name='components',
+        related_name='sentences',
         symmetrical=False,
     )
 
@@ -195,7 +195,7 @@ class EntrySentenceCompound(models.Model):
 
     to_entry = models.ForeignKey(
         'voca.Entry',
-        related_name=_('to_entry_sentence'),
+        related_name=_('to_sentence_entry'),
         db_index=True,
         on_delete=models.CASCADE,
     )
