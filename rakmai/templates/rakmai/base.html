@@ -18,9 +18,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122152735-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
         gtag('config', 'UA-122152735-1');
     </script>
@@ -47,9 +49,6 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'help:post-detail' 'about' %}">소개</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">블로그</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
@@ -78,6 +77,9 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                         <a class="dropdown-item" href="">사진게시판</a>
                         <a class="dropdown-item" href="">묻고답하기</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">블로그</a>
                 </li>
                 {% if not user.is_authenticated %}
                     <li class="nav-item">
