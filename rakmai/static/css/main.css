@@ -62,20 +62,6 @@ body {
     background-color: #17252D;
 }
 
-.carousel-item {
-    height: 35vh;
-    min-height: 100px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.portfolio-item {
-    margin-bottom: 30px;
-}
-
 .thai-font {
     font-family: 'THSarabunNew', sans-serif;
     font-size: 1.2rem;
@@ -92,4 +78,8 @@ body {
 .jumbotron-text {
     background-color: rgba(0, 0, 0, 0.6);
     line-height: 170%;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
 }
