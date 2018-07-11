@@ -47,6 +47,11 @@ class EntryCategoryAdmin(DraggableMPTTAdmin):
 
 
 class EntrySentenceAdmin(admin.ModelAdmin):
+    list_display = ('title', 'pronunciation')
+    list_display_links = ('title',)
+    search_fields = ('title',)
+    fields = ('title', 'pronunciation', 'description')
+    readonly_fields = ('is_removed',)
     inlines = [EntrySentenceCompoundInline]
 
 
