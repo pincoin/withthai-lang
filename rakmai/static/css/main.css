@@ -47,7 +47,7 @@ body {
 }
 
 .outer-footer {
-    background-color: #69B9C0;
+    background-color: #D6ECFA;
 }
 
 .outer-footer, .outer-footer a {
@@ -59,7 +59,8 @@ body {
 }
 
 .base-footer {
-    background-color: #17252D;
+    color: #1D2731;
+    background-color: #CADBE9;
 }
 
 .thai-font {
