@@ -89,3 +89,19 @@ body {
 .portfolio-item {
     margin-bottom: 30px;
 }
+
+.button-youtube {
+    color: #ff0000;
+}
+
+.button-facebook {
+    color: #3b5998;
+}
+
+.button-twitter {
+    color: #00aced;
+}
+
+.button-github {
+    color: #24292e;
+}
