@@ -73,27 +73,15 @@
         </div>
     {% endfor %}
 
-    {% for component in entry.sentences.all %}
+    {% for sentence in entry.to_sentence_entry.all %}
         {% if forloop.first %}
             <div class="row mt-4 mb-2">
                 <div class="col">예문</div>
             </div>
         {% endif %}
         <div class="row my-2">
-            <div class="col-md-2 thai-font">
-                <a href="{% url 'voca:entry-detail' component.pk %}">
-                    {{ component.title }}
-                </a>
-            </div>
-            <div class="col-md-2 thai-font">
-                {{ component.pronunciation }}
-            </div>
-            <div class="col-md-8">
-                <ul class="list-unstyled">
-                    {% for meaning in component.meanings.all %}
-                        <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
-                    {% endfor %}
-                </ul>
+            <div class="col thai-font">
+                {{ sentence.from_sentence }}
             </div>
         </div>
     {% endfor %}
