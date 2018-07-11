@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-10 01:23+0900\n"
+"POT-Creation-Date: 2018-07-11 19:58+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,28 @@ msgstr "영어"
 msgid "Thai"
 msgstr "태국어"
 
+#: help/models.py:11 rakmai/models.py:122
+msgid "slug"
+msgstr "슬러그"
+
+#: help/models.py:12 rakmai/models.py:123
+msgid ""
+"A short label containing only letters, numbers, underscores or hyphens for "
+"URL"
+msgstr ""
+
+#: help/models.py:19
+msgid "content"
+msgstr "본문"
+
+#: help/models.py:23
+msgid "post"
+msgstr "게시물"
+
+#: help/models.py:24
+msgid "posts"
+msgstr "게시물"
+
 #: rakmai/models.py:14
 msgid "equals"
 msgstr ""
@@ -47,7 +69,7 @@ msgstr ""
 
 #: rakmai/models.py:25 rakmai/models.py:108
 msgid "parent"
-msgstr ""
+msgstr "부모"
 
 #: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
 #: voca/models.py:20
@@ -61,7 +83,7 @@ msgstr ""
 
 #: rakmai/models.py:40
 msgid "url"
-msgstr ""
+msgstr "URL"
 
 #: rakmai/models.py:43
 msgid "Exact URL or URL pattern"
@@ -69,7 +91,7 @@ msgstr ""
 
 #: rakmai/models.py:47
 msgid "match"
-msgstr ""
+msgstr "일치"
 
 #: rakmai/models.py:53
 msgid "target"
@@ -87,7 +109,7 @@ msgstr "메뉴항목"
 msgid "The page title as you'd like it to be seen by the public"
 msgstr ""
 
-#: rakmai/models.py:78 voca/models.py:33 voca/models.py:140
+#: rakmai/models.py:78 voca/models.py:33 voca/models.py:141
 #: voca/templates/voca/entry_detail.html:43
 msgid "description"
 msgstr "설명"
@@ -108,16 +130,6 @@ msgstr ""
 #: rakmai/models.py:93
 msgid "owner"
 msgstr "소유자"
-
-#: rakmai/models.py:122
-msgid "slug"
-msgstr "슬러그"
-
-#: rakmai/models.py:123
-msgid ""
-"A short label containing only letters, numbers, underscores or hyphens for "
-"URL"
-msgstr ""
 
 #: rakmai/models.py:142
 msgid "file name"
@@ -144,6 +156,7 @@ msgid "attachments"
 msgstr "첨부파일"
 
 #: rakmai/templates/rakmai/base.html:8 rakmai/templates/rakmai/base.html:30
+#: rakmai/templates/rakmai/base.html:127
 msgid "WITHTHAI"
 msgstr "위드타이"
 
@@ -188,7 +201,7 @@ msgstr "발음"
 msgid "level"
 msgstr "수준"
 
-#: voca/models.py:46 voca/models.py:145
+#: voca/models.py:46 voca/models.py:146
 msgid "entry category"
 msgstr "어휘분류"
 
@@ -260,17 +273,17 @@ msgstr "뜻"
 msgid "meanings"
 msgstr "뜻"
 
-#: voca/models.py:146 voca/templates/voca/2_columns.html:18
+#: voca/models.py:147 voca/templates/voca/2_columns.html:17
 msgid "entry categories"
 msgstr "어휘분류"
 
-#: voca/templates/voca/_pagination.html:10
-#: voca/templates/voca/_pagination.html:15
+#: voca/templates/voca/_pagination.html:9
+#: voca/templates/voca/_pagination.html:14
 msgid "Previous"
 msgstr "이전"
 
-#: voca/templates/voca/_pagination.html:35
-#: voca/templates/voca/_pagination.html:40
+#: voca/templates/voca/_pagination.html:34
+#: voca/templates/voca/_pagination.html:39
 msgid "Next"
 msgstr "다음"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-10 01:23+0900\n"
+"POT-Creation-Date: 2018-07-11 19:58+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,6 +28,28 @@ msgstr "ภาษาอังกฤษ"
 #: conf/settings/local.py:12
 msgid "Thai"
 msgstr "ภาษาไทย"
+
+#: help/models.py:11 rakmai/models.py:122
+msgid "slug"
+msgstr ""
+
+#: help/models.py:12 rakmai/models.py:123
+msgid ""
+"A short label containing only letters, numbers, underscores or hyphens for "
+"URL"
+msgstr ""
+
+#: help/models.py:19
+msgid "content"
+msgstr ""
+
+#: help/models.py:23
+msgid "post"
+msgstr ""
+
+#: help/models.py:24
+msgid "posts"
+msgstr ""
 
 #: rakmai/models.py:14
 msgid "equals"
@@ -87,7 +109,7 @@ msgstr ""
 msgid "The page title as you'd like it to be seen by the public"
 msgstr ""
 
-#: rakmai/models.py:78 voca/models.py:33 voca/models.py:140
+#: rakmai/models.py:78 voca/models.py:33 voca/models.py:141
 #: voca/templates/voca/entry_detail.html:43
 msgid "description"
 msgstr ""
@@ -107,16 +129,6 @@ msgstr ""
 
 #: rakmai/models.py:93
 msgid "owner"
-msgstr ""
-
-#: rakmai/models.py:122
-msgid "slug"
-msgstr ""
-
-#: rakmai/models.py:123
-msgid ""
-"A short label containing only letters, numbers, underscores or hyphens for "
-"URL"
 msgstr ""
 
 #: rakmai/models.py:142
@@ -144,6 +156,7 @@ msgid "attachments"
 msgstr ""
 
 #: rakmai/templates/rakmai/base.html:8 rakmai/templates/rakmai/base.html:30
+#: rakmai/templates/rakmai/base.html:127
 msgid "WITHTHAI"
 msgstr ""
 
@@ -188,7 +201,7 @@ msgstr ""
 msgid "level"
 msgstr ""
 
-#: voca/models.py:46 voca/models.py:145
+#: voca/models.py:46 voca/models.py:146
 msgid "entry category"
 msgstr ""
 
@@ -260,17 +273,17 @@ msgstr ""
 msgid "meanings"
 msgstr ""
 
-#: voca/models.py:146 voca/templates/voca/2_columns.html:18
+#: voca/models.py:147 voca/templates/voca/2_columns.html:17
 msgid "entry categories"
 msgstr ""
 
-#: voca/templates/voca/_pagination.html:10
-#: voca/templates/voca/_pagination.html:15
+#: voca/templates/voca/_pagination.html:9
+#: voca/templates/voca/_pagination.html:14
 msgid "Previous"
 msgstr ""
 
-#: voca/templates/voca/_pagination.html:35
-#: voca/templates/voca/_pagination.html:40
+#: voca/templates/voca/_pagination.html:34
+#: voca/templates/voca/_pagination.html:39
 msgid "Next"
 msgstr ""
 
