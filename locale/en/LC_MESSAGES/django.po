@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-11 22:23+0900\n"
+"POT-Creation-Date: 2018-07-11 22:25+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -229,11 +229,11 @@ msgstr "to_entry"
 msgid "position"
 msgstr "position"
 
-#: voca/models.py:90 voca/models.py:208
+#: voca/models.py:90
 msgid "compound word"
 msgstr "compound word"
 
-#: voca/models.py:91 voca/models.py:209
+#: voca/models.py:91
 msgid "compound words"
 msgstr "compound words"
 
@@ -282,28 +282,28 @@ msgid "entry categories"
 msgstr "entry categories"
 
 #: voca/models.py:181
-#, fuzzy
-#| msgid "entry categories"
 msgid "entry sentence"
 msgstr "entry categories"
 
 #: voca/models.py:182
-#, fuzzy
-#| msgid "entry categories"
 msgid "entry sentences"
 msgstr "entry categories"
 
 #: voca/models.py:191
-#, fuzzy
-#| msgid "from_entry"
 msgid "from_sentence"
 msgstr "from_entry"
 
 #: voca/models.py:198
-#, fuzzy
-#| msgid "to_entry"
 msgid "to_entry_sentence"
-msgstr "to_entry"
+msgstr "to_entry_sentence"
+
+#: voca/models.py:208
+msgid "word"
+msgstr "word"
+
+#: voca/models.py:209
+msgid "words"
+msgstr "words"
 
 #: voca/templates/voca/_pagination.html:9
 #: voca/templates/voca/_pagination.html:14

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-11 22:23+0900\n"
+"POT-Creation-Date: 2018-07-11 22:25+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -225,11 +225,11 @@ msgstr ""
 msgid "position"
 msgstr ""
 
-#: voca/models.py:90 voca/models.py:208
+#: voca/models.py:90
 msgid "compound word"
 msgstr ""
 
-#: voca/models.py:91 voca/models.py:209
+#: voca/models.py:91
 msgid "compound words"
 msgstr ""
 
@@ -291,6 +291,14 @@ msgstr ""
 
 #: voca/models.py:198
 msgid "to_entry_sentence"
+msgstr ""
+
+#: voca/models.py:208
+msgid "word"
+msgstr ""
+
+#: voca/models.py:209
+msgid "words"
 msgstr ""
 
 #: voca/templates/voca/_pagination.html:9

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-11 22:23+0900\n"
+"POT-Creation-Date: 2018-07-11 22:25+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -225,11 +225,11 @@ msgstr "파생어"
 msgid "position"
 msgstr "순서"
 
-#: voca/models.py:90 voca/models.py:208
+#: voca/models.py:90
 msgid "compound word"
 msgstr "형태소"
 
-#: voca/models.py:91 voca/models.py:209
+#: voca/models.py:91
 msgid "compound words"
 msgstr "형태소"
 
@@ -293,6 +293,14 @@ msgstr "예문"
 
 #: voca/models.py:198
 msgid "to_entry_sentence"
+msgstr "단어"
+
+#: voca/models.py:208
+msgid "word"
+msgstr "단어"
+
+#: voca/models.py:209
+msgid "words"
 msgstr "단어"
 
 #: voca/templates/voca/_pagination.html:9

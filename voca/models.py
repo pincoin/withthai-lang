@@ -205,6 +205,6 @@ class EntrySentenceCompound(models.Model):
     )
 
     class Meta:
-        verbose_name = _('compound word')
-        verbose_name_plural = _('compound words')
+        verbose_name = _('word')
+        verbose_name_plural = _('words')
         ordering = ['position']
