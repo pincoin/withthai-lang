@@ -22,9 +22,13 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row my-2">
         <div class="col thai-font">
-            {{ entry.title }}
+            {% if request.user.is_superuser %}
+                <a href="{% url 'admin:voca_entry_change' entry.id %}">{{ entry.title }}</a>
+            {% else %}
+                {{ entry.title }}
+            {% endif %}
         </div>
     </div>
 
