@@ -5,8 +5,12 @@ from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
 from rakmai.viewmixins import PageableMixin
-from .models import Entry, EntryCategory
-from .viewmixins import SearchContextMixin, VocaContextMixin
+from .models import (
+    Entry, EntryCategory, EntryCompound
+)
+from .viewmixins import (
+    SearchContextMixin, VocaContextMixin
+)
 
 
 class EntryListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
@@ -46,9 +50,14 @@ class EntryDetailView(SearchContextMixin, generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super(EntryDetailView, self).get_context_data(**kwargs)
         context['page_title'] = _('{} - Vocabulary').format(self.object.title)
+
         context['entry_components'] = self.object.components \
             .prefetch_related('meanings') \
             .order_by('voca_entrycompound.position')
+
+        context['entry_complex_words'] = EntryCompound.objects \
+            .select_related('from_entry') \
+            .filter(to_entry=self.object)
 
         context['entry_sentences'] = self.object.entrysentence_set.all()
 

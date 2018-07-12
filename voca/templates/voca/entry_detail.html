@@ -73,6 +73,19 @@
         </div>
     {% endfor %}
 
+    {% for word in entry_complex_words %}
+        {% if forloop.first %}
+            <div class="row mt-4 mb-2">
+                <div class="col">파생어/합성어</div>
+            </div>
+        {% endif %}
+        <div class="row my-2">
+            <div class="col thai-font">
+                {{ word.from_entry.title }}
+            </div>
+        </div>
+    {% endfor %}
+
     {% for sentence in entry_sentences %}
         {% if forloop.first %}
             <div class="row mt-4 mb-2">
