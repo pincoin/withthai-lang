@@ -44,7 +44,6 @@ class Entry(SoftDeletableModel, TimeStampedModel):
     category = TreeForeignKey(
         'voca.EntryCategory',
         verbose_name=_('entry category'),
-        related_name=_('entries'),
         null=True,
         blank=True,
         db_index=True,
@@ -55,7 +54,6 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         'self',
         through='voca.EntryCompound',
         blank=True,
-        related_name='entries',
         symmetrical=False,
     )
 
@@ -70,14 +68,14 @@ class Entry(SoftDeletableModel, TimeStampedModel):
 class EntryCompound(models.Model):
     from_entry = models.ForeignKey(
         'voca.Entry',
-        related_name=_('from_entry'),
+        related_name='from_entry',
         db_index=True,
         on_delete=models.CASCADE,
     )
 
     to_entry = models.ForeignKey(
         'voca.Entry',
-        related_name=_('to_entry'),
+        related_name='to_entry',
         db_index=True,
         on_delete=models.CASCADE,
     )
@@ -173,7 +171,6 @@ class EntrySentence(SoftDeletableModel, TimeStampedModel):
         'self',
         through='voca.EntrySentenceCompound',
         blank=True,
-        related_name='sentences',
         symmetrical=False,
     )
 
@@ -188,14 +185,12 @@ class EntrySentence(SoftDeletableModel, TimeStampedModel):
 class EntrySentenceCompound(models.Model):
     from_sentence = models.ForeignKey(
         'voca.EntrySentence',
-        related_name=_('from_sentence'),
         db_index=True,
         on_delete=models.CASCADE,
     )
 
     to_entry = models.ForeignKey(
         'voca.Entry',
-        related_name=_('to_sentence_entry'),
         db_index=True,
         on_delete=models.CASCADE,
     )
