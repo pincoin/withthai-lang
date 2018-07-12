@@ -57,6 +57,7 @@ class EntryDetailView(SearchContextMixin, generic.DetailView):
 
         context['entry_complex_words'] = EntryCompound.objects \
             .select_related('from_entry') \
+            .prefetch_related('from_entry__meanings') \
             .filter(to_entry=self.object)
 
         context['entry_sentences'] = self.object.entrysentence_set.all()
