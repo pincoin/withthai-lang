@@ -73,6 +73,7 @@ class EntryCompound(models.Model):
 
     to_entry = models.ForeignKey(
         'voca.Entry',
+        verbose_name=_('compound word'),
         related_name='to_entry',
         db_index=True,
         on_delete=models.CASCADE,

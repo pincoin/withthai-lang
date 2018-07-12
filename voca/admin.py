@@ -15,12 +15,14 @@ class EntryCompoundInline(admin.TabularInline):
     model = Entry.components.through
     extra = 1
     fk_name = 'from_entry'
+    raw_id_fields = ('to_entry',)
 
 
 class EntryCategoryInline(admin.TabularInline):
     model = Entry.categories.through
     extra = 1
     fk_name = 'entry'
+    raw_id_fields = ('category',)
 
 
 class EntrySentenceCompoundInline(admin.TabularInline):
