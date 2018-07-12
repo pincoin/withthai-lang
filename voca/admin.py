@@ -23,6 +23,12 @@ class EntryCategoryInline(admin.TabularInline):
     fk_name = 'entry'
 
 
+class EntrySentenceCompoundInline(admin.TabularInline):
+    model = EntrySentence.words.through
+    extra = 1
+    fk_name = 'from_sentence'
+
+
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'pronunciation')
     list_display_links = ('title',)
@@ -45,6 +51,7 @@ class EntrySentenceAdmin(admin.ModelAdmin):
     search_fields = ('title',)
     fields = ('title', 'pronunciation', 'meaning')
     readonly_fields = ('is_removed',)
+    inlines = [EntrySentenceCompoundInline]
 
 
 admin.site.register(Entry, EntryAdmin)

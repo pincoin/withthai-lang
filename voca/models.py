@@ -186,9 +186,39 @@ class EntrySentence(SoftDeletableModel, TimeStampedModel):
         blank=True,
     )
 
+    words = models.ManyToManyField(
+        'voca.Entry',
+        through='voca.EntrySentenceCompound',
+        blank=True,
+        symmetrical=False,
+    )
+
     class Meta:
         verbose_name = _('entry sentence')
         verbose_name_plural = _('entry sentences')
 
     def __str__(self):
         return self.title
+
+
+class EntrySentenceCompound(models.Model):
+    from_sentence = models.ForeignKey(
+        'voca.EntrySentence',
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    to_entry = models.ForeignKey(
+        'voca.Entry',
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    position = models.IntegerField(
+        verbose_name=_('position'),
+    )
+
+    class Meta:
+        verbose_name = _('word')
+        verbose_name_plural = _('words')
+        ordering = ['position']
