@@ -81,8 +81,7 @@
         {% endif %}
         <div class="row my-2">
             <div class="col thai-font">
-                <!-- {{ sentence.title }} -->
-                {% for word in sentence.entrysentencecompound_set.all %}{{ word.to_entry.title }}{% endfor %}
+                {% for word in sentence.entrysentencecompound_set.all %}<a href="{% url 'voca:entry-detail' word.to_entry.id %}">{{ word.to_entry.title }}</a>{% endfor %}
             </div>
         </div>
     {% endfor %}

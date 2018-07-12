@@ -40,7 +40,7 @@ class EntryDetailView(SearchContextMixin, generic.DetailView):
 
     def get_queryset(self):
         queryset = Entry.objects \
-            .prefetch_related('meanings')
+            .prefetch_related('meanings', 'entrysentence_set__entrysentencecompound_set__to_entry')
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -50,10 +50,7 @@ class EntryDetailView(SearchContextMixin, generic.DetailView):
             .prefetch_related('meanings') \
             .order_by('voca_entrycompound.position')
 
-        context['entry_sentences'] = self.object \
-            .entrysentence_set \
-            .prefetch_related('words', 'words__to_entry') \
-            .all()
+        context['entry_sentences'] = self.object.entrysentence_set.all()
 
         return context
 
