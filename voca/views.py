@@ -61,9 +61,8 @@ class EntryCategoryView(SearchContextMixin, PageableMixin, VocaContextMixin, gen
 
     def get_queryset(self):
         queryset = Entry.objects \
-            .prefetch_related('meanings') \
-            .select_related('category') \
-            .filter(category__in=EntryCategory.objects
+            .prefetch_related('meanings', 'categories',) \
+            .filter(categories__in=EntryCategory.objects
                     .filter(slug=self.kwargs['slug']).get_descendants(include_self=True))
 
         return queryset.order_by('-created')
