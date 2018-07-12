@@ -40,12 +40,15 @@ class EntryDetailView(SearchContextMixin, generic.DetailView):
 
     def get_queryset(self):
         queryset = Entry.objects \
-            .prefetch_related('components', 'meanings', 'components__meanings')
+            .prefetch_related('meanings')
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super(EntryDetailView, self).get_context_data(**kwargs)
         context['page_title'] = _('{} - Vocabulary').format(self.object.title)
+        context['entry_components'] = self.object.components \
+            .prefetch_related('meanings') \
+            .order_by('voca_entrycompound.position')
         return context
 
     def get_template_names(self):

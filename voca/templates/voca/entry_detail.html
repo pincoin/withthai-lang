@@ -48,7 +48,7 @@
             <div class="col-md-10 thai-font">{{ entry.description }}</div>
         </div>
     {% endif %}
-    {% for component in entry.components.all %}
+    {% for component in entry_components %}
         {% if forloop.first %}
             <div class="row mt-4 mb-2">
                 <div class="col">구성 단어</div>

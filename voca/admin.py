@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.forms.models import BaseInlineFormSet
 from mptt.admin import DraggableMPTTAdmin
 
 from .models import (
@@ -7,15 +6,9 @@ from .models import (
 )
 
 
-class EntryMeaningInlineFormset(BaseInlineFormSet):
-    def get_queryset(self):
-        return super(EntryMeaningInlineFormset, self).get_queryset().order_by('position')
-
-
 class EntryMeaningInline(admin.TabularInline):
     model = EntryMeaning
     extra = 1
-    formset = EntryMeaningInlineFormset
 
 
 class EntryCompoundInline(admin.TabularInline):
