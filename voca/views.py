@@ -40,7 +40,7 @@ class EntryDetailView(SearchContextMixin, generic.DetailView):
 
     def get_queryset(self):
         queryset = Entry.objects \
-            .prefetch_related('relationships', 'meanings', 'relationships__meanings')
+            .prefetch_related('components', 'meanings', 'components__meanings')
         return queryset
 
     def get_context_data(self, **kwargs):

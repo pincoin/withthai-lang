@@ -19,13 +19,13 @@ class EntryMeaningInline(admin.TabularInline):
 
 
 class EntryCompoundInline(admin.TabularInline):
-    model = Entry.relationships.through
+    model = Entry.components.through
     extra = 1
     fk_name = 'from_entry'
 
 
 class EntrySentenceCompoundInline(admin.TabularInline):
-    model = EntrySentence.relationships.through
+    model = EntrySentence.words.through
     extra = 1
     fk_name = 'from_sentence'
 

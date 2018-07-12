@@ -51,11 +51,11 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         on_delete=models.SET_NULL,
     )
 
-    relationships = models.ManyToManyField(
+    components = models.ManyToManyField(
         'self',
         through='voca.EntryCompound',
         blank=True,
-        related_name='components',
+        related_name='entries',
         symmetrical=False,
     )
 
@@ -169,7 +169,7 @@ class EntrySentence(SoftDeletableModel, TimeStampedModel):
         blank=True,
     )
 
-    relationships = models.ManyToManyField(
+    words = models.ManyToManyField(
         'self',
         through='voca.EntrySentenceCompound',
         blank=True,
