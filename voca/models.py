@@ -162,8 +162,8 @@ class EntrySentence(SoftDeletableModel, TimeStampedModel):
         max_length=250,
     )
 
-    description = models.TextField(
-        verbose_name=_('description'),
+    meaning = models.TextField(
+        verbose_name=_('meaning'),
         blank=True,
     )
 
