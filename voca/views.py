@@ -49,6 +49,9 @@ class EntryDetailView(SearchContextMixin, generic.DetailView):
         context['entry_components'] = self.object.components \
             .prefetch_related('meanings') \
             .order_by('voca_entrycompound.position')
+        context['entry_sentences'] = self.object \
+            .entrysentencecompound_set \
+            .select_related('from_sentence')
         return context
 
     def get_template_names(self):
@@ -61,7 +64,7 @@ class EntryCategoryView(SearchContextMixin, PageableMixin, VocaContextMixin, gen
 
     def get_queryset(self):
         queryset = Entry.objects \
-            .prefetch_related('meanings', 'categories',) \
+            .prefetch_related('meanings', 'categories', ) \
             .filter(categories__in=EntryCategory.objects
                     .filter(slug=self.kwargs['slug']).get_descendants(include_self=True))
 

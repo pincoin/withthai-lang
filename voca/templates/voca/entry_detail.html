@@ -73,7 +73,7 @@
         </div>
     {% endfor %}
 
-    {% for sentence in entry.entrysentencecompound_set.all %}
+    {% for sentence in entry_sentences %}
         {% if forloop.first %}
             <div class="row mt-4 mb-2">
                 <div class="col">예문</div>
@@ -81,7 +81,7 @@
         {% endif %}
         <div class="row my-2">
             <div class="col thai-font">
-                {% for word in sentence.from_sentence.words.all %}<a href="{% url 'voca:entry-detail' word.id %}">{{ word.title }}</a>{% endfor %}
+                {{ sentence.from_sentence }}
             </div>
         </div>
     {% endfor %}
