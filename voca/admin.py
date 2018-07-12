@@ -23,14 +23,20 @@ class EntrySentenceCompoundInline(admin.TabularInline):
     fk_name = 'from_sentence'
 
 
+class EntryCategoryInline(admin.TabularInline):
+    model = Entry.categories.through
+    extra = 1
+    fk_name = 'entry'
+
+
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('title', 'pronunciation')
     list_display_links = ('title',)
     list_filter = ('level',)
     search_fields = ('title',)
-    fields = ('level', 'title', 'pronunciation', 'category', 'description')
+    fields = ('level', 'title', 'pronunciation', 'description')
     readonly_fields = ('is_removed',)
-    inlines = [EntryMeaningInline, EntryCompoundInline]
+    inlines = [EntryMeaningInline, EntryCompoundInline, EntryCategoryInline]
 
 
 class EntryCategoryAdmin(DraggableMPTTAdmin):

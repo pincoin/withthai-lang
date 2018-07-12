@@ -41,13 +41,11 @@ class Entry(SoftDeletableModel, TimeStampedModel):
         db_index=True,
     )
 
-    category = TreeForeignKey(
+    categories = models.ManyToManyField(
         'voca.EntryCategory',
-        verbose_name=_('entry category'),
-        null=True,
+        through='voca.EntryCategoryMembership',
         blank=True,
-        db_index=True,
-        on_delete=models.SET_NULL,
+        symmetrical=False,
     )
 
     components = models.ManyToManyField(
@@ -146,6 +144,27 @@ class EntryCategory(AbstractCategory):
 
     def __str__(self):
         return self.title
+
+
+class EntryCategoryMembership(models.Model):
+    entry = models.ForeignKey(
+        'voca.Entry',
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    category = TreeForeignKey(
+        'voca.EntryCategory',
+        verbose_name=_('entry category'),
+        null=True,
+        blank=True,
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    class Meta:
+        verbose_name = _('category membership')
+        verbose_name_plural = _('category memberships')
 
 
 class EntrySentence(SoftDeletableModel, TimeStampedModel):
