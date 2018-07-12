@@ -73,7 +73,7 @@
         </div>
     {% endfor %}
 
-    {% for sentence in entry.entrysentencecompound_set.all %}
+    {% for sentence in entry_sentences %}
         {% if forloop.first %}
             <div class="row mt-4 mb-2">
                 <div class="col">예문</div>
@@ -81,7 +81,8 @@
         {% endif %}
         <div class="row my-2">
             <div class="col thai-font">
-                {{ sentence.from_sentence }}
+                <!-- {{ sentence.title }} -->
+                {% for word in sentence.entrysentencecompound_set.all %}{{ word.to_entry.title }}{% endfor %}
             </div>
         </div>
     {% endfor %}

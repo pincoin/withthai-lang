@@ -49,6 +49,12 @@ class EntryDetailView(SearchContextMixin, generic.DetailView):
         context['entry_components'] = self.object.components \
             .prefetch_related('meanings') \
             .order_by('voca_entrycompound.position')
+
+        context['entry_sentences'] = self.object \
+            .entrysentence_set \
+            .prefetch_related('words', 'words__to_entry') \
+            .all()
+
         return context
 
     def get_template_names(self):
