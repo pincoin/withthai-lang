@@ -73,7 +73,7 @@
         </div>
     {% endfor %}
 
-    {% for sentence in entry.to_sentence_entry.all %}
+    {% for sentence in entry.entrysentencecompound_set.all %}
         {% if forloop.first %}
             <div class="row mt-4 mb-2">
                 <div class="col">예문</div>
