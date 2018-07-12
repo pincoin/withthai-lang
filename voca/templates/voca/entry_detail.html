@@ -81,7 +81,7 @@
         {% endif %}
         <div class="row my-2">
             <div class="col thai-font">
-                {{ sentence.from_sentence }}
+                {% for word in sentence.from_sentence.words.all %}<a href="{% url 'voca:entry-detail' word.id %}">{{ word.title }}</a>{% endfor %}
             </div>
         </div>
     {% endfor %}

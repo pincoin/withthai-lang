@@ -187,7 +187,7 @@ class EntrySentence(SoftDeletableModel, TimeStampedModel):
     )
 
     words = models.ManyToManyField(
-        'self',
+        'voca.Entry',
         through='voca.EntrySentenceCompound',
         blank=True,
         symmetrical=False,

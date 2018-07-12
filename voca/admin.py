@@ -30,7 +30,7 @@ class EntryCategoryInline(admin.TabularInline):
 
 
 class EntryAdmin(admin.ModelAdmin):
-    list_display = ('title', 'pronunciation')
+    list_display = ('id', 'title', 'pronunciation')
     list_display_links = ('title',)
     list_filter = ('level',)
     search_fields = ('title',)
@@ -49,7 +49,7 @@ class EntrySentenceAdmin(admin.ModelAdmin):
     list_display = ('title', 'pronunciation')
     list_display_links = ('title',)
     search_fields = ('title',)
-    fields = ('title', 'pronunciation', 'description')
+    fields = ('title', 'pronunciation', 'meaning')
     readonly_fields = ('is_removed',)
     inlines = [EntrySentenceCompoundInline]
 

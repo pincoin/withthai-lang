@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-12 01:33+0900\n"
+"POT-Creation-Date: 2018-07-12 22:12+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgid "parent"
 msgstr "parent"
 
 #: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
-#: voca/models.py:20 voca/models.py:155
+#: voca/models.py:20 voca/models.py:172
 msgid "title"
 msgstr "title"
 
@@ -112,7 +112,7 @@ msgstr "menu items"
 msgid "The page title as you'd like it to be seen by the public"
 msgstr "The page title as you'd like it to be seen by the public"
 
-#: rakmai/models.py:78 voca/models.py:33 voca/models.py:141 voca/models.py:168
+#: rakmai/models.py:78 voca/models.py:33 voca/models.py:137
 #: voca/templates/voca/entry_detail.html:47
 msgid "description"
 msgstr "description"
@@ -197,7 +197,7 @@ msgstr "intermediate"
 msgid "advanced"
 msgstr "advanced"
 
-#: voca/models.py:28 voca/models.py:163
+#: voca/models.py:28 voca/models.py:180
 msgid "pronunciation"
 msgstr "pronunciation"
 
@@ -205,103 +205,95 @@ msgstr "pronunciation"
 msgid "level"
 msgstr "level"
 
-#: voca/models.py:46 voca/models.py:146
-msgid "entry category"
-msgstr "entry category"
-
-#: voca/models.py:47 voca/models.py:64
-msgid "entries"
-msgstr "entries"
-
-#: voca/models.py:63 voca/models.py:116
+#: voca/models.py:59 voca/models.py:112
 msgid "entry"
 msgstr "entry"
 
-#: voca/models.py:73
-msgid "from_entry"
-msgstr "from_entry"
+#: voca/models.py:60
+msgid "entries"
+msgstr "entries"
 
-#: voca/models.py:80
-msgid "to_entry"
-msgstr "to_entry"
-
-#: voca/models.py:86 voca/models.py:127 voca/models.py:204
+#: voca/models.py:82 voca/models.py:123 voca/models.py:218
 msgid "position"
 msgstr "position"
 
-#: voca/models.py:90
+#: voca/models.py:86
 msgid "compound word"
 msgstr "compound word"
 
-#: voca/models.py:91
+#: voca/models.py:87
 msgid "compound words"
 msgstr "compound words"
 
-#: voca/models.py:97
+#: voca/models.py:93
 msgid "noun"
 msgstr "noun"
 
-#: voca/models.py:98
+#: voca/models.py:94
 msgid "pronoun"
 msgstr "pronoun"
 
-#: voca/models.py:99 voca/models.py:101
+#: voca/models.py:95 voca/models.py:97
 msgid "verb"
 msgstr "verb"
 
-#: voca/models.py:100
+#: voca/models.py:96
 msgid "modifier"
 msgstr "modifier"
 
-#: voca/models.py:102
+#: voca/models.py:98
 msgid "conjunction"
 msgstr "conjunction"
 
-#: voca/models.py:103
+#: voca/models.py:99
 msgid "interjection"
 msgstr "interjection"
 
-#: voca/models.py:104
+#: voca/models.py:100
 msgid "classifier"
 msgstr "classifier"
 
-#: voca/models.py:108
+#: voca/models.py:104
 msgid "part of speech"
 msgstr "part of speech"
 
-#: voca/models.py:122 voca/models.py:131
+#: voca/models.py:118 voca/models.py:127 voca/models.py:185
 msgid "meaning"
 msgstr "meaning"
 
-#: voca/models.py:132
+#: voca/models.py:128
 msgid "meanings"
 msgstr "meanings"
 
-#: voca/models.py:147 voca/templates/voca/2_columns.html:17
+#: voca/models.py:142 voca/models.py:158
+msgid "entry category"
+msgstr "entry category"
+
+#: voca/models.py:143 voca/templates/voca/2_columns.html:17
 msgid "entry categories"
 msgstr "entry categories"
 
-#: voca/models.py:181
+#: voca/models.py:166
+msgid "category membership"
+msgstr ""
+
+#: voca/models.py:167
+msgid "category memberships"
+msgstr ""
+
+#: voca/models.py:197
 msgid "entry sentence"
 msgstr "entry categories"
 
-#: voca/models.py:182
+#: voca/models.py:198
 msgid "entry sentences"
 msgstr "entry categories"
 
-#: voca/models.py:191
-msgid "from_sentence"
-msgstr "from_entry"
-
-#: voca/models.py:198
-msgid "to_entry_sentence"
-msgstr "to_entry_sentence"
-
-#: voca/models.py:208
+#: voca/models.py:222
 msgid "word"
 msgstr "word"
 
-#: voca/models.py:209
+#: voca/models.py:223
 msgid "words"
 msgstr "words"
 
@@ -315,10 +307,10 @@ msgstr "Prev"
 msgid "Next"
 msgstr "Next"
 
-#: voca/views.py:47
+#: voca/views.py:48
 msgid "{} - Vocabulary"
 msgstr "{} - Vocabulary"
 
-#: voca/views.py:69
+#: voca/views.py:72
 msgid "{} Vocabulary Category"
 msgstr "{} - Vocabulary Category"
