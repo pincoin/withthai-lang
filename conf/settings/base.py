@@ -81,3 +81,15 @@ SITE_ID = 1
 
 # crispy-form template
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Bleach sanitizing text fragments
+BLEACH_ALLOWED_TAGS = [
+    'h1', 'h2', 'h3', 'h4', 'h5', 'ol', 'ul', 'li', 'div', 'p', 'code', 'blockquote', 'pre', 'span', 'table', 'thead',
+    'tbody', 'tr', 'th', 'td', 'a', 'em', 'strong', 'hr', 'img'
+]
+
+BLEACH_ALLOWED_ATTRIBUTES = {
+    '*': ['class', 'id'],
+    'a': ['href', 'rel'],
+    'img': ['alt', 'src'],
+}

@@ -1,5 +1,7 @@
 {% extends "rakmai/base.html" %}
 
+{% load rakmai_filters %}
+
 {% block content %}
     <div class="container">
         <h4 class="my-2 my-md-4 text-center">{{ post.title }}</h4>
@@ -8,7 +10,7 @@
             <div class="col">
                 <div class="card rounded-2">
                     <div class="card-body">
-                        {{ post.content }}
+                        {{ post.content|markdownify }}
                     </div>
                 </div>
             </div>

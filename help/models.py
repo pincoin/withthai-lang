@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from model_utils import Choices
 from model_utils.models import SoftDeletableModel
 
 from rakmai.models import AbstractPage
@@ -28,3 +29,28 @@ class Post(SoftDeletableModel, AbstractPage):
 
     def get_absolute_url(self):
         return reverse('help:post-detail', args=[self.pk, self.slug])
+
+
+class NoticeMessage(SoftDeletableModel, AbstractPage):
+    CATEGORY_CHOICES = Choices(
+        (0, 'common', _('Common')),
+    )
+
+    content = models.TextField(
+        verbose_name=_('content'),
+    )
+
+    category = models.IntegerField(
+        verbose_name=_('category'),
+        choices=CATEGORY_CHOICES,
+        default=CATEGORY_CHOICES.common,
+        db_index=True,
+    )
+
+    class Meta:
+        verbose_name = _('notice')
+        verbose_name_plural = _('notice')
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.title
