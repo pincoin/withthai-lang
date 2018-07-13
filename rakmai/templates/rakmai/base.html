@@ -47,9 +47,6 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'help:post-detail' 'about' %}">소개</a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
@@ -139,7 +136,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
         <div class="row">
             <div class="col">
                 <h5 class="ml-2 mt-2">
-                    <a href="{% url 'home' %}">{% trans "WITHTHAI" %}</a>
+                    <a href="{% url 'help:post-detail' 'about' %}">{% trans "WITHTHAI" %}</a>
                 </h5>
                 <ul class="list-inline pl-2 mb-1">
                     <li class="list-inline-item">대표: OOO</li>
