@@ -3,9 +3,11 @@ import logging
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
+from rakmai.viewmixins import PageableMixin
 from .models import (
     Post, NoticeMessage
 )
+from .viewmixins import HelpContextMixin
 
 
 class PostDetailView(generic.DetailView):
@@ -24,6 +26,22 @@ class PostDetailView(generic.DetailView):
 
     def get_template_names(self):
         return 'help/post_detail.html'
+
+
+class NoticeListView(PageableMixin, HelpContextMixin, generic.ListView):
+    logger = logging.getLogger(__name__)
+    context_object_name = 'entries'
+
+    def get_queryset(self):
+        return NoticeMessage.objects.all().order_by('-created')
+
+    def get_context_data(self, **kwargs):
+        context = super(NoticeListView, self).get_context_data(**kwargs)
+        context['page_title'] = _('Notice List')
+        return context
+
+    def get_template_names(self):
+        return 'help/notice_list.html'
 
 
 class NoticeDetailView(generic.DetailView):

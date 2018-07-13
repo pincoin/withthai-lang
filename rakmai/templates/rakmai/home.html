@@ -60,7 +60,11 @@
             </div>
             <div class="col-lg-4 mb-2">
                 <div class="card h-100">
-                    <h5 class="card-header py-md-2">공지사항</h5>
+                    <h5 class="card-header py-md-2">
+                        <a href="{% url 'help:notice-list' %}">
+                            공지사항
+                        </a>
+                    </h5>
                     <div class="card-body py-1">
                         <ul class="list-unstyled mb-0">
                             {% get_notice as notice_messages %}
