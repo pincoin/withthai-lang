@@ -1,9 +1,10 @@
 {% extends "./base.html" %}
 
+{% load help_tags %}
+{% load i18n %}
+
 {% block content %}
-    <!-- Page Content -->
     <div class="container">
-        <!-- Jumbotron Header -->
         <header class="jumbotron my-2 my-md-3 py-1 py-md-4">
             <h3 class="display-5 text-light mb-3">위드타이 (2018.8.8 오픈 예정)</h3>
             <p class="jumbotron-text p-3 lead text-light">
@@ -20,9 +21,6 @@
                     <h5 class="card-header py-md-2">자유게시판</h5>
                     <div class="card-body py-1">
                         <ul class="list-unstyled mb-0">
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
                             <li class="my-1">
                                 Lorem ipsum dolor sit amet, consectetur
                             </li>
@@ -56,9 +54,6 @@
                             <li class="my-1">
                                 Lorem ipsum dolor sit amet, consectetur
                             </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -68,21 +63,22 @@
                     <h5 class="card-header py-md-2">공지사항</h5>
                     <div class="card-body py-1">
                         <ul class="list-unstyled mb-0">
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
+                            {% get_notice as notice_messages %}
+                            {% for message in notice_messages %}
+                                <li class="my-1">
+                                    <a href="{% url 'help:notice-detail' message.id %}">
+                                        {{ message.title }}
+                                    </a>
+                                </li>
+                            {% empty %}
+                                <li class="my-1">
+                                    {% trans "No message" %}
+                                </li>
+                                <li class="my-1">&nbsp;</li>
+                                <li class="my-1">&nbsp;</li>
+                                <li class="my-1">&nbsp;</li>
+                                <li class="my-1">&nbsp;</li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
