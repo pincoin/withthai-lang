@@ -13,9 +13,9 @@
         </h4>
 
         <div class="row">
-            <div class="col">
+            <div class="col mb-3">
                 <div class="card rounded-2">
-                    <div class="card-body help-post">
+                    <div class="card-body help-post pb-0">
                         {% if post.markup == post.FORMAT_CHOICES.html %}
                             {{ post.content|clean_html|linebreaks }}
                         {% elif post.markup == post.FORMAT_CHOICES.markdown %}
