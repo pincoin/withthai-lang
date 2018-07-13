@@ -87,3 +87,29 @@ class EntryCategoryView(SearchContextMixin, PageableMixin, VocaContextMixin, gen
 
     def get_template_names(self):
         return 'voca/entry_list.html'
+
+
+class EntryLevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
+    logger = logging.getLogger(__name__)
+    context_object_name = 'entries'
+
+    def get_queryset(self):
+        queryset = Entry.objects \
+            .prefetch_related('meanings')
+
+        if self.kwargs['level'] == 'beginner':
+            queryset = queryset.filter(level=Entry.LEVEL_CHOICES.beginner)
+        elif self.kwargs['level'] == 'intermediate':
+            queryset = queryset.filter(level=Entry.LEVEL_CHOICES.intermediate)
+        elif self.kwargs['level'] == 'advanced':
+            queryset = queryset.filter(level=Entry.LEVEL_CHOICES.advanced)
+
+        return queryset.order_by('-created')
+
+    def get_context_data(self, **kwargs):
+        context = super(EntryLevelListView, self).get_context_data(**kwargs)
+        context['page_title'] = _('Vocabulary')
+        return context
+
+    def get_template_names(self):
+        return 'voca/entry_list.html'

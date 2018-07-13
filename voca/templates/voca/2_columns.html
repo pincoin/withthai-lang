@@ -31,12 +31,27 @@
                     </div>
                 </div>
 
-                <!-- Side Widget -->
+                <!-- Level Widget -->
                 <div class="card my-2 my-md-4">
-                    <h5 class="card-header">Side Widget</h5>
+                    <h5 class="card-header">난이도</h5>
                     <div class="card-body">
-                        You can put anything you want inside of these side widgets. They are easy to use, and feature
-                        the new Bootstrap 4 card containers!
+                        <ul class="pl-3 mb-0">
+                            <li class="mb-1">
+                                <a href="{% url 'voca:entry-level-list' 'beginner' %}">
+                                    {% trans "beginner" %}
+                                </a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="{% url 'voca:entry-level-list' 'intermediate' %}">
+                                    {% trans "intermediate" %}
+                                </a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="{% url 'voca:entry-level-list' 'advanced' %}">
+                                    {% trans "advanced" %}
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
