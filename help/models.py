@@ -40,7 +40,7 @@ class Post(SoftDeletableModel, AbstractPage):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('help:post-detail', args=[self.pk, self.slug])
+        return reverse('help:post-detail', args=[self.pk])
 
 
 class NoticeMessage(SoftDeletableModel, AbstractPage):

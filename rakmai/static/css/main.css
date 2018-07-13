@@ -97,11 +97,22 @@ body {
     color: #24292e;
 }
 
+.help-post {
+    word-wrap: normal;
+    white-space: normal;
+    word-break: keep-all;
+    line-height: 160%;
+}
+
 .help-post h1, .help-post h2, .help-post h3, .help-post h4, .help-post h5 {
     padding-bottom: 0.5rem;
     border-bottom: #24292e 1px solid;
 }
 
-.help-post ul {
+.help-post ul, .help-post ol {
     padding-left: 1.5rem;
+}
+
+.help-post ul li, .help-post ol li {
+    margin-bottom: 0.3rem;
 }
