@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-12 23:59+0900\n"
+"POT-Creation-Date: 2018-07-13 21:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,11 +29,27 @@ msgstr "English"
 msgid "Thai"
 msgstr "Thai"
 
-#: help/models.py:11 rakmai/models.py:122
+#: help/apps.py:7
+msgid "Help"
+msgstr "Help"
+
+#: help/models.py:12 help/models.py:48
+msgid "html"
+msgstr "HTML"
+
+#: help/models.py:13 help/models.py:49
+msgid "markdown"
+msgstr "Markdown"
+
+#: help/models.py:14 help/models.py:50
+msgid "text"
+msgstr "Text"
+
+#: help/models.py:18 rakmai/models.py:122
 msgid "slug"
 msgstr "slug"
 
-#: help/models.py:12 rakmai/models.py:123
+#: help/models.py:19 rakmai/models.py:123
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
@@ -41,17 +57,33 @@ msgstr ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
 
-#: help/models.py:19
+#: help/models.py:26 help/models.py:58
 msgid "content"
-msgstr ""
+msgstr "content"
 
-#: help/models.py:23
+#: help/models.py:30 help/models.py:62
+msgid "markup"
+msgstr "markup"
+
+#: help/models.py:36
 msgid "post"
-msgstr ""
+msgstr "post"
 
-#: help/models.py:24
+#: help/models.py:37
 msgid "posts"
-msgstr ""
+msgstr "posts"
+
+#: help/models.py:54
+msgid "Common"
+msgstr "Common"
+
+#: help/models.py:68
+msgid "category"
+msgstr "category"
+
+#: help/models.py:75 help/models.py:76
+msgid "notice"
+msgstr "notice"
 
 #: rakmai/models.py:14
 msgid "equals"
@@ -169,7 +201,7 @@ msgid "Thai Language"
 msgstr "Thai"
 
 #: rakmai/templates/rakmai/base.html:60 voca/templates/voca/entry_detail.html:9
-#: voca/templates/voca/entry_list.html:9 voca/views.py:30
+#: voca/templates/voca/entry_list.html:9 voca/views.py:34 voca/views.py:111
 msgid "Vocabulary"
 msgstr "Vocabulary"
 
@@ -185,15 +217,15 @@ msgstr "vocabulary"
 msgid "lookup word"
 msgstr "lookup word"
 
-#: voca/models.py:14
+#: voca/models.py:14 voca/templates/voca/2_columns.html:41
 msgid "beginner"
 msgstr "beginner"
 
-#: voca/models.py:15
+#: voca/models.py:15 voca/templates/voca/2_columns.html:46
 msgid "intermediate"
 msgstr "intermediate"
 
-#: voca/models.py:16
+#: voca/models.py:16 voca/templates/voca/2_columns.html:51
 msgid "advanced"
 msgstr "advanced"
 
@@ -307,10 +339,10 @@ msgstr "Prev"
 msgid "Next"
 msgstr "Next"
 
-#: voca/views.py:48
+#: voca/views.py:52
 msgid "{} - Vocabulary"
 msgstr "{} - Vocabulary"
 
-#: voca/views.py:72
+#: voca/views.py:85
 msgid "{} Vocabulary Category"
 msgstr "{} - Vocabulary Category"

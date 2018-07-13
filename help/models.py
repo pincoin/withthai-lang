@@ -8,6 +8,12 @@ from rakmai.models import AbstractPage
 
 
 class Post(SoftDeletableModel, AbstractPage):
+    FORMAT_CHOICES = Choices(
+        (0, 'html', _('html')),
+        (1, 'markdown', _('markdown')),
+        (2, 'text', _('text')),
+    )
+
     slug = models.SlugField(
         verbose_name=_('slug'),
         help_text=_('A short label containing only letters, numbers, underscores or hyphens for URL'),
@@ -18,6 +24,12 @@ class Post(SoftDeletableModel, AbstractPage):
 
     content = models.TextField(
         verbose_name=_('content'),
+    )
+
+    markup = models.IntegerField(
+        verbose_name=_('markup'),
+        choices=FORMAT_CHOICES,
+        default=FORMAT_CHOICES.html,
     )
 
     class Meta:
@@ -32,12 +44,24 @@ class Post(SoftDeletableModel, AbstractPage):
 
 
 class NoticeMessage(SoftDeletableModel, AbstractPage):
+    FORMAT_CHOICES = Choices(
+        (0, 'html', _('html')),
+        (1, 'markdown', _('markdown')),
+        (2, 'text', _('text')),
+    )
+
     CATEGORY_CHOICES = Choices(
         (0, 'common', _('Common')),
     )
 
     content = models.TextField(
         verbose_name=_('content'),
+    )
+
+    markup = models.IntegerField(
+        verbose_name=_('markup'),
+        choices=FORMAT_CHOICES,
+        default=FORMAT_CHOICES.html,
     )
 
     category = models.IntegerField(

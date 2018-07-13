@@ -22,3 +22,23 @@ def markdownify(text):
             tags=settings.BLEACH_ALLOWED_TAGS, attributes=settings.BLEACH_ALLOWED_ATTRIBUTES, strip=True,
         )
     )
+
+
+@register.filter
+@stringfilter
+def clean_html(text):
+    return mark_safe(
+        bleach.clean(
+            text,
+            tags=settings.BLEACH_ALLOWED_TAGS, attributes=settings.BLEACH_ALLOWED_ATTRIBUTES, strip=True,
+        )
+    )
+
+
+@register.filter
+@stringfilter
+def strip_html(text):
+    return bleach.clean(
+        text,
+        tags=[], attributes={}, strip=True,
+    )

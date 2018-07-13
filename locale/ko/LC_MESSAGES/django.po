@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-12 23:59+0900\n"
+"POT-Creation-Date: 2018-07-13 21:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,27 +29,59 @@ msgstr "영어"
 msgid "Thai"
 msgstr "태국어"
 
-#: help/models.py:11 rakmai/models.py:122
+#: help/apps.py:7
+msgid "Help"
+msgstr "도움말"
+
+#: help/models.py:12 help/models.py:48
+msgid "html"
+msgstr "HTML"
+
+#: help/models.py:13 help/models.py:49
+msgid "markdown"
+msgstr "마크다운"
+
+#: help/models.py:14 help/models.py:50
+msgid "text"
+msgstr "텍스트"
+
+#: help/models.py:18 rakmai/models.py:122
 msgid "slug"
 msgstr "슬러그"
 
-#: help/models.py:12 rakmai/models.py:123
+#: help/models.py:19 rakmai/models.py:123
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
 msgstr ""
 
-#: help/models.py:19
+#: help/models.py:26 help/models.py:58
 msgid "content"
 msgstr "본문"
 
-#: help/models.py:23
+#: help/models.py:30 help/models.py:62
+msgid "markup"
+msgstr "마크업"
+
+#: help/models.py:36
 msgid "post"
 msgstr "게시물"
 
-#: help/models.py:24
+#: help/models.py:37
 msgid "posts"
 msgstr "게시물"
+
+#: help/models.py:54
+msgid "Common"
+msgstr "일반"
+
+#: help/models.py:68
+msgid "category"
+msgstr "분류"
+
+#: help/models.py:75 help/models.py:76
+msgid "notice"
+msgstr "공지사항"
 
 #: rakmai/models.py:14
 msgid "equals"
@@ -165,7 +197,7 @@ msgid "Thai Language"
 msgstr "태국어"
 
 #: rakmai/templates/rakmai/base.html:60 voca/templates/voca/entry_detail.html:9
-#: voca/templates/voca/entry_list.html:9 voca/views.py:30
+#: voca/templates/voca/entry_list.html:9 voca/views.py:34 voca/views.py:111
 msgid "Vocabulary"
 msgstr "어휘"
 
@@ -181,15 +213,15 @@ msgstr "어휘"
 msgid "lookup word"
 msgstr "검색"
 
-#: voca/models.py:14
+#: voca/models.py:14 voca/templates/voca/2_columns.html:41
 msgid "beginner"
 msgstr "초급"
 
-#: voca/models.py:15
+#: voca/models.py:15 voca/templates/voca/2_columns.html:46
 msgid "intermediate"
 msgstr "중급"
 
-#: voca/models.py:16
+#: voca/models.py:16 voca/templates/voca/2_columns.html:51
 msgid "advanced"
 msgstr "고급"
 
@@ -303,10 +335,10 @@ msgstr "이전"
 msgid "Next"
 msgstr "다음"
 
-#: voca/views.py:48
+#: voca/views.py:52
 msgid "{} - Vocabulary"
 msgstr "{} - 어휘"
 
-#: voca/views.py:72
+#: voca/views.py:85
 msgid "{} Vocabulary Category"
 msgstr "{} - 어휘분류"
