@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-14 20:08+0900\n"
+"POT-Creation-Date: 2018-07-14 20:51+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,7 +83,25 @@ msgstr ""
 msgid "notice"
 msgstr ""
 
-#: help/templates/help/notice_list.html:42 rakmai/templates/rakmai/home.html:79
+#: help/templates/help/_pagination.html:9
+#: help/templates/help/_pagination.html:14
+#: voca/templates/voca/_pagination.html:9
+#: voca/templates/voca/_pagination.html:14
+msgid "Previous"
+msgstr ""
+
+#: help/templates/help/_pagination.html:34
+#: help/templates/help/_pagination.html:39
+#: voca/templates/voca/_pagination.html:34
+#: voca/templates/voca/_pagination.html:39
+msgid "Next"
+msgstr ""
+
+#: help/templates/help/notice_detail.html:50
+msgid "List"
+msgstr ""
+
+#: help/templates/help/notice_list.html:38 rakmai/templates/rakmai/home.html:79
 msgid "No message"
 msgstr ""
 
@@ -335,16 +353,6 @@ msgstr ""
 
 #: voca/models.py:224
 msgid "words"
-msgstr ""
-
-#: voca/templates/voca/_pagination.html:9
-#: voca/templates/voca/_pagination.html:14
-msgid "Previous"
-msgstr ""
-
-#: voca/templates/voca/_pagination.html:34
-#: voca/templates/voca/_pagination.html:39
-msgid "Next"
 msgstr ""
 
 #: voca/views.py:52
