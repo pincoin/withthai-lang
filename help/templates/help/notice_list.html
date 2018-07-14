@@ -17,10 +17,8 @@
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-2 col-md-1 p-md-1 order-1 order-md-1">
-                                        {% if message.category == message.CATEGORY_CHOICES.common %}
-                                            <span class="btn btn-sm mr-2 btn-secondary">
-                                        {% endif %}
-                                        {{ message.get_category_display }}
+                                        <span class="btn btn-sm mr-2 btn-secondary">
+                                            {{ message.get_category_display }}
                                         </span>
                                     </div>
                                     <div class="col-12 col-md-9 pt-2 p-md-2 order-3 order-md-2">
