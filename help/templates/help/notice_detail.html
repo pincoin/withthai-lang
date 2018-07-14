@@ -6,7 +6,7 @@
     <div class="container">
         <h4 class="my-2 my-md-4 text-center">
             {% if request.user.is_superuser %}
-                <a href="{% url 'admin:help_post_change' post.id %}">{{ post.title }}</a>
+                <a href="{% url 'admin:help_noticemessage_change' post.id %}">{{ post.title }}</a>
             {% else %}
                 {{ post.title }}
             {% endif %}
