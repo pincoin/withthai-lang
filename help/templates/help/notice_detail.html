@@ -5,16 +5,33 @@
 {% block content %}
     <div class="container">
         <h4 class="my-2 my-md-4 text-center">
-            {% if request.user.is_superuser %}
-                <a href="{% url 'admin:help_noticemessage_change' post.id %}">{{ post.title }}</a>
-            {% else %}
-                {{ post.title }}
-            {% endif %}
+            공지사항
         </h4>
 
-        <div class="row">
+        <div class="row my-2 my-md-4 ">
             <div class="col mb-3">
                 <div class="card rounded-2">
+                    <div class="card-header d-flex flex-wrap">
+                        <div class="p-1">
+                            <span class="btn btn-sm mr-2 btn-info">
+                                {{ post.get_category_display }}
+                            </span>
+                        </div>
+                        <div class="p-2">
+                            <strong>
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'admin:help_noticemessage_change' post.id %}">
+                                        {{ post.title }}
+                                    </a>
+                                {% else %}
+                                    {{ post.title }}
+                                {% endif %}
+                            </strong>
+                        </div>
+                        <div class="p-2 text-muted">
+                            {{ post.created|date:'Y.m.d' }}
+                        </div>
+                    </div>
                     <div class="card-body help-post pb-0">
                         {% if post.markup == post.FORMAT_CHOICES.html %}
                             {{ post.content|clean_html|linebreaks }}
