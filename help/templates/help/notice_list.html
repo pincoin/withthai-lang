@@ -1,5 +1,6 @@
 {% extends "rakmai/base.html" %}
 
+{% load i18n %}
 {% load rakmai_filters %}
 
 {% block content %}
@@ -11,17 +12,36 @@
         <div class="row">
             <div class="col mb-3">
                 <div class="card rounded-2">
-                    <div class="card-body help-post pb-0">
-                        {% if post.markup == post.FORMAT_CHOICES.html %}
-                            {{ post.content|clean_html|linebreaks }}
-                        {% elif post.markup == post.FORMAT_CHOICES.markdown %}
-                            {{ post.content|markdownify }}
-                        {% elif post.markup == post.FORMAT_CHOICES.text %}
-                            {{ post.content|strip_html|linebreaks }}
-                        {% endif %}
-                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for message in messages %}
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-2 col-md-1 p-md-1 order-1 order-md-1">
+                                        {% if message.category == message.CATEGORY_CHOICES.common %}
+                                            <span class="btn btn-sm mr-2 btn-secondary">
+                                        {% endif %}
+                                        {{ message.get_category_display }}
+                                        </span>
+                                    </div>
+                                    <div class="col-12 col-md-9 pt-2 p-md-2 order-3 order-md-2">
+                                        <a href="{% url 'help:notice-detail' message.id %}?page={{ page_obj.number }}">
+                                            {{ message.title }}
+                                        </a>
+                                    </div>
+                                    <div class="col-10 col-md-2 pt-1 p-md-2 text-md-right text-muted order-2 order-md-3">
+                                        {{ message.created|date:'Y.m.d' }}
+                                    </div>
+                                </div>
+                            </li>
+                        {% empty %}
+                            <li class="list-group-item">
+                                {% trans "No message" %}
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
+        {% include './_pagination.html' with page_obj=page_obj page_range=page_range %}
     </div>
 {% endblock %}

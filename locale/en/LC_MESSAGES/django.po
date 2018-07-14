@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-14 00:47+0900\n"
+"POT-Creation-Date: 2018-07-14 20:08+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,7 +85,15 @@ msgstr "category"
 msgid "notice"
 msgstr "notice"
 
-#: help/views.py:38
+#: help/templates/help/notice_list.html:42 rakmai/templates/rakmai/home.html:79
+msgid "No message"
+msgstr "No message"
+
+#: help/views.py:40
+msgid "Notice"
+msgstr "Notice"
+
+#: help/views.py:56
 msgid "{} : Notice"
 msgstr "{} : Notice"
 
@@ -196,7 +204,7 @@ msgid "attachments"
 msgstr "attachments"
 
 #: rakmai/templates/rakmai/base.html:8 rakmai/templates/rakmai/base.html:42
-#: rakmai/templates/rakmai/base.html:139
+#: rakmai/templates/rakmai/base.html:142
 msgid "WITHTHAI"
 msgstr "WITHTHAI"
 
@@ -208,10 +216,6 @@ msgstr "Thai"
 #: voca/templates/voca/entry_list.html:9 voca/views.py:34 voca/views.py:111
 msgid "Vocabulary"
 msgstr "Vocabulary"
-
-#: rakmai/templates/rakmai/home.html:75
-msgid "No message"
-msgstr "No message"
 
 #: rakmai/views.py:12
 msgid "withthai"

@@ -30,14 +30,14 @@ class PostDetailView(generic.DetailView):
 
 class NoticeListView(PageableMixin, HelpContextMixin, generic.ListView):
     logger = logging.getLogger(__name__)
-    context_object_name = 'entries'
+    context_object_name = 'messages'
 
     def get_queryset(self):
         return NoticeMessage.objects.all().order_by('-created')
 
     def get_context_data(self, **kwargs):
         context = super(NoticeListView, self).get_context_data(**kwargs)
-        context['page_title'] = _('Notice List')
+        context['page_title'] = _('Notice')
         return context
 
     def get_template_names(self):
