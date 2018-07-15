@@ -263,6 +263,10 @@ class Textbook(TimeStampedModel):
         symmetrical=False,
     )
 
+    chapter = models.IntegerField(
+        verbose_name=_('chapter'),
+    )
+
     class Meta:
         verbose_name = _('textbook')
         verbose_name_plural = _('textbooks')
@@ -291,6 +295,8 @@ class EntryTextbookCompound(models.Model):
 
     page = models.IntegerField(
         verbose_name=_('page'),
+        null=True,
+        blank=True,
     )
 
     class Meta:
