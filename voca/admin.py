@@ -75,7 +75,7 @@ class EntrySentenceAdmin(admin.ModelAdmin):
 
 
 class TextbookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'publisher', 'slug')
+    list_display = ('title', 'author', 'publisher', 'slug', 'position')
     inlines = [EntryTextbookCompoundInline]
 
 
