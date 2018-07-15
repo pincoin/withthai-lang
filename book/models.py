@@ -148,6 +148,31 @@ class Page(MPTTModel, AbstractPage):
         verbose_name=_('content'),
     )
 
+    content = models.TextField(
+        verbose_name=_('content'),
+    )
+
+    content1 = models.TextField(
+        verbose_name=_('content1'),
+        blank=True,
+    )
+
+    content2 = models.TextField(
+        verbose_name=_('content2'),
+        blank=True,
+    )
+
+    image = ThumbnailerImageField(
+        verbose_name=_('image'),
+        upload_to=upload_directory_path,
+        blank=True,
+    )
+
+    youtube = models.URLField(
+        verbose_name=_('youtube'),
+        blank=True,
+    )
+
     book = models.ForeignKey(
         'book.Book',
         verbose_name=_('book'),

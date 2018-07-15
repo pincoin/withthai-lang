@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-16 01:35+0900\n"
+"POT-Creation-Date: 2018-07-16 01:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,7 +71,7 @@ msgstr "category"
 msgid "thumbnail"
 msgstr "thumbnail"
 
-#: book/models.py:68 book/models.py:170
+#: book/models.py:68 book/models.py:195
 msgid "status"
 msgstr "status"
 
@@ -83,15 +83,15 @@ msgstr "license"
 msgid "owner"
 msgstr "owner"
 
-#: book/models.py:92 book/models.py:177
+#: book/models.py:92 book/models.py:202
 msgid "view count"
 msgstr "view count"
 
-#: book/models.py:97 book/models.py:186
+#: book/models.py:97 book/models.py:211
 msgid "updated date"
 msgstr "update date"
 
-#: book/models.py:102 book/models.py:153
+#: book/models.py:102 book/models.py:178
 msgid "book"
 msgstr "book"
 
@@ -103,7 +103,7 @@ msgstr "books"
 msgid "uploaded file"
 msgstr "uploaded file"
 
-#: book/models.py:119 book/models.py:191 voca/models.py:297
+#: book/models.py:119 book/models.py:216 voca/models.py:297
 msgid "page"
 msgstr "page"
 
@@ -123,19 +123,35 @@ msgstr "categories"
 msgid "draft"
 msgstr "draft"
 
-#: book/models.py:148 help/models.py:26 help/models.py:58
+#: book/models.py:148 book/models.py:152 help/models.py:26 help/models.py:58
 msgid "content"
 msgstr "content"
 
-#: book/models.py:161 rakmai/models.py:25 rakmai/models.py:108
+#: book/models.py:156
+msgid "content1"
+msgstr "content1"
+
+#: book/models.py:161
+msgid "content2"
+msgstr "content2"
+
+#: book/models.py:166
+msgid "image"
+msgstr "image"
+
+#: book/models.py:172
+msgid "youtube"
+msgstr "youtube"
+
+#: book/models.py:186 rakmai/models.py:25 rakmai/models.py:108
 msgid "parent"
 msgstr "parent"
 
-#: book/models.py:182
+#: book/models.py:207
 msgid "IP address"
 msgstr "IP address"
 
-#: book/models.py:192
+#: book/models.py:217
 msgid "pages"
 msgstr "pages"
 
