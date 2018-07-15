@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-14 20:51+0900\n"
+"POT-Creation-Date: 2018-07-15 12:35+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,11 +45,11 @@ msgstr "마크다운"
 msgid "text"
 msgstr "텍스트"
 
-#: help/models.py:18 rakmai/models.py:122
+#: help/models.py:18 rakmai/models.py:122 voca/models.py:238
 msgid "slug"
 msgstr "슬러그"
 
-#: help/models.py:19 rakmai/models.py:123
+#: help/models.py:19 rakmai/models.py:123 voca/models.py:239
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
@@ -97,17 +97,17 @@ msgstr "이전"
 msgid "Next"
 msgstr "다음"
 
-#: help/templates/help/notice_detail.html:50
+#: help/templates/help/notice_detail.html:8 help/views.py:40
+msgid "Notice"
+msgstr "공지사항"
+
+#: help/templates/help/notice_detail.html:46
 msgid "List"
 msgstr "목록"
 
-#: help/templates/help/notice_list.html:38 rakmai/templates/rakmai/home.html:79
+#: help/templates/help/notice_list.html:36 rakmai/templates/rakmai/home.html:79
 msgid "No message"
 msgstr "게시물 없음"
-
-#: help/views.py:40
-msgid "Notice"
-msgstr "공지사항"
 
 #: help/views.py:56
 msgid "{} : Notice"
@@ -134,7 +134,7 @@ msgid "parent"
 msgstr "부모"
 
 #: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
-#: voca/models.py:20 voca/models.py:173
+#: voca/models.py:20 voca/models.py:173 voca/models.py:230
 msgid "title"
 msgstr "제목"
 
@@ -275,7 +275,7 @@ msgstr "표제어"
 msgid "compound word"
 msgstr "형태소"
 
-#: voca/models.py:83 voca/models.py:124 voca/models.py:219
+#: voca/models.py:83 voca/models.py:124 voca/models.py:219 voca/models.py:256
 msgid "position"
 msgstr "순서"
 
@@ -354,6 +354,38 @@ msgstr "단어"
 #: voca/models.py:224
 msgid "words"
 msgstr "단어"
+
+#: voca/models.py:246
+msgid "author"
+msgstr "저자"
+
+#: voca/models.py:251
+msgid "publisher"
+msgstr "출판사"
+
+#: voca/models.py:267
+msgid "textbook"
+msgstr "교재"
+
+#: voca/models.py:268
+msgid "textbooks"
+msgstr "교재"
+
+#: voca/models.py:289
+msgid "chapter"
+msgstr "챕터"
+
+#: voca/models.py:293
+msgid "page"
+msgstr "페이지"
+
+#: voca/models.py:297
+msgid "textbook word"
+msgstr "교재 단어"
+
+#: voca/models.py:298
+msgid "textbook words"
+msgstr "교재 단어"
 
 #: voca/views.py:52
 msgid "{} - Vocabulary"

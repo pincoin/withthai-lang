@@ -223,3 +223,77 @@ class EntrySentenceCompound(models.Model):
         verbose_name = _('word')
         verbose_name_plural = _('words')
         ordering = ['position']
+
+
+class Textbook(TimeStampedModel):
+    title = models.CharField(
+        verbose_name=_('title'),
+        max_length=255,
+        null=False,
+        blank=False,
+        db_index=True,
+    )
+
+    slug = models.SlugField(
+        verbose_name=_('slug'),
+        help_text=_('A short label containing only letters, numbers, underscores or hyphens for URL'),
+        max_length=255,
+        unique=True,
+        allow_unicode=True,
+    )
+
+    author = models.CharField(
+        verbose_name=_('author'),
+        max_length=255,
+    )
+
+    publisher = models.CharField(
+        verbose_name=_('publisher'),
+        max_length=255,
+    )
+
+    position = models.IntegerField(
+        verbose_name=_('position'),
+    )
+
+    words = models.ManyToManyField(
+        'voca.Entry',
+        through='voca.EntryTextbookCompound',
+        blank=True,
+        symmetrical=False,
+    )
+
+    class Meta:
+        verbose_name = _('textbook')
+        verbose_name_plural = _('textbooks')
+        ordering = ['position', ]
+
+    def __str__(self):
+        return self.title
+
+
+class EntryTextbookCompound(models.Model):
+    textbook = models.ForeignKey(
+        'voca.Textbook',
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    entry = models.ForeignKey(
+        'voca.Entry',
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    chapter = models.IntegerField(
+        verbose_name=_('chapter'),
+    )
+
+    page = models.IntegerField(
+        verbose_name=_('page'),
+    )
+
+    class Meta:
+        verbose_name = _('textbook word')
+        verbose_name_plural = _('textbook words')
+        ordering = ['chapter', 'page']

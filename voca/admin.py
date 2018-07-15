@@ -2,7 +2,7 @@ from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
 
 from .models import (
-    Entry, EntryMeaning, EntryCategory, EntrySentence
+    Entry, EntryMeaning, EntryCategory, EntrySentence, Textbook
 )
 
 
@@ -29,6 +29,14 @@ class EntrySentenceCompoundInline(admin.TabularInline):
     model = EntrySentence.words.through
     extra = 1
     fk_name = 'from_sentence'
+    raw_id_fields = ('to_entry',)
+
+
+class EntryTextbookCompoundInline(admin.TabularInline):
+    model = Textbook.words.through
+    extra = 1
+    fk_name = 'textbook'
+    raw_id_fields = ('entry',)
 
 
 class EntryAdmin(admin.ModelAdmin):
@@ -56,6 +64,12 @@ class EntrySentenceAdmin(admin.ModelAdmin):
     inlines = [EntrySentenceCompoundInline]
 
 
+class TextbookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'publisher', 'slug')
+    inlines = [EntryTextbookCompoundInline]
+
+
 admin.site.register(Entry, EntryAdmin)
 admin.site.register(EntryCategory, EntryCategoryAdmin)
 admin.site.register(EntrySentence, EntrySentenceAdmin)
+admin.site.register(Textbook, TextbookAdmin)

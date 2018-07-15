@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-14 20:51+0900\n"
+"POT-Creation-Date: 2018-07-15 12:35+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,11 +45,11 @@ msgstr ""
 msgid "text"
 msgstr ""
 
-#: help/models.py:18 rakmai/models.py:122
+#: help/models.py:18 rakmai/models.py:122 voca/models.py:238
 msgid "slug"
 msgstr ""
 
-#: help/models.py:19 rakmai/models.py:123
+#: help/models.py:19 rakmai/models.py:123 voca/models.py:239
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
@@ -97,16 +97,16 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: help/templates/help/notice_detail.html:50
+#: help/templates/help/notice_detail.html:8 help/views.py:40
+msgid "Notice"
+msgstr ""
+
+#: help/templates/help/notice_detail.html:46
 msgid "List"
 msgstr ""
 
-#: help/templates/help/notice_list.html:38 rakmai/templates/rakmai/home.html:79
+#: help/templates/help/notice_list.html:36 rakmai/templates/rakmai/home.html:79
 msgid "No message"
-msgstr ""
-
-#: help/views.py:40
-msgid "Notice"
 msgstr ""
 
 #: help/views.py:56
@@ -134,7 +134,7 @@ msgid "parent"
 msgstr ""
 
 #: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
-#: voca/models.py:20 voca/models.py:173
+#: voca/models.py:20 voca/models.py:173 voca/models.py:230
 msgid "title"
 msgstr ""
 
@@ -275,7 +275,7 @@ msgstr ""
 msgid "compound word"
 msgstr ""
 
-#: voca/models.py:83 voca/models.py:124 voca/models.py:219
+#: voca/models.py:83 voca/models.py:124 voca/models.py:219 voca/models.py:256
 msgid "position"
 msgstr ""
 
@@ -353,6 +353,38 @@ msgstr ""
 
 #: voca/models.py:224
 msgid "words"
+msgstr ""
+
+#: voca/models.py:246
+msgid "author"
+msgstr ""
+
+#: voca/models.py:251
+msgid "publisher"
+msgstr ""
+
+#: voca/models.py:267
+msgid "textbook"
+msgstr ""
+
+#: voca/models.py:268
+msgid "textbooks"
+msgstr ""
+
+#: voca/models.py:289
+msgid "chapter"
+msgstr ""
+
+#: voca/models.py:293
+msgid "page"
+msgstr ""
+
+#: voca/models.py:297
+msgid "textbook word"
+msgstr ""
+
+#: voca/models.py:298
+msgid "textbook words"
 msgstr ""
 
 #: voca/views.py:52
