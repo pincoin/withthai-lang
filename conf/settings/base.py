@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     'mptt',
     'crispy_forms',
+    'easy_thumbnails',
     'rakmai',
     'help',
     'blog',
