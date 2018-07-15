@@ -3,7 +3,9 @@ from django.contrib.admin.filters import SimpleListFilter
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
 from ipware.ip import get_ip
-from mptt.admin import MPTTModelAdmin
+from mptt.admin import (
+    DraggableMPTTAdmin, MPTTModelAdmin
+)
 
 from .models import (
     Category, Attachment, Book, Page
@@ -31,8 +33,10 @@ class PageNullFilterSpec(SimpleListFilter):
         return queryset
 
 
-class CategoryAdmin(admin.ModelAdmin):
-    pass
+class CategoryAdmin(DraggableMPTTAdmin):
+    list_display = ('tree_actions', 'indented_title', 'slug')
+    prepopulated_fields = {'slug': ('title',)}
+    mptt_level_indent = 20
 
 
 class AttachmentAdmin(admin.ModelAdmin):
@@ -44,6 +48,10 @@ class AttachmentAdmin(admin.ModelAdmin):
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'status', 'license', 'owner')
     readonly_fields = ('view_count', 'updated')
+
+    def save_model(self, request, obj, form, change):
+        obj.updated = now()
+        super(BookAdmin, self).save_model(request, obj, form, change)
 
 
 class PageAdmin(MPTTModelAdmin):
