@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 from mptt.admin import DraggableMPTTAdmin
 
 from .models import (
@@ -40,13 +41,22 @@ class EntryTextbookCompoundInline(admin.TabularInline):
 
 
 class EntryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'pronunciation')
+    list_display = ('id', 'title', 'meanings')
     list_display_links = ('title',)
     list_filter = ('level',)
     search_fields = ('title',)
     fields = ('level', 'title', 'pronunciation', 'description')
     readonly_fields = ('is_removed',)
     inlines = [EntryMeaningInline, EntryCompoundInline, EntryCategoryInline]
+
+    def get_queryset(self, request):
+        return super(EntryAdmin, self).get_queryset(request) \
+            .prefetch_related('meanings')
+
+    def meanings(self, obj):
+        return obj.meanings.first().meaning
+
+    meanings.short_description = _('meanings')
 
 
 class EntryCategoryAdmin(DraggableMPTTAdmin):
