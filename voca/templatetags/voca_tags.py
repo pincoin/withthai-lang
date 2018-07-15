@@ -1,9 +1,10 @@
 from django import template
-from django.template import Variable
 from django.utils.safestring import mark_safe
 from mptt.utils import get_cached_trees
 
-from ..models import EntryCategory
+from ..models import (
+    EntryCategory, Textbook
+)
 
 register = template.Library()
 
@@ -54,3 +55,9 @@ def voca_categories(parser, token):
     parser.delete_first_token()
 
     return CategoryNode(nodes)
+
+
+@register.simple_tag
+def get_textbooks(count=5):
+    textbooks = Textbook.objects.all().order_by('position')[:count]
+    return textbooks

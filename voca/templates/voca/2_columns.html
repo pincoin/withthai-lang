@@ -54,6 +54,27 @@
                         </ul>
                     </div>
                 </div>
+
+                <!-- Textbook Widget -->
+                <div class="card my-2 my-md-4">
+                    <h5 class="card-header">{% trans "textbooks" %}</h5>
+                    <div class="card-body">
+                        <ul class="pl-3 mb-0">
+                            {% get_textbooks as textbooks %}
+                            {% for textbook in textbooks %}
+                                <li class="mb-1">
+                                    <a href="">
+                                        {{ textbook.title }}
+                                    </a>
+                                </li>
+                            {% empty %}
+                                <li class="mb-1">
+                                    {% trans "No textbook" %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.row -->
