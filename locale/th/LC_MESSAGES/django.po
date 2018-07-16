@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-16 01:53+0900\n"
+"POT-Creation-Date: 2018-07-16 10:58+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: book/admin.py:16 book/models.py:119 book/models.py:216 voca/models.py:297
+msgid "page"
+msgstr ""
+
+#: book/admin.py:21
+msgid "Has page"
+msgstr ""
+
+#: book/admin.py:22
+msgid "No page"
+msgstr ""
 
 #: book/apps.py:7
 msgid "Book"
@@ -101,10 +113,6 @@ msgstr ""
 
 #: book/models.py:112 rakmai/models.py:154
 msgid "uploaded file"
-msgstr ""
-
-#: book/models.py:119 book/models.py:216 voca/models.py:297
-msgid "page"
 msgstr ""
 
 #: book/models.py:127 rakmai/models.py:165
