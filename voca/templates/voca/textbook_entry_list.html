@@ -22,18 +22,25 @@
         </div>
     </div>
 
-    {% for book in books %}
-        <div class="row mb-2 mb-md-4">
-            <div class="col-md-4">
-                <a href="{% url 'voca:textbook-entry-list' book.slug %}">
-                    {{ book.title }}
+    {% for entry in entries %}
+        <div class="row my-2">
+            <div class="col-md-1">
+                {{ entry.chapter }}
+            </div>
+            <div class="col-md-2 thai-font">
+                <a href="{% url 'voca:entry-detail' pk=entry.pk %}">
+                    {{ entry.entry.title }}
                 </a>
             </div>
-            <div class="col-md-3">
-                {{ book.author }}
+            <div class="col-md-2 thai-font">
+                {{ entry.entry.pronunciation }}
             </div>
-            <div class="col-md-5">
-                {{ book.publisher }}
+            <div class="col-md-7">
+                <ul class="list-unstyled">
+                    {% for meaning in entry.entry.meanings.all %}
+                        <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     {% endfor %}
