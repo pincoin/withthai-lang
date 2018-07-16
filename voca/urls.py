@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from .views import (
-    EntryListView, EntryDetailView, EntryCategoryView, EntryLevelListView
+    EntryListView, EntryDetailView, EntryCategoryView, EntryLevelListView, TextbookListView
 )
 
 app_name = 'voca'
@@ -15,4 +15,6 @@ urlpatterns = [
         EntryDetailView.as_view(), name='entry-detail'),
     url(r'^categories/(?P<slug>[-\w]+)/$',
         EntryCategoryView.as_view(), name='entry-category'),
+    url(r'^textbooks/$',
+        TextbookListView.as_view(), name='textbook-list'),
 ]

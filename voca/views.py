@@ -6,7 +6,7 @@ from django.views import generic
 
 from rakmai.viewmixins import PageableMixin
 from .models import (
-    Entry, EntryCategory, EntryCompound
+    Entry, EntryCategory, EntryCompound, Textbook
 )
 from .viewmixins import (
     SearchContextMixin, VocaContextMixin
@@ -113,3 +113,20 @@ class EntryLevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, ge
 
     def get_template_names(self):
         return 'voca/entry_list.html'
+
+
+class TextbookListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
+    logger = logging.getLogger(__name__)
+    context_object_name = 'books'
+
+    def get_queryset(self):
+        queryset = Textbook.objects.all()
+        return queryset.order_by('position')
+
+    def get_context_data(self, **kwargs):
+        context = super(TextbookListView, self).get_context_data(**kwargs)
+        context['page_title'] = _('textbooks')
+        return context
+
+    def get_template_names(self):
+        return 'voca/textbook_list.html'

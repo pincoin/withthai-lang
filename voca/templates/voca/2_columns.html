@@ -57,7 +57,11 @@
 
                 <!-- Textbook Widget -->
                 <div class="card my-2 my-md-4">
-                    <h5 class="card-header">{% trans "textbooks" %}</h5>
+                    <h5 class="card-header">
+                        <a href="{% url 'voca:textbook-list' %}">
+                            {% trans "textbooks" %}
+                        </a>
+                    </h5>
                     <div class="card-body">
                         <ul class="pl-3 mb-0">
                             {% get_textbooks as textbooks %}
