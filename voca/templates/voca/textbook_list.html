@@ -28,6 +28,7 @@
                 <a href="{% url 'voca:textbook-entry-list' book.slug %}">
                     {{ book.title }}
                 </a>
+                <small>({{ book.total }})</small>
             </div>
             <div class="col-md-4">
                 {{ book.author }}

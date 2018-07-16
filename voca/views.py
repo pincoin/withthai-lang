@@ -1,5 +1,6 @@
 import logging
 
+from django.db.models import Count
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
@@ -121,7 +122,9 @@ class TextbookListView(SearchContextMixin, PageableMixin, VocaContextMixin, gene
     context_object_name = 'books'
 
     def get_queryset(self):
-        queryset = Textbook.objects.all()
+        queryset = Textbook.objects \
+            .all() \
+            .prefetch_related('words').annotate(total=Count('words__pk'))
         return queryset.order_by('position')
 
     def get_context_data(self, **kwargs):
