@@ -67,7 +67,7 @@
                             {% get_textbooks as textbooks %}
                             {% for textbook in textbooks %}
                                 <li class="mb-1">
-                                    <a href="">
+                                    <a href="{% url 'voca:textbook-entry-list' textbook.slug %}">
                                         {{ textbook.title }}
                                     </a>
                                 </li>

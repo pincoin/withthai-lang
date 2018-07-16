@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
 from rakmai.viewmixins import PageableMixin
+from .forms import TextbookFilterForm
 from .models import (
     Entry, EntryCategory, EntryCompound, Textbook, EntryTextbookCompound
 )
@@ -135,17 +136,27 @@ class TextbookListView(SearchContextMixin, PageableMixin, VocaContextMixin, gene
 class TextbookEntryListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
     logger = logging.getLogger(__name__)
     context_object_name = 'entries'
+    textbook_filter_form_class = TextbookFilterForm
 
     def get_queryset(self):
-        return EntryTextbookCompound.objects \
+        queryset = EntryTextbookCompound.objects \
             .filter(textbook__slug=self.kwargs['slug']) \
             .select_related('textbook', 'entry') \
-            .prefetch_related('entry__meanings') \
-            .order_by('chapter')
+            .prefetch_related('entry__meanings')
+
+        if 'chapter' in self.request.GET:
+            try:
+                queryset = queryset.filter(chapter=self.request.GET['chapter'])
+            except ValueError:
+                pass
+
+        return queryset.order_by('chapter')
 
     def get_context_data(self, **kwargs):
         context = super(TextbookEntryListView, self).get_context_data(**kwargs)
         context['page_title'] = _('textbooks')
+        context['textbook_filter_form'] = self.textbook_filter_form_class()
+        context['slug'] = self.kwargs['slug']
         return context
 
     def get_template_names(self):
