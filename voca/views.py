@@ -145,7 +145,7 @@ class TextbookEntryListView(SearchContextMixin, PageableMixin, VocaContextMixin,
             .prefetch_related('entry__meanings')
 
         try:
-            if int(self.request.GET['chapter']) > 0:
+            if 'chapter' in self.request.GET and int(self.request.GET['chapter']) > 0:
                 queryset = queryset.filter(chapter=self.request.GET['chapter'])
         except ValueError:
             pass
