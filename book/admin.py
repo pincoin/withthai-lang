@@ -1,3 +1,4 @@
+from django import forms
 from django.contrib import admin
 from django.contrib.admin.filters import SimpleListFilter
 from django.utils.timezone import now
@@ -6,6 +7,7 @@ from ipware.ip import get_ip
 from mptt.admin import (
     DraggableMPTTAdmin, MPTTModelAdmin
 )
+from mptt.forms import TreeNodeChoiceField
 
 from .models import (
     Category, Attachment, Book, Page
@@ -33,6 +35,17 @@ class PageNullFilterSpec(SimpleListFilter):
         return queryset
 
 
+class PageInlineForm(forms.ModelForm):
+    parent = TreeNodeChoiceField(queryset=Page.objects.filter(book=2))
+
+
+class PageInline(admin.StackedInline):
+    model = Page
+    form = PageInlineForm
+    readonly_fields = ('ip_address', 'view_count', 'updated')
+    extra = 1
+
+
 class CategoryAdmin(DraggableMPTTAdmin):
     list_display = ('tree_actions', 'indented_title', 'slug')
     prepopulated_fields = {'slug': ('title',)}
@@ -48,6 +61,7 @@ class AttachmentAdmin(admin.ModelAdmin):
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'status', 'license', 'owner')
     readonly_fields = ('view_count', 'updated')
+    inlines = [PageInline]
 
     def save_model(self, request, obj, form, change):
         obj.updated = now()
