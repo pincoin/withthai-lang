@@ -46,5 +46,5 @@ class TextbookFilterForm(forms.Form):
             .values_list('chapter', flat=True) \
             .distinct()
 
-        self.fields['chapter'].choices = [('0', '전체')] + list(map(lambda x: (str(x), str(x)), chapters))
+        self.fields['chapter'].choices = [('0', '전체')] + list(map(lambda x: (str(x), str(x)+'과'), chapters))
         self.fields['chapter'].initial = chapter
