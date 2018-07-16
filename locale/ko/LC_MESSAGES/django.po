@@ -337,7 +337,7 @@ msgstr "태국어"
 #: rakmai/templates/rakmai/base.html:57 voca/templates/voca/entry_detail.html:9
 #: voca/templates/voca/entry_list.html:9 voca/views.py:34 voca/views.py:111
 msgid "Vocabulary"
-msgstr "어휘"
+msgstr "단어장"
 
 #: rakmai/views.py:12
 msgid "withthai"
@@ -349,7 +349,7 @@ msgstr "뜻"
 
 #: voca/apps.py:7
 msgid "vocabulary"
-msgstr "어휘"
+msgstr "단어장"
 
 #: voca/forms.py:7 voca/forms.py:11
 msgid "lookup word"
@@ -497,7 +497,7 @@ msgstr "교재없음"
 
 #: voca/views.py:52
 msgid "{} - Vocabulary"
-msgstr "{} - 어휘"
+msgstr "{} - 단어장"
 
 #: voca/views.py:85
 msgid "{} Vocabulary Category"

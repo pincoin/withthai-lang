@@ -23,13 +23,8 @@
     </div>
 
     <div class="row mb-1 mb-md-3">
-        <div class="col">
+        <div class="col-md-10 offset-md-2">
             <form action="{% url 'voca:textbook-entry-list' slug %}" method="get" class="input-group">
-                <div class="input-group-prepend">
-                    <a href="{% url 'voca:textbook-entry-list' slug %}" class="btn btn-outline-dark">
-                        전체목록
-                    </a>
-                </div>
                 {{ textbook_filter_form.chapter }}
                 <span class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit">
@@ -40,22 +35,22 @@
         </div>
     </div>
 
-    {% for entry in entries %}
+    {% for word in words %}
         <div class="row my-2">
             <div class="col-md-1">
-                {{ entry.chapter }}
+                {{ word.chapter }}
             </div>
             <div class="col-md-2 thai-font">
-                <a href="{% url 'voca:entry-detail' pk=entry.pk %}">
-                    {{ entry.entry.title }}
+                <a href="{% url 'voca:entry-detail' pk=word.entry.pk %}">
+                    {{ word.entry.title }}
                 </a>
             </div>
             <div class="col-md-2 thai-font">
-                {{ entry.entry.pronunciation }}
+                {{ word.entry.pronunciation }}
             </div>
             <div class="col-md-7">
                 <ul class="list-unstyled">
-                    {% for meaning in entry.entry.meanings.all %}
+                    {% for meaning in word.entry.meanings.all %}
                         <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
                     {% endfor %}
                 </ul>

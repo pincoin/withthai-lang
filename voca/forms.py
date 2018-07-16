@@ -1,6 +1,8 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
+from .models import EntryTextbookCompound
+
 
 class VocabularySearchForm(forms.Form):
     q = forms.CharField(
@@ -24,10 +26,6 @@ class VocabularySearchForm(forms.Form):
 
 class TextbookFilterForm(forms.Form):
     chapter = forms.ChoiceField(
-        choices=(
-            ('1', '1'),
-            ('2', '2'),
-        ),
         widget=forms.Select(
             attrs={
                 'class': 'form-control',
@@ -37,8 +35,16 @@ class TextbookFilterForm(forms.Form):
     )
 
     def __init__(self, *args, **kwargs):
+        slug = kwargs.pop('slug', '')
         chapter = kwargs.pop('chapter', '1')
 
         super(TextbookFilterForm, self).__init__(*args, **kwargs)
 
+        chapters = EntryTextbookCompound.objects \
+            .filter(textbook__slug=slug) \
+            .order_by('chapter') \
+            .values_list('chapter', flat=True) \
+            .distinct()
+
+        self.fields['chapter'].choices = [('0', '전체')] + list(map(lambda x: (str(x), str(x)), chapters))
         self.fields['chapter'].initial = chapter

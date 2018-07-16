@@ -135,7 +135,7 @@ class TextbookListView(SearchContextMixin, PageableMixin, VocaContextMixin, gene
 
 class TextbookEntryListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
     logger = logging.getLogger(__name__)
-    context_object_name = 'entries'
+    context_object_name = 'words'
     textbook_filter_form_class = TextbookFilterForm
 
     def get_queryset(self):
@@ -144,18 +144,21 @@ class TextbookEntryListView(SearchContextMixin, PageableMixin, VocaContextMixin,
             .select_related('textbook', 'entry') \
             .prefetch_related('entry__meanings')
 
-        if 'chapter' in self.request.GET:
-            try:
+        try:
+            if int(self.request.GET['chapter']) > 0:
                 queryset = queryset.filter(chapter=self.request.GET['chapter'])
-            except ValueError:
-                pass
+        except ValueError:
+            pass
 
         return queryset.order_by('chapter')
 
     def get_context_data(self, **kwargs):
         context = super(TextbookEntryListView, self).get_context_data(**kwargs)
         context['page_title'] = _('textbooks')
-        context['textbook_filter_form'] = self.textbook_filter_form_class()
+        context['textbook_filter_form'] = self.textbook_filter_form_class(
+            chapter=self.request.GET.get('chapter') if self.request.GET.get('chapter') else '',
+            slug=self.kwargs['slug'],
+        )
         context['slug'] = self.kwargs['slug']
         return context
 
