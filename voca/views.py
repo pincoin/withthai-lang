@@ -110,7 +110,7 @@ class EntryLevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, ge
             queryset = queryset.filter(level=Entry.LEVEL_CHOICES.advanced)
 
         try:
-            if 'part' in self.request.GET and int(self.request.GET['part']) > 0:
+            if 'part' in self.request.GET and int(self.request.GET['part']) > -1:
                 queryset = queryset.filter(meanings__part=self.request.GET['part'])
         except ValueError:
             pass
