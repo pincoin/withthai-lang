@@ -279,12 +279,14 @@ class Textbook(TimeStampedModel):
 class EntryTextbookCompound(models.Model):
     textbook = models.ForeignKey(
         'voca.Textbook',
+        verbose_name=_('textbook'),
         db_index=True,
         on_delete=models.CASCADE,
     )
 
     entry = models.ForeignKey(
         'voca.Entry',
+        verbose_name=_('entry'),
         db_index=True,
         on_delete=models.CASCADE,
     )

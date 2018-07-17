@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from mptt.admin import DraggableMPTTAdmin
 
 from .models import (
-    Entry, EntryMeaning, EntryCategory, EntrySentence, Textbook
+    Entry, EntryMeaning, EntryCategory, EntrySentence, Textbook, EntryTextbookCompound
 )
 
 
@@ -50,7 +50,8 @@ class EntryAdmin(admin.ModelAdmin):
     inlines = [EntryMeaningInline, EntryCompoundInline, EntryCategoryInline]
 
     def get_queryset(self, request):
-        return super(EntryAdmin, self).get_queryset(request) \
+        return super(EntryAdmin, self) \
+            .get_queryset(request) \
             .prefetch_related('meanings')
 
     def meanings(self, obj):
@@ -79,7 +80,24 @@ class TextbookAdmin(admin.ModelAdmin):
     inlines = [EntryTextbookCompoundInline]
 
 
+class EntryTextbookCompoundAdmin(admin.ModelAdmin):
+    list_display = ('entry', 'meanings', 'textbook', 'chapter', 'page')
+    list_display_links = ('entry', 'meanings')
+    list_filter = ('textbook__title', 'chapter', 'page')
+
+    def get_queryset(self, request):
+        return super(EntryTextbookCompoundAdmin, self) \
+            .get_queryset(request) \
+            .prefetch_related('entry__meanings')
+
+    def meanings(self, obj):
+        return obj.entry.meanings.first().meaning
+
+    meanings.short_description = _('meanings')
+
+
 admin.site.register(Entry, EntryAdmin)
 admin.site.register(EntryCategory, EntryCategoryAdmin)
 admin.site.register(EntrySentence, EntrySentenceAdmin)
 admin.site.register(Textbook, TextbookAdmin)
+admin.site.register(EntryTextbookCompound, EntryTextbookCompoundAdmin)

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-16 10:58+0900\n"
+"POT-Creation-Date: 2018-07-17 11:48+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: book/admin.py:16 book/models.py:119 book/models.py:216 voca/models.py:297
+#: book/admin.py:18 book/models.py:119 book/models.py:216 voca/models.py:297
 msgid "page"
 msgstr "page"
 
-#: book/admin.py:21
+#: book/admin.py:23
 msgid "Has page"
 msgstr "Has page"
 
-#: book/admin.py:22
+#: book/admin.py:24
 msgid "No page"
 msgstr "No page"
 
@@ -339,7 +339,9 @@ msgid "Thai Language"
 msgstr "Thai"
 
 #: rakmai/templates/rakmai/base.html:57 voca/templates/voca/entry_detail.html:9
-#: voca/templates/voca/entry_list.html:9 voca/views.py:34 voca/views.py:111
+#: voca/templates/voca/entry_list.html:9
+#: voca/templates/voca/textbook_entry_list.html:9
+#: voca/templates/voca/textbook_list.html:9 voca/views.py:36 voca/views.py:113
 msgid "Vocabulary"
 msgstr "Vocabulary"
 
@@ -347,7 +349,7 @@ msgstr "Vocabulary"
 msgid "withthai"
 msgstr "withthai"
 
-#: voca/admin.py:59 voca/models.py:129
+#: voca/admin.py:60 voca/admin.py:96 voca/models.py:129
 msgid "meanings"
 msgstr "meanings"
 
@@ -355,7 +357,7 @@ msgstr "meanings"
 msgid "vocabulary"
 msgstr "vocabulary"
 
-#: voca/forms.py:7 voca/forms.py:11
+#: voca/forms.py:9 voca/forms.py:13
 msgid "lookup word"
 msgstr "lookup word"
 
@@ -483,7 +485,8 @@ msgstr "chapter"
 msgid "textbook"
 msgstr "textbook"
 
-#: voca/models.py:272 voca/templates/voca/2_columns.html:60
+#: voca/models.py:272 voca/templates/voca/2_columns.html:62 voca/views.py:132
+#: voca/views.py:160
 msgid "textbooks"
 msgstr "textbooks"
 
@@ -495,14 +498,14 @@ msgstr "textbook word"
 msgid "textbook words"
 msgstr "textbook words"
 
-#: voca/templates/voca/2_columns.html:72
+#: voca/templates/voca/2_columns.html:76
 msgid "No textbook"
 msgstr "No textbook"
 
-#: voca/views.py:52
+#: voca/views.py:54
 msgid "{} - Vocabulary"
 msgstr "{} - Vocabulary"
 
-#: voca/views.py:85
+#: voca/views.py:87
 msgid "{} Vocabulary Category"
 msgstr "{} - Vocabulary Category"

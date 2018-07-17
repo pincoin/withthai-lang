@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-16 10:58+0900\n"
+"POT-Creation-Date: 2018-07-17 11:48+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: book/admin.py:16 book/models.py:119 book/models.py:216 voca/models.py:297
+#: book/admin.py:18 book/models.py:119 book/models.py:216 voca/models.py:297
 msgid "page"
 msgstr "페이지"
 
-#: book/admin.py:21
+#: book/admin.py:23
 msgid "Has page"
 msgstr "페이지 있음"
 
-#: book/admin.py:22
+#: book/admin.py:24
 msgid "No page"
 msgstr "페이지 없음"
 
@@ -335,7 +335,9 @@ msgid "Thai Language"
 msgstr "태국어"
 
 #: rakmai/templates/rakmai/base.html:57 voca/templates/voca/entry_detail.html:9
-#: voca/templates/voca/entry_list.html:9 voca/views.py:34 voca/views.py:111
+#: voca/templates/voca/entry_list.html:9
+#: voca/templates/voca/textbook_entry_list.html:9
+#: voca/templates/voca/textbook_list.html:9 voca/views.py:36 voca/views.py:113
 msgid "Vocabulary"
 msgstr "단어장"
 
@@ -343,7 +345,7 @@ msgstr "단어장"
 msgid "withthai"
 msgstr "위드타이"
 
-#: voca/admin.py:59 voca/models.py:129
+#: voca/admin.py:60 voca/admin.py:96 voca/models.py:129
 msgid "meanings"
 msgstr "뜻"
 
@@ -351,7 +353,7 @@ msgstr "뜻"
 msgid "vocabulary"
 msgstr "단어장"
 
-#: voca/forms.py:7 voca/forms.py:11
+#: voca/forms.py:9 voca/forms.py:13
 msgid "lookup word"
 msgstr "검색"
 
@@ -479,7 +481,8 @@ msgstr "챕터"
 msgid "textbook"
 msgstr "교재"
 
-#: voca/models.py:272 voca/templates/voca/2_columns.html:60
+#: voca/models.py:272 voca/templates/voca/2_columns.html:62 voca/views.py:132
+#: voca/views.py:160
 msgid "textbooks"
 msgstr "교재"
 
@@ -491,14 +494,14 @@ msgstr "교재 단어"
 msgid "textbook words"
 msgstr "교재 단어"
 
-#: voca/templates/voca/2_columns.html:72
+#: voca/templates/voca/2_columns.html:76
 msgid "No textbook"
 msgstr "교재없음"
 
-#: voca/views.py:52
+#: voca/views.py:54
 msgid "{} - Vocabulary"
 msgstr "{} - 단어장"
 
-#: voca/views.py:85
+#: voca/views.py:87
 msgid "{} Vocabulary Category"
 msgstr "{} - 어휘분류"
