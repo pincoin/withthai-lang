@@ -80,7 +80,7 @@ class EntryCategoryView(SearchContextMixin, PageableMixin, VocaContextMixin, gen
             .filter(categories__in=EntryCategory.objects
                     .filter(slug=self.kwargs['slug']).get_descendants(include_self=True))
 
-        return queryset.order_by('-created')
+        return queryset.order_by('entrycategorymembership__position')
 
     def get_context_data(self, **kwargs):
         context = super(EntryCategoryView, self).get_context_data(**kwargs)
