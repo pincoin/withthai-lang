@@ -66,4 +66,5 @@ class PartFilterForm(forms.Form):
     def __init__(self, *args, **kwargs):
         part = kwargs.pop('part', 0)
         super(PartFilterForm, self).__init__(*args, **kwargs)
+        self.fields['part'].choices = [('all', '전체')] + self.fields['part'].choices
         self.fields['part'].initial = part
