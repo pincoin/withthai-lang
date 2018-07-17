@@ -25,6 +25,9 @@
     <div class="row mb-1 mb-md-3">
         <div class="col-md-10 offset-md-2">
             <form action="{% url 'voca:textbook-entry-list' slug %}" method="get" class="input-group">
+                <div class="input-group-prepend">
+                    <a href="{% url 'voca:textbook-entry-list' slug %}" class="btn btn-outline-dark">전체목록</a>
+                </div>
                 {{ textbook_filter_form.chapter }}
                 <span class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit">

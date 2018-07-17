@@ -48,7 +48,7 @@ class TextbookFilterForm(forms.Form):
             .values_list('chapter', flat=True) \
             .distinct()
 
-        self.fields['chapter'].choices = [('0', '전체')] + list(map(lambda x: (str(x), str(x) + '과'), chapters))
+        self.fields['chapter'].choices = list(map(lambda x: (str(x), str(x) + '과'), chapters))
         self.fields['chapter'].initial = chapter
 
 
@@ -66,5 +66,4 @@ class PartFilterForm(forms.Form):
     def __init__(self, *args, **kwargs):
         part = kwargs.pop('part', 0)
         super(PartFilterForm, self).__init__(*args, **kwargs)
-        self.fields['part'].choices = [('all', '전체')] + self.fields['part'].choices
         self.fields['part'].initial = part
