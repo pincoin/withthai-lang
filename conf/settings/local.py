@@ -54,3 +54,6 @@ LOGGING = {
         },
     }
 }
+
+OTP_TOTP_ISSUER = _('WITHTHAI')
+GOOGLE_OTP_ENABLED = False

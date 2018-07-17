@@ -19,3 +19,8 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.GOOGLE_OTP_ENABLED:
+    from django_otp.admin import OTPAdminSite
+
+    admin.site.__class__ = OTPAdminSite

@@ -27,6 +27,8 @@ INSTALLED_APPS = [
 ]
 
 INSTALLED_APPS += [
+    'django_otp',
+    'django_otp.plugins.otp_totp',
     'mptt',
     'crispy_forms',
     'easy_thumbnails',
@@ -45,6 +47,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_otp.middleware.OTPMiddleware',  # Google OTP
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
