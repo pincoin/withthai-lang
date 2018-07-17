@@ -1,7 +1,9 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from .models import EntryTextbookCompound
+from .models import (
+    EntryTextbookCompound, EntryMeaning
+)
 
 
 class VocabularySearchForm(forms.Form):
@@ -46,5 +48,22 @@ class TextbookFilterForm(forms.Form):
             .values_list('chapter', flat=True) \
             .distinct()
 
-        self.fields['chapter'].choices = [('0', '전체')] + list(map(lambda x: (str(x), str(x)+'과'), chapters))
+        self.fields['chapter'].choices = [('0', '전체')] + list(map(lambda x: (str(x), str(x) + '과'), chapters))
         self.fields['chapter'].initial = chapter
+
+
+class PartFilterForm(forms.Form):
+    part = forms.ChoiceField(
+        choices=EntryMeaning.PART_CHOICES,
+        widget=forms.Select(
+            attrs={
+                'class': 'form-control',
+                'required': 'True',
+            }
+        )
+    )
+
+    def __init__(self, *args, **kwargs):
+        part = kwargs.pop('part', 0)
+        super(PartFilterForm, self).__init__(*args, **kwargs)
+        self.fields['part'].initial = part

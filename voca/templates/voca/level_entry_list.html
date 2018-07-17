@@ -1,0 +1,59 @@
+{% extends "./2_columns.html" %}
+{% load i18n %}
+
+{% block main_content %}
+    <div class="row my-2 mt-md-4">
+        <div class="col-md-2">
+            <h4 class="mt-md-2">
+                <a href="{% url 'voca:entry-list' %}">
+                    {% trans "Vocabulary" %}
+                </a>
+            </h4>
+        </div>
+        <div class="col-md-10">
+            <form action="{% url 'voca:entry-list' %}" method="get" class="input-group mt-md-1">
+                {{ search_form.q }}
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mb-1 mb-md-3">
+        <div class="col-md-10 offset-md-2">
+            <form action="{% url 'voca:level-entry-list' level %}" method="get" class="input-group">
+                {{ part_filter_form.part }}
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fa fa-filter"></i>
+                    </button>
+                </span>
+            </form>
+        </div>
+    </div>
+
+    {% for entry in entries %}
+        <div class="row my-2">
+            <div class="col-md-2 thai-font">
+                <a href="{% url 'voca:entry-detail' pk=entry.pk %}">
+                    {{ entry.title }}
+                </a>
+            </div>
+            <div class="col-md-2 thai-font">
+                {{ entry.pronunciation }}
+            </div>
+            <div class="col-md-8">
+                <ul class="list-unstyled">
+                    {% for meaning in entry.meanings.all %}
+                        <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+    <!-- Pagination -->
+    {% include './_pagination.html' with page_obj=page_obj page_range=page_range %}
+{% endblock %}

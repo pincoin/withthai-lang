@@ -6,7 +6,9 @@ from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
 from rakmai.viewmixins import PageableMixin
-from .forms import TextbookFilterForm
+from .forms import (
+    PartFilterForm, TextbookFilterForm
+)
 from .models import (
     Entry, EntryCategory, EntryCompound, Textbook, EntryTextbookCompound
 )
@@ -94,6 +96,7 @@ class EntryCategoryView(SearchContextMixin, PageableMixin, VocaContextMixin, gen
 class EntryLevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
     logger = logging.getLogger(__name__)
     context_object_name = 'entries'
+    part_filter_form_class = PartFilterForm
 
     def get_queryset(self):
         queryset = Entry.objects \
@@ -106,15 +109,25 @@ class EntryLevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, ge
         elif self.kwargs['level'] == 'advanced':
             queryset = queryset.filter(level=Entry.LEVEL_CHOICES.advanced)
 
+        try:
+            if 'part' in self.request.GET and int(self.request.GET['part']) > 0:
+                queryset = queryset.filter(meanings__part=self.request.GET['part'])
+        except ValueError:
+            pass
+
         return queryset.order_by('-created')
 
     def get_context_data(self, **kwargs):
         context = super(EntryLevelListView, self).get_context_data(**kwargs)
         context['page_title'] = _('Vocabulary')
+        context['part_filter_form'] = self.part_filter_form_class(
+            part=self.request.GET.get('part') if self.request.GET.get('part') else '',
+        )
+        context['level'] = self.kwargs['level']
         return context
 
     def get_template_names(self):
-        return 'voca/entry_list.html'
+        return 'voca/level_entry_list.html'
 
 
 class LevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
