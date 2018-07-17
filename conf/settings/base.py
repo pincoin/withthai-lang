@@ -97,3 +97,7 @@ BLEACH_ALLOWED_ATTRIBUTES = {
     'a': ['href', 'rel'],
     'img': ['alt', 'src'],
 }
+
+# Caching
+CHACHE_TIME_LONG = 3600
+CHACHE_TIME_SHORT = 300
