@@ -19,6 +19,13 @@ class EntryCompoundInline(admin.TabularInline):
     raw_id_fields = ('to_entry',)
 
 
+class CategoryEntryInline(admin.TabularInline):
+    model = Entry.categories.through
+    extra = 1
+    fk_name = 'category'
+    raw_id_fields = ('entry',)
+
+
 class EntryCategoryInline(admin.TabularInline):
     model = Entry.categories.through
     extra = 1
@@ -64,6 +71,7 @@ class EntryCategoryAdmin(DraggableMPTTAdmin):
     list_display = ('tree_actions', 'indented_title', 'slug')
     prepopulated_fields = {'slug': ('title',)}
     mptt_level_indent = 20
+    inlines = [CategoryEntryInline]
 
 
 class EntrySentenceAdmin(admin.ModelAdmin):
