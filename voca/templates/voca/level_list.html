@@ -1,0 +1,53 @@
+{% extends "./2_columns.html" %}
+{% load i18n %}
+
+{% block main_content %}
+    <div class="row my-2 my-md-4">
+        <div class="col-md-2">
+            <h4 class="mt-md-2">
+                <a href="{% url 'voca:entry-list' %}">
+                    {% trans "Vocabulary" %}
+                </a>
+            </h4>
+        </div>
+        <div class="col-md-10">
+            <form action="{% url 'voca:entry-list' %}" method="get" class="input-group mt-md-1">
+                {{ search_form.q }}
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </form>
+        </div>
+    </div>
+
+    {% for level in levels %}
+        <div class="row mb-2 mb-md-4">
+            <div class="col-md-4">
+                {% if level.level == 0 %}
+                    <a href="{% url 'voca:level-entry-list' 'beginner' %}">
+                        {% trans "beginner" %}
+                    </a>
+                {% elif level.level == 1 %}
+                    <a href="{% url 'voca:level-entry-list' 'intermediate' %}">
+                        {% trans "intermediate" %}
+                    </a>
+                {% elif level.level == 2 %}
+                    <a href="{% url 'voca:level-entry-list' 'advanced' %}">
+                        {% trans "advanced" %}
+                    </a>
+                {% endif %}
+                <small>({{ level.total }})</small>
+            </div>
+            <div class="col-md-4">
+                {{ book.author }}
+            </div>
+            <div class="col-md-4">
+                {{ book.publisher }}
+            </div>
+        </div>
+    {% endfor %}
+    <!-- Pagination -->
+    {% include './_pagination.html' with page_obj=page_obj page_range=page_range %}
+{% endblock %}
