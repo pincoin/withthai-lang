@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-17 22:05+0900\n"
+"POT-Creation-Date: 2018-07-17 22:49+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -250,6 +250,14 @@ msgstr "게시물 없음"
 #: help/views.py:56
 msgid "{} : Notice"
 msgstr "{} : 공지사항"
+
+#: rakmai/admin.py:4 rakmai/admin.py:5
+msgid "WITHTHAI admin"
+msgstr "위드타이 관리자"
+
+#: rakmai/admin.py:6
+msgid "WITHTHAI administration"
+msgstr "위드타이 관리자"
 
 #: rakmai/models.py:14
 msgid "equals"
