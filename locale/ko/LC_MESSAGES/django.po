@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-17 22:49+0900\n"
+"POT-Creation-Date: 2018-07-18 00:13+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,6 +175,11 @@ msgstr "영어"
 msgid "Thai"
 msgstr "태국어"
 
+#: conf/settings/local.py:58 rakmai/templates/rakmai/base.html:8
+#: rakmai/templates/rakmai/base.html:42 rakmai/templates/rakmai/base.html:142
+msgid "WITHTHAI"
+msgstr "위드타이"
+
 #: help/apps.py:7
 msgid "Help"
 msgstr "도움말"
@@ -333,19 +338,16 @@ msgstr "고유 아이디"
 msgid "created time"
 msgstr "생성일시"
 
-#: rakmai/templates/rakmai/base.html:8 rakmai/templates/rakmai/base.html:42
-#: rakmai/templates/rakmai/base.html:142
-msgid "WITHTHAI"
-msgstr "위드타이"
-
 #: rakmai/templates/rakmai/base.html:53
 msgid "Thai Language"
 msgstr "태국어"
 
 #: rakmai/templates/rakmai/base.html:57 voca/templates/voca/entry_detail.html:9
-#: voca/templates/voca/entry_list.html:9 voca/templates/voca/level_list.html:9
+#: voca/templates/voca/entry_list.html:9
+#: voca/templates/voca/level_entry_list.html:9
+#: voca/templates/voca/level_list.html:9
 #: voca/templates/voca/textbook_entry_list.html:9
-#: voca/templates/voca/textbook_list.html:9 voca/views.py:36 voca/views.py:113
+#: voca/templates/voca/textbook_list.html:9 voca/views.py:38 voca/views.py:122
 msgid "Vocabulary"
 msgstr "단어장"
 
@@ -361,7 +363,7 @@ msgstr "뜻"
 msgid "vocabulary"
 msgstr "단어장"
 
-#: voca/forms.py:9 voca/forms.py:13
+#: voca/forms.py:11 voca/forms.py:15
 msgid "lookup word"
 msgstr "검색"
 
@@ -417,13 +419,17 @@ msgstr "명사"
 msgid "pronoun"
 msgstr "대명사"
 
-#: voca/models.py:96 voca/models.py:98
+#: voca/models.py:96
 msgid "verb"
 msgstr "동사"
 
 #: voca/models.py:97
 msgid "modifier"
 msgstr "수식사"
+
+#: voca/models.py:98
+msgid "preposition"
+msgstr "전치사"
 
 #: voca/models.py:99
 msgid "conjunction"
@@ -493,8 +499,8 @@ msgstr "챕터"
 msgid "textbook"
 msgstr "교재"
 
-#: voca/models.py:277 voca/templates/voca/2_columns.html:66 voca/views.py:152
-#: voca/views.py:180
+#: voca/models.py:277 voca/templates/voca/2_columns.html:66 voca/views.py:165
+#: voca/views.py:193
 msgid "textbooks"
 msgstr "교재"
 
@@ -510,14 +516,14 @@ msgstr "교재 단어"
 msgid "No textbook"
 msgstr "교재없음"
 
-#: voca/views.py:54
+#: voca/views.py:56
 msgid "{} - Vocabulary"
 msgstr "{} - 단어장"
 
-#: voca/views.py:87
+#: voca/views.py:89
 msgid "{} Vocabulary Category"
 msgstr "{} - 어휘분류"
 
-#: voca/views.py:132
+#: voca/views.py:145
 msgid "levels"
 msgstr "어휘수준"

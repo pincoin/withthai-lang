@@ -95,7 +95,7 @@ class EntryMeaning(TimeStampedModel):
         (1, 'pronoun', _('pronoun')),
         (2, 'verb', _('verb')),
         (3, 'modifier', _('modifier')),
-        (4, 'preposition', _('verb')),
+        (4, 'preposition', _('preposition')),
         (5, 'conjunction', _('conjunction')),
         (6, 'interjection', _('interjection')),
         (7, 'classifier', _('classifier')),
