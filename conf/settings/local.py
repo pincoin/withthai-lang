@@ -55,5 +55,12 @@ LOGGING = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
 OTP_TOTP_ISSUER = _('WITHTHAI')
 GOOGLE_OTP_ENABLED = False
