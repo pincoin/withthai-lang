@@ -163,9 +163,14 @@ class EntryCategoryMembership(models.Model):
         on_delete=models.CASCADE,
     )
 
+    position = models.IntegerField(
+        verbose_name=_('position'),
+    )
+
     class Meta:
         verbose_name = _('category membership')
         verbose_name_plural = _('category memberships')
+        ordering = ['position']
 
 
 class EntrySentence(SoftDeletableModel, TimeStampedModel):

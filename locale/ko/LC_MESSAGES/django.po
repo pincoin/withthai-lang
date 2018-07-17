@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-17 20:22+0900\n"
+"POT-Creation-Date: 2018-07-17 22:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: book/admin.py:18 book/models.py:119 book/models.py:216 voca/models.py:299
+#: book/admin.py:18 book/models.py:119 book/models.py:216 voca/models.py:304
 msgid "page"
 msgstr "페이지"
 
@@ -66,7 +66,7 @@ msgid "BY-NC-ND"
 msgstr ""
 
 #: book/models.py:43 rakmai/models.py:34 rakmai/models.py:72
-#: rakmai/models.py:117 voca/models.py:20 voca/models.py:173 voca/models.py:230
+#: rakmai/models.py:117 voca/models.py:20 voca/models.py:178 voca/models.py:235
 msgid "title"
 msgstr "제목"
 
@@ -191,11 +191,11 @@ msgstr "마크다운"
 msgid "text"
 msgstr "텍스트"
 
-#: help/models.py:18 rakmai/models.py:122 voca/models.py:238
+#: help/models.py:18 rakmai/models.py:122 voca/models.py:243
 msgid "slug"
 msgstr "슬러그"
 
-#: help/models.py:19 rakmai/models.py:123 voca/models.py:239
+#: help/models.py:19 rakmai/models.py:123 voca/models.py:244
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
@@ -345,7 +345,7 @@ msgstr "단어장"
 msgid "withthai"
 msgstr "위드타이"
 
-#: voca/admin.py:67 voca/admin.py:104 voca/models.py:129
+#: voca/admin.py:68 voca/admin.py:92 voca/admin.py:122 voca/models.py:129
 msgid "meanings"
 msgstr "뜻"
 
@@ -358,18 +358,21 @@ msgid "lookup word"
 msgstr "검색"
 
 #: voca/models.py:14 voca/templates/voca/2_columns.html:45
+#: voca/templates/voca/level_list.html:30
 msgid "beginner"
 msgstr "초급"
 
 #: voca/models.py:15 voca/templates/voca/2_columns.html:50
+#: voca/templates/voca/level_list.html:34
 msgid "intermediate"
 msgstr "중급"
 
 #: voca/models.py:16 voca/templates/voca/2_columns.html:55
+#: voca/templates/voca/level_list.html:38
 msgid "advanced"
 msgstr "고급"
 
-#: voca/models.py:28 voca/models.py:181
+#: voca/models.py:28 voca/models.py:186
 msgid "pronunciation"
 msgstr "발음"
 
@@ -377,7 +380,7 @@ msgstr "발음"
 msgid "level"
 msgstr "어휘수준"
 
-#: voca/models.py:59 voca/models.py:113 voca/models.py:289
+#: voca/models.py:59 voca/models.py:113 voca/models.py:294
 msgid "entry"
 msgstr "표제어"
 
@@ -389,7 +392,8 @@ msgstr "표제어"
 msgid "compound word"
 msgstr "형태소"
 
-#: voca/models.py:83 voca/models.py:124 voca/models.py:219 voca/models.py:256
+#: voca/models.py:83 voca/models.py:124 voca/models.py:167 voca/models.py:224
+#: voca/models.py:261
 msgid "position"
 msgstr "순서"
 
@@ -429,7 +433,7 @@ msgstr "수량사"
 msgid "part of speech"
 msgstr "품사"
 
-#: voca/models.py:119 voca/models.py:128 voca/models.py:186
+#: voca/models.py:119 voca/models.py:128 voca/models.py:191
 msgid "meaning"
 msgstr "뜻"
 
@@ -441,56 +445,56 @@ msgstr "어휘분류"
 msgid "entry categories"
 msgstr "어휘분류"
 
-#: voca/models.py:167
+#: voca/models.py:171
 msgid "category membership"
-msgstr "어휘분류"
+msgstr "어휘분류 단어"
 
-#: voca/models.py:168
+#: voca/models.py:172
 msgid "category memberships"
-msgstr "어휘분류"
+msgstr "어휘분류 단어"
 
-#: voca/models.py:198
+#: voca/models.py:203
 msgid "entry sentence"
-msgstr "예문"
+msgstr "표제어 예문"
 
-#: voca/models.py:199
+#: voca/models.py:204
 msgid "entry sentences"
-msgstr "예문"
+msgstr "표제어 예문"
 
-#: voca/models.py:223
+#: voca/models.py:228
 msgid "word"
 msgstr "단어"
 
-#: voca/models.py:224
+#: voca/models.py:229
 msgid "words"
 msgstr "단어"
 
-#: voca/models.py:246
+#: voca/models.py:251
 msgid "author"
 msgstr "저자"
 
-#: voca/models.py:251
+#: voca/models.py:256
 msgid "publisher"
 msgstr "출판사"
 
-#: voca/models.py:267 voca/models.py:295
+#: voca/models.py:272 voca/models.py:300
 msgid "chapter"
 msgstr "챕터"
 
-#: voca/models.py:271 voca/models.py:282
+#: voca/models.py:276 voca/models.py:287
 msgid "textbook"
 msgstr "교재"
 
-#: voca/models.py:272 voca/templates/voca/2_columns.html:66 voca/views.py:151
-#: voca/views.py:179
+#: voca/models.py:277 voca/templates/voca/2_columns.html:66 voca/views.py:152
+#: voca/views.py:180
 msgid "textbooks"
 msgstr "교재"
 
-#: voca/models.py:305
+#: voca/models.py:310
 msgid "textbook word"
 msgstr "교재 단어"
 
-#: voca/models.py:306
+#: voca/models.py:311
 msgid "textbook words"
 msgstr "교재 단어"
 
