@@ -11,9 +11,9 @@ register = template.Library()
 
 
 class CategoryNode(template.Node):
-    def __init__(self, nodes):
+    def __init__(self, nodes, tree_query_set):
         self.nodes = nodes
-        self.tree_query_set = None
+        self.tree_query_set = tree_query_set
 
     def _render_category(self, context, category):
         nodes = []
@@ -55,7 +55,19 @@ def voca_categories(parser, token):
     nodes = parser.parse(('end_voca_categories',))
     parser.delete_first_token()
 
-    return CategoryNode(nodes)
+    cache_key = 'voca.templatetags.voca_tags.voca_categories()'
+    cache_time = 300
+
+    tree_query_set = cache.get(cache_key)
+
+    if not tree_query_set:
+        try:
+            tree_query_set = EntryCategory.objects.all()
+            cache.set(cache_key, tree_query_set, cache_time)
+        except EntryCategory.DoesNotExist:
+            tree_query_set = None
+
+    return CategoryNode(nodes, tree_query_set)
 
 
 @register.simple_tag
@@ -68,5 +80,5 @@ def get_textbooks(count=5):
     if not textbooks:
         textbooks = Textbook.objects.all().order_by('position')[:count]
         cache.set(cache_key, textbooks, cache_time)
-        
+
     return textbooks
