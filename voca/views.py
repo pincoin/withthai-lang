@@ -117,6 +117,25 @@ class EntryLevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, ge
         return 'voca/entry_list.html'
 
 
+class LevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
+    logger = logging.getLogger(__name__)
+    context_object_name = 'books'
+
+    def get_queryset(self):
+        queryset = Textbook.objects \
+            .all() \
+            .prefetch_related('words').annotate(total=Count('words__pk'))
+        return queryset.order_by('position')
+
+    def get_context_data(self, **kwargs):
+        context = super(LevelListView, self).get_context_data(**kwargs)
+        context['page_title'] = _('levels')
+        return context
+
+    def get_template_names(self):
+        return 'voca/textbook_list.html'
+
+
 class TextbookListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
     logger = logging.getLogger(__name__)
     context_object_name = 'books'

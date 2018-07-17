@@ -2,22 +2,24 @@ from django.conf.urls import url
 
 from .views import (
     EntryListView, EntryDetailView, EntryCategoryView, EntryLevelListView,
-    TextbookListView, TextbookEntryListView
+    TextbookListView, TextbookEntryListView, LevelListView
 )
 
 app_name = 'voca'
 
 urlpatterns = [
-    url(r'^entries/$',
+    url(r'^entry/$',
         EntryListView.as_view(), name='entry-list'),
-    url(r'^entries/(?P<level>[\w]+)$',
-        EntryLevelListView.as_view(), name='entry-level-list'),
-    url(r'^entries/(?P<pk>\d+)/$',
+    url(r'^entry/(?P<pk>\d+)/$',
         EntryDetailView.as_view(), name='entry-detail'),
-    url(r'^categories/(?P<slug>[-\w]+)/$',
+    url(r'^level/$',
+        LevelListView.as_view(), name='level-list'),
+    url(r'^level/(?P<level>[\w]+)$',
+        EntryLevelListView.as_view(), name='level-entry-list'),
+    url(r'^category/(?P<slug>[-\w]+)/$',
         EntryCategoryView.as_view(), name='entry-category'),
-    url(r'^textbooks/$',
+    url(r'^textbook/$',
         TextbookListView.as_view(), name='textbook-list'),
-    url(r'^textbooks/(?P<slug>[-\w]+)/$',
+    url(r'^textbook/(?P<slug>[-\w]+)/$',
         TextbookEntryListView.as_view(), name='textbook-entry-list'),
 ]

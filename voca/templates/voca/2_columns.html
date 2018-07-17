@@ -33,21 +33,25 @@
 
                 <!-- Level Widget -->
                 <div class="card my-2 my-md-4">
-                    <h5 class="card-header">난이도</h5>
+                    <h5 class="card-header">
+                        <a href="{% url 'voca:textbook-list' %}">
+                            {% trans "level" %}
+                        </a>
+                    </h5>
                     <div class="card-body">
                         <ul class="pl-3 mb-0">
                             <li class="mb-1">
-                                <a href="{% url 'voca:entry-level-list' 'beginner' %}">
+                                <a href="{% url 'voca:level-entry-list' 'beginner' %}">
                                     {% trans "beginner" %}
                                 </a>
                             </li>
                             <li class="mb-1">
-                                <a href="{% url 'voca:entry-level-list' 'intermediate' %}">
+                                <a href="{% url 'voca:level-entry-list' 'intermediate' %}">
                                     {% trans "intermediate" %}
                                 </a>
                             </li>
                             <li class="mb-1">
-                                <a href="{% url 'voca:entry-level-list' 'advanced' %}">
+                                <a href="{% url 'voca:level-entry-list' 'advanced' %}">
                                     {% trans "advanced" %}
                                 </a>
                             </li>

@@ -375,7 +375,7 @@ msgstr "발음"
 
 #: voca/models.py:38
 msgid "level"
-msgstr "수준"
+msgstr "어휘수준"
 
 #: voca/models.py:59 voca/models.py:113
 msgid "entry"
