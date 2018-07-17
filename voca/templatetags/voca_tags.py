@@ -1,4 +1,5 @@
 from django import template
+from django.core.cache import cache
 from django.utils.safestring import mark_safe
 from mptt.utils import get_cached_trees
 
@@ -59,5 +60,13 @@ def voca_categories(parser, token):
 
 @register.simple_tag
 def get_textbooks(count=5):
-    textbooks = Textbook.objects.all().order_by('position')[:count]
+    cache_key = 'voca.templatetags.voca_tags.get_textbook()'
+    cache_time = 300
+
+    textbooks = cache.get(cache_key)
+
+    if not textbooks:
+        textbooks = Textbook.objects.all().order_by('position')[:count]
+        cache.set(cache_key, textbooks, cache_time)
+        
     return textbooks
