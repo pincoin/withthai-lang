@@ -70,11 +70,13 @@
                         <ul class="pl-3 mb-0">
                             {% get_textbooks as textbooks %}
                             {% for textbook in textbooks %}
-                                <li class="mb-1">
-                                    <a href="{% url 'voca:textbook-entry-list' textbook.slug %}">
-                                        {{ textbook.title }}
-                                    </a>
-                                </li>
+                                {% if textbook.slug %}
+                                    <li class="mb-1">
+                                        <a href="{% url 'voca:textbook-entry-list' textbook.slug %}">
+                                            {{ textbook.title }}
+                                        </a>
+                                    </li>
+                                {% endif %}
                             {% empty %}
                                 <li class="mb-1">
                                     {% trans "No textbook" %}
