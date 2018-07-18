@@ -1,0 +1,36 @@
+{% extends "rakmai/base.html" %}
+{% load i18n %}
+{% load voca_tags %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Widgets Column -->
+            <div class="col-12 col-md-4">
+                <div class="card my-2 my-md-4">
+                    <h5 class="card-header">목차</h5>
+                    <div class="card-body">
+                        <ul class="pl-3 mb-0">
+                            {% voca_categories %}
+                                <li class="mb-1">
+                                    <a href="{% url 'voca:entry-category' category.slug %}">{{ category.title }}</a>
+                                </li>
+                                {% if not category.is_leaf_node %}
+                                    <ul class="pl-3">
+                                        {{ children }}
+                                    </ul>
+                                {% endif %}
+                            {% end_voca_categories %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                {% block main_content %}{% endblock %}
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+{% endblock %}
