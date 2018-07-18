@@ -1,6 +1,6 @@
 {% extends "rakmai/base.html" %}
 {% load i18n %}
-{% load voca_tags %}
+{% load book_tags %}
 
 {% block content %}
     <!-- Page Content -->
@@ -11,18 +11,18 @@
                 <div class="card my-2 my-md-4">
                     <h5 class="card-header">목차</h5>
                     <div class="card-body">
-                        <ul class="pl-3 mb-0">
-                            {% voca_categories %}
+                        <ol class="pl-3 mb-0">
+                            {% book_toc %}
                                 <li class="mb-1">
-                                    <a href="{% url 'voca:entry-category' category.slug %}">{{ category.title }}</a>
+                                    <a href="">{{ category.title }}</a>
                                 </li>
                                 {% if not category.is_leaf_node %}
-                                    <ul class="pl-3">
+                                    <ol class="pl-3">
                                         {{ children }}
-                                    </ul>
+                                    </ol>
                                 {% endif %}
-                            {% end_voca_categories %}
-                        </ul>
+                            {% end_book_toc %}
+                        </ol>
                     </div>
                 </div>
             </div>
