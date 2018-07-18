@@ -10,3 +10,4 @@ Markdown==2.6.11
 easy-thumbnails==2.5
 qrcode==6.0
 python-memcached==1.59
+celery==4.2.1

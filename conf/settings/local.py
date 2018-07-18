@@ -65,3 +65,5 @@ CACHES = {
 
 OTP_TOTP_ISSUER = _('WITHTHAI')
 GOOGLE_OTP_ENABLED = False
+
+BROKER_URL = 'amqp://guest:guest@localhost:5672//'
