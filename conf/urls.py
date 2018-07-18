@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'{}'.format(settings.ADMIN_URL),
         admin.site.urls),
     url(r'^voca/', include('voca.urls', namespace='voca')),
+    url(r'^book/', include('book.urls', namespace='book')),
     url(r'^help/', include('help.urls', namespace='help'))
 ]
 
