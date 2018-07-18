@@ -9,10 +9,11 @@
             <!-- Sidebar Widgets Column -->
             <div class="col-12 col-md-4">
                 <div class="card my-2 my-md-4">
-                    <h5 class="card-header">목차</h5>
+                    <h5 class="card-header">{{ book.title }}</h5>
                     <div class="card-body">
+                        <h5 class="card-title text-center mb-1 mb-md-3">목차</h5>
                         <ol class="pl-3 mb-0">
-                            {% book_toc %}
+                            {% book_toc book %}
                                 <li class="mb-1">
                                     <a href="">{{ category.title }}</a>
                                 </li>
