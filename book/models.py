@@ -98,10 +98,15 @@ class Book(TimeStampedModel):
         null=True,
     )
 
+    position = models.PositiveIntegerField(
+        verbose_name=_('position'),
+        default=1,
+    )
+
     class Meta:
         verbose_name = _('book')
         verbose_name_plural = _('books')
-        ordering = ['-created']
+        ordering = ['position', '-created']
 
     def __str__(self):
         return self.title
