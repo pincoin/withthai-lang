@@ -68,15 +68,13 @@
                     </h5>
                     <div class="card-body">
                         <ul class="pl-3 mb-0">
-                            {% get_textbooks as textbooks %}
+                            {% get_textbooks 10 as textbooks %}
                             {% for textbook in textbooks %}
-                                {% if textbook.slug %}
-                                    <li class="mb-1">
-                                        <a href="{% url 'voca:textbook-entry-list' textbook.slug %}">
-                                            {{ textbook.title }}
-                                        </a>
-                                    </li>
-                                {% endif %}
+                                <li class="mb-1">
+                                    <a href="{% url 'voca:textbook-entry-list' textbook.slug %}">
+                                        {{ textbook.title }}
+                                    </a>
+                                </li>
                             {% empty %}
                                 <li class="mb-1">
                                     {% trans "No textbook" %}
