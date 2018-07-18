@@ -9,7 +9,7 @@ register = template.Library()
 
 @register.simple_tag
 def get_notice(count=5):
-    cache_key = 'voca.templatetags.voca_tags.get_textbook()'
+    cache_key = 'voca.templatetags.voca_tags.get_notice()'
     cache_time = settings.CHACHE_TIME_SHORT
 
     notices = cache.get(cache_key)
