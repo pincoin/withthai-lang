@@ -115,7 +115,7 @@ class EntryLevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, ge
         except ValueError:
             pass
 
-        return queryset.order_by('-created')
+        return queryset.order_by('-created').distinct()
 
     def get_context_data(self, **kwargs):
         context = super(EntryLevelListView, self).get_context_data(**kwargs)
