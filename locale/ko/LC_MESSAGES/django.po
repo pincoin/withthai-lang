@@ -105,11 +105,11 @@ msgstr "수정일시"
 
 #: book/models.py:102 book/models.py:178
 msgid "book"
-msgstr "책"
+msgstr "태국어 학습"
 
 #: book/models.py:103
 msgid "books"
-msgstr "책"
+msgstr "태국어 학습"
 
 #: book/models.py:112 rakmai/models.py:154
 msgid "uploaded file"
