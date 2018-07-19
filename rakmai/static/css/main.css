@@ -104,6 +104,10 @@ body {
     line-height: 160%;
 }
 
+.no-bullet {
+    list-style-type: none;
+}
+
 .help-post h1, .help-post h2, .help-post h3, .help-post h4, .help-post h5 {
     padding-bottom: 0.5rem;
     border-bottom: #24292e 1px solid;

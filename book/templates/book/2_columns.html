@@ -27,21 +27,21 @@
                                 <i class="fa fa-plus fa-fw"></i> 추가
                             </a>
                         {% endif %}
-                        <h5 class="card-title text-center mb-1 mb-md-3">목차</h5>
-                        <ol class="pl-3 mb-0">
+                        <h5 class="card-title text-center mb-1">목차</h5>
+                        <ul class="pl-0 mb-0 no-bullet">
                             {% book_toc book %}
-                                <li class="mb-1">
+                                <li class="mb-1 mb-md-2">
                                     <a href="{% url 'book:page-detail' book.id category.id %}">
                                         {{ category.title }}
                                     </a>
                                 </li>
                                 {% if not category.is_leaf_node %}
-                                    <ol class="pl-3">
+                                    <ul class="pl-3 no-bullet">
                                         {{ children }}
-                                    </ol>
+                                    </ul>
                                 {% endif %}
                             {% end_book_toc %}
-                        </ol>
+                        </ul>
                     </div>
                 </div>
             </div>
