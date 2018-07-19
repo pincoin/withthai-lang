@@ -35,7 +35,7 @@ class PageNode(template.Node):
         book = self.book.resolve(context)
 
         cache_key = 'book.templatetags.book_tags.book_toc({})'.format(book.id)
-        cache_time = settings.CHACHE_TIME_LONG
+        cache_time = settings.CACHE_TIME_VERY_SHORT
 
         tree_query_set = cache.get(cache_key)
 
