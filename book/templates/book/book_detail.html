@@ -23,7 +23,9 @@
     <div class="row my-2">
         <div class="col">
             <ul>
-                <li class="my-1">{% trans "status" %}: {{ book.get_status_display }}</li>
+                {% if request.user.is_superuser %}
+                    <li class="my-1">{% trans "status" %}: {{ book.get_status_display }}</li>
+                {% endif %}
                 <li class="my-1">{% trans "license" %}: {{ book.get_license_display }}</li>
                 <li class="my-1">{% trans "updated date" %}: {{ book.updated|date:'Y.m.d H:i' }}</li>
             </ul>
