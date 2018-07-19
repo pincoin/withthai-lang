@@ -61,6 +61,30 @@ class PageNode(template.Node):
         return ''.join(nodes)
 
 
+class PageListItem:
+    def __init__(self, tree_query_set, indent):
+        self.tree_query_set = tree_query_set
+        self.indent = indent
+
+    def _get_children(self, page_item):
+        page_item.indent = self.indent * (page_item.level + 1)
+
+        nodes = [page_item]
+
+        for child in page_item.get_children():
+            nodes.extend(self._get_children(child))
+
+        return nodes
+
+    def get_list(self):
+        items = []
+
+        for page_item in self.tree_query_set:
+            items.extend(self._get_children(page_item))
+
+        return items
+
+
 @register.tag
 def book_toc(parser, token):
     try:
@@ -81,3 +105,21 @@ def book_toc(parser, token):
 def get_ancestor_path(page_id):
     # breadcrumb
     return get_cached_trees(Page.objects.get(pk=page_id).get_ancestors(include_self=False))
+
+
+@register.simple_tag
+def get_adjacent_pages(book_id, page_id):
+    tree_set = get_cached_trees(Page.objects
+                                .select_related('book')
+                                .filter(book__pk=book_id, status=Page.STATUS_CHOICES.public))
+    tree_list = PageListItem(tree_set, 0).get_list()
+
+    i = 0
+    for i, p in enumerate(tree_list):
+        if p.id == page_id:
+            break
+
+    return {
+        'previous_page': tree_list[i - 1] if i > 0 else None,
+        'next_page': tree_list[i + 1] if i + 1 < len(tree_list) else None,
+    }

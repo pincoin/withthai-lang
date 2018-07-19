@@ -40,4 +40,37 @@
             </div>
         </div>
     {% endif %}
+    <div class="row my-1 my-md-3">
+        <div class="col text-right mr-2">
+            {% trans "last modified" %}: {{ page.updated }}
+        </div>
+    </div>
+    <hr class="mb-0">
+    <div class="row my-1">
+        <div class="col">
+            {% get_adjacent_pages book.id page.id as adjacent_pages %}
+            <ul class="list-unstyled">
+                {% if adjacent_pages.previous_page %}
+                    <li class="my-2">{% trans "Previous Page" %}:
+                        <a href="{% url 'book:page-detail' book.id adjacent_pages.previous_page.id %}">
+                            {{ adjacent_pages.previous_page }}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="my-2">{% trans "Previous Page" %}:
+                        <a href="{% url 'book:book-detail' book.id %}">
+                            {{ book.title }}
+                        </a>
+                    </li>
+                {% endif %}
+                {% if adjacent_pages.next_page %}
+                    <li class="my-2">{% trans "Next Page" %}:
+                        <a href="{% url 'book:page-detail' book.id adjacent_pages.next_page.id %}">
+                            {{ adjacent_pages.next_page }}
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
 {% endblock %}

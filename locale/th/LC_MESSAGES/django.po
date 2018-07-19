@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-20 01:04+0900\n"
+"POT-Creation-Date: 2018-07-20 02:28+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,11 +91,11 @@ msgstr ""
 msgid "thumbnail"
 msgstr ""
 
-#: book/models.py:68 book/models.py:199
+#: book/models.py:68 book/models.py:199 book/templates/book/book_detail.html:27
 msgid "status"
 msgstr ""
 
-#: book/models.py:75
+#: book/models.py:75 book/templates/book/book_detail.html:29
 msgid "license"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr ""
 msgid "view count"
 msgstr ""
 
-#: book/models.py:97 book/models.py:215
+#: book/models.py:97 book/models.py:215 book/templates/book/book_detail.html:30
 msgid "updated date"
 msgstr ""
 
@@ -186,6 +186,19 @@ msgstr ""
 
 #: book/templates/book/page_detail.html:14
 msgid "Delete Page"
+msgstr ""
+
+#: book/templates/book/page_detail.html:45
+msgid "last modified"
+msgstr ""
+
+#: book/templates/book/page_detail.html:55
+#: book/templates/book/page_detail.html:61
+msgid "Previous Page"
+msgstr ""
+
+#: book/templates/book/page_detail.html:68
+msgid "Next Page"
 msgstr ""
 
 #: book/templates/book/page_update.html:9
