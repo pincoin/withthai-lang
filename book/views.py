@@ -1,13 +1,16 @@
 import logging
 
 from django.urls import reverse
+from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
+from ipware.ip import get_ip
 
 from .forms import PageForm
 from .models import (
     Book, Page
 )
+from .viewmixins import BookContextMixin
 
 
 class BookListView(generic.ListView):
@@ -65,14 +68,13 @@ class PageDetailView(generic.DetailView):
         return 'book/page_detail.html'
 
 
-class PageCreateView(generic.CreateView):
+class PageCreateView(BookContextMixin, generic.CreateView):
     logger = logging.getLogger(__name__)
     model = Page
 
     def get_context_data(self, **kwargs):
         context = super(PageCreateView, self).get_context_data(**kwargs)
         context['page_title'] = _('Write New Page')
-        context['book'] = Book.objects.get(pk=self.kwargs['book'])
         return context
 
     def get_form_class(self):
@@ -80,15 +82,22 @@ class PageCreateView(generic.CreateView):
 
     def get_form_kwargs(self):
         kwargs = super(PageCreateView, self).get_form_kwargs()
-        kwargs['parent_queryset'] = Page.objects.filter(book__pk=self.kwargs['book'])
+        kwargs['parent_queryset'] = Page.objects.filter(book__pk=self.book.id)
         return kwargs
 
     def form_valid(self, form):
+        form.instance.book = self.book
+        form.instance.book.updated = now()
+        form.instance.book.save()
+        form.instance.owner = self.request.user
+        form.instance.view_count = 0
+        form.instance.updated = now()
+        form.instance.ip_address = get_ip(self.request)
         response = super(PageCreateView, self).form_valid(form)
         return response
 
     def get_success_url(self):
-        return reverse('book:page-detail', args=(self.kwargs['book'], self.object.id))
+        return reverse('book:page-detail', args=(self.book.id, self.object.id))
 
     def get_template_names(self):
         return 'book/page_create.html'
