@@ -52,7 +52,7 @@ def voca_categories(parser, token):
     parser.delete_first_token()
 
     cache_key = 'voca.templatetags.voca_tags.voca_categories()'
-    cache_time = settings.CHACHE_TIME_LONG
+    cache_time = settings.CACHE_TIME_LONG
 
     tree_query_set = cache.get(cache_key)
 
@@ -69,7 +69,7 @@ def voca_categories(parser, token):
 @register.simple_tag
 def get_textbooks(count=5):
     cache_key = 'voca.templatetags.voca_tags.get_textbook()'
-    cache_time = settings.CHACHE_TIME_LONG
+    cache_time = settings.CACHE_TIME_LONG
 
     textbooks = cache.get(cache_key)
 
