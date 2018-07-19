@@ -30,7 +30,7 @@
                         <h5 class="card-title text-center mb-1">목차</h5>
                         <ul class="pl-0 mb-0 no-bullet">
                             {% book_toc book %}
-                                <li class="mb-1 mb-md-2">
+                                <li class="mb-1 mb-md-2 no-bullet">
                                     <a href="{% url 'book:page-detail' book.id category.id %}">
                                         {{ category.title }}
                                     </a>
