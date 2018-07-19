@@ -66,3 +66,9 @@ def book_toc(parser, token):
     parser.delete_first_token()
 
     return PageNode(nodes, book)
+
+
+@register.simple_tag
+def get_ancestor_path(page_id):
+    # breadcrumb
+    return get_cached_trees(Page.objects.get(pk=page_id).get_ancestors(include_self=False))

@@ -3,13 +3,8 @@
 {% load book_tags %}
 
 {% block main_content %}
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb my-2 my-md-4">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
-        </ol>
-    </nav>
+    {% get_ancestor_path page.id as breadcrumbs %}
+    {% include "./_breadcrumbs.html" with breadcrumbs=breadcrumbs %}
     <h5 class="my-1">
         {% if request.user.is_superuser %}
             <a href="{% url 'admin:book_page_change' page.id %}">
