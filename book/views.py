@@ -54,6 +54,8 @@ class PageDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super(PageDetailView, self).get_context_data(**kwargs)
         context['page_title'] = self.object.title
+        context['page_meta_description'] = self.object.description
+        context['page_meta_keywords'] = self.object.keywords
         context['book'] = self.object.book
         return context
 
