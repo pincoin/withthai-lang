@@ -68,17 +68,23 @@ class PageDetailView(generic.DetailView):
 class PageCreateView(generic.CreateView):
     logger = logging.getLogger(__name__)
     model = Page
-    context_object_name = 'page'
-    form_class = PageForm
 
     def get_context_data(self, **kwargs):
         context = super(PageCreateView, self).get_context_data(**kwargs)
         context['page_title'] = _('Write New Page')
+        context['book'] = Book.objects.get(pk=self.kwargs['book'])
         return context
+
+    def get_form_class(self):
+        return PageForm
+
+    def get_form_kwargs(self):
+        kwargs = super(PageCreateView, self).get_form_kwargs()
+        kwargs['parent_queryset'] = Page.objects.filter(book__pk=self.kwargs['book'])
+        return kwargs
 
     def form_valid(self, form):
         response = super(PageCreateView, self).form_valid(form)
-
         return response
 
     def get_success_url(self):

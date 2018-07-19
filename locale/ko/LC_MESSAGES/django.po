@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-18 00:13+0900\n"
+"POT-Creation-Date: 2018-07-19 20:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: book/admin.py:18 book/models.py:119 book/models.py:216 voca/models.py:304
+#: book/admin.py:16 book/models.py:127 book/models.py:220 voca/models.py:304
 msgid "page"
 msgstr "페이지"
 
-#: book/admin.py:23
+#: book/admin.py:21
 msgid "Has page"
 msgstr "페이지 있음"
 
-#: book/admin.py:24
+#: book/admin.py:22
 msgid "No page"
 msgstr "페이지 없음"
 
@@ -33,37 +33,37 @@ msgstr "페이지 없음"
 msgid "Book"
 msgstr "책"
 
-#: book/models.py:29 book/models.py:143
+#: book/models.py:29 book/models.py:151
 msgid "public"
 msgstr "공개"
 
-#: book/models.py:30 book/models.py:144
+#: book/models.py:30 book/models.py:152
 msgid "private"
 msgstr "비공개"
 
 #: book/models.py:34
 msgid "BY"
-msgstr ""
+msgstr "저작자표시"
 
 #: book/models.py:35
 msgid "BY-SA"
-msgstr ""
+msgstr "저작자표시-동일조건변경허락"
 
 #: book/models.py:36
 msgid "BY-ND"
-msgstr ""
+msgstr "저작자표시-변경금지"
 
 #: book/models.py:37
 msgid "BY-NC"
-msgstr ""
+msgstr "저작자표시-비영리"
 
 #: book/models.py:38
 msgid "BY-NC-SA"
-msgstr ""
+msgstr "저작자표시-비영리-동일조건변경허락"
 
 #: book/models.py:39
 msgid "BY-NC-ND"
-msgstr ""
+msgstr "저작자표시-비영리-변경금지"
 
 #: book/models.py:43 rakmai/models.py:34 rakmai/models.py:72
 #: rakmai/models.py:117 voca/models.py:20 voca/models.py:178 voca/models.py:235
@@ -75,7 +75,7 @@ msgstr "제목"
 msgid "description"
 msgstr "설명"
 
-#: book/models.py:54 book/models.py:133 help/models.py:68
+#: book/models.py:54 book/models.py:141 help/models.py:68
 msgid "category"
 msgstr "분류"
 
@@ -83,85 +83,96 @@ msgstr "분류"
 msgid "thumbnail"
 msgstr "썸네일"
 
-#: book/models.py:68 book/models.py:195
+#: book/models.py:68 book/models.py:199
 msgid "status"
 msgstr "상태"
 
 #: book/models.py:75
 msgid "license"
-msgstr "라이센스"
+msgstr "라이선스"
 
 #: book/models.py:83 rakmai/models.py:93
 msgid "owner"
 msgstr "소유자"
 
-#: book/models.py:92 book/models.py:202
+#: book/models.py:92 book/models.py:206
 msgid "view count"
 msgstr "조회수"
 
-#: book/models.py:97 book/models.py:211
+#: book/models.py:97 book/models.py:215
 msgid "updated date"
 msgstr "수정일시"
 
-#: book/models.py:102 book/models.py:178
+#: book/models.py:102 voca/models.py:83 voca/models.py:124 voca/models.py:167
+#: voca/models.py:224 voca/models.py:261
+msgid "position"
+msgstr "순서"
+
+#: book/models.py:107 book/models.py:182
 msgid "book"
 msgstr "태국어 학습"
 
-#: book/models.py:103
+#: book/models.py:108 book/templates/book/_breadcrumbs.html:6
+#: book/templates/book/book_detail.html:10 book/templates/book/book_list.html:9
+#: book/views.py:22
 msgid "books"
 msgstr "태국어 학습"
 
-#: book/models.py:112 rakmai/models.py:154
+#: book/models.py:120 rakmai/models.py:154
 msgid "uploaded file"
 msgstr "업로드 파일"
 
-#: book/models.py:127 rakmai/models.py:165
+#: book/models.py:135 rakmai/models.py:165
 msgid "attachment"
 msgstr "첨부파일"
 
-#: book/models.py:128 rakmai/models.py:166
+#: book/models.py:136 rakmai/models.py:166
 msgid "attachments"
 msgstr "첨부파일"
 
-#: book/models.py:134
+#: book/models.py:142
 msgid "categories"
 msgstr "분류"
 
-#: book/models.py:142
+#: book/models.py:150
 msgid "draft"
 msgstr "초안"
 
-#: book/models.py:148 book/models.py:152 help/models.py:26 help/models.py:58
+#: book/models.py:156 help/models.py:26 help/models.py:58
 msgid "content"
 msgstr "본문"
 
-#: book/models.py:156
+#: book/models.py:160
 msgid "content1"
 msgstr "본문 1"
 
-#: book/models.py:161
+#: book/models.py:165
 msgid "content2"
 msgstr "본문 2"
 
-#: book/models.py:166
+#: book/models.py:170
 msgid "image"
 msgstr "이미지"
 
-#: book/models.py:172
+#: book/models.py:176
 msgid "youtube"
 msgstr "유튜브"
 
-#: book/models.py:186 rakmai/models.py:25 rakmai/models.py:108
+#: book/models.py:190 rakmai/models.py:25 rakmai/models.py:108
 msgid "parent"
 msgstr "부모"
 
-#: book/models.py:207
+#: book/models.py:211
 msgid "IP address"
 msgstr "IP 주소"
 
-#: book/models.py:217
+#: book/models.py:221
 msgid "pages"
 msgstr "페이지"
+
+#: book/views.py:76
+msgid "Write New Page"
+msgstr "새 페이지 작성"
 
 #: conf/settings/local.py:10
 msgid "Korean"
@@ -175,8 +186,8 @@ msgstr "영어"
 msgid "Thai"
 msgstr "태국어"
 
-#: conf/settings/local.py:58 rakmai/templates/rakmai/base.html:8
-#: rakmai/templates/rakmai/base.html:42 rakmai/templates/rakmai/base.html:142
+#: conf/settings/local.py:66 rakmai/templates/rakmai/base.html:8
+#: rakmai/templates/rakmai/base.html:49 rakmai/templates/rakmai/base.html:149
 msgid "WITHTHAI"
 msgstr "위드타이"
 
@@ -204,7 +215,7 @@ msgstr "슬러그"
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
-msgstr ""
+msgstr "문자 또는 숫자, 밑줄, 하이픈으로 이루어진 간단한 URL 문자열"
 
 #: help/models.py:30 help/models.py:62
 msgid "markup"
@@ -266,24 +277,24 @@ msgstr "위드타이 관리자"
 
 #: rakmai/models.py:14
 msgid "equals"
-msgstr ""
+msgstr "일치"
 
 #: rakmai/models.py:15
 msgid "startswith"
-msgstr ""
+msgstr "시작"
 
 #: rakmai/models.py:19
 msgid "_self"
-msgstr ""
+msgstr "기본값"
 
 #: rakmai/models.py:20
 msgid "blank"
-msgstr ""
+msgstr "새창열기"
 
 #: rakmai/models.py:36
 msgid ""
 "Site menu item title. Can contain template variables E.g.: {{ mytitle }}"
-msgstr ""
+msgstr "사이트 메뉴 이름 {{ mytitle }} 같은 템플릿 변수 포함 가능"
 
 #: rakmai/models.py:40
 msgid "url"
@@ -291,15 +302,15 @@ msgstr "URL"
 
 #: rakmai/models.py:43
 msgid "Exact URL or URL pattern"
-msgstr ""
+msgstr "정확한 URL 또는 URL 패턴"
 
 #: rakmai/models.py:47
 msgid "match"
-msgstr "일치"
+msgstr "매칭"
 
 #: rakmai/models.py:53
 msgid "target"
-msgstr ""
+msgstr "열기 옵션"
 
 #: rakmai/models.py:59
 msgid "menu item"
@@ -311,12 +322,12 @@ msgstr "메뉴항목"
 
 #: rakmai/models.py:74
 msgid "The page title as you'd like it to be seen by the public"
-msgstr ""
+msgstr "발행 게시물 제목"
 
 #: rakmai/models.py:80
 msgid ""
 "A short description not longer than 155 characters. Don't use double quotes."
-msgstr ""
+msgstr "155자 이내 짧은 설명, 따옴표는 입력하지 말 것"
 
 #: rakmai/models.py:85
 msgid "keywords"
@@ -324,7 +335,7 @@ msgstr "키워드"
 
 #: rakmai/models.py:87
 msgid "A comma-separated list of keywords. Don't use double quotes."
-msgstr ""
+msgstr "띄어쓰기 없이 콤마로 연결, 따옴표는 입력하지 말 것"
 
 #: rakmai/models.py:142
 msgid "file name"
@@ -332,17 +343,17 @@ msgstr "파일이름"
 
 #: rakmai/models.py:147
 msgid "public identifier"
-msgstr "고유 아이디"
+msgstr "공개식별자"
 
 #: rakmai/models.py:159
 msgid "created time"
 msgstr "생성일시"
 
-#: rakmai/templates/rakmai/base.html:53
+#: rakmai/templates/rakmai/base.html:60
 msgid "Thai Language"
 msgstr "태국어"
 
-#: rakmai/templates/rakmai/base.html:57 voca/templates/voca/entry_detail.html:9
+#: rakmai/templates/rakmai/base.html:64 voca/templates/voca/entry_detail.html:9
 #: voca/templates/voca/entry_list.html:9
 #: voca/templates/voca/level_entry_list.html:9
 #: voca/templates/voca/level_list.html:9
@@ -401,11 +412,6 @@ msgstr "표제어"
 #: voca/models.py:76 voca/models.py:87
 msgid "compound word"
 msgstr "형태소"
-
-#: voca/models.py:83 voca/models.py:124 voca/models.py:167 voca/models.py:224
-#: voca/models.py:261
-msgid "position"
-msgstr "순서"
 
 #: voca/models.py:88
 msgid "compound words"

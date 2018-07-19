@@ -2,15 +2,21 @@
 
 {% load i18n %}
 {% load rakmai_filters %}
-
+{% load crispy_forms_tags %}
 {% block content %}
     <div class="container">
-        <h4 class="my-2 my-md-4 text-center">
-            {{ book.title }}
-        </h4>
-
+        <h5 class="my-2 my-md-4 text-center">
+            {% trans "Write New Page" %}
+            <small>- {{ book.title }}</small>
+        </h5>
         <div class="row">
-            xxx
+            <div class="col">
+                {% crispy form %}
+            </div>
         </div>
+        <a href="{% url 'book:book-detail' book.id %}"
+           class="btn btn-outline-secondary btn-block">
+            <i class="fa fa-list-ul fa-fw" aria-hidden="true"></i>&nbsp;{% trans "Book" %}
+        </a>
     </div>
 {% endblock %}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-18 00:13+0900\n"
+"POT-Creation-Date: 2018-07-19 20:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: book/admin.py:18 book/models.py:119 book/models.py:216 voca/models.py:304
+#: book/admin.py:16 book/models.py:127 book/models.py:220 voca/models.py:304
 msgid "page"
 msgstr "page"
 
-#: book/admin.py:23
+#: book/admin.py:21
 msgid "Has page"
 msgstr "Has page"
 
-#: book/admin.py:24
+#: book/admin.py:22
 msgid "No page"
 msgstr "No page"
 
@@ -33,11 +33,11 @@ msgstr "No page"
 msgid "Book"
 msgstr "Book"
 
-#: book/models.py:29 book/models.py:143
+#: book/models.py:29 book/models.py:151
 msgid "public"
 msgstr "public"
 
-#: book/models.py:30 book/models.py:144
+#: book/models.py:30 book/models.py:152
 msgid "private"
 msgstr "private"
 
@@ -75,7 +75,7 @@ msgstr "title"
 msgid "description"
 msgstr "description"
 
-#: book/models.py:54 book/models.py:133 help/models.py:68
+#: book/models.py:54 book/models.py:141 help/models.py:68
 msgid "category"
 msgstr "category"
 
@@ -83,7 +83,7 @@ msgstr "category"
 msgid "thumbnail"
 msgstr "thumbnail"
 
-#: book/models.py:68 book/models.py:195
+#: book/models.py:68 book/models.py:199
 msgid "status"
 msgstr "status"
 
@@ -95,73 +95,84 @@ msgstr "license"
 msgid "owner"
 msgstr "owner"
 
-#: book/models.py:92 book/models.py:202
+#: book/models.py:92 book/models.py:206
 msgid "view count"
 msgstr "view count"
 
-#: book/models.py:97 book/models.py:211
+#: book/models.py:97 book/models.py:215
 msgid "updated date"
 msgstr "update date"
 
-#: book/models.py:102 book/models.py:178
+#: book/models.py:102 voca/models.py:83 voca/models.py:124 voca/models.py:167
+#: voca/models.py:224 voca/models.py:261
+msgid "position"
+msgstr "position"
+
+#: book/models.py:107 book/models.py:182
 msgid "book"
 msgstr "book"
 
-#: book/models.py:103
+#: book/models.py:108 book/templates/book/_breadcrumbs.html:6
+#: book/templates/book/book_detail.html:10 book/templates/book/book_list.html:9
+#: book/views.py:22
 msgid "books"
 msgstr "books"
 
-#: book/models.py:112 rakmai/models.py:154
+#: book/models.py:120 rakmai/models.py:154
 msgid "uploaded file"
 msgstr "uploaded file"
 
-#: book/models.py:127 rakmai/models.py:165
+#: book/models.py:135 rakmai/models.py:165
 msgid "attachment"
 msgstr "attachment"
 
-#: book/models.py:128 rakmai/models.py:166
+#: book/models.py:136 rakmai/models.py:166
 msgid "attachments"
 msgstr "attachments"
 
-#: book/models.py:134
+#: book/models.py:142
 msgid "categories"
 msgstr "categories"
 
-#: book/models.py:142
+#: book/models.py:150
 msgid "draft"
 msgstr "draft"
 
-#: book/models.py:148 book/models.py:152 help/models.py:26 help/models.py:58
+#: book/models.py:156 help/models.py:26 help/models.py:58
 msgid "content"
 msgstr "content"
 
-#: book/models.py:156
+#: book/models.py:160
 msgid "content1"
 msgstr "content1"
 
-#: book/models.py:161
+#: book/models.py:165
 msgid "content2"
 msgstr "content2"
 
-#: book/models.py:166
+#: book/models.py:170
 msgid "image"
 msgstr "image"
 
-#: book/models.py:172
+#: book/models.py:176
 msgid "youtube"
 msgstr "youtube"
 
-#: book/models.py:186 rakmai/models.py:25 rakmai/models.py:108
+#: book/models.py:190 rakmai/models.py:25 rakmai/models.py:108
 msgid "parent"
 msgstr "parent"
 
-#: book/models.py:207
+#: book/models.py:211
 msgid "IP address"
 msgstr "IP address"
 
-#: book/models.py:217
+#: book/models.py:221
 msgid "pages"
 msgstr "pages"
+
+#: book/views.py:76
+msgid "Write New Page"
+msgstr "Write New Page"
 
 #: conf/settings/local.py:10
 msgid "Korean"
@@ -175,8 +186,8 @@ msgstr "English"
 msgid "Thai"
 msgstr "Thai"
 
-#: conf/settings/local.py:58 rakmai/templates/rakmai/base.html:8
-#: rakmai/templates/rakmai/base.html:42 rakmai/templates/rakmai/base.html:142
+#: conf/settings/local.py:66 rakmai/templates/rakmai/base.html:8
+#: rakmai/templates/rakmai/base.html:49 rakmai/templates/rakmai/base.html:149
 msgid "WITHTHAI"
 msgstr "WITHTHAI"
 
@@ -342,11 +353,11 @@ msgstr "public identifier"
 msgid "created time"
 msgstr "created time"
 
-#: rakmai/templates/rakmai/base.html:53
+#: rakmai/templates/rakmai/base.html:60
 msgid "Thai Language"
 msgstr "Thai"
 
-#: rakmai/templates/rakmai/base.html:57 voca/templates/voca/entry_detail.html:9
+#: rakmai/templates/rakmai/base.html:64 voca/templates/voca/entry_detail.html:9
 #: voca/templates/voca/entry_list.html:9
 #: voca/templates/voca/level_entry_list.html:9
 #: voca/templates/voca/level_list.html:9
@@ -405,11 +416,6 @@ msgstr "entries"
 #: voca/models.py:76 voca/models.py:87
 msgid "compound word"
 msgstr "compound word"
-
-#: voca/models.py:83 voca/models.py:124 voca/models.py:167 voca/models.py:224
-#: voca/models.py:261
-msgid "position"
-msgstr "position"
 
 #: voca/models.py:88
 msgid "compound words"
