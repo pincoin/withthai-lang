@@ -111,6 +111,9 @@ class Book(TimeStampedModel):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('book:book-detail', args=[self.pk])
+
 
 class Attachment(AbstractAttachment):
     file = models.FileField(

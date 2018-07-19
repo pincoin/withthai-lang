@@ -1,0 +1,53 @@
+{% extends "rakmai/base.html" %}
+{% load i18n %}
+{% load book_tags %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Widgets Column -->
+            <div class="col-12 col-md-4">
+                <div class="card my-2 my-md-4">
+                    <h5 class="card-header">
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'admin:book_book_change' book.id %}">
+                                {{ book.title }}
+                            </a>
+                        {% else %}
+                            {{ book.title }}
+                        {% endif %}
+                    </h5>
+                    <div class="card-body">
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'book:page-create' book.id %}"
+                               class="btn btn-primary btn-block mb-1 mb-md-3">
+                                <i class="fa fa-plus fa-fw"></i> 추가
+                            </a>
+                        {% endif %}
+                        <h5 class="card-title text-center mb-1 mb-md-3">목차</h5>
+                        <ol class="pl-3 mb-0">
+                            {% book_toc book %}
+                                <li class="mb-1">
+                                    <a href="{% url 'book:page-detail' book.id category.id %}">
+                                        {{ category.title }}
+                                    </a>
+                                </li>
+                                {% if not category.is_leaf_node %}
+                                    <ol class="pl-3">
+                                        {{ children }}
+                                    </ol>
+                                {% endif %}
+                            {% end_book_toc %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                {% block main_content %}{% endblock %}
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+{% endblock %}

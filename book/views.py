@@ -3,7 +3,9 @@ import logging
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
-from .models import Book
+from .models import (
+    Book, Page
+)
 
 
 class BookListView(generic.ListView):
@@ -38,3 +40,40 @@ class BookDetailView(generic.DetailView):
 
     def get_template_names(self):
         return 'book/book_detail.html'
+
+
+class PageDetailView(generic.DetailView):
+    logger = logging.getLogger(__name__)
+    context_object_name = 'page'
+
+    def get_queryset(self):
+        return Page.objects \
+            .select_related('book', 'owner') \
+            .filter(pk=self.kwargs['pk'])
+
+    def get_context_data(self, **kwargs):
+        context = super(PageDetailView, self).get_context_data(**kwargs)
+        context['page_title'] = self.object.title
+        context['book'] = self.object.book
+        return context
+
+    def get_template_names(self):
+        return 'book/page_detail.html'
+
+
+class PageCreateView(generic.CreateView):
+    logger = logging.getLogger(__name__)
+    context_object_name = 'book'
+
+    def get_queryset(self):
+        return Book.objects \
+            .select_related('category', 'owner') \
+            .filter(pk=self.kwargs['pk'])
+
+    def get_context_data(self, **kwargs):
+        context = super(PageCreateView, self).get_context_data(**kwargs)
+        context['page_title'] = self.object.title
+        return context
+
+    def get_template_names(self):
+        return 'book/page_create.html'
