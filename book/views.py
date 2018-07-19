@@ -101,3 +101,36 @@ class PageCreateView(BookContextMixin, generic.CreateView):
 
     def get_template_names(self):
         return 'book/page_create.html'
+
+
+class PageUpdateView(BookContextMixin, generic.UpdateView):
+    logger = logging.getLogger(__name__)
+    model = Page
+    context_object_name = 'page'
+
+    def get_context_data(self, **kwargs):
+        context = super(PageUpdateView, self).get_context_data(**kwargs)
+        context['page_title'] = _('Edit')
+        return context
+
+    def get_form_class(self):
+        return PageForm
+
+    def get_form_kwargs(self):
+        kwargs = super(PageUpdateView, self).get_form_kwargs()
+        kwargs['parent_queryset'] = Page.objects.filter(book__pk=self.book.id)
+        return kwargs
+
+    def form_valid(self, form):
+        form.instance.book.updated = now()
+        form.instance.book.save()
+        form.instance.updated = now()
+        form.instance.ip_address = get_ip(self.request)
+        response = super(PageUpdateView, self).form_valid(form)
+        return response
+
+    def get_success_url(self):
+        return reverse('book:page-detail', args=(self.book.id, self.object.id))
+
+    def get_template_names(self):
+        return 'book/page_update.html'

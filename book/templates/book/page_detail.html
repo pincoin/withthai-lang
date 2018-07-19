@@ -8,7 +8,7 @@
     {% include "./_breadcrumbs.html" with breadcrumbs=breadcrumbs %}
     <h5 class="my-1">
         {% if request.user.is_superuser %}
-            <a href="{% url 'admin:book_page_change' page.id %}">
+            <a href="{% url 'book:page-update' book.id page.id %}">
                 {{ page.title }}
             </a>
         {% else %}

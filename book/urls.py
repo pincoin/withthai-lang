@@ -2,7 +2,7 @@ from django.conf.urls import url
 
 from .views import (
     BookListView, BookDetailView,
-    PageDetailView, PageCreateView
+    PageDetailView, PageCreateView, PageUpdateView
 )
 
 app_name = 'book'
@@ -16,4 +16,6 @@ urlpatterns = [
         PageDetailView.as_view(), name='page-detail'),
     url(r'^(?P<book>\d+)/create$',
         PageCreateView.as_view(), name='page-create'),
+    url(r'^(?P<book>\d+)/(?P<pk>\d+)/update/',
+        PageUpdateView.as_view(), name='page-update'),
 ]

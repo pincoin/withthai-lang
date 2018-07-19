@@ -31,7 +31,6 @@ class PageForm(forms.ModelForm):
         self.helper.label_class = 'col-2 col-form-label'
         self.helper.field_class = 'col-10'
 
-        # `category` field is selectively hidden.
         fieldset = [
             '',  # Hide the legend of fieldset (HTML tag)
             'title',

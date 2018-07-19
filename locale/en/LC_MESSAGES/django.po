@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-19 22:25+0900\n"
+"POT-Creation-Date: 2018-07-20 00:26+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr "Book"
 msgid "parent"
 msgstr "parent"
 
-#: book/forms.py:50
+#: book/forms.py:51
 msgid "Write"
 msgstr ""
 
@@ -179,9 +179,18 @@ msgid "Write New Page"
 msgstr "Write New Page"
 
 #: book/templates/book/page_create.html:19
+#: book/templates/book/page_update.html:19
 #: help/templates/help/notice_detail.html:46
 msgid "List"
 msgstr "List"
+
+#: book/templates/book/page_update.html:9
+msgid "Edit Page"
+msgstr "Edit Page"
+
+#: book/views.py:113
+msgid "Edit"
+msgstr "Edit"
 
 #: conf/settings/local.py:10
 msgid "Korean"
