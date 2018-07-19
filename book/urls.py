@@ -14,6 +14,6 @@ urlpatterns = [
         BookDetailView.as_view(), name='book-detail'),
     url(r'^(?P<book>\d+)/(?P<pk>\d+)/$',
         PageDetailView.as_view(), name='page-detail'),
-    url(r'^(?P<pk>\d+)/create$',
+    url(r'^(?P<book>\d+)/create$',
         PageCreateView.as_view(), name='page-create'),
 ]

@@ -1,8 +1,10 @@
 import logging
 
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 
+from .forms import PageForm
 from .models import (
     Book, Page
 )
@@ -65,17 +67,22 @@ class PageDetailView(generic.DetailView):
 
 class PageCreateView(generic.CreateView):
     logger = logging.getLogger(__name__)
-    context_object_name = 'book'
-
-    def get_queryset(self):
-        return Book.objects \
-            .select_related('category', 'owner') \
-            .filter(pk=self.kwargs['pk'])
+    model = Page
+    context_object_name = 'page'
+    form_class = PageForm
 
     def get_context_data(self, **kwargs):
         context = super(PageCreateView, self).get_context_data(**kwargs)
-        context['page_title'] = self.object.title
+        context['page_title'] = _('Write New Page')
         return context
+
+    def form_valid(self, form):
+        response = super(PageCreateView, self).form_valid(form)
+
+        return response
+
+    def get_success_url(self):
+        return reverse('book:page-detail', args=(self.kwargs['book'], self.object.id))
 
     def get_template_names(self):
         return 'book/page_create.html'
