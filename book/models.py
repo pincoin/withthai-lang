@@ -156,10 +156,6 @@ class Page(MPTTModel, AbstractPage):
         verbose_name=_('content'),
     )
 
-    content = models.TextField(
-        verbose_name=_('content'),
-    )
-
     content1 = models.TextField(
         verbose_name=_('content1'),
         blank=True,

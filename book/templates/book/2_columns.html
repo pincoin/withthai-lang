@@ -15,7 +15,9 @@
                                 {{ book.title }}
                             </a>
                         {% else %}
-                            {{ book.title }}
+                            <a href="{% url 'book:book-detail' book.id %}">
+                                {{ book.title }}
+                            </a>
                         {% endif %}
                     </h5>
                     <div class="card-body">

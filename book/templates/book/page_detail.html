@@ -1,3 +1,45 @@
 {% extends "./2_columns.html" %}
 {% load i18n %}
 {% load book_tags %}
+
+{% block main_content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb my-2 my-md-4">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+    </nav>
+    <h5 class="my-1">
+        {% if request.user.is_superuser %}
+            <a href="{% url 'admin:book_page_change' page.id %}">
+                {{ page.title }}
+            </a>
+        {% else %}
+            {{ page.title }}
+        {% endif %}
+    </h5>
+    <div class="row my-1 my-md-3">
+        <div class="col paragraph">
+            {{ page.content }}
+        </div>
+    </div>
+
+    {% if page.content1 %}
+        <h5 class="my-1 my-md-3">문법 및 표현</h5>
+        <div class="row my-1 my-md-3">
+            <div class="col paragraph">
+                {{ page.content1 }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if page.content2 %}
+        <h5 class="my-1 my-md-3">본문 해석</h5>
+        <div class="row my-1 my-md-3">
+            <div class="col paragraph">
+                {{ page.content2 }}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
