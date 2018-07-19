@@ -1,5 +1,6 @@
 @import url(../fonts/thsarabunnew.css);
 
+/* Layout */
 html {
     position: relative;
     min-height: 100%;
@@ -63,11 +64,6 @@ body {
     background-color: #CADBE9;
 }
 
-.thai-font {
-    font-family: 'THSarabunNew', sans-serif;
-    font-size: 1.2rem;
-}
-
 .jumbotron {
     background-image: url("../images/jumbotron-01.jpg");
     -webkit-background-size: cover;
@@ -97,6 +93,12 @@ body {
     color: #24292e;
 }
 
+/* Common */
+.thai-font {
+    font-family: 'THSarabunNew', sans-serif;
+    font-size: 1.2rem;
+}
+
 .paragraph {
     word-wrap: normal;
     white-space: normal;
@@ -108,6 +110,7 @@ body {
     list-style-type: none;
 }
 
+/* Help App */
 .help-post h1, .help-post h2, .help-post h3, .help-post h4, .help-post h5 {
     padding-bottom: 0.5rem;
     border-bottom: #24292e 1px solid;
@@ -119,4 +122,42 @@ body {
 
 .help-post ul li, .help-post ol li {
     margin-bottom: 0.3rem;
+}
+
+/* Book App */
+
+.book-page .toc {
+    border-radius: 5px;
+    background-color: #D6ECFA;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.book-page .toc ul {
+    margin-bottom: 0;
+}
+
+.book-page h1 {
+    font-size: 2.0rem;
+}
+
+.book-page h2 {
+    font-size: 1.8rem;
+}
+
+.book-page h3 {
+    font-size: 1.6rem;
+}
+
+.book-page h4 {
+    font-size: 1.5rem;
+}
+
+.book-page h5 {
+    font-size: 1.4rem;
+}
+
+.book-page h6 {
+    font-size: 1.3rem;
 }
