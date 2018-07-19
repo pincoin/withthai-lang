@@ -33,6 +33,7 @@ class PageForm(forms.ModelForm):
 
         fieldset = [
             '',  # Hide the legend of fieldset (HTML tag)
+            'status',
             'title',
             'parent',
             'content',
@@ -40,7 +41,6 @@ class PageForm(forms.ModelForm):
             'content2',
             'image',
             'youtube',
-            'status',
             'keywords',
             'description',
         ]

@@ -15,6 +15,7 @@ class PageNode(template.Node):
         self.nodes = nodes
         self.book = Variable(book)
         self.tree_query_set = None
+        self.request = Variable('request')
 
     def _render_category(self, context, category):
         nodes = []
@@ -33,18 +34,26 @@ class PageNode(template.Node):
 
     def render(self, context):
         book = self.book.resolve(context)
+        request = self.request.resolve(context)
 
-        cache_key = 'book.templatetags.book_tags.book_toc({})'.format(book.id)
-        cache_time = settings.CACHE_TIME_VERY_SHORT
+        if request.user.is_superuser:
+            tree_query_set = Page.objects \
+                .select_related('book') \
+                .filter(book__pk=book.id)
+        else:
+            cache_key = 'book.templatetags.book_tags.book_toc({})'.format(book.id)
+            cache_time = settings.CACHE_TIME_VERY_SHORT
 
-        tree_query_set = cache.get(cache_key)
+            tree_query_set = cache.get(cache_key)
 
-        if not tree_query_set:
-            try:
-                tree_query_set = Page.objects.select_related('book').filter(book__pk=book.id)
-                cache.set(cache_key, tree_query_set, cache_time)
-            except Page.DoesNotExist:
-                pass
+            if not tree_query_set:
+                try:
+                    tree_query_set = Page.objects \
+                        .select_related('book') \
+                        .filter(book__pk=book.id, status=Page.STATUS_CHOICES.public)
+                    cache.set(cache_key, tree_query_set, cache_time)
+                except Page.DoesNotExist:
+                    pass
 
         roots = get_cached_trees(tree_query_set)
 

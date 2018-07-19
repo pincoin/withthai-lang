@@ -21,19 +21,26 @@
                         {% endif %}
                     </h5>
                     <div class="card-body">
+                        <h5 class="card-title text-center mb-1">목차</h5>
                         {% if request.user.is_superuser %}
                             <a href="{% url 'book:page-create' book.id %}"
-                               class="btn btn-primary btn-block mb-1 mb-md-3">
+                               class="card-subtitle btn btn-primary btn-sm mb-2">
                                 <i class="fa fa-plus fa-fw"></i> 추가
                             </a>
                         {% endif %}
-                        <h5 class="card-title text-center mb-1">목차</h5>
                         <ul class="pl-0 mb-0 no-bullet">
                             {% book_toc book %}
                                 <li class="mb-1 mb-md-2 no-bullet">
                                     <a href="{% url 'book:page-detail' book.id category.id %}">
                                         {{ category.title }}
                                     </a>
+                                    {% if request.user.is_superuser %}
+                                        {% if category.status == category.STATUS_CHOICES.draft or category.status == category.STATUS_CHOICES.private %}
+                                            <small class="text-danger">
+                                                [{{ category.get_status_display }}]
+                                            </small>
+                                        {% endif %}
+                                    {% endif %}
                                 </li>
                                 {% if not category.is_leaf_node %}
                                     <ul class="pl-3 no-bullet">
