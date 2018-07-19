@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-19 20:20+0900\n"
+"POT-Creation-Date: 2018-07-19 22:25+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,6 +32,14 @@ msgstr "페이지 없음"
 #: book/apps.py:7
 msgid "Book"
 msgstr "책"
+
+#: book/forms.py:24 book/models.py:190 rakmai/models.py:25 rakmai/models.py:108
+msgid "parent"
+msgstr "부모"
+
+#: book/forms.py:50
+msgid "Write"
+msgstr "작성"
 
 #: book/models.py:29 book/models.py:151
 msgid "public"
@@ -114,7 +122,7 @@ msgstr "태국어 학습"
 
 #: book/models.py:108 book/templates/book/_breadcrumbs.html:6
 #: book/templates/book/book_detail.html:10 book/templates/book/book_list.html:9
-#: book/views.py:22
+#: book/views.py:25
 msgid "books"
 msgstr "태국어 학습"
 
@@ -158,10 +166,6 @@ msgstr "이미지"
 msgid "youtube"
 msgstr "유튜브"
 
-#: book/models.py:190 rakmai/models.py:25 rakmai/models.py:108
-msgid "parent"
-msgstr "부모"
-
 #: book/models.py:211
 msgid "IP address"
 msgstr "IP 주소"
@@ -170,9 +174,14 @@ msgstr "IP 주소"
 msgid "pages"
 msgstr "페이지"
 
-#: book/views.py:76
+#: book/templates/book/page_create.html:9 book/views.py:77
 msgid "Write New Page"
 msgstr "새 페이지 작성"
+
+#: book/templates/book/page_create.html:19
+#: help/templates/help/notice_detail.html:46
+msgid "List"
+msgstr "목록"
 
 #: conf/settings/local.py:10
 msgid "Korean"
@@ -254,10 +263,6 @@ msgstr "다음"
 #: help/templates/help/notice_detail.html:8 help/views.py:40
 msgid "Notice"
 msgstr "공지사항"
-
-#: help/templates/help/notice_detail.html:46
-msgid "List"
-msgstr "목록"
 
 #: help/templates/help/notice_list.html:36 rakmai/templates/rakmai/home.html:79
 msgid "No message"

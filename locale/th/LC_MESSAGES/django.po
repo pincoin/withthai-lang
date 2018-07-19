@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-19 20:20+0900\n"
+"POT-Creation-Date: 2018-07-19 22:25+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +31,14 @@ msgstr ""
 
 #: book/apps.py:7
 msgid "Book"
+msgstr ""
+
+#: book/forms.py:24 book/models.py:190 rakmai/models.py:25 rakmai/models.py:108
+msgid "parent"
+msgstr ""
+
+#: book/forms.py:50
+msgid "Write"
 msgstr ""
 
 #: book/models.py:29 book/models.py:151
@@ -114,7 +122,7 @@ msgstr ""
 
 #: book/models.py:108 book/templates/book/_breadcrumbs.html:6
 #: book/templates/book/book_detail.html:10 book/templates/book/book_list.html:9
-#: book/views.py:22
+#: book/views.py:25
 msgid "books"
 msgstr ""
 
@@ -158,10 +166,6 @@ msgstr ""
 msgid "youtube"
 msgstr ""
 
-#: book/models.py:190 rakmai/models.py:25 rakmai/models.py:108
-msgid "parent"
-msgstr ""
-
 #: book/models.py:211
 msgid "IP address"
 msgstr ""
@@ -170,8 +174,13 @@ msgstr ""
 msgid "pages"
 msgstr ""
 
-#: book/views.py:76
+#: book/templates/book/page_create.html:9 book/views.py:77
 msgid "Write New Page"
+msgstr ""
+
+#: book/templates/book/page_create.html:19
+#: help/templates/help/notice_detail.html:46
+msgid "List"
 msgstr ""
 
 #: conf/settings/local.py:10
@@ -253,10 +262,6 @@ msgstr ""
 
 #: help/templates/help/notice_detail.html:8 help/views.py:40
 msgid "Notice"
-msgstr ""
-
-#: help/templates/help/notice_detail.html:46
-msgid "List"
 msgstr ""
 
 #: help/templates/help/notice_list.html:36 rakmai/templates/rakmai/home.html:79
