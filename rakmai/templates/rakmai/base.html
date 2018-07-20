@@ -127,13 +127,18 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
             </div>
             <div class="col-12 col-sm-12 col-md-10 d-flex flex-row flex-wrap order-2 order-md-1">
                 <div class="pt-1 px-2">
+                    <strong>
+                        <a href="{% url 'help:post-detail' 'about' %}">{% trans "WITHTHAI" %}</a>
+                    </strong>
+                </div>
+                <div class="pt-1 px-2">
                     <a href="{% url 'help:post-detail' 'user-guide' %}">
                         이용안내
                     </a>
                 </div>
                 <div class="pt-1 px-2">
                     <a href="{% url 'help:post-detail' 'terms' %}">
-                        책임의 한계와 법적고지
+                        이용약관
                     </a>
                 </div>
                 <div class="pt-1 px-2">
@@ -143,31 +148,12 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <h5 class="ml-2 mt-2">
-                    <a href="{% url 'help:post-detail' 'about' %}">{% trans "WITHTHAI" %}</a>
-                </h5>
-                <ul class="list-inline pl-2 mb-1">
-                    <li class="list-inline-item">대표: OOO</li>
-                    <li class="list-inline-item">주소: 서울 서초구 방배동</li>
-                    <li class="list-inline-item">사업자등록번호:
-                        <a href="#" target="_blank">
-                            123-45-6789
-                        </a>
-                    </li>
-                    <li class="list-inline-item">통신판매업신고: 2018-서울OO-1234</li>
-                    <li class="list-inline-item"><i class="fa fa-envelope-o"></i> help@withthai.com</li>
-                </ul>
-            </div>
-        </div>
     </div>
     <div class="container-fluid base-footer">
         <div class="container">
             <div class="row py-2">
                 <div class="col text-center">
-                    Copyright &copy; 2018 withthai.com <br/>
-                    All Rights Reserved.
+                    Copyright &copy; 2018 withthai.com
                 </div>
             </div>
         </div>
