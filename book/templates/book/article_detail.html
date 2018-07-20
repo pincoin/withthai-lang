@@ -18,6 +18,7 @@
 
     <h5 class="my-1">
         {% if request.user.is_superuser %}
+            <span class="btn btn-outline-success btn-sm mb-1 mr-2">{{ article.category }}</span>
             <a href="">{{ article.title }}</a>
             <a href="{% url 'admin:book_article_delete' article.id %}"
                class="btn btn-outline-danger btn-sm mb-1 ml-2">
