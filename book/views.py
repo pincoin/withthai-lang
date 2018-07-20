@@ -154,7 +154,7 @@ class ArticleListView(PageableMixin, ArticleContextMixin, generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(ArticleListView, self).get_context_data(**kwargs)
         context['page_title'] = _('articles')
-        context['category'] = self.kwargs['category']
+        context['category_slug'] = self.kwargs['category']
         return context
 
     def get_template_names(self):
@@ -175,7 +175,7 @@ class ArticleDetailView(generic.DetailView):
         context['page_title'] = self.object.title
         context['page_meta_description'] = self.object.description
         context['page_meta_keywords'] = self.object.keywords
-        context['category'] = self.kwargs['category']
+        context['category_slug'] = self.kwargs['category']
         return context
 
     def get_template_names(self):

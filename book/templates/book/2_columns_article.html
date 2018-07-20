@@ -10,13 +10,21 @@
             <!-- Sidebar Widgets Column -->
             <div class="col-12 col-md-3">
                 <div class="card my-2 my-md-4">
-                    <h5 class="card-header">
-                        분류
-                    </h5>
-                    <div class="card-body">
+                    <h5 class="card-header">분류</h5>
+                    <div class="card-body pt-1 pb-0">
                         <ul class="pl-3 mb-0">
-                            <li>어쩌고</li>
-                            <li>저쩌고</li>
+                            {% article_categories category_slug %}
+                                <li class="mb-1 mb-md-2">
+                                    <a href="">
+                                        {{ category.title }}
+                                    </a>
+                                </li>
+                                {% if not category.is_leaf_node %}
+                                    <ul class="pl-3 mb-0">
+                                        {{ children }}
+                                    </ul>
+                                {% endif %}
+                            {% end_article_categories %}
                         </ul>
                     </div>
                 </div>

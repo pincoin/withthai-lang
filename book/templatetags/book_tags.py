@@ -5,7 +5,7 @@ from django.template import Variable
 from django.utils.safestring import mark_safe
 from mptt.utils import get_cached_trees
 
-from ..models import Page
+from ..models import Page, ArticleCategory
 
 register = template.Library()
 
@@ -123,3 +123,60 @@ def get_adjacent_pages(book_id, page_id):
         'previous_page': tree_list[i - 1] if i > 0 else None,
         'next_page': tree_list[i + 1] if i + 1 < len(tree_list) else None,
     }
+
+
+class CategoryNode(template.Node):
+    def __init__(self, nodes, category_slug):
+        self.nodes = nodes
+        self.category_slug = Variable(category_slug)
+
+    def _render_category(self, context, category):
+        nodes = []
+        context.push()
+
+        for child in category.get_children():
+            nodes.append(self._render_category(context, child))
+
+        context['category'] = category
+        context['children'] = mark_safe(''.join(nodes))
+
+        rendered = self.nodes.render(context)
+
+        context.pop()
+        return rendered
+
+    def render(self, context):
+        category_slug = self.category_slug.resolve(context)
+
+        cache_key = 'book.templatetags.book_tags.article_categories({})'.format(category_slug)
+        cache_time = settings.CACHE_TIME_LONG
+
+        tree_query_set = cache.get(cache_key)
+
+        if not tree_query_set:
+            try:
+                tree_query_set = ArticleCategory.objects.filter(slug=category_slug).get_descendants(include_self=False)
+                cache.set(cache_key, tree_query_set, cache_time)
+            except ArticleCategory.DoesNotExist:
+                tree_query_set = None
+
+        roots = get_cached_trees(tree_query_set)
+
+        nodes = [self._render_category(context, category) for category in roots]
+        return ''.join(nodes)
+
+
+@register.tag
+def article_categories(parser, token):
+    try:
+        # split_contents() knows not to split quoted strings.
+        tag_name, category_slug = token.split_contents()
+    except ValueError:
+        raise template.TemplateSyntaxError(
+            '{} tag does not require an additional argument.'.format(token.split_contents()[0])
+        )
+
+    nodes = parser.parse(('end_article_categories',))
+    parser.delete_first_token()
+
+    return CategoryNode(nodes, category_slug)

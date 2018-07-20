@@ -21,7 +21,7 @@
                             </a>
                         {% endif %}
                     </h5>
-                    <div class="card-body py-1">
+                    <div class="card-body pt-1 pb-0">
                         <h5 class="card-title text-center mb-1">목차</h5>
                         {% if request.user.is_superuser %}
                             <a href="{% url 'book:page-create' book.id %}"
