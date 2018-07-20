@@ -8,7 +8,7 @@ from mptt.admin import (
 )
 
 from .models import (
-    Category, Attachment, Book, Page
+    Category, Attachment, Book, Page, Article, ArticleCategory
 )
 
 
@@ -84,7 +84,19 @@ class PageAdmin(MPTTModelAdmin):
         super(PageAdmin, self).save_model(request, obj, form, change)
 
 
+class ArticleAdmin(admin.ModelAdmin):
+    pass
+
+
+class ArticleCategoryAdmin(DraggableMPTTAdmin):
+    list_display = ('tree_actions', 'indented_title', 'slug')
+    prepopulated_fields = {'slug': ('title',)}
+    mptt_level_indent = 20
+
+
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Attachment, AttachmentAdmin)
 admin.site.register(Book, BookAdmin)
 admin.site.register(Page, PageAdmin)
+admin.site.register(Article, ArticleAdmin)
+admin.site.register(ArticleCategory, ArticleCategoryAdmin)

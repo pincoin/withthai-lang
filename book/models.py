@@ -229,3 +229,86 @@ class Page(MPTTModel, AbstractPage):
 
     def get_absolute_url(self):
         return reverse('book:page-detail', args=[self.book.pk, self.pk])
+
+
+class ArticleCategory(AbstractCategory):
+    class Meta:
+        verbose_name = _('article category')
+        verbose_name_plural = _('article categories')
+
+    def __str__(self):
+        return self.title
+
+
+class Article(AbstractPage):
+    STATUS_CHOICES = Choices(
+        (0, 'draft', _('draft')),
+        (1, 'public', _('public')),
+        (2, 'private', _('private')),
+    )
+
+    category = TreeForeignKey(
+        'book.ArticleCategory',
+        verbose_name=_('article category'),
+        null=True,
+        blank=True,
+        db_index=True,
+        on_delete=models.SET_NULL,
+    )
+
+    content = models.TextField(
+        verbose_name=_('content'),
+    )
+
+    content1 = models.TextField(
+        verbose_name=_('content1'),
+        blank=True,
+    )
+
+    content2 = models.TextField(
+        verbose_name=_('content2'),
+        blank=True,
+    )
+
+    image = ThumbnailerImageField(
+        verbose_name=_('image'),
+        upload_to=upload_directory_path,
+        blank=True,
+    )
+
+    youtube = models.URLField(
+        verbose_name=_('youtube'),
+        blank=True,
+    )
+
+    status = models.IntegerField(
+        verbose_name=_('status'),
+        choices=STATUS_CHOICES,
+        default=STATUS_CHOICES.public,
+        db_index=True,
+    )
+
+    view_count = models.PositiveIntegerField(
+        verbose_name=_('view count'),
+        default=0,
+    )
+
+    ip_address = models.GenericIPAddressField(
+        verbose_name=_('IP address'),
+    )
+
+    updated = models.DateTimeField(
+        verbose_name=_('updated date'),
+        null=True,
+    )
+
+    class Meta:
+        verbose_name = _('article')
+        verbose_name_plural = _('articles')
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('book:article-detail', args=[self.pk])

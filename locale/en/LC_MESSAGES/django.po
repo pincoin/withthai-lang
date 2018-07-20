@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-20 02:28+0900\n"
+"POT-Creation-Date: 2018-07-20 11:47+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,11 +41,11 @@ msgstr "parent"
 msgid "Write"
 msgstr ""
 
-#: book/models.py:29 book/models.py:151
+#: book/models.py:29 book/models.py:151 book/models.py:246
 msgid "public"
 msgstr "public"
 
-#: book/models.py:30 book/models.py:152
+#: book/models.py:30 book/models.py:152 book/models.py:247
 msgid "private"
 msgstr "private"
 
@@ -91,7 +91,8 @@ msgstr "category"
 msgid "thumbnail"
 msgstr "thumbnail"
 
-#: book/models.py:68 book/models.py:199 book/templates/book/book_detail.html:27
+#: book/models.py:68 book/models.py:199 book/models.py:285
+#: book/templates/book/book_detail.html:27
 msgid "status"
 msgstr "status"
 
@@ -103,11 +104,12 @@ msgstr "license"
 msgid "owner"
 msgstr "owner"
 
-#: book/models.py:92 book/models.py:206
+#: book/models.py:92 book/models.py:206 book/models.py:292
 msgid "view count"
 msgstr "view count"
 
-#: book/models.py:97 book/models.py:215 book/templates/book/book_detail.html:30
+#: book/models.py:97 book/models.py:215 book/models.py:301
+#: book/templates/book/book_detail.html:30
 msgid "updated date"
 msgstr "update date"
 
@@ -142,37 +144,53 @@ msgstr "attachments"
 msgid "categories"
 msgstr "categories"
 
-#: book/models.py:150
+#: book/models.py:150 book/models.py:245
 msgid "draft"
 msgstr "draft"
 
-#: book/models.py:156 help/models.py:26 help/models.py:58
+#: book/models.py:156 book/models.py:260 help/models.py:26 help/models.py:58
 msgid "content"
 msgstr "content"
 
-#: book/models.py:160
+#: book/models.py:160 book/models.py:264
 msgid "content1"
 msgstr "content1"
 
-#: book/models.py:165
+#: book/models.py:165 book/models.py:269
 msgid "content2"
 msgstr "content2"
 
-#: book/models.py:170
+#: book/models.py:170 book/models.py:274
 msgid "image"
 msgstr "image"
 
-#: book/models.py:176
+#: book/models.py:176 book/models.py:280
 msgid "youtube"
 msgstr "youtube"
 
-#: book/models.py:211
+#: book/models.py:211 book/models.py:297
 msgid "IP address"
 msgstr "IP address"
 
 #: book/models.py:221
 msgid "pages"
 msgstr "pages"
+
+#: book/models.py:236 book/models.py:252
+msgid "article category"
+msgstr "article category"
+
+#: book/models.py:237
+msgid "article categories"
+msgstr "article categories"
+
+#: book/models.py:306
+msgid "article"
+msgstr "article"
+
+#: book/models.py:307
+msgid "articles"
+msgstr "article"
 
 #: book/templates/book/page_create.html:9 book/views.py:77
 msgid "Write New Page"
@@ -192,12 +210,12 @@ msgstr "Delete Page"
 msgid "last modified"
 msgstr "Last modified"
 
-#: book/templates/book/page_detail.html:55
-#: book/templates/book/page_detail.html:61
+#: book/templates/book/page_detail.html:54
+#: book/templates/book/page_detail.html:60
 msgid "Previous Page"
 msgstr "Previous Page"
 
-#: book/templates/book/page_detail.html:68
+#: book/templates/book/page_detail.html:67
 msgid "Next Page"
 msgstr "Next Page"
 
