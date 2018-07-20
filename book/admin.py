@@ -33,6 +33,31 @@ class PageNullFilterSpec(SimpleListFilter):
         return queryset
 
 
+class ArticleCategoryFilterSpec(SimpleListFilter):
+    title = _('category')
+    parameter_name = 'category'
+
+    def __init__(self, *args, **kwargs):
+        self.categories = ArticleCategory.objects.filter(level__gt=0)
+        super(ArticleCategoryFilterSpec, self).__init__(*args, **kwargs)
+
+    def lookups(self, request, model_admin):
+        categories = ()
+
+        for category in self.categories:
+            categories += ((str(category.id), category.title),)
+
+        return categories
+
+    def queryset(self, request, queryset):
+        kwargs = {
+            '{}'.format(self.parameter_name): self.value(),
+        }
+        if self.value() in list(map(lambda x: str(x.id), self.categories)):
+            return queryset.filter(**kwargs)
+        return queryset
+
+
 '''
 class PageInlineForm(forms.ModelForm):
     parent = TreeNodeChoiceField(queryset=Page.objects.filter(book=2))
@@ -85,7 +110,17 @@ class PageAdmin(MPTTModelAdmin):
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title', 'category', 'owner', 'status')
+    list_filter = (ArticleCategoryFilterSpec, 'status', 'owner')
+    readonly_fields = ('ip_address', 'view_count', 'updated')
+
+    def save_model(self, request, obj, form, change):
+        obj.updated = now()
+
+        if obj.id is None:
+            obj.ip_address = get_ip(request)
+
+        super(ArticleAdmin, self).save_model(request, obj, form, change)
 
 
 class ArticleCategoryAdmin(DraggableMPTTAdmin):
