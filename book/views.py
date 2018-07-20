@@ -147,14 +147,36 @@ class ArticleListView(PageableMixin, ArticleContextMixin, generic.ListView):
         return Article.objects \
             .select_related('category', 'owner') \
             .filter(category__in=ArticleCategory.objects
-                    .filter(pk=self.kwargs['category'])
+                    .filter(slug=self.kwargs['category'])
                     .get_descendants(include_self=True)) \
             .order_by('-created')
 
     def get_context_data(self, **kwargs):
         context = super(ArticleListView, self).get_context_data(**kwargs)
         context['page_title'] = _('articles')
+        context['category'] = self.kwargs['category']
         return context
 
     def get_template_names(self):
         return 'book/article_list.html'
+
+
+class ArticleDetailView(generic.DetailView):
+    logger = logging.getLogger(__name__)
+    context_object_name = 'article'
+
+    def get_queryset(self):
+        return Article.objects \
+            .select_related('category', 'owner') \
+            .filter(pk=self.kwargs['pk'])
+
+    def get_context_data(self, **kwargs):
+        context = super(ArticleDetailView, self).get_context_data(**kwargs)
+        context['page_title'] = self.object.title
+        context['page_meta_description'] = self.object.description
+        context['page_meta_keywords'] = self.object.keywords
+        context['category'] = self.kwargs['category']
+        return context
+
+    def get_template_names(self):
+        return 'book/article_detail.html'

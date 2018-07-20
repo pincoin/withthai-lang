@@ -1,0 +1,64 @@
+{% extends "./2_columns_article.html" %}
+
+{% load i18n %}
+{% load rakmai_filters %}
+{% load book_tags %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-2 mt-md-4">
+                    <li class="breadcrumb-item"><a href="{% url 'book:book-list' %}">{% trans "books" %}</a></li>
+                    <li class="breadcrumb-item active">test</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <h5 class="my-1">
+        {% if request.user.is_superuser %}
+            <a href="">{{ article.title }}</a>
+            <a href="{% url 'admin:book_article_delete' article.id %}"
+               class="btn btn-outline-danger btn-sm mb-1 ml-2">
+                <i class="fa fa-trash fa-fw"></i> {% trans "Delete Article" %}
+            </a>
+        {% else %}
+            {{ article.title }}
+        {% endif %}
+    </h5>
+
+    <div class="row my-1 my-md-3">
+        <div class="col paragraph">
+            {{ article.content|markdownify }}
+        </div>
+    </div>
+
+    {% if page.content1 %}
+        <h5 class="my-1 my-md-3">문법 및 표현</h5>
+        <div class="row my-1 my-md-3">
+            <div class="col paragraph">
+                {{ article.content1|markdownify }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if page.content2 %}
+        <h5 class="my-1 my-md-3">본문 해석</h5>
+        <div class="row my-1 my-md-3">
+            <div class="col paragraph">
+                {{ article.content2|markdownify }}
+            </div>
+        </div>
+    {% endif %}
+    <div class="row my-1 my-md-3">
+        <div class="col text-right mr-2">
+            {% trans "last modified" %}: {{ article.updated }}
+        </div>
+    </div>
+
+    <a href="{% url 'book:article-list' category %}?page={{ request.GET.page }}"
+       class="btn btn-outline-secondary btn-block my-2">
+        <i class="fa fa-list-ul fa-fw" aria-hidden="true"></i>&nbsp;{% trans "List" %}
+    </a>
+{% endblock %}

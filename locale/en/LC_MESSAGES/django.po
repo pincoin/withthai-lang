@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-20 15:15+0900\n"
+"POT-Creation-Date: 2018-07-20 20:33+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,8 +29,7 @@ msgstr "Has page"
 msgid "No page"
 msgstr "No page"
 
-#: book/admin.py:37 book/models.py:54 book/models.py:141
-#: book/templates/book/article_list.html:9 help/models.py:68
+#: book/admin.py:37 book/models.py:54 book/models.py:141 help/models.py:68
 msgid "category"
 msgstr "category"
 
@@ -78,9 +77,8 @@ msgstr "BY-NC-SA"
 msgid "BY-NC-ND"
 msgstr "BY-NC-ND"
 
-#: book/models.py:43 book/templates/book/article_list.html:12
-#: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
-#: voca/models.py:20 voca/models.py:178 voca/models.py:235
+#: book/models.py:43 rakmai/models.py:34 rakmai/models.py:72
+#: rakmai/models.py:117 voca/models.py:20 voca/models.py:178 voca/models.py:235
 msgid "title"
 msgstr "title"
 
@@ -125,8 +123,10 @@ msgid "book"
 msgstr "book"
 
 #: book/models.py:108 book/templates/book/_breadcrumbs.html:6
+#: book/templates/book/article_detail.html:11
+#: book/templates/book/article_list.html:11
 #: book/templates/book/book_detail.html:11 book/templates/book/book_list.html:9
-#: book/views.py:25
+#: book/views.py:28
 msgid "books"
 msgstr "books"
 
@@ -190,19 +190,19 @@ msgstr "article categories"
 msgid "article"
 msgstr "article"
 
-#: book/models.py:307 book/views.py:149
+#: book/models.py:307 book/views.py:156
 msgid "articles"
 msgstr "article"
 
-#: book/templates/book/article_list.html:15 rakmai/models.py:159
-msgid "created time"
-msgstr "created time"
+#: book/templates/book/article_detail.html:23
+msgid "Delete Article"
+msgstr "Delete Article"
 
-#: book/templates/book/article_list.html:77
+#: book/templates/book/article_list.html:38
 msgid "No articles yet"
 msgstr "No articles yet"
 
-#: book/templates/book/page_create.html:10 book/views.py:77
+#: book/templates/book/page_create.html:10 book/views.py:80
 msgid "Write New Page"
 msgstr "Write New Page"
 
@@ -233,7 +233,7 @@ msgstr "Next Page"
 msgid "Edit Page"
 msgstr "Edit Page"
 
-#: book/views.py:113
+#: book/views.py:116
 msgid "Edit"
 msgstr "Edit"
 
@@ -407,6 +407,10 @@ msgstr "file name"
 #: rakmai/models.py:147
 msgid "public identifier"
 msgstr "public identifier"
+
+#: rakmai/models.py:159
+msgid "created time"
+msgstr "created time"
 
 #: rakmai/templates/rakmai/base.html:60
 msgid "Thai Language"

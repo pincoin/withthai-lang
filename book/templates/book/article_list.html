@@ -23,7 +23,7 @@
                 </span>
             </div>
             <div class="col-12 col-sm-12 col-md-8 mt-1 order-3 order-md-2">
-                <a href="">
+                <a href="{% url 'book:article-detail' category article.id %}">
                     {{ article.title }}
                 </a>
             </div>
