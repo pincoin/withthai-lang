@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <a href="{% url 'book:article-list' category %}?page={{ request.GET.page }}"
+    <a href="{% url 'book:article-list' category_slug %}?page={{ request.GET.page }}"
        class="btn btn-outline-secondary btn-block my-2">
         <i class="fa fa-list-ul fa-fw" aria-hidden="true"></i>&nbsp;{% trans "List" %}
     </a>
