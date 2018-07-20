@@ -5,16 +5,8 @@
 {% load book_tags %}
 
 {% block main_content %}
-    <div class="row">
-        <div class="col">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mt-2 mt-md-4">
-                    <li class="breadcrumb-item"><a href="{% url 'book:book-list' %}">{% trans "books" %}</a></li>
-                    <li class="breadcrumb-item active">test</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
+    {% get_article_ancestor_path article.category.id as breadcrumbs %}
+    {% include "./_breadcrumbs_article.html" with breadcrumbs=breadcrumbs %}
 
     <h5 class="my-1">
         {% if request.user.is_superuser %}

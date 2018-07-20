@@ -5,8 +5,8 @@
 {% load book_tags %}
 
 {% block main_content %}
-    {% get_ancestor_path page.id as breadcrumbs %}
-    {% include "./_breadcrumbs.html" with breadcrumbs=breadcrumbs %}
+    {% get_page_ancestor_path page.id as breadcrumbs %}
+    {% include "./_breadcrumbs_book.html" with breadcrumbs=breadcrumbs %}
     <h5 class="my-1">
         {% if request.user.is_superuser %}
             <a href="{% url 'book:page-update' book.id page.id %}">{{ page.title }}</a>

@@ -102,7 +102,7 @@ def book_toc(parser, token):
 
 
 @register.simple_tag
-def get_ancestor_path(page_id):
+def get_page_ancestor_path(page_id):
     # breadcrumb
     return get_cached_trees(Page.objects.get(pk=page_id).get_ancestors(include_self=False))
 
@@ -180,3 +180,9 @@ def article_categories(parser, token):
     parser.delete_first_token()
 
     return CategoryNode(nodes, category_slug)
+
+
+@register.simple_tag
+def get_article_ancestor_path(category_id):
+    # breadcrumb
+    return ArticleCategory.objects.get(pk=category_id).get_ancestors(include_self=True)
