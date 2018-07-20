@@ -22,13 +22,16 @@
                         {% endif %}
                     </h5>
                     <div class="card-body pt-1 pb-0">
-                        <h5 class="card-title text-center mb-1">목차</h5>
-                        {% if request.user.is_superuser %}
-                            <a href="{% url 'book:page-create' book.id %}"
-                               class="card-subtitle btn btn-primary btn-sm mb-2">
-                                <i class="fa fa-plus fa-fw"></i> 추가
-                            </a>
-                        {% endif %}
+                        <h5 class="card-title text-center mb-1">
+                            목차
+                            {% if request.user.is_superuser %}
+                                <a href="{% url 'book:page-create' book.id %}"
+                                   class="btn btn-outline-info btn-sm ml-5 mt-1 mb-2">
+                                    <i class="fa fa-plus fa-fw"></i> 추가
+                                </a>
+                            {% endif %}
+                        </h5>
+
                         <ul class="pl-0 mb-0 no-bullet">
                             {% book_toc book %}
                                 <li class="mb-1 mb-md-2 no-bullet">
