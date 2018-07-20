@@ -8,7 +8,7 @@ html {
 
 body {
     padding-top: 54px;
-    margin-bottom: 101px; /* allocate footer margin for xs */
+    margin-bottom: 87px; /* allocate footer margin for xs */
 }
 
 @media (min-width: 992px) {
@@ -22,28 +22,29 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 100px; /* fixed height of the footer for xs */
+    height: 87px; /* fixed height of the footer for xs */
+    font-size: 10pt;
 }
 
 @media (min-width: 540px) {
     /* Small devices (landscape phones, 576px and up) */
     body {
-        margin-bottom: 101px;
+        margin-bottom: 87px;
     }
 
     .footer {
-        height: 100px;
+        height: 87px;
     }
 }
 
 @media (min-width: 720px) {
     /* Medium devices (tablets, 768px and up) */
     body {
-        margin-bottom: 73px;
+        margin-bottom: 63px;
     }
 
     .footer {
-        height: 73px;
+        height: 63px;
     }
 }
 
