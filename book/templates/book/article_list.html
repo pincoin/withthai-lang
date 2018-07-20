@@ -1,0 +1,42 @@
+{% extends "./2_columns_article.html" %}
+
+{% load i18n %}
+{% load book_tags %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-2 mt-md-4">
+                    <li class="breadcrumb-item"><a href="{% url 'book:book-list' %}">{% trans "books" %}</a></li>
+                    <li class="breadcrumb-item active">test</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    {% for article in articles %}
+        <div class="row my-1 py-1">
+            <div class="col-6 col-sm-6 col-md-2 order-1 order-md-1">
+                <span class="btn btn-sm btn-outline-success">
+                    {{ article.category }}
+                </span>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 mt-1 order-3 order-md-2">
+                <a href="">
+                    {{ article.title }}
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-2 mt-1 order-2 order-md-3">
+                {{ article.created|date:'Y-m-d' }}
+            </div>
+        </div>
+        <hr class="mt-0">
+    {% empty %}
+        <div class="row my-3">
+            <div class="col text-center">
+                {% trans "No articles yet" %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

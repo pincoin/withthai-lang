@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-20 11:47+0900\n"
+"POT-Creation-Date: 2018-07-20 15:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,6 +28,11 @@ msgstr "페이지 있음"
 #: book/admin.py:22
 msgid "No page"
 msgstr "페이지 없음"
+
+#: book/admin.py:37 book/models.py:54 book/models.py:141
+#: book/templates/book/article_list.html:9 help/models.py:68
+msgid "category"
+msgstr "분류"
 
 #: book/apps.py:7
 msgid "Book"
@@ -73,8 +78,9 @@ msgstr "저작자표시-비영리-동일조건변경허락"
 msgid "BY-NC-ND"
 msgstr "저작자표시-비영리-변경금지"
 
-#: book/models.py:43 rakmai/models.py:34 rakmai/models.py:72
-#: rakmai/models.py:117 voca/models.py:20 voca/models.py:178 voca/models.py:235
+#: book/models.py:43 book/templates/book/article_list.html:12
+#: rakmai/models.py:34 rakmai/models.py:72 rakmai/models.py:117
+#: voca/models.py:20 voca/models.py:178 voca/models.py:235
 msgid "title"
 msgstr "제목"
 
@@ -83,20 +89,16 @@ msgstr "제목"
 msgid "description"
 msgstr "설명"
 
-#: book/models.py:54 book/models.py:141 help/models.py:68
-msgid "category"
-msgstr "분류"
-
 #: book/models.py:62
 msgid "thumbnail"
 msgstr "썸네일"
 
 #: book/models.py:68 book/models.py:199 book/models.py:285
-#: book/templates/book/book_detail.html:27
+#: book/templates/book/book_detail.html:28
 msgid "status"
 msgstr "상태"
 
-#: book/models.py:75 book/templates/book/book_detail.html:29
+#: book/models.py:75 book/templates/book/book_detail.html:30
 msgid "license"
 msgstr "라이선스"
 
@@ -109,7 +111,7 @@ msgid "view count"
 msgstr "조회수"
 
 #: book/models.py:97 book/models.py:215 book/models.py:301
-#: book/templates/book/book_detail.html:30
+#: book/templates/book/book_detail.html:31
 msgid "updated date"
 msgstr "수정일시"
 
@@ -123,7 +125,7 @@ msgid "book"
 msgstr "태국어 학습"
 
 #: book/models.py:108 book/templates/book/_breadcrumbs.html:6
-#: book/templates/book/book_detail.html:10 book/templates/book/book_list.html:9
+#: book/templates/book/book_detail.html:11 book/templates/book/book_list.html:9
 #: book/views.py:25
 msgid "books"
 msgstr "태국어 학습"
@@ -188,38 +190,46 @@ msgstr "게시물 분류"
 msgid "article"
 msgstr "게시물"
 
-#: book/models.py:307
+#: book/models.py:307 book/views.py:149
 msgid "articles"
 msgstr "게시물"
 
-#: book/templates/book/page_create.html:9 book/views.py:77
+#: book/templates/book/article_list.html:15 rakmai/models.py:159
+msgid "created time"
+msgstr "생성일시"
+
+#: book/templates/book/article_list.html:77
+msgid "No articles yet"
+msgstr "게시물 없음"
+
+#: book/templates/book/page_create.html:10 book/views.py:77
 msgid "Write New Page"
 msgstr "새 페이지 작성"
 
-#: book/templates/book/page_create.html:19
-#: book/templates/book/page_update.html:19
+#: book/templates/book/page_create.html:20
+#: book/templates/book/page_update.html:20
 #: help/templates/help/notice_detail.html:46
 msgid "List"
 msgstr "목록"
 
-#: book/templates/book/page_detail.html:14
+#: book/templates/book/page_detail.html:15
 msgid "Delete Page"
 msgstr "삭제"
 
-#: book/templates/book/page_detail.html:45
+#: book/templates/book/page_detail.html:46
 msgid "last modified"
 msgstr "최종 수정일시"
 
-#: book/templates/book/page_detail.html:54
-#: book/templates/book/page_detail.html:60
+#: book/templates/book/page_detail.html:55
+#: book/templates/book/page_detail.html:61
 msgid "Previous Page"
 msgstr "이전 페이지"
 
-#: book/templates/book/page_detail.html:67
+#: book/templates/book/page_detail.html:68
 msgid "Next Page"
 msgstr "다음 페이지"
 
-#: book/templates/book/page_update.html:9
+#: book/templates/book/page_update.html:10
 msgid "Edit Page"
 msgstr "페이지 수정"
 
@@ -393,10 +403,6 @@ msgstr "파일이름"
 #: rakmai/models.py:147
 msgid "public identifier"
 msgstr "공개식별자"
-
-#: rakmai/models.py:159
-msgid "created time"
-msgstr "생성일시"
 
 #: rakmai/templates/rakmai/base.html:60
 msgid "Thai Language"

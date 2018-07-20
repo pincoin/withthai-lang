@@ -6,11 +6,14 @@ from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 from ipware.ip import get_ip
 
+from rakmai.viewmixins import PageableMixin
 from .forms import PageForm
 from .models import (
-    Book, Page
+    Book, Page, Article, ArticleCategory
 )
-from .viewmixins import BookContextMixin
+from .viewmixins import (
+    BookContextMixin, ArticleContextMixin
+)
 
 
 class BookListView(generic.ListView):
@@ -134,3 +137,24 @@ class PageUpdateView(BookContextMixin, generic.UpdateView):
 
     def get_template_names(self):
         return 'book/page_update.html'
+
+
+class ArticleListView(PageableMixin, ArticleContextMixin, generic.ListView):
+    logger = logging.getLogger(__name__)
+    context_object_name = 'articles'
+
+    def get_queryset(self):
+        return Article.objects \
+            .select_related('category', 'owner') \
+            .filter(category__in=ArticleCategory.objects
+                    .filter(pk=self.kwargs['category'])
+                    .get_descendants(include_self=True)) \
+            .order_by('-created')
+
+    def get_context_data(self, **kwargs):
+        context = super(ArticleListView, self).get_context_data(**kwargs)
+        context['page_title'] = _('articles')
+        return context
+
+    def get_template_names(self):
+        return 'book/article_list.html'

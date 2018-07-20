@@ -1,0 +1,31 @@
+{% extends "rakmai/base.html" %}
+
+{% load i18n %}
+{% load book_tags %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Widgets Column -->
+            <div class="col-12 col-md-3">
+                <div class="card my-2 my-md-4">
+                    <h5 class="card-header">
+                        분류
+                    </h5>
+                    <div class="card-body">
+                        <ul class="pl-3 mb-0">
+                            <li>어쩌고</li>
+                            <li>저쩌고</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-9 book-page">
+                {% block main_content %}{% endblock %}
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+{% endblock %}

@@ -1,4 +1,5 @@
 {% extends "rakmai/base.html" %}
+
 {% load i18n %}
 {% load book_tags %}
 
@@ -7,7 +8,7 @@
     <div class="container">
         <div class="row">
             <!-- Sidebar Widgets Column -->
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-3">
                 <div class="card my-2 my-md-4">
                     <h5 class="card-header">
                         {% if request.user.is_superuser %}
@@ -52,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-8 book-page">
+            <div class="col-12 col-md-9 book-page">
                 {% block main_content %}{% endblock %}
             </div>
         </div>
