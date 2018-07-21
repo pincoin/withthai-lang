@@ -44,6 +44,13 @@ class Book(TimeStampedModel):
         max_length=250,
     )
 
+    slug = models.SlugField(
+        verbose_name=_('slug'),
+        help_text=_('A short label containing only letters, numbers, underscores or hyphens for URL'),
+        max_length=255,
+        allow_unicode=True,
+    )
+
     description = models.TextField(
         verbose_name=_('description'),
         blank=True,
