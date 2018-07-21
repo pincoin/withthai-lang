@@ -50,7 +50,7 @@ class PageNode(template.Node):
                 try:
                     tree_query_set = Page.objects \
                         .select_related('book') \
-                        .filter(book__pk=book.id, status=Page.STATUS_CHOICES.public)
+                        .filter(book__slug=book.slug, status=Page.STATUS_CHOICES.public)
                     cache.set(cache_key, tree_query_set, cache_time)
                 except Page.DoesNotExist:
                     pass

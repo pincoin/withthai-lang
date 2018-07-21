@@ -85,7 +85,7 @@ class PageCreateView(BookContextMixin, generic.CreateView):
 
     def get_form_kwargs(self):
         kwargs = super(PageCreateView, self).get_form_kwargs()
-        kwargs['parent_queryset'] = Page.objects.filter(book__pk=self.book.id)
+        kwargs['parent_queryset'] = Page.objects.filter(book__slug=self.book.slug)
         return kwargs
 
     def form_valid(self, form):
@@ -100,7 +100,7 @@ class PageCreateView(BookContextMixin, generic.CreateView):
         return response
 
     def get_success_url(self):
-        return reverse('book:page-detail', args=(self.book.id, self.object.id))
+        return reverse('book:page-detail', args=(self.book.slug, self.object.id))
 
     def get_template_names(self):
         return 'book/page_create.html'
@@ -121,7 +121,7 @@ class PageUpdateView(BookContextMixin, generic.UpdateView):
 
     def get_form_kwargs(self):
         kwargs = super(PageUpdateView, self).get_form_kwargs()
-        kwargs['parent_queryset'] = Page.objects.filter(book__pk=self.book.id)
+        kwargs['parent_queryset'] = Page.objects.filter(book__slug=self.book.slug)
         return kwargs
 
     def form_valid(self, form):
@@ -133,7 +133,7 @@ class PageUpdateView(BookContextMixin, generic.UpdateView):
         return response
 
     def get_success_url(self):
-        return reverse('book:page-detail', args=(self.book.id, self.object.id))
+        return reverse('book:page-detail', args=(self.book.slug, self.object.id))
 
     def get_template_names(self):
         return 'book/page_update.html'

@@ -14,11 +14,11 @@ urlpatterns = [
     url(r'^(?P<slug>[-\w]+)/$',
         BookDetailView.as_view(), name='book-detail'),
 
-    url(r'^(?P<book>\d+)/(?P<pk>\d+)/$',
+    url(r'^(?P<book>[-\w]+)/(?P<pk>\d+)/$',
         PageDetailView.as_view(), name='page-detail'),
-    url(r'^(?P<book>\d+)/create$',
+    url(r'^(?P<book>[-\w]+)/create$',
         PageCreateView.as_view(), name='page-create'),
-    url(r'^(?P<book>\d+)/(?P<pk>\d+)/update/',
+    url(r'^(?P<book>[-\w]+)/(?P<pk>\d+)/update/',
         PageUpdateView.as_view(), name='page-update'),
 
     url(r'^article/(?P<category>[-\w]+)/$',

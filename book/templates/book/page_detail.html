@@ -9,7 +9,7 @@
     {% include "./_breadcrumbs_book.html" with breadcrumbs=breadcrumbs %}
     <h5 class="my-1">
         {% if request.user.is_superuser %}
-            <a href="{% url 'book:page-update' book.id page.id %}">{{ page.title }}</a>
+            <a href="{% url 'book:page-update' book.slug page.id %}">{{ page.title }}</a>
             <a href="{% url 'admin:book_page_delete' page.id %}"
                class="btn btn-outline-danger btn-sm mb-1 ml-2">
                 <i class="fa fa-trash fa-fw"></i> {% trans "Delete Page" %}

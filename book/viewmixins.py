@@ -8,7 +8,7 @@ class BookContextMixin(object):
     logger = logging.getLogger(__name__)
 
     def dispatch(self, *args, **kwargs):
-        self.book = Book.objects.get(pk=self.kwargs.get('book'))
+        self.book = Book.objects.get(slug=self.kwargs.get('book'))
 
         return super(BookContextMixin, self).dispatch(*args, **kwargs)
 

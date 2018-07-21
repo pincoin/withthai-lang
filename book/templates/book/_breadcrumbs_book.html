@@ -4,7 +4,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mt-0 mb-1 my-md-4">
                 <li class="breadcrumb-item"><a href="{% url 'book:book-list' %}">{% trans "books" %}</a></li>
-                <li class="breadcrumb-item"><a href="{% url 'book:book-detail' book.id %}">{{ book.title }}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'book:book-detail' book.slug %}">{{ book.title }}</a></li>
                 {% for crumb in breadcrumbs %}
                     <li class="breadcrumb-item">
                         <a href="{% url 'book:page-detail' book.id crumb.id %}">{{ crumb.title }}</a>
