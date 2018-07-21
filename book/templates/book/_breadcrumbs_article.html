@@ -6,7 +6,7 @@
                 <li class="breadcrumb-item"><a href="{% url 'book:book-list' %}">{% trans "books" %}</a></li>
                 {% for crumb in breadcrumbs %}
                     <li class="breadcrumb-item">
-                        <a href="">{{ crumb.title }}</a>
+                        <a href="{% url 'book:article-category-list' category_slug crumb.slug %}">{{ crumb.title }}</a>
                     </li>
                 {% endfor %}
                 <li class="breadcrumb-item active">{{ article.title }}</li>

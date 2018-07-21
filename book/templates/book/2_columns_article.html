@@ -15,7 +15,7 @@
                         <ul class="pl-3 mb-0">
                             {% article_categories category_slug %}
                                 <li class="mb-1 mb-md-2">
-                                    <a href="">
+                                    <a href="{% url 'book:article-category-list' category_slug category.slug %}">
                                         {{ category.title }}
                                     </a>
                                 </li>

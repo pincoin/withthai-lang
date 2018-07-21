@@ -3,7 +3,7 @@ from django.conf.urls import url
 from .views import (
     BookListView, BookDetailView,
     PageDetailView, PageCreateView, PageUpdateView,
-    ArticleListView, ArticleDetailView
+    ArticleListView, ArticleDetailView, ArticleCategoryListView,
 )
 
 app_name = 'book'
@@ -29,4 +29,6 @@ urlpatterns = [
         PageCreateView.as_view(), name='article-create'),
     url(r'^article/(?P<category>[-\w]+)/(?P<pk>\d+)/update/',
         PageUpdateView.as_view(), name='article-update'),
+    url(r'^article/(?P<category>[-\w]+)/category/(?P<slug>[-\w]+)$',
+        ArticleCategoryListView.as_view(), name='article-category-list'),
 ]

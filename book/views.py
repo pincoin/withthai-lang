@@ -180,3 +180,25 @@ class ArticleDetailView(generic.DetailView):
 
     def get_template_names(self):
         return 'book/article_detail.html'
+
+
+class ArticleCategoryListView(PageableMixin, ArticleContextMixin, generic.ListView):
+    logger = logging.getLogger(__name__)
+    context_object_name = 'articles'
+
+    def get_queryset(self):
+        return Article.objects \
+            .select_related('category', 'owner') \
+            .filter(category__in=ArticleCategory.objects
+                    .filter(slug=self.kwargs['slug'])
+                    .get_descendants(include_self=True)) \
+            .order_by('-created')
+
+    def get_context_data(self, **kwargs):
+        context = super(ArticleCategoryListView, self).get_context_data(**kwargs)
+        context['page_title'] = _('articles')
+        context['category_slug'] = self.kwargs['category']
+        return context
+
+    def get_template_names(self):
+        return 'book/article_list.html'
