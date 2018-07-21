@@ -14,8 +14,8 @@
             <div class="col-12 col-md-4">
                 <!-- Categories Widget -->
                 <div class="card my-2 my-md-4">
-                    <h5 class="card-header">{% trans "entry categories" %}</h5>
-                    <div class="card-body">
+                    <h6 class="card-header py-2">{% trans "entry categories" %}</h6>
+                    <div class="card-body pt-1 pb-0">
                         <ul class="pl-3 mb-0">
                             {% voca_categories %}
                                 <li class="mb-1">
@@ -33,12 +33,12 @@
 
                 <!-- Level Widget -->
                 <div class="card my-2 my-md-4">
-                    <h5 class="card-header">
+                    <h6 class="card-header py-2">
                         <a href="{% url 'voca:level-list' %}">
                             {% trans "level" %}
                         </a>
-                    </h5>
-                    <div class="card-body">
+                    </h6>
+                    <div class="card-body pt-1 pb-0">
                         <ul class="pl-3 mb-0">
                             <li class="mb-1">
                                 <a href="{% url 'voca:level-entry-list' 'beginner' %}">
@@ -61,12 +61,12 @@
 
                 <!-- Textbook Widget -->
                 <div class="card my-2 my-md-4">
-                    <h5 class="card-header">
+                    <h6 class="card-header py-2">
                         <a href="{% url 'voca:textbook-list' %}">
                             {% trans "textbooks" %}
                         </a>
-                    </h5>
-                    <div class="card-body">
+                    </h6>
+                    <div class="card-body pt-1 pb-0">
                         <ul class="pl-3 mb-0">
                             {% get_textbooks 10 as textbooks %}
                             {% for textbook in textbooks %}

@@ -10,7 +10,7 @@
             <!-- Sidebar Widgets Column -->
             <div class="col-12 col-md-3">
                 <div class="card my-2 my-md-4">
-                    <h5 class="card-header">
+                    <h6 class="card-header py-2">
                         {% if request.user.is_superuser %}
                             <a href="{% url 'admin:book_book_change' book.id %}">
                                 {{ book.title }}
@@ -20,9 +20,9 @@
                                 {{ book.title }}
                             </a>
                         {% endif %}
-                    </h5>
+                    </h6>
                     <div class="card-body pt-1 pb-0">
-                        <h5 class="card-title text-center mb-1">
+                        <h6 class="card-title text-center mb-1">
                             목차
                             {% if request.user.is_superuser %}
                                 <a href="{% url 'book:page-create' book.slug %}"
@@ -30,7 +30,7 @@
                                     <i class="fa fa-plus fa-fw"></i> 추가
                                 </a>
                             {% endif %}
-                        </h5>
+                        </h6>
 
                         <ul class="pl-0 mb-0 no-bullet">
                             {% book_toc book %}
