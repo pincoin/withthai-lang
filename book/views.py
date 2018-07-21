@@ -39,7 +39,7 @@ class BookDetailView(generic.DetailView):
     def get_queryset(self):
         return Book.objects \
             .select_related('category', 'owner') \
-            .filter(pk=self.kwargs['pk'])
+            .filter(slug=self.kwargs['slug'])
 
     def get_context_data(self, **kwargs):
         context = super(BookDetailView, self).get_context_data(**kwargs)

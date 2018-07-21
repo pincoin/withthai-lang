@@ -15,7 +15,7 @@
                     <div class="card h-100">
                         <div class="card-body py-1 py-md-2">
                             <h5 class="card-title text-center mb-1 mb-md-3">
-                                <a href="{% url 'book:book-detail' book.id %}">
+                                <a href="{% url 'book:book-detail' book.slug %}">
                                     {{ book.title }}
                                 </a>
                             </h5>

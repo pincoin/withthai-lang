@@ -63,11 +63,11 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                         <a class="dropdown-item" href="{% url 'voca:entry-list' %}">
                             {% trans "Vocabulary" %}
                         </a>
-                        <a class="dropdown-item" href="{% url 'book:book-detail' 1 %}">성조법 기초</a>
-                        <a class="dropdown-item" href="{% url 'book:book-detail' 2 %}">구문 및 패턴 연습</a>
-                        <a class="dropdown-item" href="{% url 'book:book-detail' 3 %}">태국어 문법</a>
-                        <a class="dropdown-item" href="{% url 'book:book-detail' 4 %}">표현 및 어구</a>
-                        <a class="dropdown-item" href="{% url 'book:book-detail' 6 %}">주제별 회화</a>
+                        <a class="dropdown-item" href="{% url 'book:book-detail' '태국어-성조법' %}">성조법 기초</a>
+                        <a class="dropdown-item" href="{% url 'book:book-detail' '구문-패턴-연습' %}">구문 및 패턴 연습</a>
+                        <a class="dropdown-item" href="{% url 'book:book-detail' '태국어-문법' %}">태국어 문법</a>
+                        <a class="dropdown-item" href="{% url 'book:book-detail' '표현-어구' %}">표현 및 어구</a>
+                        <a class="dropdown-item" href="{% url 'book:book-detail' '주제별-회화' %}">주제별 회화</a>
                         <a class="dropdown-item" href="{% url 'book:article-list' '독해' %}">독해</a>
                         <a class="dropdown-item" href="{% url 'book:article-list' '유튜브' %}">유튜브</a>
                     </div>

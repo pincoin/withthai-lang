@@ -11,7 +11,7 @@ app_name = 'book'
 urlpatterns = [
     url(r'^$',
         BookListView.as_view(), name='book-list'),
-    url(r'^(?P<pk>\d+)/$',
+    url(r'^(?P<slug>[-\w]+)/$',
         BookDetailView.as_view(), name='book-detail'),
 
     url(r'^(?P<book>\d+)/(?P<pk>\d+)/$',
