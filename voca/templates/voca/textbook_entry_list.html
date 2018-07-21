@@ -43,12 +43,12 @@
             <div class="col-md-1">
                 {{ word.chapter }}과
             </div>
-            <div class="col-md-2 thai-font">
+            <div class="col-md-2">
                 <a href="{% url 'voca:entry-detail' pk=word.entry.pk %}">
                     {{ word.entry.title }}
                 </a>
             </div>
-            <div class="col-md-2 thai-font">
+            <div class="col-md-2">
                 {{ word.entry.pronunciation }}
             </div>
             <div class="col-md-7">
