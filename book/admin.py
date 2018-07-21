@@ -84,7 +84,7 @@ class AttachmentAdmin(admin.ModelAdmin):
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'status', 'license', 'owner', 'position')
+    list_display = ('title', 'slug', 'category', 'status', 'license', 'owner', 'position')
     readonly_fields = ('view_count', 'updated')
 
     # inlines = [PageInline]
