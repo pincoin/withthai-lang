@@ -48,6 +48,7 @@ class Book(TimeStampedModel):
         verbose_name=_('slug'),
         help_text=_('A short label containing only letters, numbers, underscores or hyphens for URL'),
         max_length=255,
+        unique=True,
         allow_unicode=True,
     )
 
