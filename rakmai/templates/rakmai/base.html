@@ -21,6 +21,8 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static "css/main.css" %}">
+    {% block stylesheet %}{% endblock %}
+    {{ form.media.css }}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="//www.googletagmanager.com/gtag/js?id=UA-122152735-1"></script>
     <script>
@@ -172,5 +174,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
         crossorigin="anonymous"></script>
 <script async src="{% static "js/plugin.js" %}"></script>
 <script async src="{% static "js/main.js" %}"></script>
+{% block javascript %}{% endblock %}
+{{ form.media.js }}
 </body>
 </html>

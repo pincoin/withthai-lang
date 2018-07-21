@@ -1,8 +1,14 @@
 {% extends "./2_columns_book.html" %}
 
 {% load i18n %}
+{% load static %}
 {% load rakmai_filters %}
 {% load book_tags %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="{% static "js/replace-book-thai.js" %}"></script>
+{% endblock %}
 
 {% block main_content %}
     {% get_page_ancestor_path page.id as breadcrumbs %}
@@ -19,7 +25,7 @@
         {% endif %}
     </h5>
     <div class="row my-1 my-md-3">
-        <div class="col paragraph">
+        <div class="col paragraph" id="content1">
             {{ page.content|markdownify }}
         </div>
     </div>
@@ -27,7 +33,7 @@
     {% if page.content1 %}
         <h5 class="my-1 my-md-3">문법 및 표현</h5>
         <div class="row my-1 my-md-3">
-            <div class="col paragraph">
+            <div class="col paragraph" id="content2">
                 {{ page.content1|markdownify }}
             </div>
         </div>
@@ -36,7 +42,7 @@
     {% if page.content2 %}
         <h5 class="my-1 my-md-3">본문 해석</h5>
         <div class="row my-1 my-md-3">
-            <div class="col paragraph">
+            <div class="col paragraph" id="content3">
                 {{ page.content2|markdownify }}
             </div>
         </div>
