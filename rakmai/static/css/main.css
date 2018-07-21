@@ -163,3 +163,11 @@ body {
 .book-page h6 {
     font-size: 1.3rem;
 }
+
+.book-page table {
+    margin-bottom: 0.5rem;
+}
+
+.book-page table th, .book-page table td {
+    padding: 0.5rem 1rem;
+}
