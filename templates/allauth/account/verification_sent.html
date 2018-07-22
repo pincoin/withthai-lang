@@ -1,12 +1,21 @@
-{% extends "account/base.html" %}
+{% extends "rakmai/base.html" %}
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
-
 {% block content %}
-    <h1>{% trans "Verify Your E-mail Address" %}</h1>
-
-    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
-
+    <div class="container">
+        <h5 class="my-2 my-md-4 text-center">
+            {% trans "Verify Your E-mail Address" %}
+        </h5>
+        <div class="row mb-4">
+            <div class="col col-md-8 offset-md-2">
+                <p>
+                    인증 이메일을 발송했습니다. 회원가입을 완료하려면 받으신 이메일에서 링크를 클릭하세요.
+                </p>
+                <p>
+                    5분 후에도 이메일을 받지 못하면 help@withthai.com 이메일 주소로 가입 아이디를 알려주시기 바랍니다.
+                </p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
