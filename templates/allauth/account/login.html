@@ -13,11 +13,19 @@
             <div class="col col-md-4 offset-md-4">
                 <form class="form" id="signup_form" method="post" action="{% url 'account_login' %}">
                     {% csrf_token %}
-                    {{ form.non_field_errors }}
-                    {% for hidden_field in form.hidden_fields %}
-                        {{ hidden_field.errors }}
-                        {{ hidden_field }}
-                    {% endfor %}
+                    {% if form.non_field_errors %}
+                        <p class="alert alert-danger">
+                            {{ form.non_field_errors }}
+                        </p>
+                    {% endif %}
+                    {% if form.hidden_fields %}
+                        <p class="alert alert-danger">
+                            {% for hidden_field in form.hidden_fields %}
+                                {{ hidden_field.errors }}
+                                {{ hidden_field }}
+                            {% endfor %}
+                        </p>
+                    {% endif %}
                     <div class="form-group row">
                         <div class="col-12">
                             {{ form.login.errors }}
