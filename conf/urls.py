@@ -12,9 +12,10 @@ urlpatterns = [
         HomeView.as_view(), name='home'),
     url(r'{}'.format(settings.ADMIN_URL),
         admin.site.urls),
+    url(r'^accounts/', include('allauth.urls')),
     url(r'^voca/', include('voca.urls', namespace='voca')),
     url(r'^book/', include('book.urls', namespace='book')),
-    url(r'^help/', include('help.urls', namespace='help'))
+    url(r'^help/', include('help.urls', namespace='help')),
 ]
 
 if settings.DEBUG:
