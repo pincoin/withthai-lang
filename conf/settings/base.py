@@ -24,6 +24,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',  # appended
     'django.contrib.sitemaps',  # appended
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.kakao',
+    'allauth.socialaccount.providers.naver',
 ]
 
 INSTALLED_APPS += [
@@ -80,8 +87,41 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',  # Django default
+    'allauth.account.auth_backends.AuthenticationBackend',  # Allauth
+)
+
 # django.contrib.sites settings for allauth
 SITE_ID = 1
+
+# django.contrib.auth settings for allauth
+PASSWORD_RESET_TIMEOUT_DAYS = 1  # default=3
+LOGIN_URL = '/accounts/login/'  # default=/accounts/login/
+LOGOUT_URL = '/accounts/logout/'  # default=/accounts/logout/
+LOGIN_REDIRECT_URL = '/'  # default=/accounts/profile/
+# LOGOUT_REDIRECT_URL = '/'
+
+# django-allauth
+DEFAULT_FROM_EMAIL = Secret.EMAIL_NO_REPLY
+# ACCOUNT_ADAPTER = 'member.adapters.MyAccountAdapter'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
+# ACCOUNT_SIGNUP_FORM_CLASS = 'member.forms.MemberSignupForm'
+ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True  # default=False
+SOCIALACCOUNT_AUTO_SIGNUP = False
+
+# Social providers for django-allauth
+# Each key has an empty dictionary value that will eventually contain provider specific configuration options by admin
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {},
+    'google': {},
+    'kakao': {},
+    'naver': {},
+}
 
 # crispy-form template
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
