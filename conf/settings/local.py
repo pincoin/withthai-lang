@@ -67,5 +67,3 @@ OTP_TOTP_ISSUER = _('WITHTHAI')
 GOOGLE_OTP_ENABLED = False
 
 BROKER_URL = 'amqp://{}:{}@localhost:5672//'.format(Secret.AMQP_USER, Secret.AMQP_PASSWORD)
-
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
