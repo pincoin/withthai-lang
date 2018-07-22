@@ -9,7 +9,7 @@ class HomeView(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        context['page_title'] = _('withthai')
+        context['page_title'] = _('Thai for All')
         return context
 
     def get_template_names(self):
