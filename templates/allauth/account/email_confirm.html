@@ -13,7 +13,7 @@
                 {% if confirmation %}
                     {% user_display confirmation.email_address.user as user_display %}
                     <p>
-                        {{ confirmation.email_address.email }} 이메일 주소의 {{ user_display }} 사용자가
+                        {{ confirmation.email_address.email }} 이메일 주소의 {{ user_display }} 사용자가<br/>
                         회원가입을 완료하려면 아래 회원 가입 완료 버튼을 클릭해주세요.
                     </p>
                     <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
