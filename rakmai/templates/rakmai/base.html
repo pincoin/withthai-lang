@@ -91,7 +91,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                 </li>
                 {% if not user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="">회원가입</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">로그인</a>

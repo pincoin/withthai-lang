@@ -1,22 +1,103 @@
-{% extends "account/base.html" %}
+{% extends "rakmai/base.html" %}
 
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-    잉니ㅣ
-<h1>{% trans "Sign Up" %}</h1>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
-
+    <div class="container">
+        <h5 class="my-2 my-md-4 text-center">
+            {% trans "Sign Up" %}
+        </h5>
+        <div class="row mb-4">
+            <div class="col col-md-6 offset-md-3">
+                <form class="form" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {% for hidden_field in form.hidden_fields %}
+                        {{ hidden_field.errors }}
+                        {{ hidden_field }}
+                    {% endfor %}
+                    <div class="form-group row">
+                        <label for="{{ form.email.id_for_label }}" class="ml-1 ml-md-0 col-12 col-md-3 col-form-label">
+                            {{ form.email.label }}
+                        </label>
+                        <div class="col-12 col-md-9">
+                            {{ form.email.errors }}
+                            <input class="form-control"
+                                   placeholder="{{ form.email.label }}"
+                                   type="text"
+                                   name="{{ form.email.name }}"
+                                   id="{{ form.email.id_for_label }}"
+                                   {% if form.email.value != None %}value="{{ form.email.value|stringformat:'s' }}"{% endif %}
+                                   maxlength="{{ form.email.field.max_length }}"
+                                   {% if form.email.field.required %}required{% endif %}>
+                            {{ form.email.help_text }}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="{{ form.username.id_for_label }}" class="ml-1 ml-md-0 col-12 col-md-3 col-form-label">
+                            {{ form.username.label }}
+                        </label>
+                        <div class="col-12 col-md-9">
+                            {{ form.username.errors }}
+                            <input class="form-control"
+                                   placeholder="{{ form.username.label }}"
+                                   type="text"
+                                   name="{{ form.username.name }}"
+                                   id="{{ form.username.id_for_label }}"
+                                   {% if form.username.value != None %}value="{{ form.username.value|stringformat:'s' }}"{% endif %}
+                                   maxlength="{{ form.username.field.max_length }}"
+                                   {% if form.username.field.required %}required{% endif %}>
+                            {{ form.username.help_text }}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="{{ form.password1.id_for_label }}" class="ml-1 ml-md-0 col-12 col-md-3 col-form-label">
+                            {{ form.password1.label }}
+                        </label>
+                        <div class="col-12 col-md-9">
+                            {{ form.password1.errors }}
+                            <input class="form-control"
+                                   placeholder="{{ form.password1.label }}"
+                                   type="text"
+                                   name="{{ form.password1.name }}"
+                                   id="{{ form.password1.id_for_label }}"
+                                   {% if form.password1.value != None %}value="{{ form.password1.value|stringformat:'s' }}"{% endif %}
+                                   maxlength="{{ form.password1.field.max_length }}"
+                                   {% if form.password1.field.required %}required{% endif %}>
+                            {{ form.password1.help_text }}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="{{ form.password2.id_for_label }}" class="ml-1 ml-md-0 col-12 col-md-3 col-form-label">
+                            {{ form.password2.label }}
+                        </label>
+                        <div class="col-12 col-md-9">
+                            {{ form.password2.errors }}
+                            <input class="form-control"
+                                   placeholder="{{ form.password2.label }}"
+                                   type="text"
+                                   name="{{ form.password2.name }}"
+                                   id="{{ form.password2.id_for_label }}"
+                                   {% if form.password2.value != None %}value="{{ form.password2.value|stringformat:'s' }}"{% endif %}
+                                   maxlength="{{ form.password2.field.max_length }}"
+                                   {% if form.password2.field.required %}required{% endif %}>
+                            {{ form.password2.help_text }}
+                        </div>
+                    </div>
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                    {% endif %}
+                    <button type="submit" class="btn btn-block btn-info">
+                        {% trans "Sign Up" %}
+                    </button>
+                </form>
+                <a href="{{ login_url }}" class="btn btn-block btn-primary my-3">
+                    {% trans "Sign In" %}
+                </a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
