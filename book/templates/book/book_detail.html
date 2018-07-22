@@ -1,6 +1,7 @@
 {% extends "./2_columns_book.html" %}
 
 {% load i18n %}
+{% load rakmai_filters %}
 {% load book_tags %}
 
 {% block main_content %}
@@ -17,7 +18,7 @@
     <div class="row mb-2">
         <div class="col paragraph">
             <div class="pl-2">
-                {{ book.description }}
+                {{ book.description|markdownify }}
             </div>
         </div>
     </div>
