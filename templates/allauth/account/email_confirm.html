@@ -18,9 +18,8 @@
                     </p>
                     <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
                         {% csrf_token %}
-                        <button type="submit">회원 가입 완료</button>
+                        <button type="submit" class="btn btn-block btn-info">회원 가입 완료</button>
                     </form>
-
                 {% else %}
                     <p>
                         이메일 인증 링크가 잘못됐거나 만료되었습니다.
