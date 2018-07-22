@@ -102,10 +102,19 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                             {% trans "Sign In" %}
                         </a>
                     </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">
+                            <i class="fa fa-sign-out fa-fw"></i>
+                            {% trans "Sign Out" %}
+                        </a>
+                    </li>
                 {% endif %}
                 {% if request.user.is_superuser %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'admin:index' %}">admin</a>
+                        <a class="nav-link" href="{% url 'admin:index' %}">
+                            <i class="fa fa-cog fa-fw text-danger"></i>
+                        </a>
                     </li>
                 {% endif %}
             </ul>
