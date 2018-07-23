@@ -20,30 +20,40 @@
                     {% endfor %}
                     <div class="form-group row">
                         <div class="col-12">
-                            {{ form.login.errors }}
-                            <input class="form-control"
-                                   placeholder="{{ form.login.label }}"
-                                   type="text"
-                                   name="{{ form.login.name }}"
-                                   id="{{ form.login.id_for_label }}"
-                                   {% if form.login.value != None %}value="{{ form.login.value|stringformat:'s' }}"{% endif %}
-                                   maxlength="{{ form.login.field.max_length }}"
-                                   {% if form.login.field.required %}required{% endif %}>
-                            {{ form.login.help_text }}
+                            <div class="input-group">
+                                {{ form.login.errors }}
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-envelope-o fw"></i></span>
+                                </div>
+                                <input class="form-control"
+                                       placeholder="{{ form.login.label }}"
+                                       type="text"
+                                       name="{{ form.login.name }}"
+                                       id="{{ form.login.id_for_label }}"
+                                       {% if form.login.value != None %}value="{{ form.login.value|stringformat:'s' }}"{% endif %}
+                                       maxlength="{{ form.login.field.max_length }}"
+                                       {% if form.login.field.required %}required{% endif %}>
+                                {{ form.login.help_text }}
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-12">
-                            {{ form.password.errors }}
-                            <input class="form-control"
-                                   placeholder="{{ form.password.label }}"
-                                   type="password"
-                                   name="{{ form.password.name }}"
-                                   id="{{ form.password.id_for_label }}"
-                                   {% if form.password.value != None %}value="{{ form.password.value|stringformat:'s' }}"{% endif %}
-                                   maxlength="{{ form.password.field.max_length }}"
-                                   {% if form.password.field.required %}required{% endif %}>
-                            {{ form.password.help_text }}
+                            <div class="input-group">
+                                {{ form.password.errors }}
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-key fw"></i></span>
+                                </div>
+                                <input class="form-control"
+                                       placeholder="{{ form.password.label }}"
+                                       type="password"
+                                       name="{{ form.password.name }}"
+                                       id="{{ form.password.id_for_label }}"
+                                       {% if form.password.value != None %}value="{{ form.password.value|stringformat:'s' }}"{% endif %}
+                                       maxlength="{{ form.password.field.max_length }}"
+                                       {% if form.password.field.required %}required{% endif %}>
+                                {{ form.password.help_text }}
+                            </div>
                         </div>
                     </div>
                     {% if redirect_field_value %}

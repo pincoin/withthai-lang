@@ -1,5 +1,7 @@
 import logging
 
+from django.contrib.auth.mixins import AccessMixin
+
 
 class PageableMixin(object):
     logger = logging.getLogger(__name__)
@@ -15,3 +17,13 @@ class PageableMixin(object):
 
     def get_paginate_by(self, queryset):
         return self.chunk_size
+
+
+class SuperuserRequiredMixin(AccessMixin):
+    login_url = '/'
+
+    def dispatch(self, request, *args, **kwargs):
+        if self.request.user.is_authenticated and self.request.user.is_superuser:
+            return super(SuperuserRequiredMixin, self).dispatch(request, *args, **kwargs)
+
+        return self.handle_no_permission()
