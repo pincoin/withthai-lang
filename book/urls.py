@@ -1,5 +1,9 @@
 from django.conf.urls import url
+from django.contrib.sitemaps.views import sitemap
 
+from .sitemaps import (
+    PageSitemap, ArticleSitemap
+)
 from .views import (
     BookListView, BookDetailView,
     PageDetailView, PageCreateView, PageUpdateView,
@@ -7,6 +11,14 @@ from .views import (
 )
 
 app_name = 'book'
+
+sitemaps_page = {
+    'sitemap': PageSitemap(),
+}
+
+sitemaps_article = {
+    'sitemap': ArticleSitemap(),
+}
 
 urlpatterns = [
     url(r'^$',
@@ -31,4 +43,9 @@ urlpatterns = [
         PageUpdateView.as_view(), name='article-update'),
     url(r'^article/(?P<category>[-\w]+)/category/(?P<slug>[-\w]+)$',
         ArticleCategoryListView.as_view(), name='article-category-list'),
+
+    url(r'^sitemap-page\.xml$',
+        sitemap, {'sitemaps': sitemaps_page}, name='django.contrib.sitemaps.views.sitemap'),
+    url(r'^sitemap-article\.xml$',
+        sitemap, {'sitemaps': sitemaps_article}, name='django.contrib.sitemaps.views.sitemap'),
 ]
