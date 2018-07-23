@@ -1,8 +1,14 @@
 {% extends "./2_columns_article.html" %}
 
 {% load i18n %}
+{% load static %}
 {% load rakmai_filters %}
 {% load book_tags %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="{% static "js/replace-article-thai.js" %}"></script>
+{% endblock %}
 
 {% block main_content %}
     {% get_article_ancestor_path article.category.id as breadcrumbs %}
@@ -21,9 +27,17 @@
         {% endif %}
     </h5>
 
-    <div class="row my-1 my-md-3">
-        <div class="col paragraph">
-            {{ article.content|markdownify }}
+    {% if article.youtube %}
+        <div class="row my-1">
+            <div class="col youtube">
+                <iframe src="{{ article.youtube }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="row my-1">
+        <div class="col paragraph thai-font">
+            {{ article.content|markdownify|linebreaks }}
         </div>
     </div>
 

@@ -177,3 +177,15 @@ body {
 .book-page table th, .book-page table td {
     padding: 0.5rem 1rem;
 }
+
+.youtube {
+    position: relative;
+    width: 95%;
+    padding-bottom: 56.25%;
+}
+
+.youtube iframe {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+}
