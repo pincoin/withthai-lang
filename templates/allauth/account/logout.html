@@ -9,7 +9,6 @@
         </h5>
         <div class="row mb-4">
             <div class="col col-md-4 offset-md-4">
-                <p>{% trans 'Are you sure you want to sign out?' %}</p>
                 <form method="post" action="{% url 'account_logout' %}">
                     {% csrf_token %}
                     {% if redirect_field_value %}

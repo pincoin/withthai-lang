@@ -61,7 +61,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                        aria-haspopup="true" aria-expanded="false">
                         {% trans "Thai Language" %}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
                         <a class="dropdown-item" href="{% url 'voca:entry-list' %}">
                             {% trans "Vocabulary" %}
                         </a>
@@ -79,7 +79,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                        aria-haspopup="true" aria-expanded="false">
                         커뮤니티
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownBlog">
                         <a class="dropdown-item" href="">자유게시판</a>
                         <a class="dropdown-item" href="">묻고답하기</a>
                         <a class="dropdown-item" href="">사진게시판</a>
@@ -103,11 +103,18 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                         </a>
                     </li>
                 {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">
-                            <i class="fa fa-sign-out fa-fw"></i>
-                            {% trans "Sign Out" %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user fa-fw"></i>
+                            {{ request.user.username }}
                         </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownBlog">
+                            <a class="dropdown-item" href="">{% trans "Profile" %}</a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">
+                                {% trans "Sign Out" %}
+                            </a>
+                        </div>
                     </li>
                 {% endif %}
                 {% if request.user.is_superuser %}
