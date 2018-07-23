@@ -127,6 +127,13 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
         </div>
     </div>
 </nav>
+{% if messages %}
+    <div class="d-none">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
 
 {% block content %}body content{% endblock %}
 
