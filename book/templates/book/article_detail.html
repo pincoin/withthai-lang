@@ -14,7 +14,7 @@
     {% get_article_ancestor_path article.category.id as breadcrumbs %}
     {% include "./_breadcrumbs_article.html" with breadcrumbs=breadcrumbs %}
 
-    <h5 class="mt-0 mb-3">
+    <h5 class="my-3 mt-md-1">
         {% if request.user.is_superuser %}
             <span class="btn btn-outline-success btn-sm mb-1 mr-2">{{ article.category }}</span>
             <a href="{% url 'book:article-update' category_slug article.id %}">{{ article.title }}</a>
