@@ -6,7 +6,9 @@ from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 from ipware.ip import get_ip
 
-from rakmai.viewmixins import PageableMixin
+from rakmai.viewmixins import (
+    PageableMixin, SuperuserRequiredMixin
+)
 from .forms import PageForm
 from .models import (
     Book, Page, Article, ArticleCategory
@@ -71,7 +73,7 @@ class PageDetailView(generic.DetailView):
         return 'book/page_detail.html'
 
 
-class PageCreateView(BookContextMixin, generic.CreateView):
+class PageCreateView(BookContextMixin, SuperuserRequiredMixin, generic.CreateView):
     logger = logging.getLogger(__name__)
     model = Page
 
@@ -106,7 +108,7 @@ class PageCreateView(BookContextMixin, generic.CreateView):
         return 'book/page_create.html'
 
 
-class PageUpdateView(BookContextMixin, generic.UpdateView):
+class PageUpdateView(BookContextMixin, SuperuserRequiredMixin, generic.UpdateView):
     logger = logging.getLogger(__name__)
     model = Page
     context_object_name = 'page'
