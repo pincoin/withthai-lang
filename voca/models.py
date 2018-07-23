@@ -231,6 +231,11 @@ class EntrySentenceCompound(models.Model):
 
 
 class Textbook(TimeStampedModel):
+    STATUS_CHOICES = Choices(
+        (0, 'public', _('public')),
+        (1, 'private', _('private')),
+    )
+
     title = models.CharField(
         verbose_name=_('title'),
         max_length=255,
@@ -270,6 +275,13 @@ class Textbook(TimeStampedModel):
 
     chapter = models.IntegerField(
         verbose_name=_('chapter'),
+    )
+
+    status = models.IntegerField(
+        verbose_name=_('status'),
+        choices=STATUS_CHOICES,
+        default=STATUS_CHOICES.public,
+        db_index=True,
     )
 
     class Meta:

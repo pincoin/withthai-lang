@@ -74,7 +74,7 @@ def get_textbooks(count=5):
     textbooks = cache.get(cache_key)
 
     if not textbooks:
-        textbooks = Textbook.objects.all().order_by('position')[:count]
+        textbooks = Textbook.objects.filter(status=Textbook.STATUS_CHOICES.public).order_by('position')[:count]
         cache.set(cache_key, textbooks, cache_time)
 
     return textbooks

@@ -37,6 +37,12 @@
                 {{ book.publisher }}
             </div>
         </div>
+    {% empty %}
+        <div class="row mb-2 mb-md-4">
+            <div class="col text-center">
+                {% trans "No textbook" %}
+            </div>
+        </div>
     {% endfor %}
     <!-- Pagination -->
     {% include './_pagination.html' with page_obj=page_obj page_range=page_range %}

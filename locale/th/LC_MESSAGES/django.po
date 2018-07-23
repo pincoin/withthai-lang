@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 11:47+0900\n"
+"POT-Creation-Date: 2018-07-23 19:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: book/admin.py:16 book/models.py:135 book/models.py:228 voca/models.py:304
+#: book/admin.py:16 book/models.py:135 book/models.py:228 voca/models.py:316
 msgid "page"
 msgstr ""
 
@@ -45,11 +45,11 @@ msgstr ""
 msgid "Write"
 msgstr ""
 
-#: book/models.py:29 book/models.py:159 book/models.py:254
+#: book/models.py:29 book/models.py:159 book/models.py:254 voca/models.py:235
 msgid "public"
 msgstr ""
 
-#: book/models.py:30 book/models.py:160 book/models.py:255
+#: book/models.py:30 book/models.py:160 book/models.py:255 voca/models.py:236
 msgid "private"
 msgstr ""
 
@@ -78,15 +78,15 @@ msgid "BY-NC-ND"
 msgstr ""
 
 #: book/models.py:43 rakmai/models.py:34 rakmai/models.py:72
-#: rakmai/models.py:117 voca/models.py:20 voca/models.py:178 voca/models.py:235
+#: rakmai/models.py:117 voca/models.py:20 voca/models.py:178 voca/models.py:240
 msgid "title"
 msgstr ""
 
-#: book/models.py:48 help/models.py:18 rakmai/models.py:122 voca/models.py:243
+#: book/models.py:48 help/models.py:18 rakmai/models.py:122 voca/models.py:248
 msgid "slug"
 msgstr ""
 
-#: book/models.py:49 help/models.py:19 rakmai/models.py:123 voca/models.py:244
+#: book/models.py:49 help/models.py:19 rakmai/models.py:123 voca/models.py:249
 msgid ""
 "A short label containing only letters, numbers, underscores or hyphens for "
 "URL"
@@ -102,7 +102,7 @@ msgid "thumbnail"
 msgstr ""
 
 #: book/models.py:76 book/models.py:207 book/models.py:293
-#: book/templates/book/book_detail.html:29
+#: book/templates/book/book_detail.html:29 voca/models.py:281
 msgid "status"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgid "updated date"
 msgstr ""
 
 #: book/models.py:110 voca/models.py:83 voca/models.py:124 voca/models.py:167
-#: voca/models.py:224 voca/models.py:261
+#: voca/models.py:224 voca/models.py:266
 msgid "position"
 msgstr ""
 
@@ -136,7 +136,7 @@ msgstr ""
 #: book/templates/book/_breadcrumbs_book.html:6
 #: book/templates/book/article_list.html:11
 #: book/templates/book/book_detail.html:12 book/templates/book/book_list.html:9
-#: book/views.py:28
+#: book/views.py:30
 msgid "books"
 msgstr ""
 
@@ -200,7 +200,7 @@ msgstr ""
 msgid "article"
 msgstr ""
 
-#: book/models.py:315 book/views.py:156 book/views.py:199
+#: book/models.py:315 book/views.py:158 book/views.py:201
 msgid "articles"
 msgstr ""
 
@@ -224,7 +224,7 @@ msgstr ""
 msgid "No articles yet"
 msgstr ""
 
-#: book/templates/book/page_create.html:10 book/views.py:80
+#: book/templates/book/page_create.html:10 book/views.py:82
 msgid "Write New Page"
 msgstr ""
 
@@ -245,7 +245,7 @@ msgstr ""
 msgid "Edit Page"
 msgstr ""
 
-#: book/views.py:116
+#: book/views.py:118
 msgid "Edit"
 msgstr ""
 
@@ -423,7 +423,7 @@ msgstr ""
 msgid "Vocabulary"
 msgstr ""
 
-#: rakmai/templates/rakmai/base.html:96 templates/allauth/account/login.html:63
+#: rakmai/templates/rakmai/base.html:96 templates/allauth/account/login.html:93
 #: templates/allauth/account/signup.html:8
 #: templates/allauth/account/signup.html:94
 msgid "Sign Up"
@@ -431,16 +431,20 @@ msgstr ""
 
 #: rakmai/templates/rakmai/base.html:102
 #: templates/allauth/account/login.html:10
-#: templates/allauth/account/login.html:53
+#: templates/allauth/account/login.html:63
 #: templates/allauth/account/signup.html:99
 msgid "Sign In"
 msgstr ""
 
-#: rakmai/templates/rakmai/base.html:109
+#: rakmai/templates/rakmai/base.html:115
+msgid "Admin"
+msgstr ""
+
+#: rakmai/templates/rakmai/base.html:118
 msgid "Profile"
 msgstr ""
 
-#: rakmai/templates/rakmai/base.html:115
+#: rakmai/templates/rakmai/base.html:120
 #: templates/allauth/account/logout.html:8
 #: templates/allauth/account/logout.html:17
 msgid "Sign Out"
@@ -570,7 +574,7 @@ msgstr ""
 msgid "Confirm E-mail Address"
 msgstr ""
 
-#: templates/allauth/account/login.html:58
+#: templates/allauth/account/login.html:88
 msgid "Forgot Password?"
 msgstr ""
 
@@ -725,7 +729,7 @@ msgstr ""
 msgid "level"
 msgstr ""
 
-#: voca/models.py:59 voca/models.py:113 voca/models.py:294
+#: voca/models.py:59 voca/models.py:113 voca/models.py:306
 msgid "entry"
 msgstr ""
 
@@ -813,36 +817,37 @@ msgstr ""
 msgid "words"
 msgstr ""
 
-#: voca/models.py:251
+#: voca/models.py:256
 msgid "author"
 msgstr ""
 
-#: voca/models.py:256
+#: voca/models.py:261
 msgid "publisher"
 msgstr ""
 
-#: voca/models.py:272 voca/models.py:300
+#: voca/models.py:277 voca/models.py:312
 msgid "chapter"
 msgstr ""
 
-#: voca/models.py:276 voca/models.py:287
+#: voca/models.py:288 voca/models.py:299
 msgid "textbook"
 msgstr ""
 
-#: voca/models.py:277 voca/templates/voca/2_columns.html:66 voca/views.py:165
-#: voca/views.py:193
+#: voca/models.py:289 voca/templates/voca/2_columns.html:66 voca/views.py:166
+#: voca/views.py:194
 msgid "textbooks"
 msgstr ""
 
-#: voca/models.py:310
+#: voca/models.py:322
 msgid "textbook word"
 msgstr ""
 
-#: voca/models.py:311
+#: voca/models.py:323
 msgid "textbook words"
 msgstr ""
 
 #: voca/templates/voca/2_columns.html:80
+#: voca/templates/voca/textbook_list.html:43
 msgid "No textbook"
 msgstr ""
 

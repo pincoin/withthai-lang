@@ -110,6 +110,11 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                             {{ request.user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownBlog">
+                            {% if request.user.is_superuser %}
+                                <a class="dropdown-item" href="{% url 'admin:index' %}">
+                                    {% trans "Admin" %}
+                                </a>
+                            {% endif %}
                             <a class="dropdown-item" href="">{% trans "Profile" %}</a>
                             <a class="dropdown-item" href="{% url 'account_logout' %}">
                                 {% trans "Sign Out" %}
@@ -117,13 +122,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                         </div>
                     </li>
                 {% endif %}
-                {% if request.user.is_superuser %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'admin:index' %}">
-                            <i class="fa fa-cog fa-fw text-danger"></i>
-                        </a>
-                    </li>
-                {% endif %}
+
             </ul>
         </div>
     </div>
