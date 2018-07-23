@@ -156,9 +156,12 @@ class TextbookListView(SearchContextMixin, PageableMixin, VocaContextMixin, gene
 
     def get_queryset(self):
         queryset = Textbook.objects \
-            .filter(status=Textbook.STATUS_CHOICES.public) \
             .prefetch_related('words') \
             .annotate(total=Count('words__pk'))
+
+        if not self.request.user.is_superuser:
+            queryset = queryset.filter(status=Textbook.STATUS_CHOICES.public)
+
         return queryset.order_by('position')
 
     def get_context_data(self, **kwargs):

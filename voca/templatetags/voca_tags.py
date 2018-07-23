@@ -66,8 +66,12 @@ def voca_categories(parser, token):
     return CategoryNode(nodes, tree_query_set)
 
 
-@register.simple_tag
-def get_textbooks(count=5):
+@register.simple_tag(takes_context=True)
+def get_textbooks(context, count=5):
+    if context['request'].user.is_superuser:
+        textbooks = Textbook.objects.all().order_by('position')[:count]
+        return textbooks
+
     cache_key = 'voca.templatetags.voca_tags.get_textbook()'
     cache_time = settings.CACHE_TIME_LONG
 
