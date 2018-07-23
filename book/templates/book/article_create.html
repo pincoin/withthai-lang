@@ -14,7 +14,7 @@
                 {% crispy form %}
             </div>
         </div>
-        <a href=""
+        <a href="{% url 'book:article-list' category_slug %}"
            class="btn btn-outline-secondary btn-block">
             <i class="fa fa-list-ul fa-fw" aria-hidden="true"></i>&nbsp;{% trans "List" %}
         </a>

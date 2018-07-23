@@ -60,8 +60,17 @@ class PageForm(forms.ModelForm):
 
 
 class ArticleForm(forms.ModelForm):
+    category = TreeNodeChoiceField(None)
+
     def __init__(self, *args, **kwargs):
+        self.category_queryset = kwargs.pop('category_queryset', None)
+
         super(ArticleForm, self).__init__(*args, **kwargs)
+
+        self.fields['category'].queryset = self.category_queryset
+        self.fields['category'].required = False
+        self.fields['category'].label = _('category')
+
         self.helper = FormHelper()
         self.helper.include_media = False
 

@@ -215,6 +215,7 @@ class ArticleCreateView(SuperuserRequiredMixin, generic.CreateView):
     def get_context_data(self, **kwargs):
         context = super(ArticleCreateView, self).get_context_data(**kwargs)
         context['page_title'] = _('Write New Article')
+        context['category_slug'] = self.kwargs['category']
         return context
 
     def get_form_class(self):
@@ -222,6 +223,9 @@ class ArticleCreateView(SuperuserRequiredMixin, generic.CreateView):
 
     def get_form_kwargs(self):
         kwargs = super(ArticleCreateView, self).get_form_kwargs()
+        kwargs['category_queryset'] = ArticleCategory.objects \
+            .filter(slug=self.kwargs['category']) \
+            .get_descendants(include_self=False)
         return kwargs
 
     def form_valid(self, form):
