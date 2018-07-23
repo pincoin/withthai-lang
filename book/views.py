@@ -9,7 +9,9 @@ from ipware.ip import get_ip
 from rakmai.viewmixins import (
     PageableMixin, SuperuserRequiredMixin
 )
-from .forms import PageForm
+from .forms import (
+    ArticleForm, PageForm
+)
 from .models import (
     Book, Page, Article, ArticleCategory
 )
@@ -204,3 +206,34 @@ class ArticleCategoryListView(PageableMixin, ArticleContextMixin, generic.ListVi
 
     def get_template_names(self):
         return 'book/article_list.html'
+
+
+class ArticleCreateView(SuperuserRequiredMixin, generic.CreateView):
+    logger = logging.getLogger(__name__)
+    model = Article
+
+    def get_context_data(self, **kwargs):
+        context = super(ArticleCreateView, self).get_context_data(**kwargs)
+        context['page_title'] = _('Write New Article')
+        return context
+
+    def get_form_class(self):
+        return ArticleForm
+
+    def get_form_kwargs(self):
+        kwargs = super(ArticleCreateView, self).get_form_kwargs()
+        return kwargs
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        form.instance.view_count = 0
+        form.instance.updated = now()
+        form.instance.ip_address = get_ip(self.request)
+        response = super(ArticleCreateView, self).form_valid(form)
+        return response
+
+    def get_success_url(self):
+        return reverse('book:article-detail', args=(self.object.category.slug, self.object.id))
+
+    def get_template_names(self):
+        return 'book/article_create.html'

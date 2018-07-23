@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 19:05+0900\n"
+"POT-Creation-Date: 2018-07-23 21:17+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr "Book"
 msgid "parent"
 msgstr "parent"
 
-#: book/forms.py:51
+#: book/forms.py:51 book/forms.py:90 book/templates/book/article_list.html:44
 msgid "Write"
 msgstr ""
 
@@ -138,7 +138,7 @@ msgstr "book"
 #: book/templates/book/_breadcrumbs_book.html:6
 #: book/templates/book/article_list.html:11
 #: book/templates/book/book_detail.html:12 book/templates/book/book_list.html:9
-#: book/views.py:30
+#: book/views.py:32
 msgid "books"
 msgstr "books"
 
@@ -202,9 +202,39 @@ msgstr "article categories"
 msgid "article"
 msgstr "article"
 
-#: book/models.py:315 book/views.py:158 book/views.py:201
+#: book/models.py:315 book/views.py:160 book/views.py:203
 msgid "articles"
 msgstr "article"
+
+#: book/templates/book/_pagination.html:9
+#: book/templates/book/_pagination.html:14
+#: help/templates/help/_pagination.html:9
+#: help/templates/help/_pagination.html:14
+#: voca/templates/voca/_pagination.html:9
+#: voca/templates/voca/_pagination.html:14
+msgid "Previous"
+msgstr "Prev"
+
+#: book/templates/book/_pagination.html:34
+#: book/templates/book/_pagination.html:39
+#: help/templates/help/_pagination.html:34
+#: help/templates/help/_pagination.html:39
+#: voca/templates/voca/_pagination.html:34
+#: voca/templates/voca/_pagination.html:39
+msgid "Next"
+msgstr "Next"
+
+#: book/templates/book/article_create.html:10 book/views.py:217
+msgid "Write New Article"
+msgstr "Write New Article"
+
+#: book/templates/book/article_create.html:19
+#: book/templates/book/article_detail.html:55
+#: book/templates/book/page_create.html:20
+#: book/templates/book/page_update.html:20
+#: help/templates/help/notice_detail.html:46
+msgid "List"
+msgstr "List"
 
 #: book/templates/book/article_detail.html:17
 msgid "Delete Article"
@@ -215,18 +245,11 @@ msgstr "Delete Article"
 msgid "last modified"
 msgstr "Last modified"
 
-#: book/templates/book/article_detail.html:55
-#: book/templates/book/page_create.html:20
-#: book/templates/book/page_update.html:20
-#: help/templates/help/notice_detail.html:46
-msgid "List"
-msgstr "List"
-
 #: book/templates/book/article_list.html:38
 msgid "No articles yet"
 msgstr "No articles yet"
 
-#: book/templates/book/page_create.html:10 book/views.py:82
+#: book/templates/book/page_create.html:10 book/views.py:84
 msgid "Write New Page"
 msgstr "Write New Page"
 
@@ -247,7 +270,7 @@ msgstr "Next Page"
 msgid "Edit Page"
 msgstr "Edit Page"
 
-#: book/views.py:118
+#: book/views.py:120
 msgid "Edit"
 msgstr "Edit"
 
@@ -264,7 +287,7 @@ msgid "Thai"
 msgstr "Thai"
 
 #: conf/settings/local.py:66 rakmai/templates/rakmai/base.html:8
-#: rakmai/templates/rakmai/base.html:51 rakmai/templates/rakmai/base.html:153
+#: rakmai/templates/rakmai/base.html:51 rakmai/templates/rakmai/base.html:160
 msgid "WITHTHAI"
 msgstr "WITHTHAI"
 
@@ -303,20 +326,6 @@ msgstr "Common"
 #: help/models.py:75 help/models.py:76
 msgid "notice"
 msgstr "notice"
-
-#: help/templates/help/_pagination.html:9
-#: help/templates/help/_pagination.html:14
-#: voca/templates/voca/_pagination.html:9
-#: voca/templates/voca/_pagination.html:14
-msgid "Previous"
-msgstr "Prev"
-
-#: help/templates/help/_pagination.html:34
-#: help/templates/help/_pagination.html:39
-#: voca/templates/voca/_pagination.html:34
-#: voca/templates/voca/_pagination.html:39
-msgid "Next"
-msgstr "Next"
 
 #: help/templates/help/notice_detail.html:8 help/views.py:40
 msgid "Notice"
@@ -837,8 +846,8 @@ msgstr "chapter"
 msgid "textbook"
 msgstr "textbook"
 
-#: voca/models.py:289 voca/templates/voca/2_columns.html:66 voca/views.py:166
-#: voca/views.py:194
+#: voca/models.py:289 voca/templates/voca/2_columns.html:66 voca/views.py:169
+#: voca/views.py:197
 msgid "textbooks"
 msgstr "textbooks"
 

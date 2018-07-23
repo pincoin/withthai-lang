@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 19:05+0900\n"
+"POT-Creation-Date: 2018-07-23 21:17+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr "책"
 msgid "parent"
 msgstr "부모"
 
-#: book/forms.py:51
+#: book/forms.py:51 book/forms.py:90 book/templates/book/article_list.html:44
 msgid "Write"
 msgstr "작성"
 
@@ -136,7 +136,7 @@ msgstr "태국어 학습"
 #: book/templates/book/_breadcrumbs_book.html:6
 #: book/templates/book/article_list.html:11
 #: book/templates/book/book_detail.html:12 book/templates/book/book_list.html:9
-#: book/views.py:30
+#: book/views.py:32
 msgid "books"
 msgstr "태국어 학습"
 
@@ -200,9 +200,39 @@ msgstr "게시물 분류"
 msgid "article"
 msgstr "게시물"
 
-#: book/models.py:315 book/views.py:158 book/views.py:201
+#: book/models.py:315 book/views.py:160 book/views.py:203
 msgid "articles"
 msgstr "게시물"
+
+#: book/templates/book/_pagination.html:9
+#: book/templates/book/_pagination.html:14
+#: help/templates/help/_pagination.html:9
+#: help/templates/help/_pagination.html:14
+#: voca/templates/voca/_pagination.html:9
+#: voca/templates/voca/_pagination.html:14
+msgid "Previous"
+msgstr "이전"
+
+#: book/templates/book/_pagination.html:34
+#: book/templates/book/_pagination.html:39
+#: help/templates/help/_pagination.html:34
+#: help/templates/help/_pagination.html:39
+#: voca/templates/voca/_pagination.html:34
+#: voca/templates/voca/_pagination.html:39
+msgid "Next"
+msgstr "다음"
+
+#: book/templates/book/article_create.html:10 book/views.py:217
+msgid "Write New Article"
+msgstr "새 게시물 작성"
+
+#: book/templates/book/article_create.html:19
+#: book/templates/book/article_detail.html:55
+#: book/templates/book/page_create.html:20
+#: book/templates/book/page_update.html:20
+#: help/templates/help/notice_detail.html:46
+msgid "List"
+msgstr "목록"
 
 #: book/templates/book/article_detail.html:17
 msgid "Delete Article"
@@ -213,18 +243,11 @@ msgstr "삭제"
 msgid "last modified"
 msgstr "최종 수정일시"
 
-#: book/templates/book/article_detail.html:55
-#: book/templates/book/page_create.html:20
-#: book/templates/book/page_update.html:20
-#: help/templates/help/notice_detail.html:46
-msgid "List"
-msgstr "목록"
-
 #: book/templates/book/article_list.html:38
 msgid "No articles yet"
 msgstr "게시물 없음"
 
-#: book/templates/book/page_create.html:10 book/views.py:82
+#: book/templates/book/page_create.html:10 book/views.py:84
 msgid "Write New Page"
 msgstr "새 페이지 작성"
 
@@ -245,7 +268,7 @@ msgstr "다음 페이지"
 msgid "Edit Page"
 msgstr "페이지 수정"
 
-#: book/views.py:118
+#: book/views.py:120
 msgid "Edit"
 msgstr "수정"
 
@@ -262,7 +285,7 @@ msgid "Thai"
 msgstr "태국어"
 
 #: conf/settings/local.py:66 rakmai/templates/rakmai/base.html:8
-#: rakmai/templates/rakmai/base.html:51 rakmai/templates/rakmai/base.html:153
+#: rakmai/templates/rakmai/base.html:51 rakmai/templates/rakmai/base.html:160
 msgid "WITHTHAI"
 msgstr "위드타이"
 
@@ -301,20 +324,6 @@ msgstr "일반"
 #: help/models.py:75 help/models.py:76
 msgid "notice"
 msgstr "공지사항"
-
-#: help/templates/help/_pagination.html:9
-#: help/templates/help/_pagination.html:14
-#: voca/templates/voca/_pagination.html:9
-#: voca/templates/voca/_pagination.html:14
-msgid "Previous"
-msgstr "이전"
-
-#: help/templates/help/_pagination.html:34
-#: help/templates/help/_pagination.html:39
-#: voca/templates/voca/_pagination.html:34
-#: voca/templates/voca/_pagination.html:39
-msgid "Next"
-msgstr "다음"
 
 #: help/templates/help/notice_detail.html:8 help/views.py:40
 msgid "Notice"
@@ -833,8 +842,8 @@ msgstr "챕터"
 msgid "textbook"
 msgstr "교재"
 
-#: voca/models.py:289 voca/templates/voca/2_columns.html:66 voca/views.py:166
-#: voca/views.py:194
+#: voca/models.py:289 voca/templates/voca/2_columns.html:66 voca/views.py:169
+#: voca/views.py:197
 msgid "textbooks"
 msgstr "교재"
 

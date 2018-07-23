@@ -39,4 +39,9 @@
             </div>
         </div>
     {% endfor %}
+    <a href="{% url 'book:article-create' category_slug %}"
+       class="btn btn-secondary">
+        {% trans "Write" %}
+    </a>
+    {% include './_pagination.html' with page_obj=page_obj page_range=page_range %}
 {% endblock %}

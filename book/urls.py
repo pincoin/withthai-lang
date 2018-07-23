@@ -7,7 +7,7 @@ from .sitemaps import (
 from .views import (
     BookListView, BookDetailView,
     PageDetailView, PageCreateView, PageUpdateView,
-    ArticleListView, ArticleDetailView, ArticleCategoryListView,
+    ArticleListView, ArticleDetailView, ArticleCategoryListView, ArticleCreateView,
 )
 
 app_name = 'book'
@@ -38,7 +38,7 @@ urlpatterns = [
     url(r'^article/(?P<category>[-\w]+)/(?P<pk>\d+)/$',
         ArticleDetailView.as_view(), name='article-detail'),
     url(r'^article/(?P<category>[-\w]+)/create$',
-        PageCreateView.as_view(), name='article-create'),
+        ArticleCreateView.as_view(), name='article-create'),
     url(r'^article/(?P<category>[-\w]+)/(?P<pk>\d+)/update/',
         PageUpdateView.as_view(), name='article-update'),
     url(r'^article/(?P<category>[-\w]+)/category/(?P<slug>[-\w]+)$',
