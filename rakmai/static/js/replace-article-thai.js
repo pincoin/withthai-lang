@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let content2 = $('#content1');
+    let content2 = $('#content2');
 
     content2.html(content2.html().replace(
         /([\u0E00-\u0E7F]+)/g,
