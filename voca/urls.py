@@ -1,11 +1,17 @@
 from django.conf.urls import url
+from django.contrib.sitemaps.views import sitemap
 
+from .sitemaps import EntrySitemap
 from .views import (
     EntryListView, EntryDetailView, EntryCategoryView, EntryLevelListView,
     TextbookListView, TextbookEntryListView, LevelListView
 )
 
 app_name = 'voca'
+
+sitemaps_entry = {
+    'sitemap': EntrySitemap(),
+}
 
 urlpatterns = [
     url(r'^entry/$',
@@ -25,4 +31,7 @@ urlpatterns = [
         TextbookListView.as_view(), name='textbook-list'),
     url(r'^textbook/(?P<slug>[-\w]+)/$',
         TextbookEntryListView.as_view(), name='textbook-entry-list'),
+
+    url(r'^sitemap-entry\.xml$',
+        sitemap, {'sitemaps': sitemaps_entry}, name='django.contrib.sitemaps.views.sitemap'),
 ]
