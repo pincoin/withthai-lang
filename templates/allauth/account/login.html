@@ -63,6 +63,26 @@
                         {% trans "Sign In" %}
                     </button>
                 </form>
+                <div class="row my-1 my-md-3">
+                    <div class="col-sm-12 text-center text-md-left col-md-5 order-1 order-md-2">
+                        <h5 class="mt-md-2">SNS 로그인</h5>
+                    </div>
+                    <div class="col-sm-12 text-center text-md-left col-md-7 order-2 order-md-1">
+                        <a class="" href="">
+                            <img class="sns-login-button rounded" src="{% static "images/sns/login/naver.png" %}">
+                        </a>
+                        <a class="ml-2" href="">
+                            <img class="sns-login-button rounded" src="{% static "images/sns/login/kakao.png" %}">
+                        </a>
+                        <a class="ml-2" href="">
+                            <img class="sns-login-button rounded" src="{% static "images/sns/login/facebook.png" %}">
+                        </a>
+                        <a class="ml-2" href="">
+                            <img class="sns-login-button rounded border border-info"
+                                 src="{% static "images/sns/login/google.png" %}">
+                        </a>
+                    </div>
+                </div>
                 <a href="{% url 'account_reset_password' %}"
                    class="btn btn-block btn-outline-secondary my-3">
                     {% trans "Forgot Password?" %}
