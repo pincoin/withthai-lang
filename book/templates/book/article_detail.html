@@ -36,7 +36,7 @@
     {% endif %}
 
     <div class="row my-1">
-        <div class="col paragraph thai-font">
+        <div class="col paragraph thai-font" id="content1">
             {{ article.content|markdownify|linebreaksbr }}
         </div>
     </div>
@@ -44,16 +44,19 @@
     {% if article.content1 %}
         <h5 class="my-1 my-md-3">문법 및 표현</h5>
         <div class="row my-1 my-md-3">
-            <div class="col paragraph">
+            <div class="col paragraph" id="content2">
                 {{ article.content1|markdownify|linebreaksbr }}
             </div>
         </div>
     {% endif %}
 
     {% if article.content2 %}
-        <h5 class="my-1 my-md-3">본문 해석<small>의역</small></h5>
+        <h5 class="my-1 my-md-3">
+            본문 해석
+            <small>의역</small>
+        </h5>
         <div class="row my-1 my-md-3">
-            <div class="col paragraph">
+            <div class="col paragraph" id="content3">
                 {{ article.content2|markdownify|linebreaksbr }}
             </div>
         </div>
