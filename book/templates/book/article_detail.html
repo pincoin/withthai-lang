@@ -14,7 +14,7 @@
     {% get_article_ancestor_path article.category.id as breadcrumbs %}
     {% include "./_breadcrumbs_article.html" with breadcrumbs=breadcrumbs %}
 
-    <h5 class="my-3 mt-md-1">
+    <h5 class="my-3 mt-md-1 pb-1 border-bottom border-secondary">
         {% if request.user.is_superuser %}
             <span class="btn btn-outline-success btn-sm mb-1 mr-2">{{ article.category }}</span>
             <a href="{% url 'book:article-update' category_slug article.id %}">{{ article.title }}</a>
@@ -44,7 +44,7 @@
     </div>
 
     {% if article.content1 %}
-        <h5 class="my-3">문법 및 표현</h5>
+        <h5 class="my-2 pb-2 border-bottom border-secondary">문법 및 표현</h5>
         <div class="row my-1 my-md-3">
             <div class="col paragraph" id="content2">
                 {{ article.content1|markdownify }}
@@ -53,7 +53,7 @@
     {% endif %}
 
     {% if article.content2 %}
-        <h5 class="my-3">
+        <h5 class="my-2 pb-2 border-bottom border-secondary">
             본문 해석
             <small>의역</small>
         </h5>
@@ -63,12 +63,12 @@
             </div>
         </div>
     {% endif %}
+    <hr>
     <div class="row my-1 my-md-3">
         <div class="col text-right mr-2">
             {% trans "last modified" %}: {{ article.updated }}
         </div>
     </div>
-
     <a href="{% url 'book:article-list' category_slug %}?page={{ request.GET.page }}"
        class="btn btn-outline-secondary btn-block my-2">
         <i class="fa fa-list-ul fa-fw" aria-hidden="true"></i>&nbsp;{% trans "List" %}
