@@ -12,6 +12,14 @@
 
             <!-- Sidebar Widgets Column -->
             <div class="col-12 col-md-4">
+                {% if request.user.is_superuser %}
+                    <div class="my-2 my-md-4">
+                        <a href="{% url 'admin:voca_entry_add' %}" class="btn btn-primary btn-sm mt-1">
+                            <i class="fa fa-plus fa-fw"></i>
+                            추가
+                        </a>
+                    </div>
+                {% endif %}
                 <!-- Categories Widget -->
                 <div class="card my-2 my-md-4">
                     <h6 class="card-header py-2">{% trans "entry categories" %}</h6>
