@@ -39,7 +39,7 @@
 
     <div class="row my-1">
         <div class="col paragraph thai-font" id="content1">
-            {{ article.content|markdownify|linebreaksbr }}
+            {{ article.content|markdownify }}
         </div>
     </div>
 
@@ -47,7 +47,7 @@
         <h5 class="my-1 my-md-3">문법 및 표현</h5>
         <div class="row my-1 my-md-3">
             <div class="col paragraph" id="content2">
-                {{ article.content1|markdownify|linebreaksbr }}
+                {{ article.content1|markdownify }}
             </div>
         </div>
     {% endif %}
@@ -59,7 +59,7 @@
         </h5>
         <div class="row my-1 my-md-3">
             <div class="col paragraph" id="content3">
-                {{ article.content2|markdownify|linebreaksbr }}
+                {{ article.content2|markdownify }}
             </div>
         </div>
     {% endif %}

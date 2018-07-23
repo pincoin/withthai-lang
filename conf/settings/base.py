@@ -133,7 +133,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Bleach sanitizing text fragments
 BLEACH_ALLOWED_TAGS = [
     'h1', 'h2', 'h3', 'h4', 'h5', 'ol', 'ul', 'li', 'div', 'p', 'code', 'blockquote', 'pre', 'span', 'table', 'thead',
-    'tbody', 'tr', 'th', 'td', 'a', 'em', 'strong', 'hr', 'img'
+    'tbody', 'tr', 'th', 'td', 'a', 'em', 'strong', 'hr', 'img', 'br',
 ]
 
 BLEACH_ALLOWED_ATTRIBUTES = {
