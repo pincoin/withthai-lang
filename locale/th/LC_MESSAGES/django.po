@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 21:17+0900\n"
+"POT-Creation-Date: 2018-07-23 21:47+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,8 @@ msgstr ""
 msgid "No page"
 msgstr ""
 
-#: book/admin.py:37 book/models.py:62 book/models.py:149 help/models.py:68
+#: book/admin.py:37 book/forms.py:72 book/models.py:62 book/models.py:149
+#: help/models.py:68
 msgid "category"
 msgstr ""
 
@@ -41,7 +42,7 @@ msgstr ""
 msgid "parent"
 msgstr ""
 
-#: book/forms.py:51 book/forms.py:90 book/templates/book/article_list.html:44
+#: book/forms.py:51 book/forms.py:99 book/templates/book/article_list.html:45
 msgid "Write"
 msgstr ""
 
@@ -223,11 +224,13 @@ msgid "Next"
 msgstr ""
 
 #: book/templates/book/article_create.html:10 book/views.py:217
+#: book/views.py:252
 msgid "Write New Article"
 msgstr ""
 
 #: book/templates/book/article_create.html:19
 #: book/templates/book/article_detail.html:55
+#: book/templates/book/article_update.html:19
 #: book/templates/book/page_create.html:20
 #: book/templates/book/page_update.html:20
 #: help/templates/help/notice_detail.html:46
@@ -245,6 +248,10 @@ msgstr ""
 
 #: book/templates/book/article_list.html:38
 msgid "No articles yet"
+msgstr ""
+
+#: book/templates/book/article_update.html:10
+msgid "Edit Article"
 msgstr ""
 
 #: book/templates/book/page_create.html:10 book/views.py:84

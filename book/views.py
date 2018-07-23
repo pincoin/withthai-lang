@@ -237,7 +237,41 @@ class ArticleCreateView(SuperuserRequiredMixin, generic.CreateView):
         return response
 
     def get_success_url(self):
-        return reverse('book:article-detail', args=(self.object.category.slug, self.object.id))
+        return reverse('book:article-detail', args=(self.kwargs['category'], self.object.id))
 
     def get_template_names(self):
         return 'book/article_create.html'
+
+
+class ArticleUpdateView(SuperuserRequiredMixin, generic.UpdateView):
+    logger = logging.getLogger(__name__)
+    model = Article
+
+    def get_context_data(self, **kwargs):
+        context = super(ArticleUpdateView, self).get_context_data(**kwargs)
+        context['page_title'] = _('Write New Article')
+        context['category_slug'] = self.kwargs['category']
+        return context
+
+    def get_form_class(self):
+        return ArticleForm
+
+    def get_form_kwargs(self):
+        kwargs = super(ArticleUpdateView, self).get_form_kwargs()
+        kwargs['category_queryset'] = ArticleCategory.objects \
+            .filter(slug=self.kwargs['category']) \
+            .get_descendants(include_self=False)
+        return kwargs
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        form.instance.updated = now()
+        form.instance.ip_address = get_ip(self.request)
+        response = super(ArticleUpdateView, self).form_valid(form)
+        return response
+
+    def get_success_url(self):
+        return reverse('book:article-detail', args=(self.kwargs['category'], self.object.id))
+
+    def get_template_names(self):
+        return 'book/article_update.html'
