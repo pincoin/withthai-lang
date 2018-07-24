@@ -50,7 +50,7 @@
     {% if words %}
         <h5 class="my-2 pb-2 border-bottom border-secondary">주요 어휘</h5>
         {% for word in words %}
-            <div class="row my-3">
+            <div class="row my-1">
                 <div class="col-md-3 thai-font">
                     <a href="{% url 'voca:entry-detail' word.id %}">
                         {{ word.title }}
