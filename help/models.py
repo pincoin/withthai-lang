@@ -92,8 +92,6 @@ class ContactMessage(SoftDeletableModel, AbstractPage):
     email = models.CharField(
         verbose_name=_('email'),
         max_length=254,
-        blank=True,
-        null=True,
     )
 
     phone = models.CharField(

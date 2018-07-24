@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-24 12:17+0900\n"
+"POT-Creation-Date: 2018-07-24 13:33+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,6 +43,7 @@ msgid "parent"
 msgstr "parent"
 
 #: book/forms.py:51 book/forms.py:99 book/templates/book/article_list.html:45
+#: help/forms.py:37
 msgid "Write"
 msgstr ""
 
@@ -359,7 +360,7 @@ msgstr ""
 msgid "contact"
 msgstr "contact"
 
-#: help/templates/help/notice_detail.html:8 help/views.py:40
+#: help/templates/help/notice_detail.html:8 help/views.py:44
 msgid "Notice"
 msgstr "Notice"
 
@@ -367,9 +368,13 @@ msgstr "Notice"
 msgid "No message"
 msgstr "No message"
 
-#: help/views.py:56
+#: help/views.py:60
 msgid "{} : Notice"
 msgstr "{} : Notice"
+
+#: help/views.py:79
+msgid "Contact"
+msgstr "Contact"
 
 #: rakmai/admin.py:4 rakmai/admin.py:5
 msgid "WITHTHAI admin"
