@@ -180,6 +180,10 @@ class ArticleDetailView(generic.DetailView):
         context['page_meta_description'] = self.object.description
         context['page_meta_keywords'] = self.object.keywords
         context['category_slug'] = self.kwargs['category']
+
+        context['words'] = self.object.words \
+            .prefetch_related('meanings') \
+            .order_by('book_entryarticlemembership.position')
         return context
 
     def get_template_names(self):
