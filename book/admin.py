@@ -58,6 +58,13 @@ class ArticleCategoryFilterSpec(SimpleListFilter):
         return queryset
 
 
+class EntryArticleMembershipInline(admin.TabularInline):
+    model = Article.words.through
+    extra = 1
+    fk_name = 'from_article'
+    raw_id_fields = ('to_entry',)
+
+
 '''
 class PageInlineForm(forms.ModelForm):
     parent = TreeNodeChoiceField(queryset=Page.objects.filter(book=2))
@@ -113,6 +120,8 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'owner', 'status')
     list_filter = (ArticleCategoryFilterSpec, 'status', 'owner')
     readonly_fields = ('ip_address', 'view_count', 'updated')
+
+    inlines = [EntryArticleMembershipInline]
 
     def save_model(self, request, obj, form, change):
         obj.updated = now()

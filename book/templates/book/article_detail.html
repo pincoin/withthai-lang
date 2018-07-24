@@ -18,8 +18,12 @@
         {% if request.user.is_superuser %}
             <span class="btn btn-outline-success btn-sm mb-1 mr-2">{{ article.category }}</span>
             <a href="{% url 'book:article-update' category_slug article.id %}">{{ article.title }}</a>
+            <a href="{% url 'admin:book_article_change' article.id %}"
+               class="btn btn-outline-info btn-sm mb-1 ml-2">
+                <i class="fa fa-pencil fa-fw"></i> {% trans "Edit" %}
+            </a>
             <a href="{% url 'admin:book_article_delete' article.id %}"
-               class="btn btn-outline-danger btn-sm mb-1 ml-2">
+               class="btn btn-outline-danger btn-sm mb-1">
                 <i class="fa fa-trash fa-fw"></i> {% trans "Delete Article" %}
             </a>
         {% else %}
@@ -42,6 +46,29 @@
             {{ article.content|markdownify }}
         </div>
     </div>
+
+    {% if article.words %}
+        <h5 class="my-2 pb-2 border-bottom border-secondary">주요 어휘</h5>
+        {% for word in article.words.all %}
+            <div class="row my-3">
+                <div class="col-md-3 thai-font">
+                    <a href="">
+                        {{ word.title }}
+                    </a>
+                </div>
+                <div class="col-md-3 thai-font">
+                    {{ word.pronunciation }}
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        {% for meaning in word.meanings.all %}
+                            <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
 
     {% if article.content1 %}
         <h5 class="my-2 pb-2 border-bottom border-secondary">문법 및 표현</h5>

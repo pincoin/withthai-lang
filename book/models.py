@@ -278,6 +278,13 @@ class Article(AbstractPage):
         blank=True,
     )
 
+    words = models.ManyToManyField(
+        'voca.Entry',
+        through='book.EntryArticleMembership',
+        blank=True,
+        symmetrical=False,
+    )
+
     image = ThumbnailerImageField(
         verbose_name=_('image'),
         upload_to=upload_directory_path,
@@ -320,3 +327,26 @@ class Article(AbstractPage):
 
     def get_absolute_url(self):
         return reverse('book:article-detail', args=[self.pk])
+
+
+class EntryArticleMembership(models.Model):
+    from_article = models.ForeignKey(
+        'book.Article',
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    to_entry = models.ForeignKey(
+        'voca.Entry',
+        db_index=True,
+        on_delete=models.CASCADE,
+    )
+
+    position = models.IntegerField(
+        verbose_name=_('position'),
+    )
+
+    class Meta:
+        verbose_name = _('word')
+        verbose_name_plural = _('words')
+        ordering = ['position']
