@@ -9,7 +9,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'created', 'owner')
     list_select_related = ('owner',)
     list_display_links = ('title',)
-    fields = ('title', 'description', 'keywords', 'content', 'markup')
+    fields = ('title', 'slug', 'description', 'keywords', 'content', 'markup')
     ordering = ['-created']
 
     def save_model(self, request, obj, form, change):
