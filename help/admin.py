@@ -35,7 +35,7 @@ class NoticeMessageAdmin(admin.ModelAdmin):
 
 
 class ContactMessageAdmin(admin.ModelAdmin):
-    list_display = ('title', 'created')
+    list_display = ('title', 'fullname', 'email', 'phone', 'created')
     fields = ('title', 'fullname', 'email', 'phone', 'content')
     ordering = ['-created']
 
