@@ -89,9 +89,8 @@ class ContactMessage(SoftDeletableModel, AbstractPage):
         max_length=32,
     )
 
-    email = models.CharField(
+    email = models.EmailField(
         verbose_name=_('email'),
-        max_length=254,
     )
 
     phone = models.CharField(

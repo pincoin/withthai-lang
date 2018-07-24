@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-24 13:33+0900\n"
+"POT-Creation-Date: 2018-07-24 15:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgid "parent"
 msgstr "부모"
 
 #: book/forms.py:51 book/forms.py:99 book/templates/book/article_list.html:45
-#: help/forms.py:37
+#: help/forms.py:47
 msgid "Write"
 msgstr "작성"
 
@@ -163,7 +163,7 @@ msgid "draft"
 msgstr "초안"
 
 #: book/models.py:164 book/models.py:268 help/models.py:26 help/models.py:58
-#: help/models.py:107
+#: help/models.py:104
 msgid "content"
 msgstr "본문"
 
@@ -183,7 +183,7 @@ msgstr "이미지"
 msgid "youtube"
 msgstr "유튜브"
 
-#: book/models.py:219 book/models.py:305 help/models.py:121
+#: book/models.py:219 book/models.py:305 help/models.py:118
 msgid "IP address"
 msgstr "IP 주소"
 
@@ -302,6 +302,10 @@ msgstr "위드타이"
 msgid "Help"
 msgstr "도움말"
 
+#: help/forms.py:67
+msgid "Invalid reCAPTCHA. Please try again."
+msgstr ""
+
 #: help/models.py:12 help/models.py:48
 msgid "html"
 msgstr "HTML"
@@ -342,19 +346,19 @@ msgstr "이름"
 msgid "email"
 msgstr "이메일"
 
-#: help/models.py:100
+#: help/models.py:97
 msgid "phone number"
 msgstr "전화번호"
 
-#: help/models.py:111
+#: help/models.py:108
 msgid "user-agent"
 msgstr "user-agent"
 
-#: help/models.py:116
+#: help/models.py:113
 msgid "accept-language"
 msgstr "accept-language"
 
-#: help/models.py:125 help/models.py:126
+#: help/models.py:122 help/models.py:123
 msgid "contact"
 msgstr "문의"
 
@@ -370,7 +374,11 @@ msgstr "게시물 없음"
 msgid "{} : Notice"
 msgstr "{} : 공지사항"
 
-#: help/views.py:79
+#: help/views.py:74
+msgid "Contact Done"
+msgstr "제안 문의 완료"
+
+#: help/views.py:87
 msgid "Contact"
 msgstr "제안/문의"
 

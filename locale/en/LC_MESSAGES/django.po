@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-24 13:33+0900\n"
+"POT-Creation-Date: 2018-07-24 15:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgid "parent"
 msgstr "parent"
 
 #: book/forms.py:51 book/forms.py:99 book/templates/book/article_list.html:45
-#: help/forms.py:37
+#: help/forms.py:47
 msgid "Write"
 msgstr ""
 
@@ -165,7 +165,7 @@ msgid "draft"
 msgstr "draft"
 
 #: book/models.py:164 book/models.py:268 help/models.py:26 help/models.py:58
-#: help/models.py:107
+#: help/models.py:104
 msgid "content"
 msgstr "content"
 
@@ -185,7 +185,7 @@ msgstr "image"
 msgid "youtube"
 msgstr "youtube"
 
-#: book/models.py:219 book/models.py:305 help/models.py:121
+#: book/models.py:219 book/models.py:305 help/models.py:118
 msgid "IP address"
 msgstr "IP address"
 
@@ -304,6 +304,10 @@ msgstr "WITHTHAI"
 msgid "Help"
 msgstr "Help"
 
+#: help/forms.py:67
+msgid "Invalid reCAPTCHA. Please try again."
+msgstr ""
+
 #: help/models.py:12 help/models.py:48
 msgid "html"
 msgstr "HTML"
@@ -344,19 +348,19 @@ msgstr "fullname"
 msgid "email"
 msgstr "email"
 
-#: help/models.py:100
+#: help/models.py:97
 msgid "phone number"
 msgstr "phone number"
 
-#: help/models.py:111
+#: help/models.py:108
 msgid "user-agent"
 msgstr "user-agent"
 
-#: help/models.py:116
+#: help/models.py:113
 msgid "accept-language"
 msgstr ""
 
-#: help/models.py:125 help/models.py:126
+#: help/models.py:122 help/models.py:123
 msgid "contact"
 msgstr "contact"
 
@@ -372,7 +376,11 @@ msgstr "No message"
 msgid "{} : Notice"
 msgstr "{} : Notice"
 
-#: help/views.py:79
+#: help/views.py:74
+msgid "Contact Done"
+msgstr "Contact Done"
+
+#: help/views.py:87
 msgid "Contact"
 msgstr "Contact"
 
