@@ -52,7 +52,7 @@
         {% for word in article.words.all %}
             <div class="row my-3">
                 <div class="col-md-3 thai-font">
-                    <a href="">
+                    <a href="{% url 'voca:entry-detail' word.id %}">
                         {{ word.title }}
                     </a>
                 </div>
