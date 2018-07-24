@@ -48,7 +48,13 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
 <!-- Navigation -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">{% trans "WITHTHAI" %}</a>
+        <a class="navbar-brand d-none d-sm-none d-md-block"
+           href="{% url 'home' %}">
+            <img src="{% static 'images/logo.png' %}"
+                 height="50"
+                 alt="{% trans "WITHTHAI" %}"
+                 title="{% trans "WITHTHAI" %}">
+        </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
