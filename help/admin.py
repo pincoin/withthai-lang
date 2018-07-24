@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import (
-    Post, NoticeMessage
+    Post, NoticeMessage, ContactMessage
 )
 
 
@@ -34,5 +34,12 @@ class NoticeMessageAdmin(admin.ModelAdmin):
         super(NoticeMessageAdmin, self).save_model(request, obj, form, change)
 
 
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created')
+    fields = ('title', 'fullname', 'email', 'phone', 'content')
+    ordering = ['-created']
+
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(NoticeMessage, NoticeMessageAdmin)
+admin.site.register(ContactMessage, ContactMessageAdmin)

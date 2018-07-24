@@ -5,7 +5,8 @@ from .sitemaps import (
     NoticeSitemap, PostSitemap
 )
 from .views import (
-    PostDetailView, NoticeDetailView, NoticeListView
+    PostDetailView, NoticeDetailView, NoticeListView,
+    ContactCreateView, ContactDoneView,
 )
 
 app_name = 'help'
@@ -19,12 +20,18 @@ sitemaps_post = {
 }
 
 urlpatterns = [
-    url(r'^pages/(?P<slug>[-\w]+)/$',
+    url(r'^page/(?P<slug>[-\w]+)/$',
         PostDetailView.as_view(), name='post-detail'),
-    url(r'^notices/$',
+
+    url(r'^notice/$',
         NoticeListView.as_view(), name='notice-list'),
-    url(r'^notices/(?P<pk>\d+)/$',
+    url(r'^notice/(?P<pk>\d+)/$',
         NoticeDetailView.as_view(), name='notice-detail'),
+
+    url(r'^contact/create$',
+        ContactCreateView.as_view(), name='contact-create'),
+    url(r'^contact/done$',
+        ContactDoneView.as_view(), name='notice-done'),
 
     url(r'^sitemap-notice\.xml$',
         sitemap, {'sitemaps': sitemaps_notice}, name='django.contrib.sitemaps.views.sitemap'),

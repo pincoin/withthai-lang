@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 21:47+0900\n"
+"POT-Creation-Date: 2018-07-24 12:17+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,6 +162,7 @@ msgid "draft"
 msgstr ""
 
 #: book/models.py:164 book/models.py:268 help/models.py:26 help/models.py:58
+#: help/models.py:107
 msgid "content"
 msgstr ""
 
@@ -181,7 +182,7 @@ msgstr ""
 msgid "youtube"
 msgstr ""
 
-#: book/models.py:219 book/models.py:305
+#: book/models.py:219 book/models.py:305 help/models.py:121
 msgid "IP address"
 msgstr ""
 
@@ -229,7 +230,7 @@ msgid "Write New Article"
 msgstr ""
 
 #: book/templates/book/article_create.html:19
-#: book/templates/book/article_detail.html:55
+#: book/templates/book/article_detail.html:74
 #: book/templates/book/article_update.html:19
 #: book/templates/book/page_create.html:20
 #: book/templates/book/page_update.html:20
@@ -237,11 +238,11 @@ msgstr ""
 msgid "List"
 msgstr ""
 
-#: book/templates/book/article_detail.html:17
+#: book/templates/book/article_detail.html:23
 msgid "Delete Article"
 msgstr ""
 
-#: book/templates/book/article_detail.html:49
+#: book/templates/book/article_detail.html:69
 #: book/templates/book/page_detail.html:52
 msgid "last modified"
 msgstr ""
@@ -330,6 +331,30 @@ msgstr ""
 
 #: help/models.py:75 help/models.py:76
 msgid "notice"
+msgstr ""
+
+#: help/models.py:88
+msgid "fullname"
+msgstr ""
+
+#: help/models.py:93
+msgid "email"
+msgstr ""
+
+#: help/models.py:100
+msgid "phone number"
+msgstr ""
+
+#: help/models.py:111
+msgid "user-agent"
+msgstr ""
+
+#: help/models.py:116
+msgid "accept-language"
+msgstr ""
+
+#: help/models.py:125 help/models.py:126
+msgid "contact"
 msgstr ""
 
 #: help/templates/help/notice_detail.html:8 help/views.py:40
@@ -722,17 +747,17 @@ msgstr ""
 msgid "lookup word"
 msgstr ""
 
-#: voca/models.py:14 voca/templates/voca/2_columns.html:45
+#: voca/models.py:14 voca/templates/voca/2_columns.html:53
 #: voca/templates/voca/level_list.html:30
 msgid "beginner"
 msgstr ""
 
-#: voca/models.py:15 voca/templates/voca/2_columns.html:50
+#: voca/models.py:15 voca/templates/voca/2_columns.html:58
 #: voca/templates/voca/level_list.html:34
 msgid "intermediate"
 msgstr ""
 
-#: voca/models.py:16 voca/templates/voca/2_columns.html:55
+#: voca/models.py:16 voca/templates/voca/2_columns.html:63
 #: voca/templates/voca/level_list.html:38
 msgid "advanced"
 msgstr ""
@@ -741,7 +766,7 @@ msgstr ""
 msgid "pronunciation"
 msgstr ""
 
-#: voca/models.py:38 voca/templates/voca/2_columns.html:38
+#: voca/models.py:38 voca/templates/voca/2_columns.html:46
 msgid "level"
 msgstr ""
 
@@ -805,7 +830,7 @@ msgstr ""
 msgid "entry category"
 msgstr ""
 
-#: voca/models.py:144 voca/templates/voca/2_columns.html:17
+#: voca/models.py:144 voca/templates/voca/2_columns.html:25
 msgid "entry categories"
 msgstr ""
 
@@ -849,7 +874,7 @@ msgstr ""
 msgid "textbook"
 msgstr ""
 
-#: voca/models.py:289 voca/templates/voca/2_columns.html:66 voca/views.py:169
+#: voca/models.py:289 voca/templates/voca/2_columns.html:74 voca/views.py:169
 #: voca/views.py:197
 msgid "textbooks"
 msgstr ""
@@ -862,7 +887,7 @@ msgstr ""
 msgid "textbook words"
 msgstr ""
 
-#: voca/templates/voca/2_columns.html:80
+#: voca/templates/voca/2_columns.html:88
 #: voca/templates/voca/textbook_list.html:43
 msgid "No textbook"
 msgstr ""

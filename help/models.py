@@ -81,3 +81,50 @@ class NoticeMessage(SoftDeletableModel, AbstractPage):
 
     def get_absolute_url(self):
         return reverse('help:notice-detail', args=[self.pk])
+
+
+class ContactMessage(SoftDeletableModel, AbstractPage):
+    fullname = models.CharField(
+        verbose_name=_('fullname'),
+        max_length=32,
+    )
+
+    email = models.CharField(
+        verbose_name=_('email'),
+        max_length=254,
+        blank=True,
+        null=True,
+    )
+
+    phone = models.CharField(
+        verbose_name=_('phone number'),
+        max_length=16,
+        blank=True,
+        null=True,
+    )
+
+    content = models.TextField(
+        verbose_name=_('content'),
+    )
+
+    user_agent = models.TextField(
+        verbose_name=_('user-agent'),
+        blank=True,
+    )
+
+    accept_language = models.TextField(
+        verbose_name=_('accept-language'),
+        blank=True,
+    )
+
+    ip_address = models.GenericIPAddressField(
+        verbose_name=_('IP address'),
+    )
+
+    class Meta:
+        verbose_name = _('contact')
+        verbose_name_plural = _('contact')
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.title

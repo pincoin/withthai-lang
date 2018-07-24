@@ -5,7 +5,7 @@ from django.views import generic
 
 from rakmai.viewmixins import PageableMixin
 from .models import (
-    Post, NoticeMessage
+    Post, NoticeMessage, ContactMessage
 )
 from .viewmixins import HelpContextMixin
 
@@ -60,3 +60,11 @@ class NoticeDetailView(generic.DetailView):
 
     def get_template_names(self):
         return 'help/notice_detail.html'
+
+
+class ContactDoneView(generic.TemplateView):
+    pass
+
+
+class ContactCreateView(generic.CreateView):
+    model = ContactMessage
