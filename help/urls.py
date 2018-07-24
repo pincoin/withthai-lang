@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^contact/create$',
         ContactCreateView.as_view(), name='contact-create'),
     url(r'^contact/done$',
-        ContactDoneView.as_view(), name='notice-done'),
+        ContactDoneView.as_view(), name='contact-done'),
 
     url(r'^sitemap-notice\.xml$',
         sitemap, {'sitemaps': sitemaps_notice}, name='django.contrib.sitemaps.views.sitemap'),

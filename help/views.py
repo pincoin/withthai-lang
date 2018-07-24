@@ -67,7 +67,15 @@ class NoticeDetailView(generic.DetailView):
 
 
 class ContactDoneView(generic.TemplateView):
-    pass
+    logger = logging.getLogger(__name__)
+
+    def get_context_data(self, **kwargs):
+        context = super(ContactDoneView, self).get_context_data(**kwargs)
+        context['page_title'] = _('Contact Done')
+        return context
+
+    def get_template_names(self):
+        return 'help/contact_done.html'
 
 
 class ContactCreateView(generic.CreateView):
