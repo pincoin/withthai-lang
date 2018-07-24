@@ -49,7 +49,7 @@ class EntryTextbookCompoundInline(admin.TabularInline):
 
 
 class EntryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'meanings')
+    list_display = ('id', 'title', 'meanings', 'level')
     list_display_links = ('title',)
     list_filter = ('level',)
     search_fields = ('title',)
