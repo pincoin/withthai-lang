@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-24 15:53+0900\n"
+"POT-Creation-Date: 2018-07-25 20:59+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,130 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: board/models.py:27 book/models.py:43 rakmai/models.py:34 rakmai/models.py:72
+#: rakmai/models.py:117 voca/models.py:20 voca/models.py:178 voca/models.py:240
+msgid "title"
+msgstr "제목"
+
+#: board/models.py:32 book/models.py:48 help/models.py:18 rakmai/models.py:122
+#: voca/models.py:248
+msgid "slug"
+msgstr "슬러그"
+
+#: board/models.py:33 book/models.py:49 help/models.py:19 rakmai/models.py:123
+#: voca/models.py:249
+msgid ""
+"A short label containing only letters, numbers, underscores or hyphens for "
+"URL"
+msgstr "문자 또는 숫자, 밑줄, 하이픈으로 이루어진 간단한 URL 문자열"
+
+#: board/models.py:40
+msgid "theme"
+msgstr "테마"
+
+#: board/models.py:46
+msgid "allow comments"
+msgstr "댓글 허용"
+
+#: board/models.py:51
+msgid "pagination chunk size"
+msgstr ""
+
+#: board/models.py:56
+msgid "pagination block size"
+msgstr ""
+
+#: board/models.py:61 board/models.py:123
+msgid "board"
+msgstr "게시판"
+
+#: board/models.py:62
+msgid "boards"
+msgstr "게시판"
+
+#: board/models.py:72 board/models.py:81 board/models.py:140 book/admin.py:37
+#: book/forms.py:72 book/models.py:62 book/models.py:149 help/models.py:68
+msgid "category"
+msgstr "분류"
+
+#: board/models.py:82 book/models.py:150
+msgid "categories"
+msgstr "분류"
+
+#: board/models.py:90 book/models.py:128 rakmai/models.py:154
+msgid "uploaded file"
+msgstr "업로드 파일"
+
+#: board/models.py:97 board/models.py:180
+msgid "message"
+msgstr "게시물"
+
+#: board/models.py:105 book/models.py:143 rakmai/models.py:165
+msgid "attachment"
+msgstr "첨부파일"
+
+#: board/models.py:106 book/models.py:144 rakmai/models.py:166
+msgid "attachments"
+msgstr "첨부파일"
+
+#: board/models.py:111
+msgid "published"
+msgstr "발행"
+
+#: board/models.py:112
+msgid "moderated"
+msgstr "검토"
+
+#: board/models.py:116 help/models.py:12 help/models.py:48
+msgid "html"
+msgstr "HTML"
+
+#: board/models.py:117 help/models.py:13 help/models.py:49
+msgid "markdown"
+msgstr "마크다운"
+
+#: board/models.py:118 help/models.py:14 help/models.py:50
+msgid "text"
+msgstr "텍스트"
+
+#: board/models.py:129
+msgid "nickname"
+msgstr "닉네임"
+
+#: board/models.py:135 book/models.py:164 book/models.py:268 help/models.py:26
+#: help/models.py:58 help/models.py:104
+msgid "content"
+msgstr "본문"
+
+#: board/models.py:148 book/models.py:76 book/models.py:207 book/models.py:300
+#: book/templates/book/book_detail.html:29 voca/models.py:281
+msgid "status"
+msgstr "상태"
+
+#: board/models.py:155
+msgid "secret"
+msgstr "비밀글"
+
+#: board/models.py:160
+msgid "sticky"
+msgstr "공지"
+
+#: board/models.py:165 help/models.py:30 help/models.py:62
+msgid "markup"
+msgstr "마크업"
+
+#: board/models.py:171 book/models.py:100 book/models.py:214 book/models.py:307
+msgid "view count"
+msgstr "조회수"
+
+#: board/models.py:176 book/models.py:219 book/models.py:312 help/models.py:118
+msgid "IP address"
+msgstr "IP 주소"
+
+#: board/models.py:181
+msgid "messages"
+msgstr "게시물"
 
 #: book/admin.py:16 book/models.py:135 book/models.py:228 voca/models.py:316
 msgid "page"
@@ -28,11 +152,6 @@ msgstr "페이지 있음"
 #: book/admin.py:22
 msgid "No page"
 msgstr "페이지 없음"
-
-#: book/admin.py:37 book/forms.py:72 book/models.py:62 book/models.py:149
-#: help/models.py:68
-msgid "category"
-msgstr "분류"
 
 #: book/apps.py:7
 msgid "Book"
@@ -79,21 +198,6 @@ msgstr "저작자표시-비영리-동일조건변경허락"
 msgid "BY-NC-ND"
 msgstr "저작자표시-비영리-변경금지"
 
-#: book/models.py:43 rakmai/models.py:34 rakmai/models.py:72
-#: rakmai/models.py:117 voca/models.py:20 voca/models.py:178 voca/models.py:240
-msgid "title"
-msgstr "제목"
-
-#: book/models.py:48 help/models.py:18 rakmai/models.py:122 voca/models.py:248
-msgid "slug"
-msgstr "슬러그"
-
-#: book/models.py:49 help/models.py:19 rakmai/models.py:123 voca/models.py:249
-msgid ""
-"A short label containing only letters, numbers, underscores or hyphens for "
-"URL"
-msgstr "문자 또는 숫자, 밑줄, 하이픈으로 이루어진 간단한 URL 문자열"
-
 #: book/models.py:56 rakmai/models.py:78 voca/models.py:33 voca/models.py:138
 #: voca/templates/voca/entry_detail.html:47
 msgid "description"
@@ -103,11 +207,6 @@ msgstr "설명"
 msgid "thumbnail"
 msgstr "썸네일"
 
-#: book/models.py:76 book/models.py:207 book/models.py:293
-#: book/templates/book/book_detail.html:29 voca/models.py:281
-msgid "status"
-msgstr "상태"
-
 #: book/models.py:83 book/templates/book/book_detail.html:31
 msgid "license"
 msgstr "라이선스"
@@ -116,17 +215,13 @@ msgstr "라이선스"
 msgid "owner"
 msgstr "소유자"
 
-#: book/models.py:100 book/models.py:214 book/models.py:300
-msgid "view count"
-msgstr "조회수"
-
-#: book/models.py:105 book/models.py:223 book/models.py:309
+#: book/models.py:105 book/models.py:223 book/models.py:316
 #: book/templates/book/book_detail.html:32
 msgid "updated date"
 msgstr "수정일시"
 
-#: book/models.py:110 voca/models.py:83 voca/models.py:124 voca/models.py:167
-#: voca/models.py:224 voca/models.py:266
+#: book/models.py:110 book/models.py:346 voca/models.py:83 voca/models.py:124
+#: voca/models.py:167 voca/models.py:224 voca/models.py:266
 msgid "position"
 msgstr "순서"
 
@@ -142,30 +237,9 @@ msgstr "태국어 학습"
 msgid "books"
 msgstr "태국어 학습"
 
-#: book/models.py:128 rakmai/models.py:154
-msgid "uploaded file"
-msgstr "업로드 파일"
-
-#: book/models.py:143 rakmai/models.py:165
-msgid "attachment"
-msgstr "첨부파일"
-
-#: book/models.py:144 rakmai/models.py:166
-msgid "attachments"
-msgstr "첨부파일"
-
-#: book/models.py:150
-msgid "categories"
-msgstr "분류"
-
 #: book/models.py:158 book/models.py:253
 msgid "draft"
 msgstr "초안"
-
-#: book/models.py:164 book/models.py:268 help/models.py:26 help/models.py:58
-#: help/models.py:104
-msgid "content"
-msgstr "본문"
 
 #: book/models.py:168 book/models.py:272
 msgid "content1"
@@ -175,17 +249,13 @@ msgstr "본문 1"
 msgid "content2"
 msgstr "본문 2"
 
-#: book/models.py:178 book/models.py:282
+#: book/models.py:178 book/models.py:289
 msgid "image"
 msgstr "이미지"
 
-#: book/models.py:184 book/models.py:288
+#: book/models.py:184 book/models.py:295
 msgid "youtube"
 msgstr "유튜브"
-
-#: book/models.py:219 book/models.py:305 help/models.py:118
-msgid "IP address"
-msgstr "IP 주소"
 
 #: book/models.py:229
 msgid "pages"
@@ -199,13 +269,21 @@ msgstr "게시물 분류"
 msgid "article categories"
 msgstr "게시물 분류"
 
-#: book/models.py:314
+#: book/models.py:321
 msgid "article"
 msgstr "게시물"
 
-#: book/models.py:315 book/views.py:160 book/views.py:203
+#: book/models.py:322 book/views.py:160 book/views.py:207
 msgid "articles"
 msgstr "게시물"
+
+#: book/models.py:350 voca/models.py:228
+msgid "word"
+msgstr "단어"
+
+#: book/models.py:351 voca/models.py:229
+msgid "words"
+msgstr "단어"
 
 #: book/templates/book/_pagination.html:9
 #: book/templates/book/_pagination.html:14
@@ -225,13 +303,13 @@ msgstr "이전"
 msgid "Next"
 msgstr "다음"
 
-#: book/templates/book/article_create.html:10 book/views.py:217
-#: book/views.py:252
+#: book/templates/book/article_create.html:10 book/views.py:221
+#: book/views.py:256
 msgid "Write New Article"
 msgstr "새 게시물 작성"
 
 #: book/templates/book/article_create.html:19
-#: book/templates/book/article_detail.html:74
+#: book/templates/book/article_detail.html:101
 #: book/templates/book/article_update.html:19
 #: book/templates/book/page_create.html:20
 #: book/templates/book/page_update.html:20
@@ -239,11 +317,15 @@ msgstr "새 게시물 작성"
 msgid "List"
 msgstr "목록"
 
-#: book/templates/book/article_detail.html:23
+#: book/templates/book/article_detail.html:23 book/views.py:120
+msgid "Edit"
+msgstr "수정"
+
+#: book/templates/book/article_detail.html:27
 msgid "Delete Article"
 msgstr "삭제"
 
-#: book/templates/book/article_detail.html:69
+#: book/templates/book/article_detail.html:96
 #: book/templates/book/page_detail.html:52
 msgid "last modified"
 msgstr "최종 수정일시"
@@ -277,10 +359,6 @@ msgstr "다음 페이지"
 msgid "Edit Page"
 msgstr "페이지 수정"
 
-#: book/views.py:120
-msgid "Edit"
-msgstr "수정"
-
 #: conf/settings/local.py:10
 msgid "Korean"
 msgstr "한국어"
@@ -294,7 +372,8 @@ msgid "Thai"
 msgstr "태국어"
 
 #: conf/settings/local.py:66 rakmai/templates/rakmai/base.html:8
-#: rakmai/templates/rakmai/base.html:51 rakmai/templates/rakmai/base.html:160
+#: rakmai/templates/rakmai/base.html:55 rakmai/templates/rakmai/base.html:56
+#: rakmai/templates/rakmai/base.html:165
 msgid "WITHTHAI"
 msgstr "위드타이"
 
@@ -305,22 +384,6 @@ msgstr "도움말"
 #: help/forms.py:67
 msgid "Invalid reCAPTCHA. Please try again."
 msgstr ""
-
-#: help/models.py:12 help/models.py:48
-msgid "html"
-msgstr "HTML"
-
-#: help/models.py:13 help/models.py:49
-msgid "markdown"
-msgstr "마크다운"
-
-#: help/models.py:14 help/models.py:50
-msgid "text"
-msgstr "텍스트"
-
-#: help/models.py:30 help/models.py:62
-msgid "markup"
-msgstr "마크업"
 
 #: help/models.py:36
 msgid "post"
@@ -464,11 +527,11 @@ msgstr "공개식별자"
 msgid "created time"
 msgstr "생성일시"
 
-#: rakmai/templates/rakmai/base.html:62
+#: rakmai/templates/rakmai/base.html:68
 msgid "Thai Language"
 msgstr "태국어"
 
-#: rakmai/templates/rakmai/base.html:66 voca/templates/voca/entry_detail.html:9
+#: rakmai/templates/rakmai/base.html:72 voca/templates/voca/entry_detail.html:9
 #: voca/templates/voca/entry_list.html:9
 #: voca/templates/voca/level_entry_list.html:9
 #: voca/templates/voca/level_list.html:9
@@ -477,28 +540,29 @@ msgstr "태국어"
 msgid "Vocabulary"
 msgstr "단어장"
 
-#: rakmai/templates/rakmai/base.html:96 templates/allauth/account/login.html:93
+#: rakmai/templates/rakmai/base.html:102
+#: templates/allauth/account/login.html:93
 #: templates/allauth/account/signup.html:8
 #: templates/allauth/account/signup.html:94
 msgid "Sign Up"
 msgstr "회원가입"
 
-#: rakmai/templates/rakmai/base.html:102
+#: rakmai/templates/rakmai/base.html:108
 #: templates/allauth/account/login.html:10
 #: templates/allauth/account/login.html:63
 #: templates/allauth/account/signup.html:99
 msgid "Sign In"
 msgstr "로그인"
 
-#: rakmai/templates/rakmai/base.html:115
+#: rakmai/templates/rakmai/base.html:121
 msgid "Admin"
 msgstr "관리자"
 
-#: rakmai/templates/rakmai/base.html:118
+#: rakmai/templates/rakmai/base.html:124
 msgid "Profile"
 msgstr "마이페이지"
 
-#: rakmai/templates/rakmai/base.html:120
+#: rakmai/templates/rakmai/base.html:126
 #: templates/allauth/account/logout.html:8
 #: templates/allauth/account/logout.html:17
 msgid "Sign Out"
@@ -862,14 +926,6 @@ msgstr "표제어 예문"
 #: voca/models.py:204
 msgid "entry sentences"
 msgstr "표제어 예문"
-
-#: voca/models.py:228
-msgid "word"
-msgstr "단어"
-
-#: voca/models.py:229
-msgid "words"
-msgstr "단어"
 
 #: voca/models.py:256
 msgid "author"
