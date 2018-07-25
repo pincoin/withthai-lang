@@ -1,0 +1,26 @@
+{% extends "rakmai/base.html" %}
+
+{% load i18n %}
+{% load book_tags %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Widgets Column -->
+            <div class="col-12 col-md-3">
+                <div class="card my-2 my-md-4">
+                    <h6 class="card-header py-2">분류</h6>
+                    <div class="card-body pt-1 pb-0">
+                        Hello
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-9 book-page">
+                {% block main_content %}{% endblock %}
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+{% endblock %}

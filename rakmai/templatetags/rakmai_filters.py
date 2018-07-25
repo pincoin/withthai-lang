@@ -10,6 +10,14 @@ register = template.Library()
 
 @register.filter
 @stringfilter
+def mask_ip_address(ip):
+    ip_class = ip.split('.')
+    ip_class[1] = 'xxx'
+    return '.'.join(ip_class)
+
+
+@register.filter
+@stringfilter
 def markdownify(text):
     return mark_safe(
         bleach.clean(

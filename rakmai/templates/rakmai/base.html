@@ -86,9 +86,9 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                         커뮤니티
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item" href="">자유게시판</a>
-                        <a class="dropdown-item" href="">묻고답하기</a>
-                        <a class="dropdown-item" href="">사진게시판</a>
+                        <a class="dropdown-item" href="{% url 'board:message-list' 'free' %}">자유게시판</a>
+                        <a class="dropdown-item" href="{% url 'board:message-list' 'qna' %}">묻고답하기</a>
+                        <a class="dropdown-item" href="{% url 'board:message-list' 'pic' %}">사진게시판</a>
                         <a class="dropdown-item" href="{% url 'help:notice-list' %}">공지사항</a>
                     </div>
                 </li>

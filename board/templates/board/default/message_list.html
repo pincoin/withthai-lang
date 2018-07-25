@@ -1,0 +1,39 @@
+{% extends "./2_columns.html" %}
+
+{% load i18n %}
+{% load rakmai_filters %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-0 mb-1 my-md-4 py-1">
+                    <li class="breadcrumb-item"><a href="">{% trans "community" %}</a></li>
+                    <li class="breadcrumb-item active">{{ board.title }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    {% for message in messages %}
+        <div class="row my-1 py-1">
+            <div class="col-12 col-sm-12 col-md-8">
+                <a href="{% url 'board:message-detail' board.slug message.id %}">
+                    {{ message.title }}
+                </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2">
+                {{ message.nickname|slice:"6" }}
+            </div>
+            <div class="col-6 col-sm-4 col-md-2">
+                {{ message.created|date:'Y-m-d' }}
+            </div>
+        </div>
+        <hr class="mt-0">
+    {% empty %}
+        <div class="row my-3">
+            <div class="col text-center">
+                {% trans "No messages yet" %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

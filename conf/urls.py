@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^voca/', include('voca.urls', namespace='voca')),
     url(r'^book/', include('book.urls', namespace='book')),
+    url(r'^board/', include('board.urls', namespace='board')),
     url(r'^help/', include('help.urls', namespace='help')),
 ]
 

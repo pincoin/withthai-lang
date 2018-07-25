@@ -1,0 +1,48 @@
+{% extends "./2_columns.html" %}
+
+{% load i18n %}
+{% load rakmai_filters %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-0 mb-1 my-md-4 py-1">
+                    <li class="breadcrumb-item"><a href="">{% trans "community" %}</a></li>
+                    <li class="breadcrumb-item active">{{ board.title }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <h5 class="mt-3 mt-md-1 pb-1 border-bottom border-secondary">{{ message.title }}</h5>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            {{ message.nickname }}
+        </div>
+        <div class="col-md-2 text-right">
+            <small class="text-muted">
+                <i class="fa fa-map-marker"></i>
+                {{ message.ip_address|mask_ip_address }}
+            </small>
+        </div>
+        <div class="col-md-3 text-right">
+            <small class="text-muted">
+                <i class="fa fa-calendar fa-fw"></i>
+                {{ message.created|date:'Y-m-d H:m' }}
+            </small>
+        </div>
+        <div class="col-md-1 text-right">
+            <small class="text-muted">
+                <i class="fa fa-eye fa-fw"></i>
+                {{ message.view_count }}
+            </small>
+        </div>
+    </div>
+    <div class="row my-1">
+        <div class="col paragraph" id="content1">
+            {{ message.content }}
+        </div>
+    </div>
+    <hr>
+
+{% endblock %}

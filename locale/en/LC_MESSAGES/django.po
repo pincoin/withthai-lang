@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-25 20:59+0900\n"
+"POT-Creation-Date: 2018-07-25 22:39+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: board/apps.py:7
+msgid "Board"
+msgstr "board"
 
 #: board/models.py:27 book/models.py:43 rakmai/models.py:34 rakmai/models.py:72
 #: rakmai/models.py:117 voca/models.py:20 voca/models.py:178 voca/models.py:240
@@ -142,6 +146,14 @@ msgstr "IP address"
 #: board/models.py:181
 msgid "messages"
 msgstr "messages"
+
+#: board/templates/board/default/message_list.html:11
+msgid "community"
+msgstr "community"
+
+#: board/templates/board/default/message_list.html:37
+msgid "No messages yet"
+msgstr "No message yet"
 
 #: book/admin.py:16 book/models.py:135 book/models.py:228 voca/models.py:316
 msgid "page"
