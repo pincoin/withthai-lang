@@ -180,6 +180,11 @@ body {
     padding: 0.5rem 1rem;
 }
 
+.book-page ul li {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .youtube {
     position: relative;
     width: 100%;
