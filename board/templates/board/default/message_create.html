@@ -1,0 +1,28 @@
+{% extends "./2_columns.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load rakmai_filters %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-0 mb-1 mt-md-4 py-1">
+                    <li class="breadcrumb-item"><a href="">{% trans "community" %}</a></li>
+                    <li class="breadcrumb-item active">{{ board.title }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="row mt-0">
+        <div class="col">
+            {% crispy form %}
+        </div>
+    </div>
+    <hr>
+    <a href="{% url 'board:message-list' board.slug %}?page={{ request.GET.page }}"
+       class="btn btn-outline-secondary btn-block my-2">
+        <i class="fa fa-list-ul fa-fw" aria-hidden="true"></i>&nbsp;{% trans "List" %}
+    </a>
+{% endblock %}

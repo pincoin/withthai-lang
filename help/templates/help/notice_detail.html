@@ -16,7 +16,7 @@
                         </div>
                         <div class="p-2">
                             <strong>
-                                {% if request.user.is_superuser %}
+                                {% if user.is_superuser %}
                                     <a href="{% url 'admin:help_noticemessage_change' post.id %}">
                                         {{ post.title }}
                                     </a>

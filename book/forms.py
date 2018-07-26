@@ -1,6 +1,6 @@
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import (
-    Layout, Fieldset, Div, Submit
+    Layout, Fieldset, Div, Submit, HTML
 )
 from django import forms
 from django.utils.translation import ugettext_lazy as _
@@ -47,10 +47,13 @@ class PageForm(forms.ModelForm):
 
         self.helper.layout = Layout(
             Fieldset(*fieldset),
-            Div(
-                Submit('submit', _('Write'), css_class='btn btn-info btn-block'),
-                css_class='my-3',
-            )
+            HTML('''
+            <div class="my-3">
+            <button name="submit" class="btn btn-primary btn btn-info btn-block" type="submit">
+                <i class="fa fa-pencil fa-fw"></i>
+                {}
+            </button>
+            </div>'''.format(_('Write'))),
         )
 
     class Meta:

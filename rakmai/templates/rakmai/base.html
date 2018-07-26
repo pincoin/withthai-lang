@@ -116,7 +116,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                             {{ request.user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownBlog">
-                            {% if request.user.is_superuser %}
+                            {% if user.is_superuser %}
                                 <a class="dropdown-item" href="{% url 'admin:index' %}">
                                     {% trans "Admin" %}
                                 </a>

@@ -24,7 +24,7 @@
 
     <div class="row my-2">
         <div class="col thai-font">
-            {% if request.user.is_superuser %}
+            {% if user.is_superuser %}
                 <a href="{% url 'admin:voca_entry_change' entry.id %}">{{ entry.title }}</a>
             {% else %}
                 {{ entry.title }}

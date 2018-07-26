@@ -14,7 +14,7 @@
     {% get_page_ancestor_path page.id as breadcrumbs %}
     {% include "./_breadcrumbs_book.html" with breadcrumbs=breadcrumbs %}
     <h5 class="mt-2 mb-3 my-md-1">
-        {% if request.user.is_superuser %}
+        {% if user.is_superuser %}
             <a href="{% url 'book:page-update' book.slug page.id %}">{{ page.title }}</a>
             <a href="{% url 'admin:book_page_delete' page.id %}"
                class="btn btn-outline-danger btn-sm mb-1 ml-2">

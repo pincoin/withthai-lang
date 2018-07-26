@@ -11,7 +11,7 @@
             <div class="col-12 col-md-3">
                 <div class="card my-2 my-md-4">
                     <h6 class="card-header py-2">
-                        {% if request.user.is_superuser %}
+                        {% if user.is_superuser %}
                             <a href="{% url 'admin:book_book_change' book.id %}">
                                 {{ book.title }}
                             </a>
@@ -24,7 +24,7 @@
                     <div class="card-body pt-1 pb-0">
                         <h6 class="card-title text-center mb-1">
                             목차
-                            {% if request.user.is_superuser %}
+                            {% if user.is_superuser %}
                                 <a href="{% url 'book:page-create' book.slug %}"
                                    class="btn btn-outline-info btn-sm ml-5 mt-1 mb-2">
                                     <i class="fa fa-plus fa-fw"></i> 추가
@@ -38,7 +38,7 @@
                                     <a href="{% url 'book:page-detail' book.slug category.id %}">
                                         {{ category.title }}
                                     </a>
-                                    {% if request.user.is_superuser %}
+                                    {% if user.is_superuser %}
                                         {% if category.status == category.STATUS_CHOICES.draft or category.status == category.STATUS_CHOICES.private %}
                                             <small class="text-danger">
                                                 [{{ category.get_status_display }}]

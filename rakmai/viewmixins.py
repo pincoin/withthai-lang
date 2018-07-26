@@ -19,6 +19,15 @@ class PageableMixin(object):
         return self.chunk_size
 
 
+class OwnerRequiredMixin(object):
+    """
+    Authors may edit or delete their own posts only.
+    """
+
+    def get_queryset(self):
+        return super(OwnerRequiredMixin, self).get_queryset().filter(owner=self.request.user)
+
+
 class SuperuserRequiredMixin(AccessMixin):
     login_url = '/'
 

@@ -39,7 +39,7 @@
             </div>
         </div>
     {% endfor %}
-    {% if request.user.is_superuser %}
+    {% if user.is_superuser %}
         <a href="{% url 'book:article-create' category_slug %}"
            class="btn btn-secondary">
             {% trans "Write" %}
