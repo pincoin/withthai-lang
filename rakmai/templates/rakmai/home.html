@@ -1,7 +1,8 @@
 {% extends "./base.html" %}
 
-{% load help_tags %}
 {% load i18n %}
+{% load help_tags %}
+{% load board_tags %}
 
 {% block content %}
     <div class="container">
@@ -18,42 +19,54 @@
         <div class="row">
             <div class="col-lg-4 mb-2">
                 <div class="card h-100">
-                    <h5 class="card-header py-md-2">자유게시판</h5>
+                    <h5 class="card-header py-md-2">
+                        <a href="{% url 'board:message-list' 'free' %}">자유게시판</a>
+                    </h5>
                     <div class="card-body py-1">
                         <ul class="list-unstyled mb-0">
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
+                            {% get_messages 'free' 5 as free_messages %}
+                            {% for message in free_messages %}
+                                <li class="my-1">
+                                    <a href="{% url 'help:notice-detail' message.id %}">
+                                        {{ message.title }}
+                                    </a>
+                                </li>
+                            {% empty %}
+                                <li class="my-1">
+                                    {% trans "No message" %}
+                                </li>
+                                <li class="my-1">&nbsp;</li>
+                                <li class="my-1">&nbsp;</li>
+                                <li class="my-1">&nbsp;</li>
+                                <li class="my-1">&nbsp;</li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 mb-2">
                 <div class="card h-100">
-                    <h5 class="card-header py-md-2">묻고답하기</h5>
+                    <h5 class="card-header py-md-2">
+                        <a href="{% url 'board:message-list' 'qna' %}">묻고답하기</a>
+                    </h5>
                     <div class="card-body py-1">
                         <ul class="list-unstyled mb-0">
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
-                            <li class="my-1">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </li>
+                            {% get_messages 'qna' 5 as qna_messages %}
+                            {% for message in qna_messages %}
+                                <li class="my-1">
+                                    <a href="{% url 'help:notice-detail' message.id %}">
+                                        {{ message.title }}
+                                    </a>
+                                </li>
+                            {% empty %}
+                                <li class="my-1">
+                                    {% trans "No message" %}
+                                </li>
+                                <li class="my-1">&nbsp;</li>
+                                <li class="my-1">&nbsp;</li>
+                                <li class="my-1">&nbsp;</li>
+                                <li class="my-1">&nbsp;</li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>

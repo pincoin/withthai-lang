@@ -10,7 +10,7 @@ from rakmai.viewmixins import (
 )
 from .forms import MessageForm
 from .models import (
-    Message, Attachment
+    Message
 )
 from .viewmixins import BoardContextMixin
 
