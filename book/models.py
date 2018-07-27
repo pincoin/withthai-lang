@@ -326,7 +326,7 @@ class Article(AbstractPage):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('book:article-detail', args=[self.pk])
+        return reverse('book:article-detail', args=[self.category.slug, self.pk])
 
 
 class EntryArticleMembership(models.Model):
