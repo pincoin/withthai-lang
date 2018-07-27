@@ -3,32 +3,21 @@ $(document).ready(function () {
         this.form.submit();
     });
 
-    function toggle_text(item) {
-        if (item.text() === '[펼치기]') {
-            item.text('[접기]');
-        } else {
-            item.text('[펼치기]');
-        }
-    }
-
-    $('#collapseLink1').on('touchstart click', "small", function (e) {
-        if (e.type === 'touchstart') {
-            $(this).off('click');
-        }
-        toggle_text($(this));
+    $('#collapse1').on('hidden.bs.collapse', function () {
+        $('#collapseLink1').text('[펼치기]');
+    }).on('show.bs.collapse', function () {
+        $('#collapseLink1').text('[접기]');
     });
 
-    $('#collapseLink2').on('touchstart click', "small", function (e) {
-        if (e.type === 'touchstart') {
-            $(this).off('click');
-        }
-        toggle_text($(this));
+    $('#collapse2').on('hidden.bs.collapse', function () {
+        $('#collapseLink2').text('[펼치기]');
+    }).on('show.bs.collapse', function () {
+        $('#collapseLink2').text('[접기]');
     });
 
-    $('#collapseLink3').on('touchstart click', "small", function (e) {
-        if (e.type === 'touchstart') {
-            $(this).off('click');
-        }
-        toggle_text($(this));
+    $('#collapse3').on('hidden.bs.collapse', function () {
+        $('#collapseLink3').text('[펼치기]');
+    }).on('show.bs.collapse', function () {
+        $('#collapseLink3').text('[접기]');
     });
 });
