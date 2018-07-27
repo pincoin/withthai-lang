@@ -4,20 +4,20 @@ $(document).ready(function () {
     });
 
     $('#collapse1').on('hidden.bs.collapse', function () {
-        $('#collapseLink1').text('[펼치기]');
+        $('#collapseLink1').html('<i class="fa fa-plus fa-fw"></i>');
     }).on('show.bs.collapse', function () {
-        $('#collapseLink1').text('[접기]');
+        $('#collapseLink1').html('<i class="fa fa-minus fa-fw"></i>');
     });
 
     $('#collapse2').on('hidden.bs.collapse', function () {
-        $('#collapseLink2').text('[펼치기]');
+        $('#collapseLink2').html('<i class="fa fa-plus fa-fw"></i>');
     }).on('show.bs.collapse', function () {
-        $('#collapseLink2').text('[접기]');
+        $('#collapseLink2').html('<i class="fa fa-minus fa-fw"></i>');
     });
 
     $('#collapse3').on('hidden.bs.collapse', function () {
-        $('#collapseLink3').text('[펼치기]');
+        $('#collapseLink3').html('<i class="fa fa-plus fa-fw"></i>');
     }).on('show.bs.collapse', function () {
-        $('#collapseLink3').text('[접기]');
+        $('#collapseLink3').html('<i class="fa fa-minus fa-fw"></i>');
     });
 });

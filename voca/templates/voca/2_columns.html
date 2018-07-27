@@ -22,8 +22,13 @@
                 {% endif %}
                 <!-- Categories Widget -->
                 <div class="card my-2 my-md-4">
-                    <h6 class="card-header py-2">{% trans "entry categories" %}</h6>
-                    <div class="card-body pt-1 pb-0">
+                    <h6 class="card-header py-2">
+                        {% trans "entry categories" %}
+                        <a href="#collapse1" data-toggle="collapse" class="ml-2" id="collapseLink1">
+                            <i class="fa fa-plus fa-fw"></i>
+                        </a>
+                    </h6>
+                    <div class="card-body pt-1 pb-0 collapse" id="collapse1">
                         <ul class="pl-3 mb-0">
                             {% voca_categories %}
                                 <li class="mb-1">
@@ -45,8 +50,11 @@
                         <a href="{% url 'voca:level-list' %}">
                             {% trans "level" %}
                         </a>
+                        <a href="#collapse2" data-toggle="collapse" class="ml-2" id="collapseLink2">
+                            <i class="fa fa-plus fa-fw"></i>
+                        </a>
                     </h6>
-                    <div class="card-body pt-1 pb-0">
+                    <div class="card-body pt-1 pb-0 collapse" id="collapse2">
                         <ul class="pl-3 mb-0">
                             <li class="mb-1">
                                 <a href="{% url 'voca:level-entry-list' 'beginner' %}">
@@ -73,8 +81,11 @@
                         <a href="{% url 'voca:textbook-list' %}">
                             {% trans "textbooks" %}
                         </a>
+                        <a href="#collapse3" data-toggle="collapse" class="ml-2" id="collapseLink3">
+                            <i class="fa fa-plus fa-fw"></i>
+                        </a>
                     </h6>
-                    <div class="card-body pt-1 pb-0">
+                    <div class="card-body pt-1 pb-0 collapse" id="collapse3">
                         <ul class="pl-3 mb-0">
                             {% get_textbooks 10 as textbooks %}
                             {% for textbook in textbooks %}
