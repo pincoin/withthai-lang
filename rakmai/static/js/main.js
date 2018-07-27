@@ -12,14 +12,23 @@ $(document).ready(function () {
     }
 
     $('#collapseLink1').on('touchstart click', "small", function (e) {
+        if (e.type === 'touchstart') {
+            $(this).off('click');
+        }
         toggle_text($(this));
     });
 
     $('#collapseLink2').on('touchstart click', "small", function (e) {
+        if (e.type === 'touchstart') {
+            $(this).off('click');
+        }
         toggle_text($(this));
     });
 
     $('#collapseLink3').on('touchstart click', "small", function (e) {
+        if (e.type === 'touchstart') {
+            $(this).off('click');
+        }
         toggle_text($(this));
     });
 });
