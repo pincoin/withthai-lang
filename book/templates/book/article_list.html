@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb my-1 my-md-4 py-1">
+                <ol class="breadcrumb mt-2 mt-md-4 mb-1 py-1">
                     <li class="breadcrumb-item"><a href="{% url 'book:book-list' %}">{% trans "books" %}</a></li>
                     <li class="breadcrumb-item active">{{ category_slug }}</li>
                 </ol>
@@ -16,7 +16,7 @@
     </div>
 
     {% for article in articles %}
-        <div class="row my-1 py-1">
+        <div class="row mb-0 mb-md-1 py-1">
             <div class="col-6 col-sm-6 col-md-2 order-1 order-md-1">
                 <span class="btn btn-sm btn-outline-success">
                     {{ article.category }}
@@ -31,7 +31,7 @@
                 {{ article.created|date:'Y-m-d' }}
             </div>
         </div>
-        <hr class="mt-0">
+        <hr class="mt-0 mb-1">
     {% empty %}
         <div class="row my-3">
             <div class="col text-center">
@@ -41,7 +41,7 @@
     {% endfor %}
     {% if user.is_superuser %}
         <a href="{% url 'book:article-create' category_slug %}"
-           class="btn btn-secondary">
+           class="btn btn-info">
             {% trans "Write" %}
         </a>
     {% endif %}
