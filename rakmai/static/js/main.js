@@ -11,15 +11,15 @@ $(document).ready(function () {
         }
     }
 
-    $('#collapseLink1').on('click', "small", function (e) {
+    $('#collapseLink1').on('touchstart click', "small", function (e) {
         toggle_text($(this));
     });
 
-    $('#collapseLink2').on('click', "small", function (e) {
+    $('#collapseLink2').on('touchstart click', "small", function (e) {
         toggle_text($(this));
     });
 
-    $('#collapseLink3').on('click', "small", function (e) {
+    $('#collapseLink3').on('touchstart click', "small", function (e) {
         toggle_text($(this));
     });
 });
