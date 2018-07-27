@@ -26,4 +26,10 @@ $(document).ready(function () {
     }).on('show.bs.collapse', function () {
         $('#collapseLink3').html('<i class="fa fa-minus fa-fw"></i>');
     });
+
+    if ($(window).width() < 767) {
+        $('#collapse0').each(function () {
+            $(this).addClass('collapse');
+        })
+    }
 });
