@@ -24,6 +24,9 @@
                     <div class="card-body pt-1 pb-0">
                         <h6 class="card-title text-center mb-1">
                             목차
+                            <a href="#collapse0" data-toggle="collapse" class="ml-2" id="collapseLink0">
+                                <i class="fa fa-plus fa-fw"></i>
+                            </a>
                             {% if user.is_superuser %}
                                 <a href="{% url 'book:page-create' book.slug %}"
                                    class="btn btn-outline-info btn-sm ml-5 mt-1 mb-2">
@@ -32,7 +35,7 @@
                             {% endif %}
                         </h6>
 
-                        <ul class="pl-0 mb-0 no-bullet">
+                        <ul class="pl-0 mb-0 no-bullet collapse" id="collapse0">
                             {% book_toc book %}
                                 <li class="mb-1 mb-md-2 no-bullet">
                                     <a href="{% url 'book:page-detail' book.slug category.id %}">
