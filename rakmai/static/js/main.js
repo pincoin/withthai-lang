@@ -3,6 +3,12 @@ $(document).ready(function () {
         this.form.submit();
     });
 
+    $('#collapse0').on('hidden.bs.collapse', function () {
+        $('#collapseLink0').html('<i class="fa fa-plus fa-fw"></i>');
+    }).on('show.bs.collapse', function () {
+        $('#collapseLink0').html('<i class="fa fa-minus fa-fw"></i>');
+    });
+
     $('#collapse1').on('hidden.bs.collapse', function () {
         $('#collapseLink1').html('<i class="fa fa-plus fa-fw"></i>');
     }).on('show.bs.collapse', function () {
