@@ -41,7 +41,7 @@
     {% endfor %}
     {% if user.is_superuser %}
         <a href="{% url 'book:article-create' category_slug %}"
-           class="btn btn-info">
+           class="btn btn-info mt-1">
             {% trans "Write" %}
         </a>
     {% endif %}
