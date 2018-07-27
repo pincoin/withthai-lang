@@ -148,6 +148,11 @@ body {
     margin-bottom: 0;
 }
 
+.book-page h1, .book-page h2, .book-page h3, .book-page h4, .book-page h5, .book-page h6 {
+    padding-bottom: 0.5rem;
+    border-bottom: #24292e 1px solid;
+}
+
 .book-page h1 {
     font-size: 1.8rem;
 }
