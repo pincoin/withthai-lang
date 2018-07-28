@@ -5,7 +5,9 @@ from django.template import Variable
 from django.utils.safestring import mark_safe
 from mptt.utils import get_cached_trees
 
-from ..models import Page, ArticleCategory
+from ..models import (
+    Page, ArticleCategory, Book
+)
 
 register = template.Library()
 
@@ -186,3 +188,18 @@ def article_categories(parser, token):
 def get_article_ancestor_path(category_id):
     # breadcrumb
     return ArticleCategory.objects.get(pk=category_id).get_ancestors(include_self=True)
+
+
+@register.simple_tag
+def get_books(count=4):
+    cache_key = 'book.templatetags.book_tags.get_books()'
+    cache_time = settings.CACHE_TIME_SHORT
+
+    books = cache.get(cache_key)
+    if not books:
+        books = Book.objects \
+                       .filter(status=Book.STATUS_CHOICES.public) \
+                       .order_by('position', '-created')[:count]
+        cache.set(cache_key, books, cache_time)
+
+    return books

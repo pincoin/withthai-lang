@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load help_tags %}
 {% load board_tags %}
+{% load book_tags %}
 
 {% block content %}
     <div class="container">
@@ -102,60 +103,25 @@
             </div>
         </div>
 
-        <h5 class="mt-md-2 mb-md-3 pl-md-3">사진 게시판</h5>
+        <h5 class="mt-md-2 mb-md-3 pl-md-3">태국어 학습</h5>
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-2 px-md-3">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="//placehold.it/700x400" alt=""></a>
-                    <div class="card-body py-1 py-md-2">
-                        <h5 class="card-title mb-1">
-                            <a href="#">Project One</a>
-                        </h5>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
+            {% get_books 4 as books %}
+            {% for book in books %}
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body py-1 py-md-2">
+                            <h5 class="card-title text-center mb-1 mb-md-3">
+                                <a href="{% url 'book:book-detail' book.slug %}">
+                                    {{ book.title }}
+                                </a>
+                            </h5>
+                            <p class="card-text paragraph">
+                                {{ book.description|truncatechars:35 }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-2 px-md-3">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="//placehold.it/700x400" alt=""></a>
-                    <div class="card-body py-1 py-md-2">
-                        <h5 class="card-title mb-1">
-                            <a href="#">Project One</a>
-                        </h5>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-2 px-md-3">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="//placehold.it/700x400" alt=""></a>
-                    <div class="card-body py-1 py-md-2">
-                        <h5 class="card-title mb-1">
-                            <a href="#">Project One</a>
-                        </h5>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-2 px-md-3">
-                <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="//placehold.it/700x400" alt=""></a>
-                    <div class="card-body py-1 py-md-2">
-                        <h5 class="card-title mb-1">
-                            <a href="#">Project One</a>
-                        </h5>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <!-- /.container -->

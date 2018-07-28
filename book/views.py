@@ -25,7 +25,9 @@ class BookListView(generic.ListView):
     context_object_name = 'books'
 
     def get_queryset(self):
-        return Book.objects.order_by('position', '-created')
+        return Book.objects \
+            .filter(status=Book.STATUS_CHOICES.public) \
+            .order_by('position', '-created')
 
     def get_context_data(self, **kwargs):
         context = super(BookListView, self).get_context_data(**kwargs)
