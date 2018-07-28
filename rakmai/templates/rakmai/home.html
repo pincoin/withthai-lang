@@ -103,7 +103,11 @@
             </div>
         </div>
 
-        <h5 class="mt-md-2 mb-md-3 pl-md-3">태국어 학습</h5>
+        <h5 class="mt-md-2 mb-md-3 pl-md-3">
+            <a href="{% url 'book:book-list' %}">
+                {% trans "books" %}
+            </a>
+        </h5>
         <div class="row">
             {% get_books 4 as books %}
             {% for book in books %}
