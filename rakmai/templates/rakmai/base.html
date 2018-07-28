@@ -44,9 +44,99 @@ You are using an <strong>outdated</strong> browser.
 Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
 </p>
 <![endif]-->
-
-<!-- Navigation -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+<!-- Navigation for extra small or small device  -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top d-block d-md-none">
+    <div class="container">
+        <a class="navbar-brand d-none d-sm-none d-md-block"
+           href="{% url 'home' %}">
+            <img src="{% static 'images/logo.png' %}"
+                 height="50"
+                 alt="{% trans "WITHTHAI" %}"
+                 title="{% trans "WITHTHAI" %}">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin:index' %}">{% trans "Admin" %}</a>
+                    </li>
+                {% endif %}
+                {% if not user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">
+                            <i class="fa fa-user-plus fa-fw"></i>
+                            {% trans "Sign Up" %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">
+                            <i class="fa fa-sign-in fa-fw"></i>
+                            {% trans "Sign In" %}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="">{% trans "Profile" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">
+                            {% trans "Sign Out" %}
+                        </a>
+                    </li>
+                {% endif %}
+                <div class="dropdown-divider"></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'voca:entry-list' %}">{% trans "Vocabulary" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'book:book-detail' '태국어-성조법' %}">성조법 기초</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'book:book-detail' '구문-패턴-연습' %}">구문 및 패턴 연습</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'book:book-detail' '태국어-문법' %}">태국어 문법</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'book:book-detail' '표현-어구' %}">표현 및 어구</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'book:book-detail' '주제별-회화' %}">주제별 회화</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'book:article-list' '유튜브' %}">유튜브</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'book:article-list' '독해' %}">독해</a>
+                </li>
+                <div class="dropdown-divider"></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'board:message-list' 'free' %}">자유게시판</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'board:message-list' 'qna' %}">묻고답하기</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'board:message-list' 'pic' %}">사진게시판</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'help:notice-list' %}">공지사항</a>
+                </li>
+                <div class="dropdown-divider"></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="">블로그</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navigation for medium or large device -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top d-none d-md-block">
     <div class="container">
         <a class="navbar-brand d-none d-sm-none d-md-block"
            href="{% url 'home' %}">
