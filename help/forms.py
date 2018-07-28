@@ -21,11 +21,6 @@ class ContactMessageForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.include_media = False
 
-        # horizontal grid form
-        self.helper.form_class = 'form-horizontal'  # Appends `row` class to `div` surrounding label and form field
-        self.helper.label_class = 'col-2 col-form-label'
-        self.helper.field_class = 'col-10'
-
         fieldset = [
             '',  # Hide the legend of fieldset (HTML tag)
             'title',
@@ -34,7 +29,7 @@ class ContactMessageForm(forms.ModelForm):
             'phone',
             'content',
             HTML('<div class="row">'
-                 '<div class="col offset-md-2">'
+                 '<div class="col">'
                  '<div class="g-recaptcha" data-sitekey="{}"></div>'
                  '</div>'
                  '</div>'
