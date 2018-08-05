@@ -185,6 +185,11 @@ body {
     padding: 0.5rem 1rem;
 }
 
+.book-page #content1 ul li {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .book-page #content2 ul li {
     margin-top: 1rem;
     margin-bottom: 1rem;
