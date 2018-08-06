@@ -65,7 +65,7 @@
                     </li>
                 {% else %}
                     <li class="my-2">{% trans "Previous Page" %}:
-                        <a href="{% url 'book:book-detail' book.id %}">
+                        <a href="{% url 'book:book-detail' book.slug %}">
                             {{ book.title }}
                         </a>
                     </li>
