@@ -55,15 +55,12 @@
             </div>
         {% endif %}
         <div class="row my-2">
-            <div class="col-md-2 thai-font">
+            <div class="col-md-5 thai-font">
                 <a href="{% url 'voca:entry-detail' component.pk %}">
                     {{ component.title }}
                 </a>
             </div>
-            <div class="col-md-2 thai-font">
-                {{ component.pronunciation }}
-            </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <ul class="list-unstyled">
                     {% for meaning in component.meanings.all %}
                         <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
