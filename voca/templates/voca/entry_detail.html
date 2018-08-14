@@ -85,7 +85,7 @@
                 </a>
             </div>
             <div class="col-md-7">
-                <ul class="list-unstyled">
+                <ul class="list-unstyled mb-0">
                     {% for meaning in word.from_entry.meanings.all %}
                         <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
                     {% endfor %}
