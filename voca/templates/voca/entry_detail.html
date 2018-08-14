@@ -77,15 +77,12 @@
             </div>
         {% endif %}
         <div class="row my-3">
-            <div class="col-md-3 thai-font">
+            <div class="col-md-5 thai-font">
                 <a href="{% url 'voca:entry-detail' word.from_entry.id %}">
                     {{ word.from_entry.title }}
                 </a>
             </div>
-            <div class="col-md-3 thai-font">
-                {{ word.from_entry.pronunciation }}
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <ul class="list-unstyled">
                     {% for meaning in word.from_entry.meanings.all %}
                         <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
