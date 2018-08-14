@@ -23,7 +23,7 @@
     </div>
 
     {% for entry in entries %}
-        <div class="row py-2 {% if not forloop.first %}border-top{% endif %}">
+        <div class="row pb-1 {% if not forloop.first %}pt-2 border-top{% endif %}">
             <div class="col-md-5 thai-font">
                 <a href="{% url 'voca:entry-detail' pk=entry.pk %}">
                     {{ entry.title }}
