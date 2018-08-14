@@ -39,16 +39,18 @@
     </div>
 
     {% for entry in entries %}
-        <div class="row my-1">
+        <div class="row py-2 {% if not forloop.first %}border-top{% endif %}">
             <div class="col-md-5 thai-font">
                 <a href="{% url 'voca:entry-detail' pk=entry.pk %}">
                     {{ entry.title }}
                 </a>
             </div>
             <div class="col-md-7">
-                <ul class="list-unstyled">
+                <ul class="list-unstyled mb-0">
                     {% for meaning in entry.meanings.all %}
-                        <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
+                        <li{% if not forloop.last %} class="mb-2"{% endif %}>
+                            {{ meaning.get_part_display }} - {{ meaning.meaning }}
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
