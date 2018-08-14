@@ -24,20 +24,22 @@
 
     <div class="row my-2">
         <div class="col thai-font">
-            {% if user.is_superuser %}
-                <a href="{% url 'admin:voca_entry_change' entry.id %}">{{ entry.title }}</a>
-            {% else %}
-                {{ entry.title }}
-            {% endif %}
+            <strong>
+                {% if user.is_superuser %}
+                    <a href="{% url 'admin:voca_entry_change' entry.id %}">{{ entry.title }}</a>
+                {% else %}
+                    {{ entry.title }}
+                {% endif %}
+            </strong>
         </div>
     </div>
 
-    <div class="row my-2">
+    <div class="row my-2 pb-1 border-bottom">
         <div class="col-md-2">발음</div>
         <div class="col-md-10 thai-font">{{ entry.pronunciation }}</div>
     </div>
     {% for meaning in entry.meanings.all %}
-        <div class="row my-2">
+        <div class="row my-2{% if forloop.last %} pb-2 border-bottom{% endif %}">
             <div class="col-md-2">{{ meaning.get_part_display }}</div>
             <div class="col-md-10">{{ meaning.meaning }}</div>
         </div>
@@ -50,18 +52,18 @@
     {% endif %}
     {% for component in entry_components %}
         {% if forloop.first %}
-            <div class="row mt-4 mb-2">
-                <div class="col">형태소</div>
+            <div class="row mt-4 mb-1 mb-md-3">
+                <div class="col"><strong>형태소</strong></div>
             </div>
         {% endif %}
-        <div class="row my-2">
+        <div class="row my-2 border-bottom">
             <div class="col-md-5 thai-font">
                 <a href="{% url 'voca:entry-detail' component.pk %}">
                     {{ component.title }}
                 </a>
             </div>
             <div class="col-md-7">
-                <ul class="list-unstyled">
+                <ul class="list-unstyled mb-0">
                     {% for meaning in component.meanings.all %}
                         <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
                     {% endfor %}
@@ -72,11 +74,11 @@
 
     {% for word in entry_complex_words %}
         {% if forloop.first %}
-            <div class="row mt-4 mb-2">
-                <div class="col">파생어 / 합성어</div>
+            <div class="row mt-4 mb-1 mb-md-3">
+                <div class="col"><strong>파생어 / 합성어</strong></div>
             </div>
         {% endif %}
-        <div class="row my-3">
+        <div class="row pb-1{% if not forloop.first %} pt-2 border-top{% endif %}{% if forloop.last %} mb-1 mb-md-3{% endif %}">
             <div class="col-md-5 thai-font">
                 <a href="{% url 'voca:entry-detail' word.from_entry.id %}">
                     {{ word.from_entry.title }}
@@ -100,7 +102,8 @@
         {% endif %}
         <div class="row mt-2 mb-0">
             <div class="col thai-font">
-                {% for word in sentence.entrysentencecompound_set.all %}<a href="{% url 'voca:entry-detail' word.to_entry.id %}">{{ word.to_entry.title }}</a>{% endfor %}
+                {% for word in sentence.entrysentencecompound_set.all %}
+                    <a href="{% url 'voca:entry-detail' word.to_entry.id %}">{{ word.to_entry.title }}</a>{% endfor %}
             </div>
         </div>
         <div class="row my-0">
