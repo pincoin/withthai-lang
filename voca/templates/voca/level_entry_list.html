@@ -40,15 +40,12 @@
 
     {% for entry in entries %}
         <div class="row my-1">
-            <div class="col-md-3 thai-font">
+            <div class="col-md-5 thai-font">
                 <a href="{% url 'voca:entry-detail' pk=entry.pk %}">
                     {{ entry.title }}
                 </a>
             </div>
-            <div class="col-md-3 thai-font">
-                {{ entry.pronunciation }}
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <ul class="list-unstyled">
                     {% for meaning in entry.meanings.all %}
                         <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
