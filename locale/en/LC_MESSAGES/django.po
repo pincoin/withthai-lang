@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-25 22:39+0900\n"
+"POT-Creation-Date: 2018-08-15 23:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,9 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: blog/apps.py:7
+msgid "Blog"
+msgstr ""
+
 #: board/apps.py:7
 msgid "Board"
 msgstr "board"
+
+#: board/forms.py:32 board/templates/board/default/message_list.html:44
+#: book/forms.py:56 book/forms.py:102 book/templates/book/article_list.html:45
+#: help/forms.py:42
+msgid "Write"
+msgstr ""
 
 #: board/models.py:27 book/models.py:43 rakmai/models.py:34 rakmai/models.py:72
 #: rakmai/models.py:117 voca/models.py:20 voca/models.py:178 voca/models.py:240
@@ -65,7 +75,7 @@ msgid "boards"
 msgstr "boards"
 
 #: board/models.py:72 board/models.py:81 board/models.py:140 book/admin.py:37
-#: book/forms.py:72 book/models.py:62 book/models.py:149 help/models.py:68
+#: book/forms.py:75 book/models.py:62 book/models.py:149 help/models.py:68
 msgid "category"
 msgstr "category"
 
@@ -147,11 +157,24 @@ msgstr "IP address"
 msgid "messages"
 msgstr "messages"
 
+#: board/templates/board/default/message_create.html:12
+#: board/templates/board/default/message_detail.html:11
 #: board/templates/board/default/message_list.html:11
 msgid "community"
 msgstr "community"
 
-#: board/templates/board/default/message_list.html:37
+#: board/templates/board/default/message_create.html:26
+#: board/templates/board/default/message_detail.html:49
+#: book/templates/book/article_create.html:19
+#: book/templates/book/article_detail.html:115
+#: book/templates/book/article_update.html:19
+#: book/templates/book/page_create.html:20
+#: book/templates/book/page_update.html:20
+#: help/templates/help/notice_detail.html:46
+msgid "List"
+msgstr "List"
+
+#: board/templates/board/default/message_list.html:35
 msgid "No messages yet"
 msgstr "No message yet"
 
@@ -174,11 +197,6 @@ msgstr "Book"
 #: book/forms.py:24 book/models.py:198 rakmai/models.py:25 rakmai/models.py:108
 msgid "parent"
 msgstr "parent"
-
-#: book/forms.py:51 book/forms.py:99 book/templates/book/article_list.html:45
-#: help/forms.py:47
-msgid "Write"
-msgstr ""
 
 #: book/models.py:29 book/models.py:159 book/models.py:254 voca/models.py:235
 msgid "public"
@@ -213,7 +231,7 @@ msgid "BY-NC-ND"
 msgstr "BY-NC-ND"
 
 #: book/models.py:56 rakmai/models.py:78 voca/models.py:33 voca/models.py:138
-#: voca/templates/voca/entry_detail.html:47
+#: voca/templates/voca/entry_detail.html:49
 msgid "description"
 msgstr "description"
 
@@ -247,7 +265,7 @@ msgstr "book"
 #: book/templates/book/_breadcrumbs_book.html:6
 #: book/templates/book/article_list.html:11
 #: book/templates/book/book_detail.html:12 book/templates/book/book_list.html:9
-#: book/views.py:32
+#: book/views.py:34 rakmai/templates/rakmai/home.html:108
 msgid "books"
 msgstr "books"
 
@@ -287,7 +305,7 @@ msgstr "article categories"
 msgid "article"
 msgstr "article"
 
-#: book/models.py:322 book/views.py:160 book/views.py:207
+#: book/models.py:322 book/views.py:162 book/views.py:209
 msgid "articles"
 msgstr "article"
 
@@ -317,21 +335,12 @@ msgstr "Prev"
 msgid "Next"
 msgstr "Next"
 
-#: book/templates/book/article_create.html:10 book/views.py:221
-#: book/views.py:256
+#: book/templates/book/article_create.html:10 book/views.py:223
+#: book/views.py:258
 msgid "Write New Article"
 msgstr "Write New Article"
 
-#: book/templates/book/article_create.html:19
-#: book/templates/book/article_detail.html:101
-#: book/templates/book/article_update.html:19
-#: book/templates/book/page_create.html:20
-#: book/templates/book/page_update.html:20
-#: help/templates/help/notice_detail.html:46
-msgid "List"
-msgstr "List"
-
-#: book/templates/book/article_detail.html:23 book/views.py:120
+#: book/templates/book/article_detail.html:23 book/views.py:122
 msgid "Edit"
 msgstr "Edit"
 
@@ -339,7 +348,7 @@ msgstr "Edit"
 msgid "Delete Article"
 msgstr "Delete Article"
 
-#: book/templates/book/article_detail.html:96
+#: book/templates/book/article_detail.html:110
 #: book/templates/book/page_detail.html:52
 msgid "last modified"
 msgstr "Last modified"
@@ -352,7 +361,7 @@ msgstr "No articles yet"
 msgid "Edit Article"
 msgstr "Edit Article"
 
-#: book/templates/book/page_create.html:10 book/views.py:84
+#: book/templates/book/page_create.html:10 book/views.py:86
 msgid "Write New Page"
 msgstr "Write New Page"
 
@@ -386,8 +395,9 @@ msgid "Thai"
 msgstr "Thai"
 
 #: conf/settings/local.py:66 rakmai/templates/rakmai/base.html:8
-#: rakmai/templates/rakmai/base.html:55 rakmai/templates/rakmai/base.html:56
-#: rakmai/templates/rakmai/base.html:165
+#: rakmai/templates/rakmai/base.html:54 rakmai/templates/rakmai/base.html:55
+#: rakmai/templates/rakmai/base.html:141 rakmai/templates/rakmai/base.html:142
+#: rakmai/templates/rakmai/base.html:252
 msgid "WITHTHAI"
 msgstr "WITHTHAI"
 
@@ -395,7 +405,7 @@ msgstr "WITHTHAI"
 msgid "Help"
 msgstr "Help"
 
-#: help/forms.py:67
+#: help/forms.py:62
 msgid "Invalid reCAPTCHA. Please try again."
 msgstr ""
 
@@ -443,7 +453,8 @@ msgstr "contact"
 msgid "Notice"
 msgstr "Notice"
 
-#: help/templates/help/notice_list.html:36 rakmai/templates/rakmai/home.html:79
+#: help/templates/help/notice_list.html:36 rakmai/templates/rakmai/home.html:37
+#: rakmai/templates/rakmai/home.html:64 rakmai/templates/rakmai/home.html:93
 msgid "No message"
 msgstr "No message"
 
@@ -543,11 +554,36 @@ msgstr "public identifier"
 msgid "created time"
 msgstr "created time"
 
-#: rakmai/templates/rakmai/base.html:68
-msgid "Thai Language"
-msgstr "Thai"
+#: rakmai/templates/rakmai/base.html:66 rakmai/templates/rakmai/base.html:208
+msgid "Admin"
+msgstr "Admin"
 
-#: rakmai/templates/rakmai/base.html:72 voca/templates/voca/entry_detail.html:9
+#: rakmai/templates/rakmai/base.html:73 rakmai/templates/rakmai/base.html:189
+#: templates/allauth/account/login.html:93
+#: templates/allauth/account/signup.html:8
+#: templates/allauth/account/signup.html:94
+msgid "Sign Up"
+msgstr ""
+
+#: rakmai/templates/rakmai/base.html:79 rakmai/templates/rakmai/base.html:195
+#: templates/allauth/account/login.html:10
+#: templates/allauth/account/login.html:63
+#: templates/allauth/account/signup.html:99
+msgid "Sign In"
+msgstr ""
+
+#: rakmai/templates/rakmai/base.html:84 rakmai/templates/rakmai/base.html:211
+msgid "Profile"
+msgstr "Profile"
+
+#: rakmai/templates/rakmai/base.html:88 rakmai/templates/rakmai/base.html:213
+#: templates/allauth/account/logout.html:8
+#: templates/allauth/account/logout.html:17
+msgid "Sign Out"
+msgstr ""
+
+#: rakmai/templates/rakmai/base.html:94 rakmai/templates/rakmai/base.html:158
+#: voca/templates/voca/entry_detail.html:9
 #: voca/templates/voca/entry_list.html:9
 #: voca/templates/voca/level_entry_list.html:9
 #: voca/templates/voca/level_list.html:9
@@ -556,33 +592,9 @@ msgstr "Thai"
 msgid "Vocabulary"
 msgstr "Vocabulary"
 
-#: rakmai/templates/rakmai/base.html:102
-#: templates/allauth/account/login.html:93
-#: templates/allauth/account/signup.html:8
-#: templates/allauth/account/signup.html:94
-msgid "Sign Up"
-msgstr ""
-
-#: rakmai/templates/rakmai/base.html:108
-#: templates/allauth/account/login.html:10
-#: templates/allauth/account/login.html:63
-#: templates/allauth/account/signup.html:99
-msgid "Sign In"
-msgstr ""
-
-#: rakmai/templates/rakmai/base.html:121
-msgid "Admin"
-msgstr "Admin"
-
-#: rakmai/templates/rakmai/base.html:124
-msgid "Profile"
-msgstr "Profile"
-
-#: rakmai/templates/rakmai/base.html:126
-#: templates/allauth/account/logout.html:8
-#: templates/allauth/account/logout.html:17
-msgid "Sign Out"
-msgstr ""
+#: rakmai/templates/rakmai/base.html:154
+msgid "Thai Language"
+msgstr "Thai"
 
 #: rakmai/views.py:12
 msgid "Thai for All"
@@ -840,17 +852,17 @@ msgstr "vocabulary"
 msgid "lookup word"
 msgstr "lookup word"
 
-#: voca/models.py:14 voca/templates/voca/2_columns.html:53
+#: voca/models.py:14 voca/templates/voca/2_columns.html:61
 #: voca/templates/voca/level_list.html:30
 msgid "beginner"
 msgstr "beginner"
 
-#: voca/models.py:15 voca/templates/voca/2_columns.html:58
+#: voca/models.py:15 voca/templates/voca/2_columns.html:66
 #: voca/templates/voca/level_list.html:34
 msgid "intermediate"
 msgstr "intermediate"
 
-#: voca/models.py:16 voca/templates/voca/2_columns.html:63
+#: voca/models.py:16 voca/templates/voca/2_columns.html:71
 #: voca/templates/voca/level_list.html:38
 msgid "advanced"
 msgstr "advanced"
@@ -859,7 +871,7 @@ msgstr "advanced"
 msgid "pronunciation"
 msgstr "pronunciation"
 
-#: voca/models.py:38 voca/templates/voca/2_columns.html:46
+#: voca/models.py:38 voca/templates/voca/2_columns.html:51
 msgid "level"
 msgstr "level"
 
@@ -923,7 +935,7 @@ msgstr "meaning"
 msgid "entry category"
 msgstr "entry category"
 
-#: voca/models.py:144 voca/templates/voca/2_columns.html:25
+#: voca/models.py:144 voca/templates/voca/2_columns.html:26
 msgid "entry categories"
 msgstr "entry categories"
 
@@ -959,7 +971,7 @@ msgstr "chapter"
 msgid "textbook"
 msgstr "textbook"
 
-#: voca/models.py:289 voca/templates/voca/2_columns.html:74 voca/views.py:169
+#: voca/models.py:289 voca/templates/voca/2_columns.html:82 voca/views.py:169
 #: voca/views.py:197
 msgid "textbooks"
 msgstr "textbooks"
@@ -972,7 +984,7 @@ msgstr "textbook word"
 msgid "textbook words"
 msgstr "textbook words"
 
-#: voca/templates/voca/2_columns.html:88
+#: voca/templates/voca/2_columns.html:99
 #: voca/templates/voca/textbook_list.html:43
 msgid "No textbook"
 msgstr "No textbook"
