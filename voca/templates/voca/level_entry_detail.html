@@ -58,7 +58,7 @@
         {% endif %}
         <div class="row my-2 border-bottom">
             <div class="col-md-5 thai-font">
-                <a href="{% url 'voca:level-entry-detail' level component.pk %}?page={{ request.GET.page }}">
+                <a href="{% url 'voca:level-entry-detail' level component.pk %}?page={{ request.GET.page }}&part={{ request.GET.part }}">
                     {{ component.title }}
                 </a>
             </div>
@@ -80,7 +80,7 @@
         {% endif %}
         <div class="row pb-1{% if not forloop.first %} pt-2 border-top{% endif %}{% if forloop.last %} mb-1 mb-md-3{% endif %}">
             <div class="col-md-5 thai-font">
-                <a href="{% url 'voca:level-entry-detail' level word.from_entry.id %}?page={{ request.GET.page }}">
+                <a href="{% url 'voca:level-entry-detail' level word.from_entry.id %}?page={{ request.GET.page }}&part={{ request.GET.part }}">
                     {{ word.from_entry.title }}
                 </a>
             </div>
@@ -103,7 +103,7 @@
         <div class="row mt-2 mb-0">
             <div class="col thai-font">
                 {% for word in sentence.entrysentencecompound_set.all %}
-                    <a href="{% url 'voca:level-entry-detail' level word.to_entry.id %}?page={{ request.GET.page }}">
+                    <a href="{% url 'voca:level-entry-detail' level word.to_entry.id %}?page={{ request.GET.page }}&part={{ request.GET.part }}">
                         {{ word.to_entry.title }}
                     </a>{% endfor %}
             </div>
@@ -116,7 +116,7 @@
     {% endfor %}
     <div class="row mt-1 mt-md-4">
         <div class="col">
-            <a href="{% url 'voca:level-entry-list' level %}?page={{ request.GET.page }}" class="btn btn-secondary">
+            <a href="{% url 'voca:level-entry-list' level %}?page={{ request.GET.page }}&part={{ request.GET.part }}" class="btn btn-secondary">
                 {% trans "List" %}
             </a>
         </div>

@@ -41,7 +41,7 @@
     {% for entry in entries %}
         <div class="row pb-1{% if not forloop.first %} pt-2 border-top{% endif %}{% if forloop.last %} mb-1 mb-md-3{% endif %}">
             <div class="col-md-5 thai-font">
-                <a href="{% url 'voca:level-entry-detail' level entry.pk %}?page={{ request.GET.page }}">
+                <a href="{% url 'voca:level-entry-detail' level entry.pk %}?page={{ request.GET.page }}&part={{ request.GET.part }}">
                     {{ entry.title }}
                 </a>
             </div>
@@ -57,5 +57,5 @@
         </div>
     {% endfor %}
     <!-- Pagination -->
-    {% include './_pagination.html' with page_obj=page_obj page_range=page_range %}
+    {% include './_pagination_level.html' with page_obj=page_obj page_range=page_range %}
 {% endblock %}
