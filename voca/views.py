@@ -162,6 +162,18 @@ class LevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic
         return 'voca/level_list.html'
 
 
+class CategoryTemplateView(SearchContextMixin, VocaContextMixin, generic.TemplateView):
+    logger = logging.getLogger(__name__)
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoryTemplateView, self).get_context_data(**kwargs)
+        context['page_title'] = _('categories')
+        return context
+
+    def get_template_names(self):
+        return 'voca/category_template.html'
+
+
 class TextbookListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
     logger = logging.getLogger(__name__)
     context_object_name = 'books'

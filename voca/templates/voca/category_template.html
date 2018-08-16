@@ -1,0 +1,47 @@
+{% extends "./2_columns.html" %}
+{% load i18n %}
+{% load voca_tags %}
+
+{% block main_content %}
+    <div class="row my-2 my-md-4">
+        <div class="col-md-2">
+            <h4 class="mt-md-2">
+                <a href="{% url 'voca:entry-list' %}">
+                    {% trans "Vocabulary" %}
+                </a>
+            </h4>
+        </div>
+        <div class="col-md-10">
+            <form action="{% url 'voca:entry-list' %}" method="get" class="input-group mt-md-1">
+                {{ search_form.q }}
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </form>
+        </div>
+    </div>
+
+    <div class="card my-1 my-md-3">
+        <h6 class="card-header py-2">
+            {% trans "entry categories" %}
+        </h6>
+        <div class="card-body pt-1 pb-0">
+            <ul class="pl-3 mb-0">
+                {% voca_categories %}
+                    <li class="mb-1">
+                        <a href="{% url 'voca:entry-category' category.slug %}">{{ category.title }}</a>
+                    </li>
+                    {% if not category.is_leaf_node %}
+                        <ul class="pl-3">
+                            {{ children }}
+                        </ul>
+                    {% endif %}
+                {% end_voca_categories %}
+            </ul>
+        </div>
+    </div>
+    <!-- Pagination -->
+    {% include './_pagination.html' with page_obj=page_obj page_range=page_range %}
+{% endblock %}

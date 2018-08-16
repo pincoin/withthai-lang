@@ -3,8 +3,9 @@ from django.contrib.sitemaps.views import sitemap
 
 from .sitemaps import EntrySitemap
 from .views import (
-    EntryListView, EntryDetailView, EntryCategoryView, EntryLevelListView, EntryLevelDetailView,
-    TextbookListView, TextbookEntryListView, LevelListView
+    EntryListView, EntryDetailView, LevelListView, EntryLevelListView, EntryLevelDetailView,
+    EntryCategoryView, CategoryTemplateView,
+    TextbookListView, TextbookEntryListView,
 )
 
 app_name = 'voca'
@@ -26,6 +27,8 @@ urlpatterns = [
     url(r'^level/(?P<level>[\w]+)/(?P<pk>\d+)/$',
         EntryLevelDetailView.as_view(), name='level-entry-detail'),
 
+    url(r'^category/$',
+        CategoryTemplateView.as_view(), name='category-list'),
     url(r'^category/(?P<slug>[-\w]+)/$',
         EntryCategoryView.as_view(), name='entry-category'),
 
