@@ -13,7 +13,6 @@
         <div class="col-md-10">
             <form action="{% url 'voca:level-entry-list' level %}" method="get" class="input-group mt-md-1">
                 {{ search_form.q }}
-                <input type="hidden" name="page" value="{{ request.GET.page }}"/>
                 <span class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit">
                         <i class="fa fa-search"></i>
@@ -30,7 +29,6 @@
                     <a href="{% url 'voca:level-entry-list' level %}" class="btn btn-outline-dark">전체목록</a>
                 </div>
                 {{ part_filter_form.part }}
-                <input type="hidden" name="page" value="{{ request.GET.page }}"/>
                 <span class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit">
                         <i class="fa fa-filter"></i>
