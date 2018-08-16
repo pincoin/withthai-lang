@@ -114,7 +114,7 @@
     {% endfor %}
     <div class="row mt-1 mt-md-4">
         <div class="col">
-            <a href="{% url 'voca:entry-list' %}?page={{ request.GET.page }}" class="btn btn-secondary">
+            <a href="{% url 'voca:level-entry-list' level %}?page={{ request.GET.page }}" class="btn btn-secondary">
                 {% trans "List" %}
             </a>
         </div>

@@ -130,6 +130,18 @@ class EntryLevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, ge
         return 'voca/level_entry_list.html'
 
 
+class EntryLevelDetailView(EntryDetailView):
+    logger = logging.getLogger(__name__)
+
+    def get_context_data(self, **kwargs):
+        context = super(EntryLevelDetailView, self).get_context_data(**kwargs)
+        context['level'] = self.kwargs['level']
+        return context
+
+    def get_template_names(self):
+        return 'voca/level_entry_detail.html'
+
+
 class LevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
     logger = logging.getLogger(__name__)
     context_object_name = 'levels'

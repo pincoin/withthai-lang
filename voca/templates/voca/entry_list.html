@@ -25,7 +25,7 @@
     {% for entry in entries %}
         <div class="row pb-1{% if not forloop.first %} pt-2 border-top{% endif %}{% if forloop.last %} mb-1 mb-md-3{% endif %}">
             <div class="col-md-5 thai-font">
-                <a href="{% url 'voca:entry-detail' pk=entry.pk %}">
+                <a href="{% url 'voca:entry-detail' pk=entry.pk %}?page={{ request.GET.page }}">
                     {{ entry.title }}
                 </a>
             </div>
