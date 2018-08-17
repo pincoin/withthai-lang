@@ -39,7 +39,12 @@
     </div>
 
     {% for entry in entries %}
-        <div class="row pb-1{% if not forloop.first %} pt-2 border-top{% endif %}{% if forloop.last %} mb-1 mb-md-3{% endif %}">
+        <div class="row pb-1{% if forloop.last %} mb-1 mb-md-3{% endif %}">
+            {% if not forloop.first %}
+                <div class="col-12">
+                    <hr class="mt-1">
+                </div>
+            {% endif %}
             <div class="col-md-5 thai-font">
                 <a href="{% url 'voca:level-entry-detail' level entry.pk %}?page={{ request.GET.page }}&part={{ request.GET.part }}">
                     {{ entry.title }}
