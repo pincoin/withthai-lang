@@ -67,14 +67,22 @@
         </div>
     </div>
 
-    <div class="row my-2 pb-1 border-bottom">
+    <div class="row my-2 pb-1">
         <div class="col-md-2">발음</div>
         <div class="col-md-10 thai-font">{{ entry.pronunciation }}</div>
+        <div class="col-12">
+            <hr class="my-0">
+        </div>
     </div>
     {% for meaning in entry.meanings.all %}
-        <div class="row my-2{% if forloop.last %} pb-2 border-bottom{% endif %}">
+        <div class="row my-2">
             <div class="col-md-2">{{ meaning.get_part_display }}</div>
             <div class="col-md-10">{{ meaning.meaning }}</div>
+            {% if forloop.last %}
+                <div class="col-12">
+                    <hr class="mt-1 mb-2">
+                </div>
+            {% endif %}
         </div>
     {% endfor %}
     {% if entry.description %}
@@ -89,7 +97,7 @@
                 <div class="col"><strong>형태소</strong></div>
             </div>
         {% endif %}
-        <div class="row my-2 border-bottom">
+        <div class="row my-2">
             <div class="col-md-5 thai-font">
                 <a href="{% url 'voca:category-entry-detail' category_slug component.pk %}?page={{ request.GET.page }}&part={{ request.GET.part }}">
                     {{ component.title }}
@@ -101,6 +109,9 @@
                         <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
                     {% endfor %}
                 </ul>
+            </div>
+            <div class="col-12">
+                <hr class="my-0">
             </div>
         </div>
     {% endfor %}
