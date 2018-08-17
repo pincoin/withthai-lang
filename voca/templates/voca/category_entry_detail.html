@@ -1,8 +1,9 @@
 {% extends "./2_columns.html" %}
 {% load i18n %}
+{% load voca_tags %}
 
 {% block main_content %}
-    <div class="row my-2 my-md-4">
+    <div class="row my-2 mt-md-4">
         <div class="col-md-2">
             <h4 class="mt-md-2">
                 <a href="{% url 'voca:category-list' %}">
@@ -19,6 +20,30 @@
                     </button>
                 </span>
             </form>
+        </div>
+    </div>
+
+    {% get_category_ancestor_path category_slug as breadcrumbs %}
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-1 mb-1 py-1">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'voca:category-list' %}">{% trans "All Categories" %}</a>
+                    </li>
+                    {% for crumb in breadcrumbs %}
+                        {% if not forloop.last %}
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'voca:entry-category' crumb.slug %}">
+                                    {{ crumb.title }}
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="breadcrumb-item active">{{ crumb.title }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </nav>
         </div>
     </div>
 
