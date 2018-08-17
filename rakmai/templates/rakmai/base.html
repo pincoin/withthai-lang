@@ -91,7 +91,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                 {% endif %}
                 <div class="dropdown-divider"></div>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'voca:entry-list' %}">{% trans "Vocabulary" %}</a>
+                    <a class="nav-link" href="{% url 'voca:category-list' %}">{% trans "Vocabulary" %}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'book:book-detail' '태국어-성조법' %}">성조법 기초</a>
@@ -154,7 +154,7 @@ Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve yo
                         {% trans "Thai Language" %}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
-                        <a class="dropdown-item" href="{% url 'voca:entry-list' %}">
+                        <a class="dropdown-item" href="{% url 'voca:category-list' %}">
                             {% trans "Vocabulary" %}
                         </a>
                         <a class="dropdown-item" href="{% url 'book:book-detail' '태국어-성조법' %}">성조법 기초</a>
