@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-15 23:46+0900\n"
+"POT-Creation-Date: 2018-08-17 22:56+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,7 +79,7 @@ msgstr "boards"
 msgid "category"
 msgstr "category"
 
-#: board/models.py:82 book/models.py:150
+#: board/models.py:82 book/models.py:150 voca/views.py:171
 msgid "categories"
 msgstr "categories"
 
@@ -171,6 +171,8 @@ msgstr "community"
 #: book/templates/book/page_create.html:20
 #: book/templates/book/page_update.html:20
 #: help/templates/help/notice_detail.html:46
+#: voca/templates/voca/entry_detail.html:120
+#: voca/templates/voca/level_entry_detail.html:120
 msgid "List"
 msgstr "List"
 
@@ -232,6 +234,7 @@ msgstr "BY-NC-ND"
 
 #: book/models.py:56 rakmai/models.py:78 voca/models.py:33 voca/models.py:138
 #: voca/templates/voca/entry_detail.html:49
+#: voca/templates/voca/level_entry_detail.html:49
 msgid "description"
 msgstr "description"
 
@@ -323,6 +326,10 @@ msgstr "words"
 #: help/templates/help/_pagination.html:14
 #: voca/templates/voca/_pagination.html:9
 #: voca/templates/voca/_pagination.html:14
+#: voca/templates/voca/_pagination_category.html:9
+#: voca/templates/voca/_pagination_category.html:14
+#: voca/templates/voca/_pagination_level.html:9
+#: voca/templates/voca/_pagination_level.html:14
 msgid "Previous"
 msgstr "Prev"
 
@@ -332,6 +339,10 @@ msgstr "Prev"
 #: help/templates/help/_pagination.html:39
 #: voca/templates/voca/_pagination.html:34
 #: voca/templates/voca/_pagination.html:39
+#: voca/templates/voca/_pagination_category.html:34
+#: voca/templates/voca/_pagination_category.html:39
+#: voca/templates/voca/_pagination_level.html:34
+#: voca/templates/voca/_pagination_level.html:39
 msgid "Next"
 msgstr "Next"
 
@@ -583,12 +594,15 @@ msgid "Sign Out"
 msgstr ""
 
 #: rakmai/templates/rakmai/base.html:94 rakmai/templates/rakmai/base.html:158
+#: voca/templates/voca/category_entry_list.html:10
+#: voca/templates/voca/category_template.html:10
 #: voca/templates/voca/entry_detail.html:9
 #: voca/templates/voca/entry_list.html:9
+#: voca/templates/voca/level_entry_detail.html:9
 #: voca/templates/voca/level_entry_list.html:9
 #: voca/templates/voca/level_list.html:9
 #: voca/templates/voca/textbook_entry_list.html:9
-#: voca/templates/voca/textbook_list.html:9 voca/views.py:38 voca/views.py:122
+#: voca/templates/voca/textbook_list.html:9 voca/views.py:38 voca/views.py:123
 msgid "Vocabulary"
 msgstr "Vocabulary"
 
@@ -852,17 +866,17 @@ msgstr "vocabulary"
 msgid "lookup word"
 msgstr "lookup word"
 
-#: voca/models.py:14 voca/templates/voca/2_columns.html:61
+#: voca/models.py:14 voca/templates/voca/2_columns.html:35
 #: voca/templates/voca/level_list.html:30
 msgid "beginner"
 msgstr "beginner"
 
-#: voca/models.py:15 voca/templates/voca/2_columns.html:66
+#: voca/models.py:15 voca/templates/voca/2_columns.html:40
 #: voca/templates/voca/level_list.html:34
 msgid "intermediate"
 msgstr "intermediate"
 
-#: voca/models.py:16 voca/templates/voca/2_columns.html:71
+#: voca/models.py:16 voca/templates/voca/2_columns.html:45
 #: voca/templates/voca/level_list.html:38
 msgid "advanced"
 msgstr "advanced"
@@ -871,7 +885,7 @@ msgstr "advanced"
 msgid "pronunciation"
 msgstr "pronunciation"
 
-#: voca/models.py:38 voca/templates/voca/2_columns.html:51
+#: voca/models.py:38 voca/templates/voca/2_columns.html:28
 msgid "level"
 msgstr "level"
 
@@ -935,7 +949,7 @@ msgstr "meaning"
 msgid "entry category"
 msgstr "entry category"
 
-#: voca/models.py:144 voca/templates/voca/2_columns.html:26
+#: voca/models.py:144
 msgid "entry categories"
 msgstr "entry categories"
 
@@ -971,8 +985,8 @@ msgstr "chapter"
 msgid "textbook"
 msgstr "textbook"
 
-#: voca/models.py:289 voca/templates/voca/2_columns.html:82 voca/views.py:169
-#: voca/views.py:197
+#: voca/models.py:289 voca/templates/voca/2_columns.html:56 voca/views.py:194
+#: voca/views.py:222
 msgid "textbooks"
 msgstr "textbooks"
 
@@ -984,10 +998,14 @@ msgstr "textbook word"
 msgid "textbook words"
 msgstr "textbook words"
 
-#: voca/templates/voca/2_columns.html:99
+#: voca/templates/voca/2_columns.html:70
 #: voca/templates/voca/textbook_list.html:43
 msgid "No textbook"
 msgstr "No textbook"
+
+#: voca/templates/voca/category_entry_list.html:32
+msgid "All Categories"
+msgstr "All Categories"
 
 #: voca/views.py:56
 msgid "{} - Vocabulary"
@@ -997,6 +1015,6 @@ msgstr "{} - Vocabulary"
 msgid "{} Vocabulary Category"
 msgstr "{} - Vocabulary Category"
 
-#: voca/views.py:145
+#: voca/views.py:158
 msgid "levels"
 msgstr "level"
