@@ -3,8 +3,9 @@ from django.contrib.sitemaps.views import sitemap
 
 from .sitemaps import EntrySitemap
 from .views import (
-    EntryListView, EntryDetailView, LevelListView, EntryLevelListView, EntryLevelDetailView,
-    EntryCategoryView, CategoryTemplateView,
+    EntryListView, EntryDetailView,
+    LevelListView, EntryLevelListView, EntryLevelDetailView,
+    CategoryTemplateView, EntryCategoryView, EntryCategoryDetailView,
     TextbookListView, TextbookEntryListView,
 )
 
@@ -31,6 +32,8 @@ urlpatterns = [
         CategoryTemplateView.as_view(), name='category-list'),
     url(r'^category/(?P<slug>[-\w]+)/$',
         EntryCategoryView.as_view(), name='entry-category'),
+    url(r'^category/(?P<slug>[-\w]+)/(?P<pk>\d+)/$',
+        EntryCategoryDetailView.as_view(), name='category-entry-detail'),
 
     url(r'^textbook/$',
         TextbookListView.as_view(), name='textbook-list'),

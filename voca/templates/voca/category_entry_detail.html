@@ -1,0 +1,124 @@
+{% extends "./2_columns.html" %}
+{% load i18n %}
+
+{% block main_content %}
+    <div class="row my-2 my-md-4">
+        <div class="col-md-2">
+            <h4 class="mt-md-2">
+                <a href="{% url 'voca:category-list' %}">
+                    {% trans "Vocabulary" %}
+                </a>
+            </h4>
+        </div>
+        <div class="col-md-10">
+            <form action="{% url 'voca:entry-category' category_slug %}" method="get" class="input-group mt-md-1">
+                {{ search_form.q }}
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </form>
+        </div>
+    </div>
+
+    <div class="row my-2">
+        <div class="col thai-font">
+            <strong>
+                {% if user.is_superuser %}
+                    <a href="{% url 'admin:voca_entry_change' entry.id %}">{{ entry.title }}</a>
+                {% else %}
+                    {{ entry.title }}
+                {% endif %}
+            </strong>
+        </div>
+    </div>
+
+    <div class="row my-2 pb-1 border-bottom">
+        <div class="col-md-2">발음</div>
+        <div class="col-md-10 thai-font">{{ entry.pronunciation }}</div>
+    </div>
+    {% for meaning in entry.meanings.all %}
+        <div class="row my-2{% if forloop.last %} pb-2 border-bottom{% endif %}">
+            <div class="col-md-2">{{ meaning.get_part_display }}</div>
+            <div class="col-md-10">{{ meaning.meaning }}</div>
+        </div>
+    {% endfor %}
+    {% if entry.description %}
+        <div class="row my-2">
+            <div class="col-md-2">{% trans "description" %}</div>
+            <div class="col-md-10 thai-font">{{ entry.description }}</div>
+        </div>
+    {% endif %}
+    {% for component in entry_components %}
+        {% if forloop.first %}
+            <div class="row mt-4 mb-1 mb-md-3">
+                <div class="col"><strong>형태소</strong></div>
+            </div>
+        {% endif %}
+        <div class="row my-2 border-bottom">
+            <div class="col-md-5 thai-font">
+                <a href="{% url 'voca:category-entry-detail' category_slug component.pk %}?page={{ request.GET.page }}&part={{ request.GET.part }}">
+                    {{ component.title }}
+                </a>
+            </div>
+            <div class="col-md-7">
+                <ul class="list-unstyled mb-0">
+                    {% for meaning in component.meanings.all %}
+                        <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% for word in entry_complex_words %}
+        {% if forloop.first %}
+            <div class="row mt-4 mb-1 mb-md-3">
+                <div class="col"><strong>파생어 / 합성어</strong></div>
+            </div>
+        {% endif %}
+        <div class="row pb-1{% if not forloop.first %} pt-2 border-top{% endif %}{% if forloop.last %} mb-1 mb-md-3{% endif %}">
+            <div class="col-md-5 thai-font">
+                <a href="{% url 'voca:category-entry-detail' category_slug word.from_entry.id %}?page={{ request.GET.page }}&part={{ request.GET.part }}">
+                    {{ word.from_entry.title }}
+                </a>
+            </div>
+            <div class="col-md-7">
+                <ul class="list-unstyled mb-0">
+                    {% for meaning in word.from_entry.meanings.all %}
+                        <li class="mb-2">{{ meaning.get_part_display }} - {{ meaning.meaning }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% for sentence in entry_sentences %}
+        {% if forloop.first %}
+            <div class="row mt-4 mb-2">
+                <div class="col">예문</div>
+            </div>
+        {% endif %}
+        <div class="row mt-2 mb-0">
+            <div class="col thai-font">
+                {% for word in sentence.entrysentencecompound_set.all %}
+                    <a href="{% url 'voca:category-entry-detail' category_slug word.to_entry.id %}?page={{ request.GET.page }}&part={{ request.GET.part }}">
+                        {{ word.to_entry.title }}
+                    </a>{% endfor %}
+            </div>
+        </div>
+        <div class="row my-0">
+            <div class="col">
+                {{ sentence.meaning }}
+            </div>
+        </div>
+    {% endfor %}
+    <div class="row mt-1 mt-md-4">
+        <div class="col">
+            <a href="{% url 'voca:entry-category' category_slug %}?page={{ request.GET.page }}&part={{ request.GET.part }}" class="btn btn-secondary">
+                {% trans "List" %}
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -94,6 +94,18 @@ class EntryCategoryView(SearchContextMixin, PageableMixin, VocaContextMixin, gen
         return 'voca/category_entry_list.html'
 
 
+class EntryCategoryDetailView(EntryDetailView):
+    logger = logging.getLogger(__name__)
+
+    def get_context_data(self, **kwargs):
+        context = super(EntryCategoryDetailView, self).get_context_data(**kwargs)
+        context['category_slug'] = self.kwargs['slug']
+        return context
+
+    def get_template_names(self):
+        return 'voca/category_entry_detail.html'
+
+
 class EntryLevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):
     logger = logging.getLogger(__name__)
     context_object_name = 'entries'
