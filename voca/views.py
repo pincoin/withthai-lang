@@ -87,10 +87,11 @@ class EntryCategoryView(SearchContextMixin, PageableMixin, VocaContextMixin, gen
     def get_context_data(self, **kwargs):
         context = super(EntryCategoryView, self).get_context_data(**kwargs)
         context['page_title'] = _('{} Vocabulary Category').format(self.kwargs['slug'])
+        context['category_slug'] = self.kwargs['slug']
         return context
 
     def get_template_names(self):
-        return 'voca/entry_list.html'
+        return 'voca/category_entry_list.html'
 
 
 class EntryLevelListView(SearchContextMixin, PageableMixin, VocaContextMixin, generic.ListView):

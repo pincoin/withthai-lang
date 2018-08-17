@@ -82,3 +82,9 @@ def get_textbooks(context, count=5):
         cache.set(cache_key, textbooks, cache_time)
 
     return textbooks
+
+
+@register.simple_tag
+def get_category_ancestor_path(category_slug):
+    # breadcrumb
+    return EntryCategory.objects.get(slug=category_slug).get_ancestors(include_self=True)

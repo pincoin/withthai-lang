@@ -1,0 +1,70 @@
+{% extends "./2_columns.html" %}
+{% load i18n %}
+{% load voca_tags %}
+
+{% block main_content %}
+    <div class="row my-2 my-md-4">
+        <div class="col-md-2">
+            <h4 class="mt-md-2">
+                <a href="{% url 'voca:category-list' %}">
+                    {% trans "Vocabulary" %}
+                </a>
+            </h4>
+        </div>
+        <div class="col-md-10">
+            <form action="{% url 'voca:entry-list' %}" method="get" class="input-group mt-md-1">
+                {{ search_form.q }}
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </form>
+        </div>
+    </div>
+
+    {% get_category_ancestor_path category_slug as breadcrumbs %}
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-1 mb-1 mb-md-3 py-1">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'voca:category-list' %}">{% trans "Vocabulary" %}</a>
+                    </li>
+                    {% for crumb in breadcrumbs %}
+                        {% if not forloop.last %}
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'voca:entry-category' crumb.slug %}">
+                                    {{ crumb.title }}
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="breadcrumb-item active">{{ crumb.title }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    {% for entry in entries %}
+        <div class="row pb-1{% if not forloop.first %} pt-2 border-top{% endif %}{% if forloop.last %} mb-1 mb-md-3{% endif %}">
+            <div class="col-md-5 thai-font">
+                <a href="{% url 'voca:entry-detail' pk=entry.pk %}?page={{ request.GET.page }}">
+                    {{ entry.title }}
+                </a>
+            </div>
+            <div class="col-md-7">
+                <ul class="list-unstyled mb-0">
+                    {% for meaning in entry.meanings.all %}
+                        <li{% if not forloop.last %} class="mb-2"{% endif %}>
+                            {{ meaning.get_part_display }} - {{ meaning.meaning }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+    <!-- Pagination -->
+    {% include './_pagination_category.html' with page_obj=page_obj page_range=page_range %}
+{% endblock %}
