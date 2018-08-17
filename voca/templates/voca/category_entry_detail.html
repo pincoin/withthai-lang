@@ -39,7 +39,15 @@
                                 </a>
                             </li>
                         {% else %}
-                            <li class="breadcrumb-item active">{{ crumb.title }}</li>
+                            {% if user.is_superuser %}
+                                <li class="breadcrumb-item active">
+                                    <a href="{% url 'admin:voca_entrycategory_change' crumb.id %}">
+                                        {{ crumb.title }}
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="breadcrumb-item active">{{ crumb.title }}</li>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </ol>
@@ -141,7 +149,8 @@
     {% endfor %}
     <div class="row my-1 my-md-3">
         <div class="col">
-            <a href="{% url 'voca:entry-category' category_slug %}?page={{ request.GET.page }}&part={{ request.GET.part }}" class="btn btn-secondary">
+            <a href="{% url 'voca:entry-category' category_slug %}?page={{ request.GET.page }}&part={{ request.GET.part }}"
+               class="btn btn-secondary">
                 {% trans "List" %}
             </a>
         </div>

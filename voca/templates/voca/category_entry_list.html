@@ -39,7 +39,15 @@
                                 </a>
                             </li>
                         {% else %}
-                            <li class="breadcrumb-item active">{{ crumb.title }}</li>
+                            {% if user.is_superuser %}
+                                <li class="breadcrumb-item active">
+                                    <a href="{% url 'admin:voca_entrycategory_change' crumb.id %}">
+                                        {{ crumb.title }}
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="breadcrumb-item active">{{ crumb.title }}</li>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </ol>
