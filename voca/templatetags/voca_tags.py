@@ -73,7 +73,7 @@ def get_textbooks(context, count=5):
         return textbooks
 
     cache_key = 'voca.templatetags.voca_tags.get_textbook()'
-    cache_time = settings.CACHE_TIME_LONG
+    cache_time = settings.CACHE_TIME_VERY_SHORT
 
     textbooks = cache.get(cache_key)
 
